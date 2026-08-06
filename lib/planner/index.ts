@@ -1,0 +1,70 @@
+import type { DrawnZone, PlotFixture } from "@/lib/mapbox";
+import { DEFAULT_BRAND, type SprinklerBrand } from "./catalog";
+import type { AlgorithmVersion, SofortPlan } from "./types";
+import { normalizeLoadedPlan } from "./adapt";
+import {
+  computeSofortPlanV1,
+  recomputeAfterEditV1,
+} from "./v1";
+import {
+  computeSofortPlanV2,
+  recomputeAfterEditV2,
+} from "./v2";
+
+export type {
+  SofortPlan,
+  SprinklerHead,
+  BomLine,
+  PipeRun,
+  HydraulicZoneInfo,
+  AlgorithmVersion,
+  ProjectLevel,
+  PlanMetrics,
+  HydraulicSummary,
+} from "./types";
+
+export { ZONE_COLORS, ZONE_COLORS_CANVAS, zoneColor } from "./v1/hydraulics";
+export { headScreenLabel } from "./v1/layout";
+export { resolveHeadProduct, type HeadProductInfo } from "./v1/headProduct";
+export { DEFAULT_BRAND, type SprinklerBrand } from "./catalog";
+export { normalizeLoadedPlan };
+export { computeSofortPlanV1, recomputeAfterEditV1 } from "./v1";
+export {
+  computeSofortPlanV2,
+  computeSofortPlanV2Raw,
+  recomputeAfterEditV2,
+} from "./v2";
+
+export type ComputeSofortOpts = {
+  brand?: SprinklerBrand;
+  algorithmVersion?: AlgorithmVersion;
+};
+
+/**
+ * Public router: dispatch to frozen v1 or engineering v2.
+ * Default algorithm remains v1 until explicitly switched.
+ */
+export function computeSofortPlan(
+  zones: DrawnZone[],
+  fixtures: PlotFixture[],
+  opts?: ComputeSofortOpts,
+): SofortPlan {
+  const brand = opts?.brand ?? DEFAULT_BRAND;
+  const algorithmVersion = opts?.algorithmVersion ?? "v1";
+  if (algorithmVersion === "v2") {
+    return computeSofortPlanV2(zones, fixtures, { brand });
+  }
+  return computeSofortPlanV1(zones, fixtures, { brand });
+}
+
+export function recomputeAfterEdit(
+  plan: SofortPlan,
+  fixtures: PlotFixture[],
+  zones: DrawnZone[],
+): SofortPlan {
+  const version = plan.algorithmVersion ?? "v1";
+  if (version === "v2") {
+    return recomputeAfterEditV2(plan, fixtures, zones);
+  }
+  return recomputeAfterEditV1(plan, fixtures, zones);
+}

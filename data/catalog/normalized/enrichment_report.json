@@ -1,0 +1,5860 @@
+{
+  "schema_version": "1.0.0",
+  "generated_at": "2026-08-02T19:45:34.185Z",
+  "products_total": 2499,
+  "products_touched": 493,
+  "attributes_filled": 1218,
+  "tables_added": 108,
+  "calculation_ready": 1203,
+  "with_performance_tables": 125,
+  "touches": [
+    {
+      "product_id": "filter_druckgeregelter_filter_rby_rain_bird_prf_fe8d7092",
+      "attrs_filled": [
+        "filtration_micron",
+        "flow_max_l_min"
+      ],
+      "tables_added": [],
+      "pdf_used": "PRF Informationen",
+      "notes": [
+        "filter_pdf=mesh,micron,element_screen",
+        "filter_shop=mesh,element_screen,regulated_fixed,flow_lmin"
+      ]
+    },
+    {
+      "product_id": "filter_druckgeregelter_filter_rby_rain_bird_prf_64567e38",
+      "attrs_filled": [
+        "filtration_micron",
+        "flow_max_l_min"
+      ],
+      "tables_added": [],
+      "pdf_used": "PRF Informationen",
+      "notes": [
+        "filter_pdf=mesh,micron,element_screen",
+        "filter_shop=mesh,element_screen,regulated_fixed,flow_lmin"
+      ]
+    },
+    {
+      "product_id": "filter_druckgeregelter_filter_rby_rain_bird_prf_9f8bbeec",
+      "attrs_filled": [
+        "filtration_micron",
+        "flow_max_l_min"
+      ],
+      "tables_added": [],
+      "pdf_used": "PRF Informationen",
+      "notes": [
+        "filter_pdf=mesh,micron,element_screen",
+        "filter_shop=mesh,element_screen,regulated_fixed,flow_lmin"
+      ]
+    },
+    {
+      "product_id": "filter_druckgeregelter_filter_rby_rain_bird_prf_d6270d28",
+      "attrs_filled": [
+        "filtration_micron",
+        "flow_max_l_min"
+      ],
+      "tables_added": [],
+      "pdf_used": "PRF Informationen",
+      "notes": [
+        "filter_pdf=mesh,micron,element_screen",
+        "filter_shop=mesh,element_screen,regulated_fixed,flow_lmin"
+      ]
+    },
+    {
+      "product_id": "solenoid_magnetventil_100_dv_mm_24vac_rain_bird_1_835c9783",
+      "attrs_filled": [
+        "flow_min_l_min",
+        "flow_max_l_min",
+        "pressure_min_bar"
+      ],
+      "tables_added": [],
+      "pdf_used": "Bedienungsanleitung DV und DVF",
+      "notes": [
+        "hv_dv=flow_m3h,pressure_bar"
+      ]
+    },
+    {
+      "product_id": "solenoid_magnetventil_100_dv_mm_24vac_rain_bird_1_694a5058",
+      "attrs_filled": [
+        "flow_min_l_min",
+        "flow_max_l_min",
+        "pressure_min_bar"
+      ],
+      "tables_added": [],
+      "pdf_used": "Bedienungsanleitung DV und DVF",
+      "notes": [
+        "hv_dv=flow_m3h,pressure_bar"
+      ]
+    },
+    {
+      "product_id": "drip_acc_rain_bird_tropfer_cv_xbcv_10pc_xbcv_20pc_d3ffd92f",
+      "attrs_filled": [
+        "emitter_flow_l_h",
+        "pressure_compensating"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": [
+        "drip_shop=emitter_flow,pc"
+      ]
+    },
+    {
+      "product_id": "drip_acc_rain_bird_tropfer_cv_xbcv_10pc_xbcv_20pc_458c1819",
+      "attrs_filled": [
+        "emitter_flow_l_h",
+        "pressure_compensating"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": [
+        "drip_shop=emitter_flow,pc"
+      ]
+    },
+    {
+      "product_id": "drip_acc_rain_bird_tropfer_xb_05pc_xb_10pc_xb_20p_ee6caacd",
+      "attrs_filled": [
+        "emitter_flow_l_h",
+        "pressure_compensating"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": [
+        "drip_shop=emitter_flow,pc"
+      ]
+    },
+    {
+      "product_id": "drip_acc_rain_bird_tropfer_xb_05pc_xb_10pc_xb_20p_a4db9d7f",
+      "attrs_filled": [
+        "emitter_flow_l_h",
+        "pressure_compensating"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": [
+        "drip_shop=emitter_flow,pc"
+      ]
+    },
+    {
+      "product_id": "drip_acc_rain_bird_tropfer_xb_05pc_xb_10pc_xb_20p_68126c00",
+      "attrs_filled": [
+        "emitter_flow_l_h",
+        "pressure_compensating"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": [
+        "drip_shop=emitter_flow,pc"
+      ]
+    },
+    {
+      "product_id": "drip_acc_rain_bird_tropfer_xb_05pc_xb_10pc_xb_20p_ad53bf65",
+      "attrs_filled": [
+        "pressure_compensating"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": [
+        "drip_shop=pc"
+      ]
+    },
+    {
+      "product_id": "drip_acc_rain_bird_tropfer_xb_05pc_xb_10pc_xb_20p_b5df41d2",
+      "attrs_filled": [
+        "pressure_compensating"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": [
+        "drip_shop=pc"
+      ]
+    },
+    {
+      "product_id": "rotor_getrieberegner_5000_serie_rain_bird_5004_a0542ec9",
+      "attrs_filled": [
+        "radius_min_m",
+        "radius_max_m",
+        "pressure_min_bar",
+        "pressure_max_bar",
+        "pop_up_height_mm"
+      ],
+      "tables_added": [],
+      "pdf_used": "Datenblatt 5004, 5006, 5012 Rain-Bird",
+      "notes": [
+        "shop_rotor=wurfweite,druck,durchfluss,sam,shop_pop"
+      ]
+    },
+    {
+      "product_id": "rotor_getrieberegner_5000_serie_rain_bird_5004_6d120629",
+      "attrs_filled": [
+        "radius_min_m",
+        "radius_max_m",
+        "pressure_min_bar",
+        "pressure_max_bar",
+        "pop_up_height_mm"
+      ],
+      "tables_added": [],
+      "pdf_used": "Datenblatt 5004, 5006, 5012 Rain-Bird",
+      "notes": [
+        "shop_rotor=wurfweite,druck,durchfluss,sam,shop_pop"
+      ]
+    },
+    {
+      "product_id": "rotor_getrieberegner_5000_serie_rain_bird_5004_cef6dfa5",
+      "attrs_filled": [
+        "radius_min_m",
+        "radius_max_m",
+        "pressure_min_bar",
+        "pressure_max_bar",
+        "pop_up_height_mm"
+      ],
+      "tables_added": [],
+      "pdf_used": "Datenblatt 5004, 5006, 5012 Rain-Bird",
+      "notes": [
+        "shop_rotor=wurfweite,druck,durchfluss,sam,shop_pop"
+      ]
+    },
+    {
+      "product_id": "rotor_getrieberegner_5000_serie_rain_bird_5004_db693fe5",
+      "attrs_filled": [
+        "radius_min_m",
+        "radius_max_m",
+        "pressure_min_bar",
+        "pressure_max_bar",
+        "pop_up_height_mm"
+      ],
+      "tables_added": [],
+      "pdf_used": "Datenblatt 5004, 5006, 5012 Rain-Bird",
+      "notes": [
+        "shop_rotor=wurfweite,druck,durchfluss,sam,shop_pop"
+      ]
+    },
+    {
+      "product_id": "rotor_getrieberegner_5000_serie_rain_bird_5004_1012aab4",
+      "attrs_filled": [
+        "radius_min_m",
+        "radius_max_m",
+        "pressure_min_bar",
+        "pressure_max_bar",
+        "pop_up_height_mm"
+      ],
+      "tables_added": [],
+      "pdf_used": "Datenblatt 5004, 5006, 5012 Rain-Bird",
+      "notes": [
+        "shop_rotor=wurfweite,druck,durchfluss,sam,shop_pop"
+      ]
+    },
+    {
+      "product_id": "rotor_getrieberegner_5000_serie_rain_bird_5004_1e768d9c",
+      "attrs_filled": [
+        "radius_min_m",
+        "radius_max_m",
+        "pressure_min_bar",
+        "pressure_max_bar",
+        "pop_up_height_mm"
+      ],
+      "tables_added": [],
+      "pdf_used": "Datenblatt 5004, 5006, 5012 Rain-Bird",
+      "notes": [
+        "shop_rotor=wurfweite,druck,durchfluss,sam,shop_pop"
+      ]
+    },
+    {
+      "product_id": "rotor_getrieberegner_5000_serie_rain_bird_5004_b897ead6",
+      "attrs_filled": [
+        "radius_min_m",
+        "radius_max_m",
+        "pressure_min_bar",
+        "pressure_max_bar",
+        "pop_up_height_mm"
+      ],
+      "tables_added": [],
+      "pdf_used": "Datenblatt 5004, 5006, 5012 Rain-Bird",
+      "notes": [
+        "shop_rotor=wurfweite,druck,durchfluss,sam,shop_pop"
+      ]
+    },
+    {
+      "product_id": "rotor_getrieberegner_5000_serie_rain_bird_5004_3c44afe1",
+      "attrs_filled": [
+        "radius_min_m",
+        "radius_max_m",
+        "pressure_min_bar",
+        "pressure_max_bar",
+        "pop_up_height_mm"
+      ],
+      "tables_added": [],
+      "pdf_used": "Datenblatt 5004, 5006, 5012 Rain-Bird",
+      "notes": [
+        "shop_rotor=wurfweite,druck,durchfluss,sam,shop_pop"
+      ]
+    },
+    {
+      "product_id": "rotor_getrieberegner_5000_serie_rain_bird_5004_c526857e",
+      "attrs_filled": [
+        "radius_min_m",
+        "radius_max_m",
+        "pressure_min_bar",
+        "pressure_max_bar",
+        "pop_up_height_mm"
+      ],
+      "tables_added": [],
+      "pdf_used": "Datenblatt 5004, 5006, 5012 Rain-Bird",
+      "notes": [
+        "shop_rotor=wurfweite,druck,durchfluss,sam,shop_pop"
+      ]
+    },
+    {
+      "product_id": "rotor_getrieberegner_5000_serie_rain_bird_5004_e07de859",
+      "attrs_filled": [
+        "radius_min_m",
+        "radius_max_m",
+        "pressure_min_bar",
+        "pressure_max_bar",
+        "pop_up_height_mm"
+      ],
+      "tables_added": [],
+      "pdf_used": "Datenblatt 5004, 5006, 5012 Rain-Bird",
+      "notes": [
+        "shop_rotor=wurfweite,druck,durchfluss,sam,shop_pop"
+      ]
+    },
+    {
+      "product_id": "nozzle_installation_set_rain_bird_1804_1804_sam_1e8aaac4",
+      "attrs_filled": [
+        "pressure_min_bar",
+        "pressure_max_bar",
+        "radius_min_m",
+        "radius_max_m",
+        "precipitation_rate_mm_h",
+        "pressure_recommended_bar"
+      ],
+      "tables_added": [
+        "radius_flow_r-van14"
+      ],
+      "pdf_used": "R-VAN Technisches-Datenblatt Rain-Bird",
+      "notes": [
+        "rvan_table_rows=24"
+      ]
+    },
+    {
+      "product_id": "nozzle_installation_set_rain_bird_1804_1804_sam_c4f81000",
+      "attrs_filled": [
+        "pressure_min_bar",
+        "pressure_max_bar",
+        "radius_min_m",
+        "radius_max_m",
+        "precipitation_rate_mm_h",
+        "pressure_recommended_bar"
+      ],
+      "tables_added": [
+        "radius_flow_r-van18"
+      ],
+      "pdf_used": "R-VAN Technisches-Datenblatt Rain-Bird",
+      "notes": [
+        "rvan_table_rows=24"
+      ]
+    },
+    {
+      "product_id": "nozzle_installation_set_rain_bird_1804_1804_sam_2f5f0269",
+      "attrs_filled": [
+        "pressure_min_bar",
+        "pressure_max_bar",
+        "radius_min_m",
+        "radius_max_m",
+        "precipitation_rate_mm_h",
+        "pressure_recommended_bar"
+      ],
+      "tables_added": [
+        "radius_flow_r-van24"
+      ],
+      "pdf_used": "R-VAN Technisches-Datenblatt Rain-Bird",
+      "notes": [
+        "rvan_table_rows=24"
+      ]
+    },
+    {
+      "product_id": "nozzle_installation_set_rain_bird_1804_1804_sam_17a18241",
+      "attrs_filled": [
+        "pressure_min_bar",
+        "pressure_max_bar",
+        "radius_min_m",
+        "radius_max_m",
+        "precipitation_rate_mm_h",
+        "pressure_recommended_bar"
+      ],
+      "tables_added": [
+        "radius_flow_r-van14"
+      ],
+      "pdf_used": "R-VAN Technisches-Datenblatt Rain-Bird",
+      "notes": [
+        "rvan_table_rows=24"
+      ]
+    },
+    {
+      "product_id": "nozzle_installation_set_rain_bird_1804_1804_sam_5197b27d",
+      "attrs_filled": [
+        "pressure_min_bar",
+        "pressure_max_bar",
+        "radius_min_m",
+        "radius_max_m",
+        "precipitation_rate_mm_h",
+        "pressure_recommended_bar"
+      ],
+      "tables_added": [
+        "radius_flow_r-van18"
+      ],
+      "pdf_used": "R-VAN Technisches-Datenblatt Rain-Bird",
+      "notes": [
+        "rvan_table_rows=24"
+      ]
+    },
+    {
+      "product_id": "nozzle_installation_set_rain_bird_1804_1804_sam_0c309e27",
+      "attrs_filled": [
+        "pressure_min_bar",
+        "pressure_max_bar",
+        "radius_min_m",
+        "radius_max_m",
+        "precipitation_rate_mm_h",
+        "pressure_recommended_bar"
+      ],
+      "tables_added": [
+        "radius_flow_r-van24"
+      ],
+      "pdf_used": "R-VAN Technisches-Datenblatt Rain-Bird",
+      "notes": [
+        "rvan_table_rows=24"
+      ]
+    },
+    {
+      "product_id": "nozzle_installation_set_rain_bird_1804_1804_sam_446a7c3d",
+      "attrs_filled": [
+        "pressure_min_bar",
+        "pressure_max_bar",
+        "precipitation_rate_mm_h",
+        "strip_width_m",
+        "strip_length_m",
+        "pressure_recommended_bar"
+      ],
+      "tables_added": [
+        "radius_flow_r-van-lcs"
+      ],
+      "pdf_used": "R-VAN Technisches-Datenblatt Rain-Bird",
+      "notes": [
+        "rvan_table_rows=6"
+      ]
+    },
+    {
+      "product_id": "nozzle_installation_set_rain_bird_1804_1804_sam_4f97edac",
+      "attrs_filled": [
+        "pressure_min_bar",
+        "pressure_max_bar",
+        "precipitation_rate_mm_h",
+        "strip_width_m",
+        "strip_length_m",
+        "pressure_recommended_bar"
+      ],
+      "tables_added": [
+        "radius_flow_r-van-sst"
+      ],
+      "pdf_used": "R-VAN Technisches-Datenblatt Rain-Bird",
+      "notes": [
+        "rvan_table_rows=6"
+      ]
+    },
+    {
+      "product_id": "nozzle_installation_set_rain_bird_1804_1804_sam_e92b67a6",
+      "attrs_filled": [
+        "pressure_min_bar",
+        "pressure_max_bar",
+        "precipitation_rate_mm_h",
+        "strip_width_m",
+        "strip_length_m",
+        "pressure_recommended_bar"
+      ],
+      "tables_added": [
+        "radius_flow_r-van-rcs"
+      ],
+      "pdf_used": "R-VAN Technisches-Datenblatt Rain-Bird",
+      "notes": [
+        "rvan_table_rows=6"
+      ]
+    },
+    {
+      "product_id": "nozzle_installation_set_rain_bird_1804_1804_sam_2e82bed7",
+      "attrs_filled": [
+        "pressure_min_bar",
+        "pressure_max_bar",
+        "radius_min_m",
+        "radius_max_m",
+        "precipitation_rate_mm_h",
+        "pressure_recommended_bar"
+      ],
+      "tables_added": [
+        "radius_flow_r-van14"
+      ],
+      "pdf_used": "R-VAN Technisches-Datenblatt Rain-Bird",
+      "notes": [
+        "rvan_table_rows=24"
+      ]
+    },
+    {
+      "product_id": "nozzle_installation_set_rain_bird_1804_1804_sam_ab034cd8",
+      "attrs_filled": [
+        "pressure_min_bar",
+        "pressure_max_bar",
+        "radius_min_m",
+        "radius_max_m",
+        "precipitation_rate_mm_h",
+        "pressure_recommended_bar"
+      ],
+      "tables_added": [
+        "radius_flow_r-van18"
+      ],
+      "pdf_used": "R-VAN Technisches-Datenblatt Rain-Bird",
+      "notes": [
+        "rvan_table_rows=24"
+      ]
+    },
+    {
+      "product_id": "nozzle_installation_set_rain_bird_1804_1804_sam_76850d0a",
+      "attrs_filled": [
+        "pressure_min_bar",
+        "pressure_max_bar",
+        "radius_min_m",
+        "radius_max_m",
+        "precipitation_rate_mm_h",
+        "pressure_recommended_bar"
+      ],
+      "tables_added": [
+        "radius_flow_r-van24"
+      ],
+      "pdf_used": "R-VAN Technisches-Datenblatt Rain-Bird",
+      "notes": [
+        "rvan_table_rows=24"
+      ]
+    },
+    {
+      "product_id": "nozzle_installation_set_rain_bird_1804_1804_sam_a5611fb8",
+      "attrs_filled": [
+        "pressure_min_bar",
+        "pressure_max_bar",
+        "radius_min_m",
+        "radius_max_m",
+        "precipitation_rate_mm_h",
+        "pressure_recommended_bar"
+      ],
+      "tables_added": [
+        "radius_flow_r-van14"
+      ],
+      "pdf_used": "R-VAN Technisches-Datenblatt Rain-Bird",
+      "notes": [
+        "rvan_table_rows=24"
+      ]
+    },
+    {
+      "product_id": "nozzle_installation_set_rain_bird_1804_1804_sam_9816bdb1",
+      "attrs_filled": [
+        "pressure_min_bar",
+        "pressure_max_bar",
+        "radius_min_m",
+        "radius_max_m",
+        "precipitation_rate_mm_h",
+        "pressure_recommended_bar"
+      ],
+      "tables_added": [
+        "radius_flow_r-van18"
+      ],
+      "pdf_used": "R-VAN Technisches-Datenblatt Rain-Bird",
+      "notes": [
+        "rvan_table_rows=24"
+      ]
+    },
+    {
+      "product_id": "nozzle_installation_set_rain_bird_1804_1804_sam_6439cd25",
+      "attrs_filled": [
+        "pressure_min_bar",
+        "pressure_max_bar",
+        "radius_min_m",
+        "radius_max_m",
+        "precipitation_rate_mm_h",
+        "pressure_recommended_bar"
+      ],
+      "tables_added": [
+        "radius_flow_r-van24"
+      ],
+      "pdf_used": "R-VAN Technisches-Datenblatt Rain-Bird",
+      "notes": [
+        "rvan_table_rows=24"
+      ]
+    },
+    {
+      "product_id": "nozzle_installation_set_rain_bird_1804_1804_sam_b35f6cc9",
+      "attrs_filled": [
+        "pressure_min_bar",
+        "pressure_max_bar",
+        "precipitation_rate_mm_h",
+        "strip_width_m",
+        "strip_length_m",
+        "pressure_recommended_bar"
+      ],
+      "tables_added": [
+        "radius_flow_r-van-lcs"
+      ],
+      "pdf_used": "R-VAN Technisches-Datenblatt Rain-Bird",
+      "notes": [
+        "rvan_table_rows=6"
+      ]
+    },
+    {
+      "product_id": "nozzle_installation_set_rain_bird_1804_1804_sam_a6415002",
+      "attrs_filled": [
+        "pressure_min_bar",
+        "pressure_max_bar",
+        "precipitation_rate_mm_h",
+        "strip_width_m",
+        "strip_length_m",
+        "pressure_recommended_bar"
+      ],
+      "tables_added": [
+        "radius_flow_r-van-sst"
+      ],
+      "pdf_used": "R-VAN Technisches-Datenblatt Rain-Bird",
+      "notes": [
+        "rvan_table_rows=6"
+      ]
+    },
+    {
+      "product_id": "nozzle_installation_set_rain_bird_1804_1804_sam_e7615524",
+      "attrs_filled": [
+        "pressure_min_bar",
+        "pressure_max_bar",
+        "precipitation_rate_mm_h",
+        "strip_width_m",
+        "strip_length_m",
+        "pressure_recommended_bar"
+      ],
+      "tables_added": [
+        "radius_flow_r-van-rcs"
+      ],
+      "pdf_used": "R-VAN Technisches-Datenblatt Rain-Bird",
+      "notes": [
+        "rvan_table_rows=6"
+      ]
+    },
+    {
+      "product_id": "nozzle_installation_set_rain_bird_1804_1804_sam_47931c39",
+      "attrs_filled": [
+        "pressure_min_bar",
+        "pressure_max_bar",
+        "radius_min_m",
+        "radius_max_m",
+        "precipitation_rate_mm_h",
+        "pressure_recommended_bar"
+      ],
+      "tables_added": [
+        "radius_flow_r-van14"
+      ],
+      "pdf_used": "R-VAN Technisches-Datenblatt Rain-Bird",
+      "notes": [
+        "rvan_table_rows=24"
+      ]
+    },
+    {
+      "product_id": "nozzle_installation_set_rain_bird_1804_1804_sam_e676d38b",
+      "attrs_filled": [
+        "pressure_min_bar",
+        "pressure_max_bar",
+        "radius_min_m",
+        "radius_max_m",
+        "precipitation_rate_mm_h",
+        "pressure_recommended_bar"
+      ],
+      "tables_added": [
+        "radius_flow_r-van18"
+      ],
+      "pdf_used": "R-VAN Technisches-Datenblatt Rain-Bird",
+      "notes": [
+        "rvan_table_rows=24"
+      ]
+    },
+    {
+      "product_id": "nozzle_installation_set_rain_bird_1804_1804_sam_2d6620f5",
+      "attrs_filled": [
+        "pressure_min_bar",
+        "pressure_max_bar",
+        "radius_min_m",
+        "radius_max_m",
+        "precipitation_rate_mm_h",
+        "pressure_recommended_bar"
+      ],
+      "tables_added": [
+        "radius_flow_r-van24"
+      ],
+      "pdf_used": "R-VAN Technisches-Datenblatt Rain-Bird",
+      "notes": [
+        "rvan_table_rows=24"
+      ]
+    },
+    {
+      "product_id": "nozzle_installation_set_rain_bird_1804_1804_sam_e935d4b8",
+      "attrs_filled": [
+        "pressure_min_bar",
+        "pressure_max_bar",
+        "radius_min_m",
+        "radius_max_m",
+        "precipitation_rate_mm_h",
+        "pressure_recommended_bar"
+      ],
+      "tables_added": [
+        "radius_flow_r-van14"
+      ],
+      "pdf_used": "R-VAN Technisches-Datenblatt Rain-Bird",
+      "notes": [
+        "rvan_table_rows=24"
+      ]
+    },
+    {
+      "product_id": "nozzle_installation_set_rain_bird_1804_1804_sam_b85367bb",
+      "attrs_filled": [
+        "pressure_min_bar",
+        "pressure_max_bar",
+        "radius_min_m",
+        "radius_max_m",
+        "precipitation_rate_mm_h",
+        "pressure_recommended_bar"
+      ],
+      "tables_added": [
+        "radius_flow_r-van18"
+      ],
+      "pdf_used": "R-VAN Technisches-Datenblatt Rain-Bird",
+      "notes": [
+        "rvan_table_rows=24"
+      ]
+    },
+    {
+      "product_id": "nozzle_installation_set_rain_bird_1804_1804_sam_d9363b89",
+      "attrs_filled": [
+        "pressure_min_bar",
+        "pressure_max_bar",
+        "radius_min_m",
+        "radius_max_m",
+        "precipitation_rate_mm_h",
+        "pressure_recommended_bar"
+      ],
+      "tables_added": [
+        "radius_flow_r-van24"
+      ],
+      "pdf_used": "R-VAN Technisches-Datenblatt Rain-Bird",
+      "notes": [
+        "rvan_table_rows=24"
+      ]
+    },
+    {
+      "product_id": "nozzle_installation_set_rain_bird_1804_1804_sam_e42f51bf",
+      "attrs_filled": [
+        "pressure_min_bar",
+        "pressure_max_bar",
+        "precipitation_rate_mm_h",
+        "strip_width_m",
+        "strip_length_m",
+        "pressure_recommended_bar"
+      ],
+      "tables_added": [
+        "radius_flow_r-van-lcs"
+      ],
+      "pdf_used": "R-VAN Technisches-Datenblatt Rain-Bird",
+      "notes": [
+        "rvan_table_rows=6"
+      ]
+    },
+    {
+      "product_id": "nozzle_installation_set_rain_bird_1804_1804_sam_614ce970",
+      "attrs_filled": [
+        "pressure_min_bar",
+        "pressure_max_bar",
+        "precipitation_rate_mm_h",
+        "strip_width_m",
+        "strip_length_m",
+        "pressure_recommended_bar"
+      ],
+      "tables_added": [
+        "radius_flow_r-van-sst"
+      ],
+      "pdf_used": "R-VAN Technisches-Datenblatt Rain-Bird",
+      "notes": [
+        "rvan_table_rows=6"
+      ]
+    },
+    {
+      "product_id": "nozzle_installation_set_rain_bird_1804_1804_sam_191bc649",
+      "attrs_filled": [
+        "pressure_min_bar",
+        "pressure_max_bar",
+        "precipitation_rate_mm_h",
+        "strip_width_m",
+        "strip_length_m",
+        "pressure_recommended_bar"
+      ],
+      "tables_added": [
+        "radius_flow_r-van-rcs"
+      ],
+      "pdf_used": "R-VAN Technisches-Datenblatt Rain-Bird",
+      "notes": [
+        "rvan_table_rows=6"
+      ]
+    },
+    {
+      "product_id": "nozzle_installation_set_rain_bird_1804_1804_sam_a202440d",
+      "attrs_filled": [
+        "pressure_min_bar",
+        "pressure_max_bar",
+        "radius_min_m",
+        "radius_max_m",
+        "precipitation_rate_mm_h",
+        "pressure_recommended_bar"
+      ],
+      "tables_added": [
+        "radius_flow_r-van14"
+      ],
+      "pdf_used": "R-VAN Technisches-Datenblatt Rain-Bird",
+      "notes": [
+        "rvan_table_rows=24"
+      ]
+    },
+    {
+      "product_id": "nozzle_installation_set_rain_bird_1804_1804_sam_1bcd774f",
+      "attrs_filled": [
+        "pressure_min_bar",
+        "pressure_max_bar",
+        "radius_min_m",
+        "radius_max_m",
+        "precipitation_rate_mm_h",
+        "pressure_recommended_bar"
+      ],
+      "tables_added": [
+        "radius_flow_r-van18"
+      ],
+      "pdf_used": "R-VAN Technisches-Datenblatt Rain-Bird",
+      "notes": [
+        "rvan_table_rows=24"
+      ]
+    },
+    {
+      "product_id": "nozzle_installation_set_rain_bird_1804_1804_sam_557a374d",
+      "attrs_filled": [
+        "pressure_min_bar",
+        "pressure_max_bar",
+        "radius_min_m",
+        "radius_max_m",
+        "precipitation_rate_mm_h",
+        "pressure_recommended_bar"
+      ],
+      "tables_added": [
+        "radius_flow_r-van24"
+      ],
+      "pdf_used": "R-VAN Technisches-Datenblatt Rain-Bird",
+      "notes": [
+        "rvan_table_rows=24"
+      ]
+    },
+    {
+      "product_id": "nozzle_installation_set_rain_bird_1804_1804_sam_75a34f66",
+      "attrs_filled": [
+        "pressure_min_bar",
+        "pressure_max_bar",
+        "radius_min_m",
+        "radius_max_m",
+        "precipitation_rate_mm_h",
+        "pressure_recommended_bar"
+      ],
+      "tables_added": [
+        "radius_flow_r-van14"
+      ],
+      "pdf_used": "R-VAN Technisches-Datenblatt Rain-Bird",
+      "notes": [
+        "rvan_table_rows=24"
+      ]
+    },
+    {
+      "product_id": "nozzle_installation_set_rain_bird_1804_1804_sam_f1f2dd19",
+      "attrs_filled": [
+        "pressure_min_bar",
+        "pressure_max_bar",
+        "radius_min_m",
+        "radius_max_m",
+        "precipitation_rate_mm_h",
+        "pressure_recommended_bar"
+      ],
+      "tables_added": [
+        "radius_flow_r-van18"
+      ],
+      "pdf_used": "R-VAN Technisches-Datenblatt Rain-Bird",
+      "notes": [
+        "rvan_table_rows=24"
+      ]
+    },
+    {
+      "product_id": "nozzle_installation_set_rain_bird_1804_1804_sam_33613092",
+      "attrs_filled": [
+        "pressure_min_bar",
+        "pressure_max_bar",
+        "radius_min_m",
+        "radius_max_m",
+        "precipitation_rate_mm_h",
+        "pressure_recommended_bar"
+      ],
+      "tables_added": [
+        "radius_flow_r-van24"
+      ],
+      "pdf_used": "R-VAN Technisches-Datenblatt Rain-Bird",
+      "notes": [
+        "rvan_table_rows=24"
+      ]
+    },
+    {
+      "product_id": "nozzle_installation_set_rain_bird_1804_1804_sam_5f472699",
+      "attrs_filled": [
+        "pressure_min_bar",
+        "pressure_max_bar",
+        "precipitation_rate_mm_h",
+        "strip_width_m",
+        "strip_length_m",
+        "pressure_recommended_bar"
+      ],
+      "tables_added": [
+        "radius_flow_r-van-lcs"
+      ],
+      "pdf_used": "R-VAN Technisches-Datenblatt Rain-Bird",
+      "notes": [
+        "rvan_table_rows=6"
+      ]
+    },
+    {
+      "product_id": "nozzle_installation_set_rain_bird_1804_1804_sam_20914651",
+      "attrs_filled": [
+        "pressure_min_bar",
+        "pressure_max_bar",
+        "precipitation_rate_mm_h",
+        "strip_width_m",
+        "strip_length_m",
+        "pressure_recommended_bar"
+      ],
+      "tables_added": [
+        "radius_flow_r-van-sst"
+      ],
+      "pdf_used": "R-VAN Technisches-Datenblatt Rain-Bird",
+      "notes": [
+        "rvan_table_rows=6"
+      ]
+    },
+    {
+      "product_id": "nozzle_installation_set_rain_bird_1804_1804_sam_b2ce04ac",
+      "attrs_filled": [
+        "pressure_min_bar",
+        "pressure_max_bar",
+        "precipitation_rate_mm_h",
+        "strip_width_m",
+        "strip_length_m",
+        "pressure_recommended_bar"
+      ],
+      "tables_added": [
+        "radius_flow_r-van-rcs"
+      ],
+      "pdf_used": "R-VAN Technisches-Datenblatt Rain-Bird",
+      "notes": [
+        "rvan_table_rows=6"
+      ]
+    },
+    {
+      "product_id": "nozzle_installation_set_rain_bird_1804_1804_sam_83a52dbe",
+      "attrs_filled": [
+        "pressure_min_bar",
+        "pressure_max_bar",
+        "radius_min_m",
+        "radius_max_m",
+        "precipitation_rate_mm_h",
+        "pressure_recommended_bar"
+      ],
+      "tables_added": [
+        "radius_flow_r-van14"
+      ],
+      "pdf_used": "R-VAN Technisches-Datenblatt Rain-Bird",
+      "notes": [
+        "rvan_table_rows=24"
+      ]
+    },
+    {
+      "product_id": "nozzle_installation_set_rain_bird_1804_1804_sam_c795421d",
+      "attrs_filled": [
+        "pressure_min_bar",
+        "pressure_max_bar",
+        "radius_min_m",
+        "radius_max_m",
+        "precipitation_rate_mm_h",
+        "pressure_recommended_bar"
+      ],
+      "tables_added": [
+        "radius_flow_r-van18"
+      ],
+      "pdf_used": "R-VAN Technisches-Datenblatt Rain-Bird",
+      "notes": [
+        "rvan_table_rows=24"
+      ]
+    },
+    {
+      "product_id": "nozzle_installation_set_rain_bird_1804_1804_sam_080fabc5",
+      "attrs_filled": [
+        "pressure_min_bar",
+        "pressure_max_bar",
+        "radius_min_m",
+        "radius_max_m",
+        "precipitation_rate_mm_h",
+        "pressure_recommended_bar"
+      ],
+      "tables_added": [
+        "radius_flow_r-van24"
+      ],
+      "pdf_used": "R-VAN Technisches-Datenblatt Rain-Bird",
+      "notes": [
+        "rvan_table_rows=24"
+      ]
+    },
+    {
+      "product_id": "nozzle_installation_set_rain_bird_1804_1804_sam_dd9bf89c",
+      "attrs_filled": [
+        "pressure_min_bar",
+        "pressure_max_bar",
+        "radius_min_m",
+        "radius_max_m",
+        "precipitation_rate_mm_h",
+        "pressure_recommended_bar"
+      ],
+      "tables_added": [
+        "radius_flow_r-van14"
+      ],
+      "pdf_used": "R-VAN Technisches-Datenblatt Rain-Bird",
+      "notes": [
+        "rvan_table_rows=24"
+      ]
+    },
+    {
+      "product_id": "nozzle_installation_set_rain_bird_1804_1804_sam_67d736a4",
+      "attrs_filled": [
+        "pressure_min_bar",
+        "pressure_max_bar",
+        "radius_min_m",
+        "radius_max_m",
+        "precipitation_rate_mm_h",
+        "pressure_recommended_bar"
+      ],
+      "tables_added": [
+        "radius_flow_r-van18"
+      ],
+      "pdf_used": "R-VAN Technisches-Datenblatt Rain-Bird",
+      "notes": [
+        "rvan_table_rows=24"
+      ]
+    },
+    {
+      "product_id": "nozzle_installation_set_rain_bird_1804_1804_sam_4a95decd",
+      "attrs_filled": [
+        "pressure_min_bar",
+        "pressure_max_bar",
+        "radius_min_m",
+        "radius_max_m",
+        "precipitation_rate_mm_h",
+        "pressure_recommended_bar"
+      ],
+      "tables_added": [
+        "radius_flow_r-van24"
+      ],
+      "pdf_used": "R-VAN Technisches-Datenblatt Rain-Bird",
+      "notes": [
+        "rvan_table_rows=24"
+      ]
+    },
+    {
+      "product_id": "nozzle_installation_set_rain_bird_1804_1804_sam_777d9527",
+      "attrs_filled": [
+        "pressure_min_bar",
+        "pressure_max_bar",
+        "precipitation_rate_mm_h",
+        "strip_width_m",
+        "strip_length_m",
+        "pressure_recommended_bar"
+      ],
+      "tables_added": [
+        "radius_flow_r-van-lcs"
+      ],
+      "pdf_used": "R-VAN Technisches-Datenblatt Rain-Bird",
+      "notes": [
+        "rvan_table_rows=6"
+      ]
+    },
+    {
+      "product_id": "nozzle_installation_set_rain_bird_1804_1804_sam_e76db3b8",
+      "attrs_filled": [
+        "pressure_min_bar",
+        "pressure_max_bar",
+        "precipitation_rate_mm_h",
+        "strip_width_m",
+        "strip_length_m",
+        "pressure_recommended_bar"
+      ],
+      "tables_added": [
+        "radius_flow_r-van-sst"
+      ],
+      "pdf_used": "R-VAN Technisches-Datenblatt Rain-Bird",
+      "notes": [
+        "rvan_table_rows=6"
+      ]
+    },
+    {
+      "product_id": "nozzle_installation_set_rain_bird_1804_1804_sam_506b3d3e",
+      "attrs_filled": [
+        "pressure_min_bar",
+        "pressure_max_bar",
+        "precipitation_rate_mm_h",
+        "strip_width_m",
+        "strip_length_m",
+        "pressure_recommended_bar"
+      ],
+      "tables_added": [
+        "radius_flow_r-van-rcs"
+      ],
+      "pdf_used": "R-VAN Technisches-Datenblatt Rain-Bird",
+      "notes": [
+        "rvan_table_rows=6"
+      ]
+    },
+    {
+      "product_id": "nozzle_installation_set_rain_bird_1804_1804_sam_d541371f",
+      "attrs_filled": [
+        "pressure_min_bar",
+        "pressure_max_bar",
+        "radius_min_m",
+        "radius_max_m",
+        "precipitation_rate_mm_h",
+        "pressure_recommended_bar"
+      ],
+      "tables_added": [
+        "radius_flow_r-van14"
+      ],
+      "pdf_used": "R-VAN Technisches-Datenblatt Rain-Bird",
+      "notes": [
+        "rvan_table_rows=24"
+      ]
+    },
+    {
+      "product_id": "nozzle_installation_set_rain_bird_1804_1804_sam_048f1b4a",
+      "attrs_filled": [
+        "pressure_min_bar",
+        "pressure_max_bar",
+        "radius_min_m",
+        "radius_max_m",
+        "precipitation_rate_mm_h",
+        "pressure_recommended_bar"
+      ],
+      "tables_added": [
+        "radius_flow_r-van18"
+      ],
+      "pdf_used": "R-VAN Technisches-Datenblatt Rain-Bird",
+      "notes": [
+        "rvan_table_rows=24"
+      ]
+    },
+    {
+      "product_id": "nozzle_installation_set_rain_bird_1804_1804_sam_6ef0103b",
+      "attrs_filled": [
+        "pressure_min_bar",
+        "pressure_max_bar",
+        "radius_min_m",
+        "radius_max_m",
+        "precipitation_rate_mm_h",
+        "pressure_recommended_bar"
+      ],
+      "tables_added": [
+        "radius_flow_r-van24"
+      ],
+      "pdf_used": "R-VAN Technisches-Datenblatt Rain-Bird",
+      "notes": [
+        "rvan_table_rows=24"
+      ]
+    },
+    {
+      "product_id": "nozzle_installation_set_rain_bird_1804_1804_sam_e8b35157",
+      "attrs_filled": [
+        "pressure_min_bar",
+        "pressure_max_bar",
+        "radius_min_m",
+        "radius_max_m",
+        "precipitation_rate_mm_h",
+        "pressure_recommended_bar"
+      ],
+      "tables_added": [
+        "radius_flow_r-van14"
+      ],
+      "pdf_used": "R-VAN Technisches-Datenblatt Rain-Bird",
+      "notes": [
+        "rvan_table_rows=24"
+      ]
+    },
+    {
+      "product_id": "nozzle_installation_set_rain_bird_1804_1804_sam_b4141584",
+      "attrs_filled": [
+        "pressure_min_bar",
+        "pressure_max_bar",
+        "radius_min_m",
+        "radius_max_m",
+        "precipitation_rate_mm_h",
+        "pressure_recommended_bar"
+      ],
+      "tables_added": [
+        "radius_flow_r-van18"
+      ],
+      "pdf_used": "R-VAN Technisches-Datenblatt Rain-Bird",
+      "notes": [
+        "rvan_table_rows=24"
+      ]
+    },
+    {
+      "product_id": "nozzle_installation_set_rain_bird_1804_1804_sam_8d62ed20",
+      "attrs_filled": [
+        "pressure_min_bar",
+        "pressure_max_bar",
+        "radius_min_m",
+        "radius_max_m",
+        "precipitation_rate_mm_h",
+        "pressure_recommended_bar"
+      ],
+      "tables_added": [
+        "radius_flow_r-van24"
+      ],
+      "pdf_used": "R-VAN Technisches-Datenblatt Rain-Bird",
+      "notes": [
+        "rvan_table_rows=24"
+      ]
+    },
+    {
+      "product_id": "nozzle_installation_set_rain_bird_1804_1804_sam_0883894b",
+      "attrs_filled": [
+        "pressure_min_bar",
+        "pressure_max_bar",
+        "precipitation_rate_mm_h",
+        "strip_width_m",
+        "strip_length_m",
+        "pressure_recommended_bar"
+      ],
+      "tables_added": [
+        "radius_flow_r-van-lcs"
+      ],
+      "pdf_used": "R-VAN Technisches-Datenblatt Rain-Bird",
+      "notes": [
+        "rvan_table_rows=6"
+      ]
+    },
+    {
+      "product_id": "nozzle_installation_set_rain_bird_1804_1804_sam_3ed6daae",
+      "attrs_filled": [
+        "pressure_min_bar",
+        "pressure_max_bar",
+        "precipitation_rate_mm_h",
+        "strip_width_m",
+        "strip_length_m",
+        "pressure_recommended_bar"
+      ],
+      "tables_added": [
+        "radius_flow_r-van-sst"
+      ],
+      "pdf_used": "R-VAN Technisches-Datenblatt Rain-Bird",
+      "notes": [
+        "rvan_table_rows=6"
+      ]
+    },
+    {
+      "product_id": "nozzle_installation_set_rain_bird_1804_1804_sam_d521016c",
+      "attrs_filled": [
+        "pressure_min_bar",
+        "pressure_max_bar",
+        "precipitation_rate_mm_h",
+        "strip_width_m",
+        "strip_length_m",
+        "pressure_recommended_bar"
+      ],
+      "tables_added": [
+        "radius_flow_r-van-rcs"
+      ],
+      "pdf_used": "R-VAN Technisches-Datenblatt Rain-Bird",
+      "notes": [
+        "rvan_table_rows=6"
+      ]
+    },
+    {
+      "product_id": "nozzle_installation_set_rain_bird_1804_1804_sam_34bac950",
+      "attrs_filled": [
+        "pressure_min_bar",
+        "pressure_max_bar",
+        "radius_min_m",
+        "radius_max_m",
+        "precipitation_rate_mm_h",
+        "pressure_recommended_bar"
+      ],
+      "tables_added": [
+        "radius_flow_r-van14"
+      ],
+      "pdf_used": "R-VAN Technisches-Datenblatt Rain-Bird",
+      "notes": [
+        "rvan_table_rows=24"
+      ]
+    },
+    {
+      "product_id": "nozzle_installation_set_rain_bird_1804_1804_sam_e52699a7",
+      "attrs_filled": [
+        "pressure_min_bar",
+        "pressure_max_bar",
+        "radius_min_m",
+        "radius_max_m",
+        "precipitation_rate_mm_h",
+        "pressure_recommended_bar"
+      ],
+      "tables_added": [
+        "radius_flow_r-van18"
+      ],
+      "pdf_used": "R-VAN Technisches-Datenblatt Rain-Bird",
+      "notes": [
+        "rvan_table_rows=24"
+      ]
+    },
+    {
+      "product_id": "nozzle_installation_set_rain_bird_1804_1804_sam_f269ad19",
+      "attrs_filled": [
+        "pressure_min_bar",
+        "pressure_max_bar",
+        "radius_min_m",
+        "radius_max_m",
+        "precipitation_rate_mm_h",
+        "pressure_recommended_bar"
+      ],
+      "tables_added": [
+        "radius_flow_r-van24"
+      ],
+      "pdf_used": "R-VAN Technisches-Datenblatt Rain-Bird",
+      "notes": [
+        "rvan_table_rows=24"
+      ]
+    },
+    {
+      "product_id": "nozzle_installation_set_rain_bird_1804_1804_sam_37e83de1",
+      "attrs_filled": [
+        "pressure_min_bar",
+        "pressure_max_bar",
+        "radius_min_m",
+        "radius_max_m",
+        "precipitation_rate_mm_h",
+        "pressure_recommended_bar"
+      ],
+      "tables_added": [
+        "radius_flow_r-van14"
+      ],
+      "pdf_used": "R-VAN Technisches-Datenblatt Rain-Bird",
+      "notes": [
+        "rvan_table_rows=24"
+      ]
+    },
+    {
+      "product_id": "nozzle_installation_set_rain_bird_1804_1804_sam_05a0ed4d",
+      "attrs_filled": [
+        "pressure_min_bar",
+        "pressure_max_bar",
+        "radius_min_m",
+        "radius_max_m",
+        "precipitation_rate_mm_h",
+        "pressure_recommended_bar"
+      ],
+      "tables_added": [
+        "radius_flow_r-van18"
+      ],
+      "pdf_used": "R-VAN Technisches-Datenblatt Rain-Bird",
+      "notes": [
+        "rvan_table_rows=24"
+      ]
+    },
+    {
+      "product_id": "nozzle_installation_set_rain_bird_1804_1804_sam_ce0efe07",
+      "attrs_filled": [
+        "pressure_min_bar",
+        "pressure_max_bar",
+        "radius_min_m",
+        "radius_max_m",
+        "precipitation_rate_mm_h",
+        "pressure_recommended_bar"
+      ],
+      "tables_added": [
+        "radius_flow_r-van24"
+      ],
+      "pdf_used": "R-VAN Technisches-Datenblatt Rain-Bird",
+      "notes": [
+        "rvan_table_rows=24"
+      ]
+    },
+    {
+      "product_id": "nozzle_installation_set_rain_bird_1804_1804_sam_7f2a72a7",
+      "attrs_filled": [
+        "pressure_min_bar",
+        "pressure_max_bar",
+        "precipitation_rate_mm_h",
+        "strip_width_m",
+        "strip_length_m",
+        "pressure_recommended_bar"
+      ],
+      "tables_added": [
+        "radius_flow_r-van-lcs"
+      ],
+      "pdf_used": "R-VAN Technisches-Datenblatt Rain-Bird",
+      "notes": [
+        "rvan_table_rows=6"
+      ]
+    },
+    {
+      "product_id": "nozzle_installation_set_rain_bird_1804_1804_sam_9678ca14",
+      "attrs_filled": [
+        "pressure_min_bar",
+        "pressure_max_bar",
+        "precipitation_rate_mm_h",
+        "strip_width_m",
+        "strip_length_m",
+        "pressure_recommended_bar"
+      ],
+      "tables_added": [
+        "radius_flow_r-van-sst"
+      ],
+      "pdf_used": "R-VAN Technisches-Datenblatt Rain-Bird",
+      "notes": [
+        "rvan_table_rows=6"
+      ]
+    },
+    {
+      "product_id": "nozzle_installation_set_rain_bird_1804_1804_sam_1a75885c",
+      "attrs_filled": [
+        "pressure_min_bar",
+        "pressure_max_bar",
+        "precipitation_rate_mm_h",
+        "strip_width_m",
+        "strip_length_m",
+        "pressure_recommended_bar"
+      ],
+      "tables_added": [
+        "radius_flow_r-van-rcs"
+      ],
+      "pdf_used": "R-VAN Technisches-Datenblatt Rain-Bird",
+      "notes": [
+        "rvan_table_rows=6"
+      ]
+    },
+    {
+      "product_id": "nozzle_installation_set_rain_bird_1804_1804_sam_c10b5da0",
+      "attrs_filled": [
+        "pressure_min_bar",
+        "pressure_max_bar",
+        "radius_min_m",
+        "radius_max_m",
+        "precipitation_rate_mm_h",
+        "pressure_recommended_bar"
+      ],
+      "tables_added": [
+        "radius_flow_r-van14"
+      ],
+      "pdf_used": "R-VAN Technisches-Datenblatt Rain-Bird",
+      "notes": [
+        "rvan_table_rows=24"
+      ]
+    },
+    {
+      "product_id": "nozzle_installation_set_rain_bird_1804_1804_sam_4a882de9",
+      "attrs_filled": [
+        "pressure_min_bar",
+        "pressure_max_bar",
+        "radius_min_m",
+        "radius_max_m",
+        "precipitation_rate_mm_h",
+        "pressure_recommended_bar"
+      ],
+      "tables_added": [
+        "radius_flow_r-van18"
+      ],
+      "pdf_used": "R-VAN Technisches-Datenblatt Rain-Bird",
+      "notes": [
+        "rvan_table_rows=24"
+      ]
+    },
+    {
+      "product_id": "nozzle_installation_set_rain_bird_1804_1804_sam_13367df2",
+      "attrs_filled": [
+        "pressure_min_bar",
+        "pressure_max_bar",
+        "radius_min_m",
+        "radius_max_m",
+        "precipitation_rate_mm_h",
+        "pressure_recommended_bar"
+      ],
+      "tables_added": [
+        "radius_flow_r-van24"
+      ],
+      "pdf_used": "R-VAN Technisches-Datenblatt Rain-Bird",
+      "notes": [
+        "rvan_table_rows=24"
+      ]
+    },
+    {
+      "product_id": "nozzle_installation_set_rain_bird_1804_1804_sam_1f508f5f",
+      "attrs_filled": [
+        "pressure_min_bar",
+        "pressure_max_bar",
+        "radius_min_m",
+        "radius_max_m",
+        "precipitation_rate_mm_h",
+        "pressure_recommended_bar"
+      ],
+      "tables_added": [
+        "radius_flow_r-van14"
+      ],
+      "pdf_used": "R-VAN Technisches-Datenblatt Rain-Bird",
+      "notes": [
+        "rvan_table_rows=24"
+      ]
+    },
+    {
+      "product_id": "nozzle_installation_set_rain_bird_1804_1804_sam_e0865039",
+      "attrs_filled": [
+        "pressure_min_bar",
+        "pressure_max_bar",
+        "radius_min_m",
+        "radius_max_m",
+        "precipitation_rate_mm_h",
+        "pressure_recommended_bar"
+      ],
+      "tables_added": [
+        "radius_flow_r-van18"
+      ],
+      "pdf_used": "R-VAN Technisches-Datenblatt Rain-Bird",
+      "notes": [
+        "rvan_table_rows=24"
+      ]
+    },
+    {
+      "product_id": "nozzle_installation_set_rain_bird_1804_1804_sam_e21b8505",
+      "attrs_filled": [
+        "pressure_min_bar",
+        "pressure_max_bar",
+        "radius_min_m",
+        "radius_max_m",
+        "precipitation_rate_mm_h",
+        "pressure_recommended_bar"
+      ],
+      "tables_added": [
+        "radius_flow_r-van24"
+      ],
+      "pdf_used": "R-VAN Technisches-Datenblatt Rain-Bird",
+      "notes": [
+        "rvan_table_rows=24"
+      ]
+    },
+    {
+      "product_id": "nozzle_installation_set_rain_bird_1804_1804_sam_70c8dfc8",
+      "attrs_filled": [
+        "pressure_min_bar",
+        "pressure_max_bar",
+        "precipitation_rate_mm_h",
+        "strip_width_m",
+        "strip_length_m",
+        "pressure_recommended_bar"
+      ],
+      "tables_added": [
+        "radius_flow_r-van-lcs"
+      ],
+      "pdf_used": "R-VAN Technisches-Datenblatt Rain-Bird",
+      "notes": [
+        "rvan_table_rows=6"
+      ]
+    },
+    {
+      "product_id": "nozzle_installation_set_rain_bird_1804_1804_sam_e546e560",
+      "attrs_filled": [
+        "pressure_min_bar",
+        "pressure_max_bar",
+        "precipitation_rate_mm_h",
+        "strip_width_m",
+        "strip_length_m",
+        "pressure_recommended_bar"
+      ],
+      "tables_added": [
+        "radius_flow_r-van-sst"
+      ],
+      "pdf_used": "R-VAN Technisches-Datenblatt Rain-Bird",
+      "notes": [
+        "rvan_table_rows=6"
+      ]
+    },
+    {
+      "product_id": "nozzle_installation_set_rain_bird_1804_1804_sam_04e43b15",
+      "attrs_filled": [
+        "pressure_min_bar",
+        "pressure_max_bar",
+        "precipitation_rate_mm_h",
+        "strip_width_m",
+        "strip_length_m",
+        "pressure_recommended_bar"
+      ],
+      "tables_added": [
+        "radius_flow_r-van-rcs"
+      ],
+      "pdf_used": "R-VAN Technisches-Datenblatt Rain-Bird",
+      "notes": [
+        "rvan_table_rows=6"
+      ]
+    },
+    {
+      "product_id": "nozzle_installation_set_rain_bird_1804_1804_sam_e0dce96b",
+      "attrs_filled": [
+        "pressure_min_bar",
+        "pressure_max_bar",
+        "radius_min_m",
+        "radius_max_m",
+        "precipitation_rate_mm_h",
+        "pressure_recommended_bar"
+      ],
+      "tables_added": [
+        "radius_flow_r-van14"
+      ],
+      "pdf_used": "R-VAN Technisches-Datenblatt Rain-Bird",
+      "notes": [
+        "rvan_table_rows=24"
+      ]
+    },
+    {
+      "product_id": "nozzle_installation_set_rain_bird_1804_1804_sam_1a2fe709",
+      "attrs_filled": [
+        "pressure_min_bar",
+        "pressure_max_bar",
+        "radius_min_m",
+        "radius_max_m",
+        "precipitation_rate_mm_h",
+        "pressure_recommended_bar"
+      ],
+      "tables_added": [
+        "radius_flow_r-van18"
+      ],
+      "pdf_used": "R-VAN Technisches-Datenblatt Rain-Bird",
+      "notes": [
+        "rvan_table_rows=24"
+      ]
+    },
+    {
+      "product_id": "nozzle_installation_set_rain_bird_1804_1804_sam_0a58e428",
+      "attrs_filled": [
+        "pressure_min_bar",
+        "pressure_max_bar",
+        "radius_min_m",
+        "radius_max_m",
+        "precipitation_rate_mm_h",
+        "pressure_recommended_bar"
+      ],
+      "tables_added": [
+        "radius_flow_r-van24"
+      ],
+      "pdf_used": "R-VAN Technisches-Datenblatt Rain-Bird",
+      "notes": [
+        "rvan_table_rows=24"
+      ]
+    },
+    {
+      "product_id": "nozzle_installation_set_rain_bird_1804_1804_sam_92b80dfb",
+      "attrs_filled": [
+        "pressure_min_bar",
+        "pressure_max_bar",
+        "radius_min_m",
+        "radius_max_m",
+        "precipitation_rate_mm_h",
+        "pressure_recommended_bar"
+      ],
+      "tables_added": [
+        "radius_flow_r-van14"
+      ],
+      "pdf_used": "R-VAN Technisches-Datenblatt Rain-Bird",
+      "notes": [
+        "rvan_table_rows=24"
+      ]
+    },
+    {
+      "product_id": "nozzle_installation_set_rain_bird_1804_1804_sam_7fc850d0",
+      "attrs_filled": [
+        "pressure_min_bar",
+        "pressure_max_bar",
+        "radius_min_m",
+        "radius_max_m",
+        "precipitation_rate_mm_h",
+        "pressure_recommended_bar"
+      ],
+      "tables_added": [
+        "radius_flow_r-van18"
+      ],
+      "pdf_used": "R-VAN Technisches-Datenblatt Rain-Bird",
+      "notes": [
+        "rvan_table_rows=24"
+      ]
+    },
+    {
+      "product_id": "nozzle_installation_set_rain_bird_1804_1804_sam_df65d942",
+      "attrs_filled": [
+        "pressure_min_bar",
+        "pressure_max_bar",
+        "radius_min_m",
+        "radius_max_m",
+        "precipitation_rate_mm_h",
+        "pressure_recommended_bar"
+      ],
+      "tables_added": [
+        "radius_flow_r-van24"
+      ],
+      "pdf_used": "R-VAN Technisches-Datenblatt Rain-Bird",
+      "notes": [
+        "rvan_table_rows=24"
+      ]
+    },
+    {
+      "product_id": "nozzle_installation_set_rain_bird_1804_1804_sam_51d60c45",
+      "attrs_filled": [
+        "pressure_min_bar",
+        "pressure_max_bar",
+        "precipitation_rate_mm_h",
+        "strip_width_m",
+        "strip_length_m",
+        "pressure_recommended_bar"
+      ],
+      "tables_added": [
+        "radius_flow_r-van-lcs"
+      ],
+      "pdf_used": "R-VAN Technisches-Datenblatt Rain-Bird",
+      "notes": [
+        "rvan_table_rows=6"
+      ]
+    },
+    {
+      "product_id": "nozzle_installation_set_rain_bird_1804_1804_sam_0364d5c7",
+      "attrs_filled": [
+        "pressure_min_bar",
+        "pressure_max_bar",
+        "precipitation_rate_mm_h",
+        "strip_width_m",
+        "strip_length_m",
+        "pressure_recommended_bar"
+      ],
+      "tables_added": [
+        "radius_flow_r-van-sst"
+      ],
+      "pdf_used": "R-VAN Technisches-Datenblatt Rain-Bird",
+      "notes": [
+        "rvan_table_rows=6"
+      ]
+    },
+    {
+      "product_id": "nozzle_installation_set_rain_bird_1804_1804_sam_02252260",
+      "attrs_filled": [
+        "pressure_min_bar",
+        "pressure_max_bar",
+        "precipitation_rate_mm_h",
+        "strip_width_m",
+        "strip_length_m",
+        "pressure_recommended_bar"
+      ],
+      "tables_added": [
+        "radius_flow_r-van-rcs"
+      ],
+      "pdf_used": "R-VAN Technisches-Datenblatt Rain-Bird",
+      "notes": [
+        "rvan_table_rows=6"
+      ]
+    },
+    {
+      "product_id": "nozzle_installation_set_rain_bird_1804_1804_sam_09f24d8f",
+      "attrs_filled": [
+        "pressure_min_bar",
+        "pressure_max_bar",
+        "radius_min_m",
+        "radius_max_m",
+        "precipitation_rate_mm_h",
+        "pressure_recommended_bar"
+      ],
+      "tables_added": [
+        "radius_flow_r-van14"
+      ],
+      "pdf_used": "R-VAN Technisches-Datenblatt Rain-Bird",
+      "notes": [
+        "rvan_table_rows=24"
+      ]
+    },
+    {
+      "product_id": "nozzle_installation_set_rain_bird_1804_1804_sam_a309f044",
+      "attrs_filled": [
+        "pressure_min_bar",
+        "pressure_max_bar",
+        "radius_min_m",
+        "radius_max_m",
+        "precipitation_rate_mm_h",
+        "pressure_recommended_bar"
+      ],
+      "tables_added": [
+        "radius_flow_r-van18"
+      ],
+      "pdf_used": "R-VAN Technisches-Datenblatt Rain-Bird",
+      "notes": [
+        "rvan_table_rows=24"
+      ]
+    },
+    {
+      "product_id": "nozzle_installation_set_rain_bird_1804_1804_sam_e1e7effd",
+      "attrs_filled": [
+        "pressure_min_bar",
+        "pressure_max_bar",
+        "radius_min_m",
+        "radius_max_m",
+        "precipitation_rate_mm_h",
+        "pressure_recommended_bar"
+      ],
+      "tables_added": [
+        "radius_flow_r-van24"
+      ],
+      "pdf_used": "R-VAN Technisches-Datenblatt Rain-Bird",
+      "notes": [
+        "rvan_table_rows=24"
+      ]
+    },
+    {
+      "product_id": "nozzle_installation_set_rain_bird_1804_1804_sam_bcf46c84",
+      "attrs_filled": [
+        "pressure_min_bar",
+        "pressure_max_bar",
+        "radius_min_m",
+        "radius_max_m",
+        "precipitation_rate_mm_h",
+        "pressure_recommended_bar"
+      ],
+      "tables_added": [
+        "radius_flow_r-van14"
+      ],
+      "pdf_used": "R-VAN Technisches-Datenblatt Rain-Bird",
+      "notes": [
+        "rvan_table_rows=24"
+      ]
+    },
+    {
+      "product_id": "nozzle_installation_set_rain_bird_1804_1804_sam_a5a4c41d",
+      "attrs_filled": [
+        "pressure_min_bar",
+        "pressure_max_bar",
+        "radius_min_m",
+        "radius_max_m",
+        "precipitation_rate_mm_h",
+        "pressure_recommended_bar"
+      ],
+      "tables_added": [
+        "radius_flow_r-van18"
+      ],
+      "pdf_used": "R-VAN Technisches-Datenblatt Rain-Bird",
+      "notes": [
+        "rvan_table_rows=24"
+      ]
+    },
+    {
+      "product_id": "nozzle_installation_set_rain_bird_1804_1804_sam_5de048ef",
+      "attrs_filled": [
+        "pressure_min_bar",
+        "pressure_max_bar",
+        "radius_min_m",
+        "radius_max_m",
+        "precipitation_rate_mm_h",
+        "pressure_recommended_bar"
+      ],
+      "tables_added": [
+        "radius_flow_r-van24"
+      ],
+      "pdf_used": "R-VAN Technisches-Datenblatt Rain-Bird",
+      "notes": [
+        "rvan_table_rows=24"
+      ]
+    },
+    {
+      "product_id": "nozzle_installation_set_rain_bird_1804_1804_sam_b5a6a636",
+      "attrs_filled": [
+        "pressure_min_bar",
+        "pressure_max_bar",
+        "precipitation_rate_mm_h",
+        "strip_width_m",
+        "strip_length_m",
+        "pressure_recommended_bar"
+      ],
+      "tables_added": [
+        "radius_flow_r-van-lcs"
+      ],
+      "pdf_used": "R-VAN Technisches-Datenblatt Rain-Bird",
+      "notes": [
+        "rvan_table_rows=6"
+      ]
+    },
+    {
+      "product_id": "nozzle_installation_set_rain_bird_1804_1804_sam_11a5969d",
+      "attrs_filled": [
+        "pressure_min_bar",
+        "pressure_max_bar",
+        "precipitation_rate_mm_h",
+        "strip_width_m",
+        "strip_length_m",
+        "pressure_recommended_bar"
+      ],
+      "tables_added": [
+        "radius_flow_r-van-sst"
+      ],
+      "pdf_used": "R-VAN Technisches-Datenblatt Rain-Bird",
+      "notes": [
+        "rvan_table_rows=6"
+      ]
+    },
+    {
+      "product_id": "nozzle_installation_set_rain_bird_1804_1804_sam_a154f98e",
+      "attrs_filled": [
+        "pressure_min_bar",
+        "pressure_max_bar",
+        "precipitation_rate_mm_h",
+        "strip_width_m",
+        "strip_length_m",
+        "pressure_recommended_bar"
+      ],
+      "tables_added": [
+        "radius_flow_r-van-rcs"
+      ],
+      "pdf_used": "R-VAN Technisches-Datenblatt Rain-Bird",
+      "notes": [
+        "rvan_table_rows=6"
+      ]
+    },
+    {
+      "product_id": "nozzle_installation_set_rain_bird_1804_1804_sam_cd7da955",
+      "attrs_filled": [
+        "pressure_min_bar",
+        "pressure_max_bar",
+        "radius_min_m",
+        "radius_max_m",
+        "precipitation_rate_mm_h",
+        "pressure_recommended_bar"
+      ],
+      "tables_added": [
+        "radius_flow_r-van14"
+      ],
+      "pdf_used": "R-VAN Technisches-Datenblatt Rain-Bird",
+      "notes": [
+        "rvan_table_rows=24"
+      ]
+    },
+    {
+      "product_id": "nozzle_installation_set_rain_bird_1804_1804_sam_233dc82e",
+      "attrs_filled": [
+        "pressure_min_bar",
+        "pressure_max_bar",
+        "radius_min_m",
+        "radius_max_m",
+        "precipitation_rate_mm_h",
+        "pressure_recommended_bar"
+      ],
+      "tables_added": [
+        "radius_flow_r-van18"
+      ],
+      "pdf_used": "R-VAN Technisches-Datenblatt Rain-Bird",
+      "notes": [
+        "rvan_table_rows=24"
+      ]
+    },
+    {
+      "product_id": "nozzle_installation_set_rain_bird_1804_1804_sam_47afdbb0",
+      "attrs_filled": [
+        "pressure_min_bar",
+        "pressure_max_bar",
+        "radius_min_m",
+        "radius_max_m",
+        "precipitation_rate_mm_h",
+        "pressure_recommended_bar"
+      ],
+      "tables_added": [
+        "radius_flow_r-van24"
+      ],
+      "pdf_used": "R-VAN Technisches-Datenblatt Rain-Bird",
+      "notes": [
+        "rvan_table_rows=24"
+      ]
+    },
+    {
+      "product_id": "nozzle_installation_set_rain_bird_1804_1804_sam_c24ca271",
+      "attrs_filled": [
+        "pressure_min_bar",
+        "pressure_max_bar",
+        "radius_min_m",
+        "radius_max_m",
+        "precipitation_rate_mm_h",
+        "pressure_recommended_bar"
+      ],
+      "tables_added": [
+        "radius_flow_r-van14"
+      ],
+      "pdf_used": "R-VAN Technisches-Datenblatt Rain-Bird",
+      "notes": [
+        "rvan_table_rows=24"
+      ]
+    },
+    {
+      "product_id": "nozzle_installation_set_rain_bird_1804_1804_sam_558bb809",
+      "attrs_filled": [
+        "pressure_min_bar",
+        "pressure_max_bar",
+        "radius_min_m",
+        "radius_max_m",
+        "precipitation_rate_mm_h",
+        "pressure_recommended_bar"
+      ],
+      "tables_added": [
+        "radius_flow_r-van18"
+      ],
+      "pdf_used": "R-VAN Technisches-Datenblatt Rain-Bird",
+      "notes": [
+        "rvan_table_rows=24"
+      ]
+    },
+    {
+      "product_id": "nozzle_installation_set_rain_bird_1804_1804_sam_2ff29b83",
+      "attrs_filled": [
+        "pressure_min_bar",
+        "pressure_max_bar",
+        "radius_min_m",
+        "radius_max_m",
+        "precipitation_rate_mm_h",
+        "pressure_recommended_bar"
+      ],
+      "tables_added": [
+        "radius_flow_r-van24"
+      ],
+      "pdf_used": "R-VAN Technisches-Datenblatt Rain-Bird",
+      "notes": [
+        "rvan_table_rows=24"
+      ]
+    },
+    {
+      "product_id": "nozzle_installation_set_rain_bird_1804_1804_sam_262cd155",
+      "attrs_filled": [
+        "pressure_min_bar",
+        "pressure_max_bar",
+        "precipitation_rate_mm_h",
+        "strip_width_m",
+        "strip_length_m",
+        "pressure_recommended_bar"
+      ],
+      "tables_added": [
+        "radius_flow_r-van-lcs"
+      ],
+      "pdf_used": "R-VAN Technisches-Datenblatt Rain-Bird",
+      "notes": [
+        "rvan_table_rows=6"
+      ]
+    },
+    {
+      "product_id": "nozzle_installation_set_rain_bird_1804_1804_sam_b548a3a1",
+      "attrs_filled": [
+        "pressure_min_bar",
+        "pressure_max_bar",
+        "precipitation_rate_mm_h",
+        "strip_width_m",
+        "strip_length_m",
+        "pressure_recommended_bar"
+      ],
+      "tables_added": [
+        "radius_flow_r-van-sst"
+      ],
+      "pdf_used": "R-VAN Technisches-Datenblatt Rain-Bird",
+      "notes": [
+        "rvan_table_rows=6"
+      ]
+    },
+    {
+      "product_id": "nozzle_installation_set_rain_bird_1804_1804_sam_ffef3dbd",
+      "attrs_filled": [
+        "pressure_min_bar",
+        "pressure_max_bar",
+        "precipitation_rate_mm_h",
+        "strip_width_m",
+        "strip_length_m",
+        "pressure_recommended_bar"
+      ],
+      "tables_added": [
+        "radius_flow_r-van-rcs"
+      ],
+      "pdf_used": "R-VAN Technisches-Datenblatt Rain-Bird",
+      "notes": [
+        "rvan_table_rows=6"
+      ]
+    },
+    {
+      "product_id": "nozzle_installation_set_rain_bird_1804_1804_sam_b51ab349",
+      "attrs_filled": [
+        "pressure_min_bar",
+        "pressure_max_bar",
+        "radius_min_m",
+        "radius_max_m",
+        "precipitation_rate_mm_h",
+        "pressure_recommended_bar"
+      ],
+      "tables_added": [
+        "radius_flow_r-van14"
+      ],
+      "pdf_used": "R-VAN Technisches-Datenblatt Rain-Bird",
+      "notes": [
+        "rvan_table_rows=24"
+      ]
+    },
+    {
+      "product_id": "nozzle_installation_set_rain_bird_1804_1804_sam_37e79e55",
+      "attrs_filled": [
+        "pressure_min_bar",
+        "pressure_max_bar",
+        "radius_min_m",
+        "radius_max_m",
+        "precipitation_rate_mm_h",
+        "pressure_recommended_bar"
+      ],
+      "tables_added": [
+        "radius_flow_r-van18"
+      ],
+      "pdf_used": "R-VAN Technisches-Datenblatt Rain-Bird",
+      "notes": [
+        "rvan_table_rows=24"
+      ]
+    },
+    {
+      "product_id": "nozzle_installation_set_rain_bird_1804_1804_sam_caa035a8",
+      "attrs_filled": [
+        "pressure_min_bar",
+        "pressure_max_bar",
+        "radius_min_m",
+        "radius_max_m",
+        "precipitation_rate_mm_h",
+        "pressure_recommended_bar"
+      ],
+      "tables_added": [
+        "radius_flow_r-van24"
+      ],
+      "pdf_used": "R-VAN Technisches-Datenblatt Rain-Bird",
+      "notes": [
+        "rvan_table_rows=24"
+      ]
+    },
+    {
+      "product_id": "nozzle_installation_set_rain_bird_1804_1804_sam_b9e5fa6a",
+      "attrs_filled": [
+        "pressure_min_bar",
+        "pressure_max_bar",
+        "radius_min_m",
+        "radius_max_m",
+        "precipitation_rate_mm_h",
+        "pressure_recommended_bar"
+      ],
+      "tables_added": [
+        "radius_flow_r-van14"
+      ],
+      "pdf_used": "R-VAN Technisches-Datenblatt Rain-Bird",
+      "notes": [
+        "rvan_table_rows=24"
+      ]
+    },
+    {
+      "product_id": "nozzle_installation_set_rain_bird_1804_1804_sam_729c7b3a",
+      "attrs_filled": [
+        "pressure_min_bar",
+        "pressure_max_bar",
+        "radius_min_m",
+        "radius_max_m",
+        "precipitation_rate_mm_h",
+        "pressure_recommended_bar"
+      ],
+      "tables_added": [
+        "radius_flow_r-van18"
+      ],
+      "pdf_used": "R-VAN Technisches-Datenblatt Rain-Bird",
+      "notes": [
+        "rvan_table_rows=24"
+      ]
+    },
+    {
+      "product_id": "nozzle_installation_set_rain_bird_1804_1804_sam_f6228d44",
+      "attrs_filled": [
+        "pressure_min_bar",
+        "pressure_max_bar",
+        "radius_min_m",
+        "radius_max_m",
+        "precipitation_rate_mm_h",
+        "pressure_recommended_bar"
+      ],
+      "tables_added": [
+        "radius_flow_r-van24"
+      ],
+      "pdf_used": "R-VAN Technisches-Datenblatt Rain-Bird",
+      "notes": [
+        "rvan_table_rows=24"
+      ]
+    },
+    {
+      "product_id": "nozzle_installation_set_rain_bird_1804_1804_sam_c4bb9b6a",
+      "attrs_filled": [
+        "pressure_min_bar",
+        "pressure_max_bar",
+        "precipitation_rate_mm_h",
+        "strip_width_m",
+        "strip_length_m",
+        "pressure_recommended_bar"
+      ],
+      "tables_added": [
+        "radius_flow_r-van-lcs"
+      ],
+      "pdf_used": "R-VAN Technisches-Datenblatt Rain-Bird",
+      "notes": [
+        "rvan_table_rows=6"
+      ]
+    },
+    {
+      "product_id": "nozzle_installation_set_rain_bird_1804_1804_sam_87efd916",
+      "attrs_filled": [
+        "pressure_min_bar",
+        "pressure_max_bar",
+        "precipitation_rate_mm_h",
+        "strip_width_m",
+        "strip_length_m",
+        "pressure_recommended_bar"
+      ],
+      "tables_added": [
+        "radius_flow_r-van-sst"
+      ],
+      "pdf_used": "R-VAN Technisches-Datenblatt Rain-Bird",
+      "notes": [
+        "rvan_table_rows=6"
+      ]
+    },
+    {
+      "product_id": "nozzle_installation_set_rain_bird_1804_1804_sam_87e1c6c2",
+      "attrs_filled": [
+        "pressure_min_bar",
+        "pressure_max_bar",
+        "precipitation_rate_mm_h",
+        "strip_width_m",
+        "strip_length_m",
+        "pressure_recommended_bar"
+      ],
+      "tables_added": [
+        "radius_flow_r-van-rcs"
+      ],
+      "pdf_used": "R-VAN Technisches-Datenblatt Rain-Bird",
+      "notes": [
+        "rvan_table_rows=6"
+      ]
+    },
+    {
+      "product_id": "tropfrohr_profi_tropfrohr_fuer_die_unterirdische_v_577e768d",
+      "attrs_filled": [
+        "emitter_spacing_m"
+      ],
+      "tables_added": [],
+      "pdf_used": "QF Informationen",
+      "notes": [
+        "drip_pdf=od",
+        "drip_shop=od,emitter_flow,spacing,pc,coil"
+      ]
+    },
+    {
+      "product_id": "tropfrohr_profi_tropfrohr_fuer_die_unterirdische_v_f668d0de",
+      "attrs_filled": [
+        "emitter_spacing_m"
+      ],
+      "tables_added": [],
+      "pdf_used": "QF Informationen",
+      "notes": [
+        "drip_pdf=od",
+        "drip_shop=od,emitter_flow,spacing,pc,coil"
+      ]
+    },
+    {
+      "product_id": "tropfrohr_profi_tropfrohr_fuer_die_unterirdische_v_817d18ae",
+      "attrs_filled": [
+        "emitter_spacing_m"
+      ],
+      "tables_added": [],
+      "pdf_used": "QF Informationen",
+      "notes": [
+        "drip_pdf=od",
+        "drip_shop=od,emitter_flow,spacing,pc,coil"
+      ]
+    },
+    {
+      "product_id": "tropfrohr_xfs_tropfleitung_rain_bird_xfs_tropfrohr_2b1fe347",
+      "attrs_filled": [
+        "pressure_compensating"
+      ],
+      "tables_added": [],
+      "pdf_used": "XFS Informationen",
+      "notes": [
+        "drip_pdf=od,emitter_flow,pc",
+        "drip_pdf=od",
+        "drip_shop=od,emitter_flow,spacing,pc,coil"
+      ]
+    },
+    {
+      "product_id": "tropfrohr_xfs_tropfleitung_rain_bird_xfs_tropfrohr_14d11e9e",
+      "attrs_filled": [
+        "pressure_compensating"
+      ],
+      "tables_added": [],
+      "pdf_used": "XFS Informationen",
+      "notes": [
+        "drip_pdf=od,emitter_flow,pc",
+        "drip_pdf=od",
+        "drip_shop=od,emitter_flow,spacing,pc,coil"
+      ]
+    },
+    {
+      "product_id": "tropfrohr_xfs_tropfleitung_rain_bird_xfs_tropfrohr_c41653e6",
+      "attrs_filled": [
+        "pressure_compensating"
+      ],
+      "tables_added": [],
+      "pdf_used": "XFS Informationen",
+      "notes": [
+        "drip_pdf=od,emitter_flow,pc",
+        "drip_pdf=od",
+        "drip_shop=od,emitter_flow,spacing,pc,coil"
+      ]
+    },
+    {
+      "product_id": "tropfrohr_xfs_tropfleitung_rain_bird_xfs_tropfrohr_fee018dc",
+      "attrs_filled": [
+        "pressure_compensating"
+      ],
+      "tables_added": [],
+      "pdf_used": "XFS Informationen",
+      "notes": [
+        "drip_pdf=od,emitter_flow,pc",
+        "drip_pdf=od",
+        "drip_shop=od,emitter_flow,spacing,pc,coil"
+      ]
+    },
+    {
+      "product_id": "boxes_rain_bird_p_33_entnahmestelle_rain_bird__91573163",
+      "attrs_filled": [
+        "body_material"
+      ],
+      "tables_added": [],
+      "pdf_used": "Informationen P-33 und P-33DK Wasser & Grüntechnik",
+      "notes": [
+        "vbox_pdf=material",
+        "vbox_shop=material"
+      ]
+    },
+    {
+      "product_id": "boxes_rain_bird_p_33_entnahmestelle_rain_bird__f8dfa451",
+      "attrs_filled": [
+        "body_material"
+      ],
+      "tables_added": [],
+      "pdf_used": "Informationen P-33 und P-33DK Wasser & Grüntechnik",
+      "notes": [
+        "vbox_pdf=material",
+        "vbox_shop=material"
+      ]
+    },
+    {
+      "product_id": "boxes_rain_bird_p_33_entnahmestelle_rain_bird__4c914dbe",
+      "attrs_filled": [
+        "body_material"
+      ],
+      "tables_added": [],
+      "pdf_used": "Informationen P-33 und P-33DK Wasser & Grüntechnik",
+      "notes": [
+        "vbox_pdf=material",
+        "vbox_shop=material"
+      ]
+    },
+    {
+      "product_id": "boxes_rain_bird_p_33_entnahmestelle_rain_bird__98d6b496",
+      "attrs_filled": [
+        "body_material"
+      ],
+      "tables_added": [],
+      "pdf_used": "Informationen P-33 und P-33DK Wasser & Grüntechnik",
+      "notes": [
+        "vbox_pdf=material",
+        "vbox_shop=material"
+      ]
+    },
+    {
+      "product_id": "boxes_schnellkupplungsventil_3_4_ig_wasserentn_197841e5",
+      "attrs_filled": [
+        "body_material"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": [
+        "vbox_shop=material"
+      ]
+    },
+    {
+      "product_id": "boxes_schnellkupplungsventil_3_4_ig_wasserentn_55fe12ef",
+      "attrs_filled": [
+        "body_material"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": [
+        "vbox_shop=material"
+      ]
+    },
+    {
+      "product_id": "boxes_schnellkupplungsventil_3_4_ig_wasserentn_2a70cae0",
+      "attrs_filled": [
+        "body_material"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": [
+        "vbox_shop=material"
+      ]
+    },
+    {
+      "product_id": "rotor_8005_getrieberegner_8005_ss_rasenabdecku_36078481",
+      "attrs_filled": [
+        "radius_min_m",
+        "radius_max_m",
+        "pressure_min_bar",
+        "pressure_max_bar",
+        "pop_up_height_mm"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": [
+        "shop_rotor=wurfweite,druck,pop_up,shop_flow_m3h"
+      ]
+    },
+    {
+      "product_id": "rotor_8005_getrieberegner_8005_ss_rasenabdecku_4f3b580a",
+      "attrs_filled": [
+        "radius_min_m",
+        "radius_max_m",
+        "pressure_min_bar",
+        "pressure_max_bar",
+        "pop_up_height_mm"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": [
+        "shop_rotor=wurfweite,druck,pop_up,shop_flow_m3h"
+      ]
+    },
+    {
+      "product_id": "rotor_8005_getrieberegner_8005_ss_rasenabdecku_0331a151",
+      "attrs_filled": [
+        "radius_min_m",
+        "radius_max_m",
+        "pressure_min_bar",
+        "pressure_max_bar",
+        "pop_up_height_mm"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": [
+        "shop_rotor=wurfweite,druck,pop_up,shop_flow_m3h"
+      ]
+    },
+    {
+      "product_id": "nozzle_10er_pack_hunter_mp_rotator_rotary_duese_c9020f8a",
+      "attrs_filled": [
+        "precipitation_rate_mm_h",
+        "pressure_recommended_bar",
+        "radius_min_m",
+        "radius_max_m"
+      ],
+      "tables_added": [],
+      "pdf_used": "Bedienungsanleitung MP-Düse",
+      "notes": [
+        "mp_specs:Bedienungsanleitung MP-Düse=precip",
+        "mp_specs:MP Planungsleitfaden=prs40",
+        "mp_specs:MP Düse Vorteile=radius"
+      ]
+    },
+    {
+      "product_id": "nozzle_10er_pack_hunter_mp_rotator_rotary_duese_9724edff",
+      "attrs_filled": [
+        "precipitation_rate_mm_h",
+        "pressure_recommended_bar",
+        "radius_min_m",
+        "radius_max_m"
+      ],
+      "tables_added": [],
+      "pdf_used": "Bedienungsanleitung MP-Düse",
+      "notes": [
+        "mp_specs:Bedienungsanleitung MP-Düse=precip",
+        "mp_specs:MP Planungsleitfaden=prs40",
+        "mp_specs:MP Düse Vorteile=radius"
+      ]
+    },
+    {
+      "product_id": "nozzle_10er_pack_hunter_mp_rotator_rotary_duese_58fc9eec",
+      "attrs_filled": [
+        "precipitation_rate_mm_h",
+        "pressure_recommended_bar",
+        "radius_min_m",
+        "radius_max_m"
+      ],
+      "tables_added": [],
+      "pdf_used": "Bedienungsanleitung MP-Düse",
+      "notes": [
+        "mp_specs:Bedienungsanleitung MP-Düse=precip",
+        "mp_specs:MP Planungsleitfaden=prs40",
+        "mp_specs:MP Düse Vorteile=radius"
+      ]
+    },
+    {
+      "product_id": "nozzle_10er_pack_hunter_mp_rotator_rotary_duese_1e393040",
+      "attrs_filled": [
+        "precipitation_rate_mm_h",
+        "pressure_recommended_bar",
+        "radius_min_m",
+        "radius_max_m"
+      ],
+      "tables_added": [],
+      "pdf_used": "Bedienungsanleitung MP-Düse",
+      "notes": [
+        "mp_specs:Bedienungsanleitung MP-Düse=precip",
+        "mp_specs:MP Planungsleitfaden=prs40",
+        "mp_specs:MP Düse Vorteile=radius"
+      ]
+    },
+    {
+      "product_id": "nozzle_10er_pack_hunter_mp_rotator_rotary_duese_70c86dbc",
+      "attrs_filled": [
+        "precipitation_rate_mm_h",
+        "pressure_recommended_bar",
+        "radius_min_m",
+        "radius_max_m"
+      ],
+      "tables_added": [],
+      "pdf_used": "Bedienungsanleitung MP-Düse",
+      "notes": [
+        "mp_specs:Bedienungsanleitung MP-Düse=precip",
+        "mp_specs:MP Planungsleitfaden=prs40",
+        "mp_specs:MP Düse Vorteile=radius"
+      ]
+    },
+    {
+      "product_id": "nozzle_10er_pack_hunter_mp_rotator_rotary_duese_527c009e",
+      "attrs_filled": [
+        "precipitation_rate_mm_h",
+        "pressure_recommended_bar",
+        "radius_min_m",
+        "radius_max_m"
+      ],
+      "tables_added": [],
+      "pdf_used": "Bedienungsanleitung MP-Düse",
+      "notes": [
+        "mp_specs:Bedienungsanleitung MP-Düse=precip",
+        "mp_specs:MP Planungsleitfaden=prs40",
+        "mp_specs:MP Düse Vorteile=radius"
+      ]
+    },
+    {
+      "product_id": "nozzle_10er_pack_hunter_mp_rotator_rotary_duese_25316333",
+      "attrs_filled": [
+        "precipitation_rate_mm_h",
+        "pressure_recommended_bar",
+        "radius_min_m",
+        "radius_max_m"
+      ],
+      "tables_added": [],
+      "pdf_used": "Bedienungsanleitung MP-Düse",
+      "notes": [
+        "mp_specs:Bedienungsanleitung MP-Düse=precip",
+        "mp_specs:MP Planungsleitfaden=prs40",
+        "mp_specs:MP Düse Vorteile=radius"
+      ]
+    },
+    {
+      "product_id": "nozzle_10er_pack_hunter_mp_rotator_rotary_duese_2a2c4a65",
+      "attrs_filled": [
+        "precipitation_rate_mm_h",
+        "pressure_recommended_bar",
+        "radius_min_m",
+        "radius_max_m"
+      ],
+      "tables_added": [],
+      "pdf_used": "Bedienungsanleitung MP-Düse",
+      "notes": [
+        "mp_specs:Bedienungsanleitung MP-Düse=precip",
+        "mp_specs:MP Planungsleitfaden=prs40",
+        "mp_specs:MP Düse Vorteile=radius"
+      ]
+    },
+    {
+      "product_id": "nozzle_10er_pack_hunter_mp_rotator_rotary_duese_730f4a8e",
+      "attrs_filled": [
+        "precipitation_rate_mm_h",
+        "pressure_recommended_bar",
+        "radius_min_m",
+        "radius_max_m"
+      ],
+      "tables_added": [],
+      "pdf_used": "Bedienungsanleitung MP-Düse",
+      "notes": [
+        "mp_specs:Bedienungsanleitung MP-Düse=precip",
+        "mp_specs:MP Planungsleitfaden=prs40",
+        "mp_specs:MP Düse Vorteile=radius"
+      ]
+    },
+    {
+      "product_id": "nozzle_10er_pack_hunter_mp_rotator_rotary_duese_b654a3b2",
+      "attrs_filled": [
+        "precipitation_rate_mm_h",
+        "pressure_recommended_bar",
+        "radius_min_m",
+        "radius_max_m"
+      ],
+      "tables_added": [],
+      "pdf_used": "Bedienungsanleitung MP-Düse",
+      "notes": [
+        "mp_specs:Bedienungsanleitung MP-Düse=precip",
+        "mp_specs:MP Planungsleitfaden=prs40",
+        "mp_specs:MP Düse Vorteile=radius"
+      ]
+    },
+    {
+      "product_id": "nozzle_10er_pack_hunter_mp_rotator_rotary_duese_c88772f4",
+      "attrs_filled": [
+        "precipitation_rate_mm_h",
+        "pressure_recommended_bar",
+        "radius_min_m",
+        "radius_max_m"
+      ],
+      "tables_added": [],
+      "pdf_used": "Bedienungsanleitung MP-Düse",
+      "notes": [
+        "mp_specs:Bedienungsanleitung MP-Düse=precip",
+        "mp_specs:MP Planungsleitfaden=prs40",
+        "mp_specs:MP Düse Vorteile=radius"
+      ]
+    },
+    {
+      "product_id": "nozzle_10er_pack_hunter_mp_rotator_rotary_duese_5cd682fa",
+      "attrs_filled": [
+        "precipitation_rate_mm_h",
+        "pressure_recommended_bar",
+        "radius_min_m",
+        "radius_max_m"
+      ],
+      "tables_added": [],
+      "pdf_used": "Bedienungsanleitung MP-Düse",
+      "notes": [
+        "mp_specs:Bedienungsanleitung MP-Düse=precip",
+        "mp_specs:MP Planungsleitfaden=prs40",
+        "mp_specs:MP Düse Vorteile=radius"
+      ]
+    },
+    {
+      "product_id": "nozzle_10er_pack_hunter_mp_rotator_rotary_duese_31c71242",
+      "attrs_filled": [
+        "precipitation_rate_mm_h",
+        "pressure_recommended_bar",
+        "radius_min_m",
+        "radius_max_m"
+      ],
+      "tables_added": [],
+      "pdf_used": "Bedienungsanleitung MP-Düse",
+      "notes": [
+        "mp_specs:Bedienungsanleitung MP-Düse=precip",
+        "mp_specs:MP Planungsleitfaden=prs40",
+        "mp_specs:MP Düse Vorteile=radius"
+      ]
+    },
+    {
+      "product_id": "nozzle_10er_pack_hunter_mp_rotator_rotary_duese_8dbfc2da",
+      "attrs_filled": [
+        "precipitation_rate_mm_h",
+        "pressure_recommended_bar",
+        "radius_min_m",
+        "radius_max_m"
+      ],
+      "tables_added": [],
+      "pdf_used": "Bedienungsanleitung MP-Düse",
+      "notes": [
+        "mp_specs:Bedienungsanleitung MP-Düse=precip",
+        "mp_specs:MP Planungsleitfaden=prs40",
+        "mp_specs:MP Düse Vorteile=radius"
+      ]
+    },
+    {
+      "product_id": "nozzle_10er_pack_hunter_mp_rotator_rotary_duese_6e35d4a9",
+      "attrs_filled": [
+        "precipitation_rate_mm_h",
+        "pressure_recommended_bar",
+        "radius_min_m",
+        "radius_max_m"
+      ],
+      "tables_added": [],
+      "pdf_used": "Bedienungsanleitung MP-Düse",
+      "notes": [
+        "mp_specs:Bedienungsanleitung MP-Düse=precip",
+        "mp_specs:MP Planungsleitfaden=prs40",
+        "mp_specs:MP Düse Vorteile=radius"
+      ]
+    },
+    {
+      "product_id": "filter_duesen_spruehsektor_fix_hunter_2_h_2_q_4_12a2e1a7",
+      "attrs_filled": [
+        "pressure_max_bar",
+        "regulated_pressure_bar"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": [
+        "filter_shop=regulated_fixed,pmax"
+      ]
+    },
+    {
+      "product_id": "filter_duesen_spruehsektor_fix_hunter_2_h_2_q_4_41959c24",
+      "attrs_filled": [
+        "pressure_max_bar",
+        "regulated_pressure_bar"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": [
+        "filter_shop=regulated_fixed,pmax"
+      ]
+    },
+    {
+      "product_id": "filter_duesen_spruehsektor_fix_hunter_2_h_2_q_4_b462ef15",
+      "attrs_filled": [
+        "pressure_max_bar",
+        "regulated_pressure_bar"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": [
+        "filter_shop=regulated_fixed,pmax"
+      ]
+    },
+    {
+      "product_id": "filter_duesen_spruehsektor_fix_hunter_2_h_2_q_4_521bad49",
+      "attrs_filled": [
+        "pressure_max_bar",
+        "regulated_pressure_bar"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": [
+        "filter_shop=regulated_fixed,pmax"
+      ]
+    },
+    {
+      "product_id": "filter_duesen_spruehsektor_fix_hunter_2_h_2_q_4_051363fe",
+      "attrs_filled": [
+        "pressure_max_bar",
+        "regulated_pressure_bar"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": [
+        "filter_shop=regulated_fixed,pmax"
+      ]
+    },
+    {
+      "product_id": "filter_duesen_spruehsektor_fix_hunter_2_h_2_q_4_b94ed125",
+      "attrs_filled": [
+        "pressure_max_bar",
+        "regulated_pressure_bar"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": [
+        "filter_shop=regulated_fixed,pmax"
+      ]
+    },
+    {
+      "product_id": "filter_duesen_spruehsektor_fix_hunter_2_h_2_q_4_000139c7",
+      "attrs_filled": [
+        "pressure_max_bar",
+        "regulated_pressure_bar"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": [
+        "filter_shop=regulated_fixed,pmax"
+      ]
+    },
+    {
+      "product_id": "filter_duesen_spruehsektor_fix_hunter_2_h_2_q_4_9a85d884",
+      "attrs_filled": [
+        "pressure_max_bar",
+        "regulated_pressure_bar"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": [
+        "filter_shop=regulated_fixed,pmax"
+      ]
+    },
+    {
+      "product_id": "filter_duesen_spruehsektor_fix_hunter_2_h_2_q_4_19d73de0",
+      "attrs_filled": [
+        "pressure_max_bar",
+        "regulated_pressure_bar"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": [
+        "filter_shop=regulated_fixed,pmax"
+      ]
+    },
+    {
+      "product_id": "filter_duesen_spruehsektor_fix_hunter_2_h_2_q_4_1775f428",
+      "attrs_filled": [
+        "pressure_max_bar",
+        "regulated_pressure_bar"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": [
+        "filter_shop=regulated_fixed,pmax"
+      ]
+    },
+    {
+      "product_id": "filter_duesen_spruehsektor_fix_hunter_2_h_2_q_4_8353a0a6",
+      "attrs_filled": [
+        "pressure_max_bar",
+        "regulated_pressure_bar"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": [
+        "filter_shop=regulated_fixed,pmax"
+      ]
+    },
+    {
+      "product_id": "filter_duesen_spruehsektor_fix_hunter_2_h_2_q_4_cb13dafd",
+      "attrs_filled": [
+        "pressure_max_bar",
+        "regulated_pressure_bar"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": [
+        "filter_shop=regulated_fixed,pmax"
+      ]
+    },
+    {
+      "product_id": "filter_duesen_spruehsektor_fix_hunter_2_h_2_q_4_c08f82e7",
+      "attrs_filled": [
+        "pressure_max_bar",
+        "regulated_pressure_bar"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": [
+        "filter_shop=regulated_fixed,pmax"
+      ]
+    },
+    {
+      "product_id": "filter_duesen_spruehsektor_fix_hunter_2_h_2_q_4_a23d2381",
+      "attrs_filled": [
+        "pressure_max_bar",
+        "regulated_pressure_bar"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": [
+        "filter_shop=regulated_fixed,pmax"
+      ]
+    },
+    {
+      "product_id": "filter_duesen_spruehsektor_fix_hunter_2_h_2_q_4_60899fb3",
+      "attrs_filled": [
+        "pressure_max_bar",
+        "regulated_pressure_bar"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": [
+        "filter_shop=regulated_fixed,pmax"
+      ]
+    },
+    {
+      "product_id": "filter_duesen_spruehsektor_fix_hunter_2_h_2_q_4_ead5d2fc",
+      "attrs_filled": [
+        "pressure_max_bar",
+        "regulated_pressure_bar"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": [
+        "filter_shop=regulated_fixed,pmax"
+      ]
+    },
+    {
+      "product_id": "filter_duesen_spruehsektor_fix_hunter_2_h_2_q_4_e31faafe",
+      "attrs_filled": [
+        "pressure_max_bar",
+        "regulated_pressure_bar"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": [
+        "filter_shop=regulated_fixed,pmax"
+      ]
+    },
+    {
+      "product_id": "filter_duesen_spruehsektor_fix_hunter_2_h_2_q_4_8db61de0",
+      "attrs_filled": [
+        "pressure_max_bar",
+        "regulated_pressure_bar"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": [
+        "filter_shop=regulated_fixed,pmax"
+      ]
+    },
+    {
+      "product_id": "filter_duesen_spruehsektor_fix_hunter_2_h_2_q_4_e82cff0d",
+      "attrs_filled": [
+        "pressure_max_bar",
+        "regulated_pressure_bar"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": [
+        "filter_shop=regulated_fixed,pmax"
+      ]
+    },
+    {
+      "product_id": "filter_duesen_spruehsektor_fix_hunter_2_h_2_q_4_ef848af0",
+      "attrs_filled": [
+        "pressure_max_bar",
+        "regulated_pressure_bar"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": [
+        "filter_shop=regulated_fixed,pmax"
+      ]
+    },
+    {
+      "product_id": "filter_duesen_spruehsektor_fix_hunter_2_h_2_q_4_f2592c9e",
+      "attrs_filled": [
+        "pressure_max_bar",
+        "regulated_pressure_bar"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": [
+        "filter_shop=regulated_fixed,pmax"
+      ]
+    },
+    {
+      "product_id": "filter_duesen_spruehsektor_fix_hunter_2_h_2_q_4_a3d30fb1",
+      "attrs_filled": [
+        "pressure_max_bar",
+        "regulated_pressure_bar"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": [
+        "filter_shop=regulated_fixed,pmax"
+      ]
+    },
+    {
+      "product_id": "filter_duesen_spruehsektor_fix_hunter_2_h_2_q_4_d3f5d119",
+      "attrs_filled": [
+        "pressure_max_bar",
+        "regulated_pressure_bar"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": [
+        "filter_shop=regulated_fixed,pmax"
+      ]
+    },
+    {
+      "product_id": "filter_duesen_spruehsektor_fix_hunter_2_h_2_q_4_6fc064c7",
+      "attrs_filled": [
+        "pressure_max_bar",
+        "regulated_pressure_bar"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": [
+        "filter_shop=regulated_fixed,pmax"
+      ]
+    },
+    {
+      "product_id": "filter_duesen_spruehsektor_fix_hunter_2_h_2_q_4_5224caa7",
+      "attrs_filled": [
+        "pressure_max_bar",
+        "regulated_pressure_bar"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": [
+        "filter_shop=regulated_fixed,pmax"
+      ]
+    },
+    {
+      "product_id": "spray_body_hunter_pro_he_hochleistungsduesen_fuer_p_dc7869ad",
+      "attrs_filled": [
+        "pressure_max_bar"
+      ],
+      "tables_added": [],
+      "pdf_used": "Datenblatt",
+      "notes": []
+    },
+    {
+      "product_id": "spray_body_hunter_pro_he_hochleistungsduesen_fuer_p_b03e9d63",
+      "attrs_filled": [
+        "pressure_max_bar"
+      ],
+      "tables_added": [],
+      "pdf_used": "Datenblatt",
+      "notes": []
+    },
+    {
+      "product_id": "spray_body_hunter_pro_he_hochleistungsduesen_fuer_p_b5569912",
+      "attrs_filled": [
+        "pressure_max_bar"
+      ],
+      "tables_added": [],
+      "pdf_used": "Datenblatt",
+      "notes": []
+    },
+    {
+      "product_id": "spray_body_hunter_pro_he_hochleistungsduesen_fuer_p_f7d6e934",
+      "attrs_filled": [
+        "pressure_max_bar"
+      ],
+      "tables_added": [],
+      "pdf_used": "Datenblatt",
+      "notes": []
+    },
+    {
+      "product_id": "spray_body_hunter_pro_he_hochleistungsduesen_fuer_p_7333dd9e",
+      "attrs_filled": [
+        "pressure_max_bar"
+      ],
+      "tables_added": [],
+      "pdf_used": "Datenblatt",
+      "notes": []
+    },
+    {
+      "product_id": "nozzle_mp815_rotator_hunter_mp_duese_rotary_mp8_e88cede5",
+      "attrs_filled": [
+        "pressure_recommended_bar"
+      ],
+      "tables_added": [],
+      "pdf_used": "MP815 Informationen",
+      "notes": [
+        "mp_specs:MP815 Informationen=prs40"
+      ]
+    },
+    {
+      "product_id": "nozzle_mp815_rotator_hunter_mp_duese_rotary_mp8_9f1c8e1a",
+      "attrs_filled": [
+        "pressure_recommended_bar"
+      ],
+      "tables_added": [],
+      "pdf_used": "MP815 Informationen",
+      "notes": [
+        "mp_specs:MP815 Informationen=prs40"
+      ]
+    },
+    {
+      "product_id": "nozzle_mp815_rotator_hunter_mp_duese_rotary_mp8_01673d60",
+      "attrs_filled": [
+        "pressure_recommended_bar"
+      ],
+      "tables_added": [],
+      "pdf_used": "MP815 Informationen",
+      "notes": [
+        "mp_specs:MP815 Informationen=prs40"
+      ]
+    },
+    {
+      "product_id": "spray_body_pro_spray_prs40_cv_hunter_pros_04_prs40__9e806210",
+      "attrs_filled": [
+        "pressure_max_bar"
+      ],
+      "tables_added": [],
+      "pdf_used": "Informationsblatt Pro Spray",
+      "notes": []
+    },
+    {
+      "product_id": "spray_body_pro_spray_prs40_cv_hunter_pros_04_prs40__e647aa64",
+      "attrs_filled": [
+        "pressure_max_bar"
+      ],
+      "tables_added": [],
+      "pdf_used": "Informationsblatt Pro Spray",
+      "notes": []
+    },
+    {
+      "product_id": "spray_body_pro_spray_prs40_cv_hunter_pros_04_prs40__ee0d5dee",
+      "attrs_filled": [
+        "pressure_max_bar"
+      ],
+      "tables_added": [],
+      "pdf_used": "Informationsblatt Pro Spray",
+      "notes": []
+    },
+    {
+      "product_id": "spray_body_pro_spray_prs40_cv_hunter_pros_04_prs40__bd878c7c",
+      "attrs_filled": [
+        "pressure_max_bar"
+      ],
+      "tables_added": [],
+      "pdf_used": "Informationsblatt Pro Spray",
+      "notes": []
+    },
+    {
+      "product_id": "spray_body_ps_ultra_hunter_spruehduesen_versenkbere_f9b202d3",
+      "attrs_filled": [
+        "pressure_max_bar"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "spray_body_ps_ultra_hunter_spruehduesen_versenkbere_f90c5673",
+      "attrs_filled": [
+        "pressure_max_bar"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "spray_body_ps_ultra_hunter_spruehduesen_versenkbere_1b5092a6",
+      "attrs_filled": [
+        "pressure_max_bar"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "spray_body_ps_ultra_hunter_spruehduesen_versenkbere_ec12e358",
+      "attrs_filled": [
+        "pressure_max_bar"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "spray_body_ps_ultra_hunter_spruehduesen_versenkbere_8f93df4a",
+      "attrs_filled": [
+        "pressure_max_bar"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "spray_body_ps_ultra_hunter_spruehduesen_versenkbere_7abc6046",
+      "attrs_filled": [
+        "pressure_max_bar"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "filter_kit_baumbewaesserung_hunter_wurzelzonenb_c843a4ea",
+      "attrs_filled": [
+        "filter_element_type",
+        "regulated_pressure_bar"
+      ],
+      "tables_added": [],
+      "pdf_used": "Bedienungsanleitung RZWS.",
+      "notes": [
+        "filter_pdf=element_disc,regulated_range"
+      ]
+    },
+    {
+      "product_id": "rotor_i_90_versenkregner_hunter_i_90_adv_i_90__fdae0d2b",
+      "attrs_filled": [
+        "radius_min_m",
+        "radius_max_m",
+        "pressure_min_bar",
+        "pressure_max_bar",
+        "pop_up_height_mm"
+      ],
+      "tables_added": [],
+      "pdf_used": "Datenblatt Aufbau",
+      "notes": [
+        "rotor_kenndaten=wurfweite,druck,pop_up",
+        "shop_rotor=pop_up,shop_flow_m3h"
+      ]
+    },
+    {
+      "product_id": "rotor_i_90_versenkregner_hunter_i_90_adv_i_90__7fc9b473",
+      "attrs_filled": [
+        "radius_min_m",
+        "radius_max_m",
+        "pressure_min_bar",
+        "pressure_max_bar",
+        "pop_up_height_mm"
+      ],
+      "tables_added": [],
+      "pdf_used": "Datenblatt Aufbau",
+      "notes": [
+        "rotor_kenndaten=wurfweite,druck,pop_up",
+        "shop_rotor=pop_up,shop_flow_m3h"
+      ]
+    },
+    {
+      "product_id": "rotor_i_90_versenkregner_hunter_i_90_adv_i_90__42a5aa55",
+      "attrs_filled": [
+        "radius_min_m",
+        "radius_max_m",
+        "pressure_min_bar",
+        "pressure_max_bar",
+        "pop_up_height_mm"
+      ],
+      "tables_added": [],
+      "pdf_used": "Datenblatt Aufbau",
+      "notes": [
+        "rotor_kenndaten=wurfweite,druck,pop_up",
+        "shop_rotor=pop_up,shop_flow_m3h"
+      ]
+    },
+    {
+      "product_id": "rotor_i_90_versenkregner_hunter_i_90_adv_i_90__7252afa6",
+      "attrs_filled": [
+        "radius_min_m",
+        "radius_max_m",
+        "pressure_min_bar",
+        "pressure_max_bar",
+        "pop_up_height_mm"
+      ],
+      "tables_added": [],
+      "pdf_used": "Datenblatt Aufbau",
+      "notes": [
+        "rotor_kenndaten=wurfweite,druck,pop_up",
+        "shop_rotor=pop_up,shop_flow_m3h"
+      ]
+    },
+    {
+      "product_id": "rotor_i_90_versenkregner_hunter_i_90_adv_i_90__78a704d1",
+      "attrs_filled": [
+        "radius_min_m",
+        "radius_max_m",
+        "pressure_min_bar",
+        "pressure_max_bar",
+        "pop_up_height_mm"
+      ],
+      "tables_added": [],
+      "pdf_used": "Datenblatt Aufbau",
+      "notes": [
+        "rotor_kenndaten=wurfweite,druck,pop_up",
+        "shop_rotor=pop_up,shop_flow_m3h"
+      ]
+    },
+    {
+      "product_id": "anbohr_anbohrschelle_fuer_pe_rohr_und_pvc_rohre_7fb29267",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "anbohr_anbohrschelle_fuer_pe_rohr_und_pvc_rohre_6ca67eb1",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "anbohr_anbohrschelle_fuer_pe_rohr_und_pvc_rohre_252c4246",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "anbohr_anbohrschelle_fuer_pe_rohr_und_pvc_rohre_d1f218e3",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "anbohr_anbohrschelle_fuer_pe_rohr_und_pvc_rohre_466e2352",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "anbohr_anbohrschelle_fuer_pe_rohr_und_pvc_rohre_0760808f",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "anbohr_anbohrschelle_fuer_pe_rohr_und_pvc_rohre_6d7df49c",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "anbohr_anbohrschelle_fuer_pe_rohr_und_pvc_rohre_39ac191a",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "anbohr_anbohrschelle_fuer_pe_rohr_und_pvc_rohre_ab264078",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "anbohr_anbohrschelle_fuer_pe_rohr_und_pvc_rohre_44684c39",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "anbohr_anbohrschelle_fuer_pe_rohr_und_pvc_rohre_a05f3ee9",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "anbohr_anbohrschelle_fuer_pe_rohr_und_pvc_rohre_0bdec6b3",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "anbohr_anbohrschelle_fuer_pe_rohr_und_pvc_rohre_c38b1831",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "anbohr_anbohrschelle_fuer_pe_rohr_und_pvc_rohre_6672105d",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "anbohr_anbohrschelle_fuer_pe_rohr_und_pvc_rohre_410af32f",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "anbohr_anbohrschelle_fuer_pe_rohr_und_pvc_rohre_40828889",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "anbohr_anbohrschelle_fuer_pe_rohr_und_pvc_rohre_f3f3c4e3",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "anbohr_anbohrschelle_fuer_pe_rohr_und_pvc_rohre_709a7887",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "anbohr_anbohrschelle_fuer_pe_rohr_und_pvc_rohre_4eba7a58",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "anbohr_anbohrschelle_fuer_pe_rohr_und_pvc_rohre_9e4774b9",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "anbohr_profi_anbohrschelle_mit_ig_innengewinde__2dea1077",
+      "attrs_filled": [
+        "seal_material"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "anbohr_profi_anbohrschelle_mit_ig_innengewinde__f6a25f20",
+      "attrs_filled": [
+        "seal_material"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_rueckschlagventil_mit_innengewinde_aus_k_41c46b49",
+      "attrs_filled": [
+        "potable_water_approved",
+        "seal_material",
+        "uv_resistant"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_rueckschlagventil_mit_innengewinde_aus_k_faf7bc3b",
+      "attrs_filled": [
+        "potable_water_approved",
+        "seal_material",
+        "uv_resistant"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_rueckschlagventil_mit_innengewinde_aus_k_75ba81b0",
+      "attrs_filled": [
+        "potable_water_approved",
+        "seal_material",
+        "uv_resistant"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_rueckschlagventil_mit_innengewinde_aus_k_b7f94c22",
+      "attrs_filled": [
+        "potable_water_approved",
+        "seal_material",
+        "uv_resistant"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_rueckschlagventil_mit_innengewinde_aus_k_1b80ee4b",
+      "attrs_filled": [
+        "potable_water_approved",
+        "seal_material",
+        "uv_resistant"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_rueckschlagventil_mit_innengewinde_aus_k_9a33cd55",
+      "attrs_filled": [
+        "potable_water_approved",
+        "seal_material",
+        "uv_resistant"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_verbinder_pe_rohr_auf_tropfrohr_gerade_w_558d0dca",
+      "attrs_filled": [
+        "uv_resistant"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_verbinder_pe_rohr_auf_tropfrohr_gerade_w_563da97c",
+      "attrs_filled": [
+        "uv_resistant"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_verbinder_pe_rohr_auf_tropfrohr_gerade_w_ed29a3cc",
+      "attrs_filled": [
+        "uv_resistant"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_verbinder_pe_rohr_auf_tropfrohr_gerade_w_893d3b55",
+      "attrs_filled": [
+        "uv_resistant"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_verbinder_pe_rohr_auf_tropfrohr_gerade_w_3ed75ef0",
+      "attrs_filled": [
+        "uv_resistant"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_verbinder_pe_rohr_auf_tropfrohr_gerade_w_f55b199e",
+      "attrs_filled": [
+        "uv_resistant"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_winkel_45_pe_kupplung_aus_kunststoff_pn1_0e8a91a5",
+      "attrs_filled": [
+        "potable_water_approved",
+        "uv_resistant"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_winkel_45_pe_kupplung_aus_kunststoff_pn1_fdc56a05",
+      "attrs_filled": [
+        "potable_water_approved",
+        "uv_resistant"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_winkel_45_pe_kupplung_aus_kunststoff_pn1_e59bc0cf",
+      "attrs_filled": [
+        "potable_water_approved",
+        "uv_resistant"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_winkel_45_pe_kupplung_aus_kunststoff_pn1_ab7cfebb",
+      "attrs_filled": [
+        "potable_water_approved",
+        "uv_resistant"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_winkel_45_pe_kupplung_aus_kunststoff_pn1_958c3554",
+      "attrs_filled": [
+        "potable_water_approved",
+        "uv_resistant"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_winkel_45_pe_kupplung_aus_kunststoff_pn1_ec546ce4",
+      "attrs_filled": [
+        "potable_water_approved",
+        "uv_resistant"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_endkappe_pe_klemmverschraubung_pn16_dvgw_a2097363",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_endkappe_pe_klemmverschraubung_pn16_dvgw_ee4288ce",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_endkappe_pe_klemmverschraubung_pn16_dvgw_7bd98ec0",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_endkappe_pe_klemmverschraubung_pn16_dvgw_81608f88",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_endkappe_pe_klemmverschraubung_pn16_dvgw_11313528",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_endkappe_pe_klemmverschraubung_pn16_dvgw_5e1ff158",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_endkappe_pe_klemmverschraubung_pn16_dvgw_1f95aa35",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_endkappe_pe_klemmverschraubung_pn16_dvgw_4416708d",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_endkappe_pe_klemmverschraubung_pn16_dvgw_55fb3455",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_kupplung_gerade_pe_klemmverschraubung_x__07c62da7",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_kupplung_gerade_pe_klemmverschraubung_x__cd35527d",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_kupplung_gerade_pe_klemmverschraubung_x__9201a4e5",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_kupplung_gerade_pe_klemmverschraubung_x__ccc5a8ad",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_kupplung_gerade_pe_klemmverschraubung_x__de24309a",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_kupplung_gerade_pe_klemmverschraubung_x__346c9c63",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_kupplung_gerade_pe_klemmverschraubung_x__9c4bc4c0",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_kupplung_gerade_pe_klemmverschraubung_x__791d7774",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_kupplung_gerade_pe_klemmverschraubung_x__d9f49417",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_kupplung_gerade_pe_klemmverschraubung_x__ffbd321f",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_kupplung_gerade_pe_klemmverschraubung_x__1186a98a",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_kupplung_gerade_pe_klemmverschraubung_x__c2196b57",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_kupplung_gerade_pe_klemmverschraubung_x__ea75a5a2",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_kupplung_gerade_pe_klemmverschraubung_x__3abe18e3",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_kupplung_gerade_pe_klemmverschraubung_x__977736b7",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_kupplung_gerade_pe_klemmverschraubung_x__f4202055",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_kupplung_gerade_pe_klemmverschraubung_x__133a8c60",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_kupplung_gerade_pe_klemmverschraubung_x__d6241349",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_kupplung_gerade_pe_klemmverschraubung_x__00f61de8",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_kupplung_gerade_pe_klemmverschraubung_x__beb3328c",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_kupplung_gerade_pe_klemmverschraubung_x__13bf3568",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_kupplung_gerade_pe_klemmverschraubung_x__04ee09e6",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_kupplung_gerade_pe_klemmverschraubung_x__789f5737",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_kupplung_gerade_pe_klemmverschraubung_x__5fb609c6",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_kupplung_gerade_pe_klemmverschraubung_x__6fd17e63",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_kupplung_gerade_pe_klemmverschraubung_x__bb6b3402",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_kupplung_gerade_pe_klemmverschraubung_x__4f70ddd5",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_kupplung_gerade_pe_klemmverschraubung_x__17cd132e",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_kupplung_gerade_pe_klemmverschraubung_x__c532cb20",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_kupplung_gerade_pe_klemmverschraubung_x__f617c0e2",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_kupplung_gerade_pe_klemmverschraubung_x__a2b9daae",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_kupplung_gerade_pe_klemmverschraubung_x__8cdf8cd8",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_kupplung_gerade_pe_klemmverschraubung_x__39452239",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_kupplung_gerade_pe_klemmverschraubung_x__3f37594f",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_kupplung_gerade_pe_klemmverschraubung_x__9222157d",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_kupplung_gerade_pe_klemmverschraubung_x__e6a09df4",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_kupplung_gerade_pe_klemmverschraubung_x__ca28b8b9",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_kupplung_gerade_pe_klemmverschraubung_x__da2e7b69",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_kupplung_gerade_pe_klemmverschraubung_x__f9d651fa",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_kupplung_gerade_pe_klemmverschraubung_x__1de2d90a",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_kupplung_gerade_pe_klemmverschraubung_x__16a2146d",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_kupplung_gerade_pe_klemmverschraubung_x__021b65a2",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_kupplung_gerade_pe_klemmverschraubung_x__83237833",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_kupplung_gerade_pe_klemmverschraubung_x__f910f978",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_kupplung_gerade_pe_klemmverschraubung_x__a155d22b",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_kupplung_gerade_pe_klemmverschraubung_x__6dbd97ff",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_kupplung_gerade_pe_klemmverschraubung_x__75719822",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_kupplung_gerade_pe_klemmverschraubung_x__b3a53bda",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_kupplung_gerade_pe_klemmverschraubung_x__b85ca8f1",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_kupplung_gerade_pe_klemmverschraubung_x__5cc2b020",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_kupplung_gerade_pe_klemmverschraubung_x__05404205",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_kupplung_gerade_pe_klemmverschraubung_x__a5176cfd",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_kupplung_gerade_pe_klemmverschraubung_x__d1c8ff81",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_kupplung_gerade_pe_klemmverschraubung_x__49a7d75f",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_kupplung_gerade_pe_klemmverschraubung_x__06d03b66",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_kupplung_gerade_pe_klemmverschraubung_x__e6f7151c",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_kupplung_gerade_pe_klemmverschraubung_x__963abf4d",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_kupplung_gerade_pe_klemmverschraubung_x__f94add2b",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_kupplung_gerade_pe_klemmverschraubung_x__f91e09eb",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_kupplung_gerade_pe_klemmverschraubung_x__0379fa9f",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_kupplung_gerade_pe_klemmverschraubung_x__663e498c",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_kupplung_gerade_pe_klemmverschraubung_x__aa93caef",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_kupplung_gerade_pe_klemmverschraubung_x__ecdc0449",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_kupplung_gerade_pe_klemmverschraubung_x__8fb8d5dd",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_reduzier_kupplung_gerade_pe_klemmverschr_8605a9ca",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_reduzier_kupplung_gerade_pe_klemmverschr_5f0d7321",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_reduzier_kupplung_gerade_pe_klemmverschr_daa41518",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_reduzier_kupplung_gerade_pe_klemmverschr_cc525e5f",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_reduzier_kupplung_gerade_pe_klemmverschr_cfd43640",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_reduzier_kupplung_gerade_pe_klemmverschr_4106a5bc",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_reduzier_kupplung_gerade_pe_klemmverschr_7c274444",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_reduzier_kupplung_gerade_pe_klemmverschr_13eb2ff7",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_reduzier_kupplung_gerade_pe_klemmverschr_3397d45f",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_reduzier_kupplung_gerade_pe_klemmverschr_b5ebc82c",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_reduzier_kupplung_gerade_pe_klemmverschr_7a639649",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_reduzier_t_stueck_pe_klemmverschraubung__79240543",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_reduzier_t_stueck_pe_klemmverschraubung__f7c9db38",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_reduzier_t_stueck_pe_klemmverschraubung__14e51806",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_reduzier_t_stueck_pe_klemmverschraubung__2811d309",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_reduzier_t_stueck_pe_klemmverschraubung__1b2dcdb3",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_reduzier_t_stueck_pe_klemmverschraubung__b9da1600",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_reduzier_t_stueck_pe_klemmverschraubung__694583aa",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_reduzier_t_stueck_pe_klemmverschraubung__4fffbe81",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_t_stueck_pe_klemmverschraubung_x_ausseng_496401db",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_t_stueck_pe_klemmverschraubung_x_ausseng_12743794",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_t_stueck_pe_klemmverschraubung_x_ausseng_4b946bf3",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_t_stueck_pe_klemmverschraubung_x_ausseng_7609ba14",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_t_stueck_pe_klemmverschraubung_x_ausseng_f84ba581",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_t_stueck_pe_klemmverschraubung_x_ausseng_a84f4df7",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_t_stueck_pe_klemmverschraubung_x_ausseng_47e38bb0",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_t_stueck_pe_klemmverschraubung_x_ausseng_a585efc4",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_t_stueck_pe_klemmverschraubung_x_ausseng_0d2e8c9c",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_t_stueck_pe_klemmverschraubung_x_ausseng_cc7e874f",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_t_stueck_pe_klemmverschraubung_x_ausseng_c2a78596",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_t_stueck_pe_klemmverschraubung_x_ausseng_3b998239",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_t_stueck_pe_klemmverschraubung_x_ausseng_54b7e27f",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_t_stueck_pe_klemmverschraubung_x_ausseng_4cf830b0",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_t_stueck_pe_klemmverschraubung_x_ausseng_4119160a",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_t_stueck_pe_klemmverschraubung_x_ausseng_8408ee0f",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_t_stueck_pe_klemmverschraubung_x_ausseng_3333ea95",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_t_stueck_pe_klemmverschraubung_x_ausseng_b30c02d2",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_t_stueck_pe_klemmverschraubung_x_ausseng_6d3ada85",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_t_stueck_pe_klemmverschraubung_x_ausseng_cc051113",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_t_stueck_pe_klemmverschraubung_x_innenge_aa225440",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_t_stueck_pe_klemmverschraubung_x_innenge_ee712e27",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_t_stueck_pe_klemmverschraubung_x_innenge_3c02b8ca",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_t_stueck_pe_klemmverschraubung_x_innenge_0f9ac772",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_t_stueck_pe_klemmverschraubung_x_innenge_6a6197cb",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_t_stueck_pe_klemmverschraubung_x_innenge_ba5d11d2",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_t_stueck_pe_klemmverschraubung_x_innenge_7ec86886",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_t_stueck_pe_klemmverschraubung_x_innenge_6d292cee",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_t_stueck_pe_klemmverschraubung_x_innenge_2fe4ffd4",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_t_stueck_pe_klemmverschraubung_x_innenge_53628809",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_t_stueck_pe_klemmverschraubung_x_innenge_3afd56f3",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_t_stueck_pe_klemmverschraubung_x_innenge_65c44741",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_t_stueck_pe_klemmverschraubung_x_innenge_146fa838",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_t_stueck_pe_klemmverschraubung_x_innenge_6c8b91db",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_t_stueck_pe_klemmverschraubung_x_innenge_4dfa8664",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_t_stueck_pe_klemmverschraubung_x_innenge_68b2d8ce",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_t_stueck_pe_klemmverschraubung_x_innenge_7ae0795b",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_t_stueck_pe_klemmverschraubung_x_innenge_bae41878",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_t_stueck_pe_klemmverschraubung_x_klemmve_78adb33b",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_t_stueck_pe_klemmverschraubung_x_klemmve_8926efb6",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_t_stueck_pe_klemmverschraubung_x_klemmve_52763ad0",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_t_stueck_pe_klemmverschraubung_x_klemmve_ffd74bca",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_t_stueck_pe_klemmverschraubung_x_klemmve_4b58ef6a",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_t_stueck_pe_klemmverschraubung_x_klemmve_3ce80a75",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_t_stueck_pe_klemmverschraubung_x_klemmve_b90f0174",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_t_stueck_pe_klemmverschraubung_x_klemmve_202e75c5",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_t_stueck_pe_klemmverschraubung_x_klemmve_12d72c17",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_winkel_pe_klemmverschraubung_x_aussengew_0cdc217b",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_winkel_pe_klemmverschraubung_x_aussengew_6ab6bc9b",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_winkel_pe_klemmverschraubung_x_aussengew_0705de8c",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_winkel_pe_klemmverschraubung_x_aussengew_83455fd2",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_winkel_pe_klemmverschraubung_x_aussengew_095af955",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_winkel_pe_klemmverschraubung_x_aussengew_58144e44",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_winkel_pe_klemmverschraubung_x_aussengew_b655bdcf",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_winkel_pe_klemmverschraubung_x_aussengew_4c94c6bb",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_winkel_pe_klemmverschraubung_x_aussengew_d27d2963",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_winkel_pe_klemmverschraubung_x_aussengew_17ffc3f1",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_winkel_pe_klemmverschraubung_x_aussengew_d2697d5d",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_winkel_pe_klemmverschraubung_x_aussengew_4a6c4f14",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_winkel_pe_klemmverschraubung_x_aussengew_8949ceab",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_winkel_pe_klemmverschraubung_x_aussengew_50969565",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_winkel_pe_klemmverschraubung_x_aussengew_fdea0562",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_winkel_pe_klemmverschraubung_x_aussengew_80e71b86",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_winkel_pe_klemmverschraubung_x_aussengew_0a99e86a",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_winkel_pe_klemmverschraubung_x_aussengew_b8540a78",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_winkel_pe_klemmverschraubung_x_innengewi_445ca50c",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_winkel_pe_klemmverschraubung_x_innengewi_e1d5beb1",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_winkel_pe_klemmverschraubung_x_innengewi_c043c0e3",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_winkel_pe_klemmverschraubung_x_innengewi_78412f5f",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_winkel_pe_klemmverschraubung_x_innengewi_61845136",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_winkel_pe_klemmverschraubung_x_innengewi_cc8b36b6",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_winkel_pe_klemmverschraubung_x_innengewi_589a06b6",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_winkel_pe_klemmverschraubung_x_innengewi_5df2f880",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_winkel_pe_klemmverschraubung_x_innengewi_8864cd7a",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_winkel_pe_klemmverschraubung_x_innengewi_5113a9fb",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_winkel_pe_klemmverschraubung_x_innengewi_3e804af1",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_winkel_pe_klemmverschraubung_x_innengewi_8739f9e3",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_winkel_pe_klemmverschraubung_x_innengewi_afb0783c",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_winkel_pe_klemmverschraubung_x_innengewi_1f896802",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_winkel_pe_klemmverschraubung_x_innengewi_132ef581",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_winkel_pe_klemmverschraubung_x_innengewi_9f312d7c",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_winkel_pe_klemmverschraubung_x_innengewi_dd7b4153",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_winkel_pe_klemmverschraubung_x_innengewi_64a09bdc",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_winkel_pe_klemmverschraubung_x_klemmvers_3890825d",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_winkel_pe_klemmverschraubung_x_klemmvers_98d5a591",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_winkel_pe_klemmverschraubung_x_klemmvers_70efab45",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_winkel_pe_klemmverschraubung_x_klemmvers_5241768a",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_winkel_pe_klemmverschraubung_x_klemmvers_c55fd823",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_winkel_pe_klemmverschraubung_x_klemmvers_0bf3ca84",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_winkel_pe_klemmverschraubung_x_klemmvers_49ac5c17",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_winkel_pe_klemmverschraubung_x_klemmvers_6ce96e74",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_winkel_pe_klemmverschraubung_x_klemmvers_4c078a33",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_messing_pe_kupplung_gerade_form_mit_auss_51695fc4",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_messing_pe_kupplung_gerade_form_mit_auss_237865d3",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_messing_pe_kupplung_gerade_form_mit_auss_df371629",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_messing_pe_kupplung_gerade_form_mit_auss_6678275b",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_messing_pe_kupplung_gerade_form_mit_auss_0c627dd2",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_messing_pe_kupplung_gerade_form_mit_auss_de196e1a",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_messing_pe_kupplung_gerade_form_mit_inne_31e653ce",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_messing_pe_kupplung_gerade_form_mit_inne_c3915747",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_messing_pe_kupplung_gerade_form_mit_inne_71f7ff35",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_messing_pe_kupplung_gerade_form_mit_inne_377df07c",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_messing_pe_kupplung_gerade_form_mit_inne_3fdebbb7",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_messing_pe_kupplung_gerade_form_mit_inne_22511871",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_messing_pe_kupplung_t_stueck_mit_drei_ve_bbafb26f",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_messing_pe_kupplung_t_stueck_mit_drei_ve_0ff44b4d",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_messing_pe_kupplung_t_stueck_mit_drei_ve_f364f4c7",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_messing_pe_kupplung_t_stueck_mit_drei_ve_9a029caa",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_messing_pe_kupplung_t_stueck_mit_drei_ve_a0e4c7de",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_messing_pe_kupplung_t_stueck_mit_drei_ve_8ee4c686",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_messing_pe_kupplung_winkelform_mit_ausse_66d1d703",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_messing_pe_kupplung_winkelform_mit_ausse_0f55d9bd",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_messing_pe_kupplung_winkelform_mit_ausse_6442f4ac",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_messing_pe_kupplung_winkelform_mit_ausse_5e748158",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_messing_pe_kupplung_winkelform_mit_ausse_d8801468",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_messing_pe_kupplung_winkelform_mit_ausse_1e5f3a99",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_messing_pe_kupplung_winkelform_mit_innen_5b736b08",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_messing_pe_kupplung_winkelform_mit_innen_9c64970a",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_messing_pe_kupplung_winkelform_mit_innen_c3579edc",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_messing_pe_kupplung_winkelform_mit_innen_66dbeef5",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_messing_pe_kupplung_winkelform_mit_innen_2abe0d37",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_messing_pe_kupplung_winkelform_mit_zwei__dc39e99d",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_messing_pe_kupplung_winkelform_mit_zwei__e42d78ab",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_messing_pe_kupplung_winkelform_mit_zwei__88b4abcc",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_messing_pe_kupplung_winkelform_mit_zwei__638891a8",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_messing_pe_kupplung_winkelform_mit_zwei__1e246596",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_messing_pe_kupplung_winkelform_mit_zwei__9f36c19a",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_messing_pe_kupplung_winkelform_wandschei_f5f50300",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_messing_pe_kupplung_winkelform_wandschei_8f773dba",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_messing_pe_kupplung_winkelform_wandschei_349e8d09",
+      "attrs_filled": [
+        "potable_water_approved"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "pe_pipe_pe_rohr_25_mm_10_bar_pe100_schwarz_blau__d736e2a2",
+      "attrs_filled": [
+        "wall_thickness_mm",
+        "internal_diameter_mm"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": [
+        "pipe_shop=material,od,sdr,pn,wall_from_sdr,id_computed"
+      ]
+    },
+    {
+      "product_id": "pe_pipe_pe_rohr_25_mm_10_bar_pe100_schwarz_blau__e8b066a8",
+      "attrs_filled": [
+        "wall_thickness_mm",
+        "internal_diameter_mm"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": [
+        "pipe_shop=material,od,sdr,pn,wall_from_sdr,id_computed"
+      ]
+    },
+    {
+      "product_id": "pe_pipe_pe_rohr_25_mm_10_bar_pe100_schwarz_blau__fb8b7c7c",
+      "attrs_filled": [
+        "wall_thickness_mm",
+        "internal_diameter_mm"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": [
+        "pipe_shop=material,od,sdr,pn,wall_from_sdr,id_computed"
+      ]
+    },
+    {
+      "product_id": "pe_pipe_pe_rohr_25_mm_10_bar_pe100_schwarz_blau__28564107",
+      "attrs_filled": [
+        "wall_thickness_mm",
+        "internal_diameter_mm"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": [
+        "pipe_shop=material,od,sdr,pn,wall_from_sdr,id_computed"
+      ]
+    },
+    {
+      "product_id": "pe_pipe_pe_rohr_32_mm_pe100_blau_oder_schwarz_bl_9bd905f5",
+      "attrs_filled": [
+        "wall_thickness_mm",
+        "internal_diameter_mm"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": [
+        "pipe_shop=material,od,sdr,pn,wall_from_sdr,id_computed,length"
+      ]
+    },
+    {
+      "product_id": "pe_pipe_pe_rohr_32_mm_pe100_blau_oder_schwarz_bl_24e815a7",
+      "attrs_filled": [
+        "wall_thickness_mm",
+        "internal_diameter_mm"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": [
+        "pipe_shop=material,od,sdr,pn,wall_from_sdr,id_computed,length"
+      ]
+    },
+    {
+      "product_id": "pe_pipe_pe_rohr_32_mm_pe100_blau_oder_schwarz_bl_93a3dc19",
+      "attrs_filled": [
+        "wall_thickness_mm",
+        "internal_diameter_mm"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": [
+        "pipe_shop=material,od,sdr,pn,wall_from_sdr,id_computed,length"
+      ]
+    },
+    {
+      "product_id": "pe_pipe_pe_rohr_32_mm_pe100_blau_oder_schwarz_bl_8c9921ca",
+      "attrs_filled": [
+        "wall_thickness_mm",
+        "internal_diameter_mm"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": [
+        "pipe_shop=material,potable,od,sdr,pn,wall_from_sdr,id_computed,length"
+      ]
+    },
+    {
+      "product_id": "pe_pipe_pe_rohr_63_mm_pe_rohr_75_mm_pe_rohr_90_m_13d9a47d",
+      "attrs_filled": [
+        "wall_thickness_mm",
+        "internal_diameter_mm"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": [
+        "pipe_shop=material,potable,od,sdr,pn,wall_from_sdr,id_computed,length"
+      ]
+    },
+    {
+      "product_id": "pe_pipe_pe_rohr_63_mm_pe_rohr_75_mm_pe_rohr_90_m_02a7878c",
+      "attrs_filled": [
+        "wall_thickness_mm",
+        "internal_diameter_mm"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": [
+        "pipe_shop=material,potable,od,sdr,pn,wall_from_sdr,id_computed,length"
+      ]
+    },
+    {
+      "product_id": "pe_pipe_pe_rohr_63_mm_pe_rohr_75_mm_pe_rohr_90_m_d267c0c2",
+      "attrs_filled": [
+        "wall_thickness_mm",
+        "internal_diameter_mm"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": [
+        "pipe_shop=material,potable,od,sdr,pn,wall_from_sdr,id_computed,length"
+      ]
+    },
+    {
+      "product_id": "klemm_pe_rohr_stange_1m_und_1_5_m_pn10_pe_25mm_763d70bc",
+      "attrs_filled": [
+        "uv_resistant"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_pe_rohr_stange_1m_und_1_5_m_pn10_pe_25mm_bb05028e",
+      "attrs_filled": [
+        "uv_resistant"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_pe_rohr_stange_1m_und_1_5_m_pn10_pe_25mm_7ce70634",
+      "attrs_filled": [
+        "uv_resistant"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_pe_rohr_stange_1m_und_1_5_m_pn10_pe_25mm_a0797427",
+      "attrs_filled": [
+        "uv_resistant"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_pe_rohr_stange_1m_und_1_5_m_pn10_pe_25mm_26ad2e72",
+      "attrs_filled": [
+        "uv_resistant"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_pe_rohr_stange_1m_und_1_5_m_pn10_pe_25mm_3e2da413",
+      "attrs_filled": [
+        "uv_resistant"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_pe_rohr_stange_1m_und_1_5_m_pn10_pe_25mm_b29ff6e7",
+      "attrs_filled": [
+        "uv_resistant"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    },
+    {
+      "product_id": "klemm_pe_rohr_stange_1m_und_1_5_m_pn10_pe_25mm_068229a7",
+      "attrs_filled": [
+        "uv_resistant"
+      ],
+      "tables_added": [],
+      "pdf_used": null,
+      "notes": []
+    }
+  ]
+}

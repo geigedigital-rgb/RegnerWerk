@@ -1,0 +1,50 @@
+{
+  "name": "regnerwerk",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "scrape": "tsx scripts/scrape/run-scrape.ts",
+    "scrape:hunter": "tsx scripts/scrape/run-scrape.ts --keywords Hunter --out hunter",
+    "scrape:klemm": "tsx scripts/scrape/run-scrape.ts --category https://www.wasserundgruen.de/klemmverschraubungen-und-pe-rohr/klemmverschraubungen/ --out klemm",
+    "scrape:clean": "tsx scripts/scrape/clean.ts",
+    "scrape:merge": "tsx scripts/scrape/merge-ai.ts",
+    "scrape:variants": "tsx scripts/scrape/expand-variants.ts",
+    "catalog:schemas": "tsx scripts/catalog/build-schemas.ts",
+    "catalog:pilot": "tsx scripts/catalog/pilot-normalize.ts",
+    "catalog:expand": "tsx scripts/catalog/expand-normalize.ts",
+    "catalog:enrich": "tsx scripts/catalog/enrich-from-pdfs.ts",
+    "catalog:pdfs": "tsx scripts/catalog/download-pdfs.ts",
+    "catalog:pdf-text": "tsx scripts/catalog/extract-pdf-text.ts",
+    "catalog:planner": "tsx scripts/catalog/build-planner-catalog.ts",
+    "catalog:repair-connections": "tsx scripts/catalog/repair-connections-from-source.ts",
+    "scrape:structure": "tsx scripts/scrape/structure.ts",
+    "test:planner": "tsx --test lib/planner/v1/*.test.ts lib/planner/v2/*.test.ts"
+  },
+  "dependencies": {
+    "framer-motion": "^12.42.2",
+    "lucide-react": "^1.27.0",
+    "mapbox-gl": "^3.27.0",
+    "next": "16.2.11",
+    "react": "19.2.4",
+    "react-dom": "19.2.4"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "@types/mapbox-gl": "^3.4.1",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "cheerio": "^1.2.0",
+    "eslint": "^9",
+    "eslint-config-next": "16.2.11",
+    "pdf-parse": "^2.4.5",
+    "tailwindcss": "^4",
+    "tsx": "^4.23.1",
+    "typescript": "^5",
+    "zod": "^4.4.3"
+  }
+}

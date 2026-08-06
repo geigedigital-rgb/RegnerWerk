@@ -1,0 +1,206 @@
+import plannerCatalog from "@/data/planner/planner-catalog.json";
+
+export type SprinklerBrand = "hunter" | "rainbird";
+
+export type PerformancePoint = {
+  pressureBar: number;
+  arcDeg?: number;
+  radiusM?: number;
+  widthM?: number;
+  lengthM?: number;
+  flowLMin: number;
+  precipSquareMmH?: number;
+  precipTriangleMmH?: number;
+};
+
+export type NozzleSpec = {
+  radiusMinM: number;
+  radiusMaxM: number;
+  arcMinDeg: number;
+  arcMaxDeg: number;
+  flow360LMin: number | null;
+  /** Representative pressure for flow360LMin (compat). */
+  pressureBar: number;
+  pressureMinBar?: number | null;
+  pressureRecommendedBar?: number | null;
+  pressureMaxBar?: number | null;
+  precipMmH?: number | null;
+  matchedPrecipitation?: boolean | null;
+  precipitationFamily?: string | null;
+  hydraulicZoneGroup?: string | null;
+  patternType?: string | null;
+  /** Full published performance rows — do not collapse to one pressure. */
+  performance?: PerformancePoint[];
+};
+
+export type StripSpec = {
+  pattern: "left_corner_strip" | "right_corner_strip" | "side_strip" | string;
+  patternType?: string;
+  widthM: number;
+  lengthM: number;
+  flowLMin: number | null;
+  pressureBar: number;
+  pressureMinBar?: number | null;
+  pressureRecommendedBar?: number | null;
+  pressureMaxBar?: number | null;
+  precipMmH?: number | null;
+  precipSquareMmH?: number | null;
+  precipTriangleMmH?: number | null;
+  matchedPrecipitation?: boolean | null;
+  precipitationFamily?: string | null;
+  hydraulicZoneGroup?: string | null;
+  performance?: PerformancePoint[];
+};
+
+export type SetVariant = {
+  nozzleKey: string;
+  anschluss: "tee" | "elbow";
+  label: string;
+  priceEur: number | null;
+};
+
+export type RollSpec = {
+  article: string | null;
+  label: string;
+  lengthM: number;
+  priceEur: number | null;
+  imageUrl?: string | null;
+};
+
+export type SimplePart = {
+  article: string | null;
+  label: string;
+  priceEur: number | null;
+  imageUrl?: string | null;
+};
+
+export type BrandEmitters = {
+  sprayHead: {
+    setArticle: string;
+    bodyLabel: string;
+    variants: SetVariant[];
+    nozzles: Record<string, NozzleSpec>;
+    strips: Record<string, StripSpec>;
+  };
+  rotor: {
+    article: string;
+    label: string;
+    priceEur: number | null;
+    imageUrl?: string | null;
+    radiusMinM: number;
+    radiusMaxM: number;
+    arcMinDeg: number;
+    arcMaxDeg: number;
+    pressureMinBar?: number | null;
+    pressureRecommendedBar?: number | null;
+    pressureMaxBar?: number | null;
+    precipitationFamily?: string | null;
+    hydraulicZoneGroup?: string | null;
+    options: Array<{
+      nozzle: string;
+      pressureBar: number;
+      radiusM: number;
+      flowLMin: number;
+      precipSquareMmH?: number;
+      precipTriangleMmH?: number;
+    }>;
+    accessories: SimplePart[];
+  };
+};
+
+export type PlannerCatalog = {
+  /** Product photos from RegnerWerk_universal.json (build-planner-catalog). */
+  images?: Record<string, string>;
+  defaultBrand?: SprinklerBrand;
+  brands?: Record<SprinklerBrand, BrandEmitters>;
+  sprayHead: BrandEmitters["sprayHead"];
+  rotor: BrandEmitters["rotor"];
+  pipes: { pe25Rolls: RollSpec[]; pe32Rolls: RollSpec[] };
+  hydraulics: {
+    defaultSourceFlowM3h: number;
+    zoneFillFactor: number;
+    recommendedPressureBar: number;
+    assumedVerteilerPressureBar: number;
+    pe25InternalDiameterMm: number;
+    pe32InternalDiameterMm: number;
+    hazenWilliamsC: number;
+    /** v2: max design velocity m/s */
+    maxVelocityMps?: number;
+    /** v2: spacingFactor ≤ 1 (head-to-head); default 1.0 without wind */
+    spacingFactor?: number;
+    /** Catalog revision for v2 output */
+    catalogVersion?: string;
+  };
+  /** Optional PE size ladder for v2 diameter selection */
+  pipeSizes?: Array<{
+    odMm: number;
+    idMm: number;
+    rollsKey: "pe25Rolls" | "pe32Rolls" | string;
+  }>;
+  zoneParts: {
+    valve: SimplePart;
+    adapterPe25Valve: SimplePart;
+    adapterPe32Valve: SimplePart;
+    verteiler: Array<SimplePart & { outlets: number }>;
+    valveBox: SimplePart;
+  };
+  controls: {
+    controllers: Array<SimplePart & { stations: number }>;
+    wirePerMeter: Array<{
+      article: string | null;
+      label: string;
+      cores: number;
+      priceEurPerM: number | null;
+      imageUrl?: string | null;
+    }>;
+    splice: SimplePart;
+  };
+  sourceParts: { ballValve: SimplePart; checkValve: SimplePart };
+  drip: {
+    tube: SimplePart & { emitterSpacingM: number; emitterFlowLh: number };
+    controlKit: SimplePart;
+    rowSpacingM: number;
+  };
+};
+
+export const CATALOG = plannerCatalog as unknown as PlannerCatalog;
+
+export const DEFAULT_BRAND: SprinklerBrand =
+  CATALOG.defaultBrand === "rainbird" ? "rainbird" : "hunter";
+
+export function brandEmitters(brand: SprinklerBrand = DEFAULT_BRAND): BrandEmitters {
+  const pack = CATALOG.brands?.[brand];
+  if (pack) return pack;
+  return { sprayHead: CATALOG.sprayHead, rotor: CATALOG.rotor };
+}
+
+export function setVariantFor(
+  nozzleKey: string,
+  anschluss: "tee" | "elbow",
+  brand: SprinklerBrand = DEFAULT_BRAND,
+): SetVariant | null {
+  const { sprayHead } = brandEmitters(brand);
+  return (
+    sprayHead.variants.find(
+      (v) => v.nozzleKey === nozzleKey && v.anschluss === anschluss,
+    ) ?? null
+  );
+}
+
+/** Standard-precip spray families (excludes MP800 ~20 mm/h). */
+export function primaryNozzleOrder(brand: SprinklerBrand): string[] {
+  if (brand === "hunter") return ["MP1000", "MP2000", "MP3000", "MP3500"];
+  return ["R-VAN14", "R-VAN18", "R-VAN24"];
+}
+
+export function smallNozzleKey(brand: SprinklerBrand): string {
+  return brand === "hunter" ? "MP800SR" : "R-VAN14";
+}
+
+export function sideStripKey(brand: SprinklerBrand): string {
+  return brand === "hunter" ? "MPSS530" : "R-VAN-SST";
+}
+
+export function isMp800Family(configKey: string): boolean {
+  return /^MP8/i.test(configKey);
+}

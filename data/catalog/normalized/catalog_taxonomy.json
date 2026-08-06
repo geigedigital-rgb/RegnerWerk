@@ -1,0 +1,457 @@
+{
+  "schema_version": "1.0.0",
+  "generated_at": "2026-08-02T12:13:59.227Z",
+  "sections": [
+    {
+      "section_id": "irrigation",
+      "name": {
+        "de": "Bewässerung"
+      },
+      "description": "Beregnung und Tropfbewässerung"
+    },
+    {
+      "section_id": "hydraulics",
+      "name": {
+        "de": "Hydraulik"
+      },
+      "description": "Rohre, Fittings, Ventile, Filter, Pumpen"
+    },
+    {
+      "section_id": "control",
+      "name": {
+        "de": "Steuerung"
+      },
+      "description": "Steuergeräte, Sensoren, Elektrik"
+    },
+    {
+      "section_id": "installation",
+      "name": {
+        "de": "Installation"
+      },
+      "description": "Kästen, Befestigungen, Montageelemente"
+    },
+    {
+      "section_id": "assemblies",
+      "name": {
+        "de": "Baugruppen"
+      },
+      "description": "Fertige Sets und vormontierte Module"
+    }
+  ],
+  "groups": [
+    {
+      "group_id": "nozzles_rotators",
+      "section_id": "irrigation",
+      "name": {
+        "de": "Düsen und Rotatoren"
+      },
+      "subtypes": [
+        {
+          "subtype_id": "fixed_spray_nozzle"
+        },
+        {
+          "subtype_id": "adjustable_spray_nozzle"
+        },
+        {
+          "subtype_id": "rotary_nozzle"
+        },
+        {
+          "subtype_id": "strip_nozzle"
+        },
+        {
+          "subtype_id": "bubbler_nozzle"
+        }
+      ]
+    },
+    {
+      "group_id": "spray_bodies",
+      "section_id": "irrigation",
+      "name": {
+        "de": "Versenksprühgehäuse"
+      },
+      "subtypes": [
+        {
+          "subtype_id": "pop_up_spray_body"
+        },
+        {
+          "subtype_id": "shrub_adapter"
+        },
+        {
+          "subtype_id": "pressure_regulating_spray_body"
+        }
+      ]
+    },
+    {
+      "group_id": "rotor_sprinklers",
+      "section_id": "irrigation",
+      "name": {
+        "de": "Getrieberegner"
+      },
+      "subtypes": [
+        {
+          "subtype_id": "gear_drive_rotor"
+        },
+        {
+          "subtype_id": "impact_sprinkler"
+        },
+        {
+          "subtype_id": "long_range_rotor"
+        }
+      ]
+    },
+    {
+      "group_id": "drip_irrigation",
+      "section_id": "irrigation",
+      "name": {
+        "de": "Tropfbewässerung"
+      },
+      "subtypes": [
+        {
+          "subtype_id": "dripline"
+        },
+        {
+          "subtype_id": "online_emitter"
+        },
+        {
+          "subtype_id": "micro_tube"
+        },
+        {
+          "subtype_id": "drip_fitting"
+        },
+        {
+          "subtype_id": "flush_end"
+        }
+      ]
+    },
+    {
+      "group_id": "pressure_pipes",
+      "section_id": "hydraulics",
+      "name": {
+        "de": "Druckrohre"
+      },
+      "subtypes": [
+        {
+          "subtype_id": "pe_pressure_pipe"
+        },
+        {
+          "subtype_id": "pe_soft_pipe"
+        },
+        {
+          "subtype_id": "pvc_pressure_pipe"
+        }
+      ]
+    },
+    {
+      "group_id": "sprinkler_connections",
+      "section_id": "hydraulics",
+      "name": {
+        "de": "Regneranschlüsse"
+      },
+      "subtypes": [
+        {
+          "subtype_id": "swing_pipe"
+        },
+        {
+          "subtype_id": "swing_elbow"
+        },
+        {
+          "subtype_id": "funny_pipe_fitting"
+        },
+        {
+          "subtype_id": "tapping_saddle"
+        },
+        {
+          "subtype_id": "riser"
+        }
+      ]
+    },
+    {
+      "group_id": "pe_compression_fittings",
+      "section_id": "hydraulics",
+      "name": {
+        "de": "PE-Klemmverschraubungen"
+      },
+      "subtypes": [
+        {
+          "subtype_id": "straight_coupling"
+        },
+        {
+          "subtype_id": "reducing_coupling"
+        },
+        {
+          "subtype_id": "elbow_90"
+        },
+        {
+          "subtype_id": "tee"
+        },
+        {
+          "subtype_id": "end_cap"
+        },
+        {
+          "subtype_id": "threaded_adapter"
+        },
+        {
+          "subtype_id": "tapping_saddle"
+        }
+      ]
+    },
+    {
+      "group_id": "threaded_fittings_manifolds",
+      "section_id": "hydraulics",
+      "name": {
+        "de": "Gewindefittings und Verteiler"
+      },
+      "subtypes": [
+        {
+          "subtype_id": "nipple"
+        },
+        {
+          "subtype_id": "threaded_coupling"
+        },
+        {
+          "subtype_id": "union"
+        },
+        {
+          "subtype_id": "elbow"
+        },
+        {
+          "subtype_id": "tee"
+        },
+        {
+          "subtype_id": "cross"
+        },
+        {
+          "subtype_id": "plug"
+        },
+        {
+          "subtype_id": "cap"
+        },
+        {
+          "subtype_id": "manifold"
+        },
+        {
+          "subtype_id": "adapter"
+        }
+      ]
+    },
+    {
+      "group_id": "valves",
+      "section_id": "hydraulics",
+      "name": {
+        "de": "Ventile"
+      },
+      "subtypes": [
+        {
+          "subtype_id": "solenoid_valve"
+        },
+        {
+          "subtype_id": "manual_ball_valve"
+        },
+        {
+          "subtype_id": "check_valve"
+        },
+        {
+          "subtype_id": "master_valve"
+        },
+        {
+          "subtype_id": "quick_coupling_valve"
+        }
+      ]
+    },
+    {
+      "group_id": "filters_pressure_regulators",
+      "section_id": "hydraulics",
+      "name": {
+        "de": "Filter und Druckminderer"
+      },
+      "subtypes": [
+        {
+          "subtype_id": "disc_filter"
+        },
+        {
+          "subtype_id": "screen_filter"
+        },
+        {
+          "subtype_id": "pressure_regulator"
+        },
+        {
+          "subtype_id": "filter_regulator"
+        },
+        {
+          "subtype_id": "valve_filter_regulator_assembly"
+        }
+      ]
+    },
+    {
+      "group_id": "pumps_water_supply",
+      "section_id": "hydraulics",
+      "name": {
+        "de": "Pumpen und Wasserversorgung"
+      },
+      "subtypes": [
+        {
+          "subtype_id": "surface_pump"
+        },
+        {
+          "subtype_id": "submersible_pump"
+        },
+        {
+          "subtype_id": "booster_pump"
+        },
+        {
+          "subtype_id": "pump_start_relay"
+        },
+        {
+          "subtype_id": "water_source_adapter"
+        },
+        {
+          "subtype_id": "backflow_prevention_device"
+        },
+        {
+          "subtype_id": "pressure_tank"
+        }
+      ]
+    },
+    {
+      "group_id": "controllers",
+      "section_id": "control",
+      "name": {
+        "de": "Steuergeräte"
+      },
+      "subtypes": [
+        {
+          "subtype_id": "irrigation_controller"
+        },
+        {
+          "subtype_id": "expansion_module"
+        },
+        {
+          "subtype_id": "wifi_module"
+        },
+        {
+          "subtype_id": "decoder_controller"
+        },
+        {
+          "subtype_id": "battery_controller"
+        }
+      ]
+    },
+    {
+      "group_id": "sensors",
+      "section_id": "control",
+      "name": {
+        "de": "Sensoren"
+      },
+      "subtypes": [
+        {
+          "subtype_id": "rain_sensor"
+        },
+        {
+          "subtype_id": "flow_sensor"
+        },
+        {
+          "subtype_id": "soil_moisture_sensor"
+        },
+        {
+          "subtype_id": "freeze_sensor"
+        },
+        {
+          "subtype_id": "weather_sensor"
+        }
+      ]
+    },
+    {
+      "group_id": "electrical_accessories",
+      "section_id": "control",
+      "name": {
+        "de": "Elektrisches Zubehör"
+      },
+      "subtypes": [
+        {
+          "subtype_id": "control_cable"
+        },
+        {
+          "subtype_id": "waterproof_connector"
+        },
+        {
+          "subtype_id": "conduit"
+        },
+        {
+          "subtype_id": "pump_start_relay"
+        },
+        {
+          "subtype_id": "solenoid_coil"
+        }
+      ]
+    },
+    {
+      "group_id": "valve_boxes",
+      "section_id": "installation",
+      "name": {
+        "de": "Ventilkästen"
+      },
+      "subtypes": [
+        {
+          "subtype_id": "round_valve_box"
+        },
+        {
+          "subtype_id": "rectangular_valve_box"
+        },
+        {
+          "subtype_id": "valve_box_extension"
+        }
+      ]
+    },
+    {
+      "group_id": "mounting_accessories",
+      "section_id": "installation",
+      "name": {
+        "de": "Montagezubehör"
+      },
+      "subtypes": [
+        {
+          "subtype_id": "stake"
+        },
+        {
+          "subtype_id": "mounting_bracket"
+        },
+        {
+          "subtype_id": "installation_tool"
+        },
+        {
+          "subtype_id": "thread_seal"
+        },
+        {
+          "subtype_id": "winterization_adapter"
+        },
+        {
+          "subtype_id": "pressure_gauge"
+        }
+      ]
+    },
+    {
+      "group_id": "preassembled_modules",
+      "section_id": "assemblies",
+      "name": {
+        "de": "Vormontierte Baugruppen"
+      },
+      "subtypes": [
+        {
+          "subtype_id": "sprinkler_installation_set"
+        },
+        {
+          "subtype_id": "valve_manifold_assembly"
+        },
+        {
+          "subtype_id": "drip_control_zone_kit"
+        },
+        {
+          "subtype_id": "water_source_connection_kit"
+        },
+        {
+          "subtype_id": "complete_irrigation_package"
+        }
+      ]
+    }
+  ]
+}

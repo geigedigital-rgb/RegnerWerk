@@ -1,0 +1,5046 @@
+{
+  "generated_at": "2026-08-03T08:47:49.177Z",
+  "summary": {
+    "products": 2499,
+    "group_reclassifications": 1192,
+    "attribute_fills": 567,
+    "critical_product_fills": 109,
+    "by_group": {
+      "drip_irrigation": 101,
+      "pe_compression_fittings": 476,
+      "sensors": 30,
+      "filters_pressure_regulators": 88,
+      "valves": 196,
+      "threaded_fittings_manifolds": 29,
+      "preassembled_modules": 1053,
+      "rotor_sprinklers": 52,
+      "spray_bodies": 25,
+      "mounting_accessories": 103,
+      "nozzles_rotators": 158,
+      "sprinkler_connections": 34,
+      "controllers": 112,
+      "valve_boxes": 11,
+      "electrical_accessories": 6,
+      "pressure_pipes": 25
+    },
+    "by_attribute": {
+      "measurement_type": 15,
+      "wired": 15,
+      "wireless": 15,
+      "arc_min_deg": 32,
+      "arc_max_deg": 32,
+      "full_circle_supported": 12,
+      "pattern_type": 150,
+      "strip_width_m": 10,
+      "strip_length_m": 10,
+      "nozzle_thread_type": 3,
+      "shape": 23,
+      "angle_deg": 12,
+      "body_material": 23,
+      "radius_min_m": 35,
+      "radius_max_m": 35,
+      "arc_adjustable": 46,
+      "pressure_min_bar": 4,
+      "pressure_max_bar": 4,
+      "pop_up_height_mm": 4,
+      "check_valve_present": 5,
+      "trajectory_deg": 4,
+      "stainless_riser": 6,
+      "nozzles_included": 5,
+      "check_valve_max_elevation_m": 4,
+      "length_m": 1,
+      "flexible": 1,
+      "conductor_count": 5,
+      "direct_burial_allowed": 5,
+      "regulated_pressure_bar": 5,
+      "filtration_mesh": 14,
+      "filter_element_type": 18,
+      "flow_max_l_min": 14
+    }
+  },
+  "group_moves": [
+    {
+      "move": "nozzles_rotators → preassembled_modules",
+      "count": 576
+    },
+    {
+      "move": "valves → preassembled_modules",
+      "count": 415
+    },
+    {
+      "move": "sprinkler_connections → preassembled_modules",
+      "count": 52
+    },
+    {
+      "move": "mounting_accessories → nozzles_rotators",
+      "count": 36
+    },
+    {
+      "move": "filters_pressure_regulators → nozzles_rotators",
+      "count": 32
+    },
+    {
+      "move": "drip_irrigation → pe_compression_fittings",
+      "count": 20
+    },
+    {
+      "move": "controllers → sensors",
+      "count": 15
+    },
+    {
+      "move": "pe_compression_fittings → filters_pressure_regulators",
+      "count": 14
+    },
+    {
+      "move": "mounting_accessories → rotor_sprinklers",
+      "count": 6
+    },
+    {
+      "move": "valves → electrical_accessories",
+      "count": 5
+    },
+    {
+      "move": "rotor_sprinklers → preassembled_modules",
+      "count": 4
+    },
+    {
+      "move": "rotor_sprinklers → filters_pressure_regulators",
+      "count": 4
+    },
+    {
+      "move": "mounting_accessories → pe_compression_fittings",
+      "count": 3
+    },
+    {
+      "move": "filters_pressure_regulators → mounting_accessories",
+      "count": 2
+    },
+    {
+      "move": "drip_irrigation → filters_pressure_regulators",
+      "count": 2
+    },
+    {
+      "move": "pressure_pipes → filters_pressure_regulators",
+      "count": 2
+    },
+    {
+      "move": "electrical → electrical_accessories",
+      "count": 1
+    },
+    {
+      "move": "mounting_accessories → sprinkler_connections",
+      "count": 1
+    },
+    {
+      "move": "valves → mounting_accessories",
+      "count": 1
+    },
+    {
+      "move": "valves → filters_pressure_regulators",
+      "count": 1
+    }
+  ],
+  "attribute_fills": [
+    {
+      "article": null,
+      "model": "Wasserzähler IMPULSWASSERZÄHLER 1\" kompatibel mit Pro, HC Hydrawise 6,",
+      "group": "sensors",
+      "from_group": "controllers",
+      "attr": "measurement_type",
+      "value": "flow",
+      "source": "shop_extract"
+    },
+    {
+      "article": null,
+      "model": "Wasserzähler IMPULSWASSERZÄHLER 1\" kompatibel mit Pro, HC Hydrawise 6,",
+      "group": "sensors",
+      "from_group": "controllers",
+      "attr": "wired",
+      "value": true,
+      "source": "shop_extract"
+    },
+    {
+      "article": null,
+      "model": "Wasserzähler IMPULSWASSERZÄHLER 1\" kompatibel mit Pro, HC Hydrawise 6,",
+      "group": "sensors",
+      "from_group": "controllers",
+      "attr": "wireless",
+      "value": false,
+      "source": "shop_extract"
+    },
+    {
+      "article": null,
+      "model": "Rain-Bird Getriebeeinsatz 952E für Eagle 950E, 900E Rain-Bird Austausc",
+      "group": "rotor_sprinklers",
+      "attr": "arc_min_deg",
+      "value": 40,
+      "source": "shop_extract"
+    },
+    {
+      "article": null,
+      "model": "Rain-Bird Getriebeeinsatz 952E für Eagle 950E, 900E Rain-Bird Austausc",
+      "group": "rotor_sprinklers",
+      "attr": "arc_max_deg",
+      "value": 360,
+      "source": "shop_extract"
+    },
+    {
+      "article": null,
+      "model": "Rain-Bird Getriebeeinsatz 952E für Eagle 950E, 900E Rain-Bird Austausc",
+      "group": "rotor_sprinklers",
+      "attr": "full_circle_supported",
+      "value": true,
+      "source": "shop_extract"
+    },
+    {
+      "article": null,
+      "model": "Falcon 6504 PC Rain-Bird, 6004-PC: Teilkreis (40° bis 360°) Teilkreis ",
+      "group": "rotor_sprinklers",
+      "attr": "arc_min_deg",
+      "value": 40,
+      "source": "shop_extract"
+    },
+    {
+      "article": null,
+      "model": "Falcon 6504 PC Rain-Bird, 6004-PC: Teilkreis (40° bis 360°) Teilkreis ",
+      "group": "rotor_sprinklers",
+      "attr": "arc_max_deg",
+      "value": 360,
+      "source": "shop_extract"
+    },
+    {
+      "article": null,
+      "model": "R-VAN-RCS Eckdüse, Einstellbare-Rotationsdüse, Rotary-Düse R-VAN-RCS ",
+      "group": "nozzles_rotators",
+      "attr": "pattern_type",
+      "value": "strip",
+      "source": "shop_extract"
+    },
+    {
+      "article": null,
+      "model": "R-VAN-SST Eckdüse, Einstellbare-Rotationsdüse, Rotary-Düse R-VAN-SST ",
+      "group": "nozzles_rotators",
+      "attr": "pattern_type",
+      "value": "strip",
+      "source": "shop_extract"
+    },
+    {
+      "article": null,
+      "model": "Rain Bird Maxi-PAW Schwinghebel-Versenkregner, Typ: Maxi Paw Rain-Bird",
+      "group": "rotor_sprinklers",
+      "attr": "full_circle_supported",
+      "value": true,
+      "source": "shop_extract"
+    },
+    {
+      "article": null,
+      "model": "Rain-Bird Eagle 952E Regner, Voll- und Teilkreis, Pop-up-Regner Sportp",
+      "group": "rotor_sprinklers",
+      "attr": "arc_min_deg",
+      "value": 40,
+      "source": "shop_extract"
+    },
+    {
+      "article": null,
+      "model": "Rain-Bird Eagle 952E Regner, Voll- und Teilkreis, Pop-up-Regner Sportp",
+      "group": "rotor_sprinklers",
+      "attr": "arc_max_deg",
+      "value": 360,
+      "source": "shop_extract"
+    },
+    {
+      "article": null,
+      "model": "Verschluss Düse für Rain-Bird 1800 Serie kompatibel, Blinddüse 1804, 1",
+      "group": "nozzles_rotators",
+      "attr": "pattern_type",
+      "value": "arc",
+      "source": "shop_extract"
+    },
+    {
+      "article": null,
+      "model": "702 E Rain-Bird 702E PC Regner,  Pop-up-Regner, Typ 702E PC Sportplatz",
+      "group": "rotor_sprinklers",
+      "attr": "arc_min_deg",
+      "value": 40,
+      "source": "shop_extract"
+    },
+    {
+      "article": null,
+      "model": "702 E Rain-Bird 702E PC Regner,  Pop-up-Regner, Typ 702E PC Sportplatz",
+      "group": "rotor_sprinklers",
+      "attr": "arc_max_deg",
+      "value": 360,
+      "source": "shop_extract"
+    },
+    {
+      "article": null,
+      "model": "900 E Rain-Bird 900E PC Regner, Pop-up-Regner, Typ Eagle 900E PC Sport",
+      "group": "rotor_sprinklers",
+      "attr": "arc_min_deg",
+      "value": 40,
+      "source": "shop_extract"
+    },
+    {
+      "article": null,
+      "model": "900 E Rain-Bird 900E PC Regner, Pop-up-Regner, Typ Eagle 900E PC Sport",
+      "group": "rotor_sprinklers",
+      "attr": "arc_max_deg",
+      "value": 360,
+      "source": "shop_extract"
+    },
+    {
+      "article": null,
+      "model": "900 E Rain-Bird 900E PC Regner, Pop-up-Regner, Typ Eagle 900E PC Sport",
+      "group": "rotor_sprinklers",
+      "attr": "full_circle_supported",
+      "value": true,
+      "source": "shop_extract"
+    },
+    {
+      "article": null,
+      "model": "Eagle 950E Rain 950E PC Regner, Pop-up-Regner, Typ Eagle 950 E PC Spor",
+      "group": "rotor_sprinklers",
+      "attr": "arc_min_deg",
+      "value": 40,
+      "source": "shop_extract"
+    },
+    {
+      "article": null,
+      "model": "Eagle 950E Rain 950E PC Regner, Pop-up-Regner, Typ Eagle 950 E PC Spor",
+      "group": "rotor_sprinklers",
+      "attr": "arc_max_deg",
+      "value": 360,
+      "source": "shop_extract"
+    },
+    {
+      "article": null,
+      "model": "Eagle 950E Rain 950E PC Regner, Pop-up-Regner, Typ Eagle 950 E PC Spor",
+      "group": "rotor_sprinklers",
+      "attr": "full_circle_supported",
+      "value": true,
+      "source": "shop_extract"
+    },
+    {
+      "article": null,
+      "model": "*10er Pack* Hunter MP800 Düse Rotary MP800 90°-210° – Wurfweite 1,8 m ",
+      "group": "nozzles_rotators",
+      "attr": "pattern_type",
+      "value": "arc",
+      "source": "shop_extract"
+    },
+    {
+      "article": null,
+      "model": "*10er Pack* Hunter MPSS530 Seitenstreifendüse – Radius 1,5 x 9,1 m, MP",
+      "group": "nozzles_rotators",
+      "attr": "pattern_type",
+      "value": "strip",
+      "source": "shop_extract"
+    },
+    {
+      "article": null,
+      "model": "*10er Pack* Hunter MPSS530 Seitenstreifendüse – Radius 1,5 x 9,1 m, MP",
+      "group": "nozzles_rotators",
+      "attr": "strip_width_m",
+      "value": 1.5,
+      "source": "shop_extract"
+    },
+    {
+      "article": null,
+      "model": "*10er Pack* Hunter MPSS530 Seitenstreifendüse – Radius 1,5 x 9,1 m, MP",
+      "group": "nozzles_rotators",
+      "attr": "strip_length_m",
+      "value": 9.1,
+      "source": "shop_extract"
+    },
+    {
+      "article": null,
+      "model": "MP3500 90°-210° Rotator Hunter MP-Düse Rotary MP350090, Wurfweite 9,40",
+      "group": "nozzles_rotators",
+      "attr": "pattern_type",
+      "value": "arc",
+      "source": "shop_extract"
+    },
+    {
+      "article": null,
+      "model": "MPLCS515 Streifendüse Ecke links 1,5 x 4,6 m Rotator Hunter MP Rotary,",
+      "group": "nozzles_rotators",
+      "attr": "pattern_type",
+      "value": "strip",
+      "source": "shop_extract"
+    },
+    {
+      "article": null,
+      "model": "MPLCS515 Streifendüse Ecke links 1,5 x 4,6 m Rotator Hunter MP Rotary,",
+      "group": "nozzles_rotators",
+      "attr": "strip_width_m",
+      "value": 1.5,
+      "source": "shop_extract"
+    },
+    {
+      "article": null,
+      "model": "MPLCS515 Streifendüse Ecke links 1,5 x 4,6 m Rotator Hunter MP Rotary,",
+      "group": "nozzles_rotators",
+      "attr": "strip_length_m",
+      "value": 4.6,
+      "source": "shop_extract"
+    },
+    {
+      "article": null,
+      "model": "MPRCS515 Streifendüse Ecke rechts 1,5 x 4,6 m, Rotator Hunter MP Rotar",
+      "group": "nozzles_rotators",
+      "attr": "pattern_type",
+      "value": "strip",
+      "source": "shop_extract"
+    },
+    {
+      "article": null,
+      "model": "MPRCS515 Streifendüse Ecke rechts 1,5 x 4,6 m, Rotator Hunter MP Rotar",
+      "group": "nozzles_rotators",
+      "attr": "strip_width_m",
+      "value": 1.5,
+      "source": "shop_extract"
+    },
+    {
+      "article": null,
+      "model": "MPRCS515 Streifendüse Ecke rechts 1,5 x 4,6 m, Rotator Hunter MP Rotar",
+      "group": "nozzles_rotators",
+      "attr": "strip_length_m",
+      "value": 4.6,
+      "source": "shop_extract"
+    },
+    {
+      "article": null,
+      "model": "MPSS530 Seitenstreifendüse 1,5 x 9,1m Rotator Hunter MP Rotary, Eckdüs",
+      "group": "nozzles_rotators",
+      "attr": "pattern_type",
+      "value": "strip",
+      "source": "shop_extract"
+    },
+    {
+      "article": null,
+      "model": "MPSS530 Seitenstreifendüse 1,5 x 9,1m Rotator Hunter MP Rotary, Eckdüs",
+      "group": "nozzles_rotators",
+      "attr": "strip_width_m",
+      "value": 1.5,
+      "source": "shop_extract"
+    },
+    {
+      "article": null,
+      "model": "MPSS530 Seitenstreifendüse 1,5 x 9,1m Rotator Hunter MP Rotary, Eckdüs",
+      "group": "nozzles_rotators",
+      "attr": "strip_length_m",
+      "value": 9.1,
+      "source": "shop_extract"
+    },
+    {
+      "article": null,
+      "model": "Pro-Spray PRS30 CV Hunter Versenkdüsengehäuse, speziel für MP Düsen, M",
+      "group": "nozzles_rotators",
+      "attr": "pattern_type",
+      "value": "arc",
+      "source": "shop_extract"
+    },
+    {
+      "article": null,
+      "model": "Pro-Spray PRS30 Hunter Versenkdüsengehäuse, PROS-04-PRS30 reguliert de",
+      "group": "nozzles_rotators",
+      "attr": "pattern_type",
+      "value": "arc",
+      "source": "shop_extract"
+    },
+    {
+      "article": null,
+      "model": "Pro-Spray PRS30-06 Hunter 15cm Aufsteiger, Versenkdüsengehäuse, PROS-0",
+      "group": "nozzles_rotators",
+      "attr": "pattern_type",
+      "value": "arc",
+      "source": "shop_extract"
+    },
+    {
+      "article": null,
+      "model": "Pro-Spray PRS30-06 Hunter 15cm Aufsteiger, Versenkdüsengehäuse, PROS-0",
+      "group": "nozzles_rotators",
+      "attr": "nozzle_thread_type",
+      "value": "female",
+      "source": "shop_extract"
+    },
+    {
+      "article": "PROS-PRS40",
+      "model": "PROS-PRS40",
+      "group": "nozzles_rotators",
+      "attr": "pattern_type",
+      "value": "arc",
+      "source": "shop_extract"
+    },
+    {
+      "article": null,
+      "model": "Pro-Spray PRS40 Hunter Versenkdüsengehäuse, speziel für MP Düsen, MP80",
+      "group": "nozzles_rotators",
+      "attr": "pattern_type",
+      "value": "arc",
+      "source": "shop_extract"
+    },
+    {
+      "article": null,
+      "model": "Verschluss Düse für Hunter Pro Spray PROS Blinddüse, Hunter 916400SP D",
+      "group": "nozzles_rotators",
+      "attr": "pattern_type",
+      "value": "arc",
+      "source": "shop_extract"
+    },
+    {
+      "article": null,
+      "model": "Verschluss Kappe für Hunter Pro Spray PROS Blinddüse, Hunter 213600",
+      "group": "nozzles_rotators",
+      "attr": "pattern_type",
+      "value": "full_circle",
+      "source": "shop_extract"
+    },
+    {
+      "article": null,
+      "model": "Verschluss Kappe für Hunter Pro Spray PROS Blinddüse, Hunter 213600",
+      "group": "nozzles_rotators",
+      "attr": "arc_min_deg",
+      "value": 360,
+      "source": "shop_extract"
+    },
+    {
+      "article": null,
+      "model": "Verschluss Kappe für Hunter Pro Spray PROS Blinddüse, Hunter 213600",
+      "group": "nozzles_rotators",
+      "attr": "arc_max_deg",
+      "value": 360,
+      "source": "shop_extract"
+    },
+    {
+      "article": "6.67",
+      "model": "Winkel 25 x 25 mm, Steck x Steck",
+      "group": "pe_compression_fittings",
+      "from_group": "drip_irrigation",
+      "attr": "shape",
+      "value": "elbow",
+      "source": "shop_extract"
+    },
+    {
+      "article": "6.67",
+      "model": "Winkel 25 x 25 mm, Steck x Steck",
+      "group": "pe_compression_fittings",
+      "from_group": "drip_irrigation",
+      "attr": "angle_deg",
+      "value": 90,
+      "source": "shop_extract"
+    },
+    {
+      "article": "6.67",
+      "model": "Winkel 25 x 25 mm, Steck x Steck",
+      "group": "pe_compression_fittings",
+      "from_group": "drip_irrigation",
+      "attr": "body_material",
+      "value": "pp",
+      "source": "shop_extract"
+    },
+    {
+      "article": "6.67",
+      "model": "Winkel 25 mm x 3/4\" AG, Steck x Aussengewinde",
+      "group": "pe_compression_fittings",
+      "from_group": "drip_irrigation",
+      "attr": "shape",
+      "value": "elbow",
+      "source": "shop_extract"
+    },
+    {
+      "article": "6.67",
+      "model": "Winkel 25 mm x 3/4\" AG, Steck x Aussengewinde",
+      "group": "pe_compression_fittings",
+      "from_group": "drip_irrigation",
+      "attr": "angle_deg",
+      "value": 90,
+      "source": "shop_extract"
+    },
+    {
+      "article": "6.67",
+      "model": "Winkel 25 mm x 3/4\" AG, Steck x Aussengewinde",
+      "group": "pe_compression_fittings",
+      "from_group": "drip_irrigation",
+      "attr": "body_material",
+      "value": "pp",
+      "source": "shop_extract"
+    },
+    {
+      "article": "6.67",
+      "model": "T-Stück 25 x 25 x 25 mm, Steck x Steck x Steck",
+      "group": "pe_compression_fittings",
+      "from_group": "drip_irrigation",
+      "attr": "shape",
+      "value": "tee",
+      "source": "shop_extract"
+    },
+    {
+      "article": "6.67",
+      "model": "T-Stück 25 x 25 x 25 mm, Steck x Steck x Steck",
+      "group": "pe_compression_fittings",
+      "from_group": "drip_irrigation",
+      "attr": "body_material",
+      "value": "pp",
+      "source": "shop_extract"
+    },
+    {
+      "article": "6.67",
+      "model": "T-Stück 25 mm x 3/4\" AG x 25 mm, Steck x Aussengewinde x Steck",
+      "group": "pe_compression_fittings",
+      "from_group": "drip_irrigation",
+      "attr": "shape",
+      "value": "tee",
+      "source": "shop_extract"
+    },
+    {
+      "article": "6.67",
+      "model": "T-Stück 25 mm x 3/4\" AG x 25 mm, Steck x Aussengewinde x Steck",
+      "group": "pe_compression_fittings",
+      "from_group": "drip_irrigation",
+      "attr": "body_material",
+      "value": "pp",
+      "source": "shop_extract"
+    },
+    {
+      "article": "8.05-KU34",
+      "model": "Profi Wasserzähler 3/4\" mit Impuls aus *KUNSTSTOFF",
+      "group": "sensors",
+      "from_group": "controllers",
+      "attr": "measurement_type",
+      "value": "flow",
+      "source": "shop_extract"
+    },
+    {
+      "article": "8.05-KU34",
+      "model": "Profi Wasserzähler 3/4\" mit Impuls aus *KUNSTSTOFF",
+      "group": "sensors",
+      "from_group": "controllers",
+      "attr": "wired",
+      "value": true,
+      "source": "shop_extract"
+    },
+    {
+      "article": "8.05-KU34",
+      "model": "Profi Wasserzähler 3/4\" mit Impuls aus *KUNSTSTOFF",
+      "group": "sensors",
+      "from_group": "controllers",
+      "attr": "wireless",
+      "value": false,
+      "source": "shop_extract"
+    },
+    {
+      "article": "8.05-KU01",
+      "model": "Profi Wasserzähler 1\" mit Impuls aus *KUNSTSTOFF",
+      "group": "sensors",
+      "from_group": "controllers",
+      "attr": "measurement_type",
+      "value": "flow",
+      "source": "shop_extract"
+    },
+    {
+      "article": "8.05-KU01",
+      "model": "Profi Wasserzähler 1\" mit Impuls aus *KUNSTSTOFF",
+      "group": "sensors",
+      "from_group": "controllers",
+      "attr": "wired",
+      "value": true,
+      "source": "shop_extract"
+    },
+    {
+      "article": "8.05-KU01",
+      "model": "Profi Wasserzähler 1\" mit Impuls aus *KUNSTSTOFF",
+      "group": "sensors",
+      "from_group": "controllers",
+      "attr": "wireless",
+      "value": false,
+      "source": "shop_extract"
+    },
+    {
+      "article": "8.05-KU14",
+      "model": "Profi Wasserzähler 1 1/4\" mit Impuls aus *KUNSTSTOFF",
+      "group": "sensors",
+      "from_group": "controllers",
+      "attr": "measurement_type",
+      "value": "flow",
+      "source": "shop_extract"
+    },
+    {
+      "article": "8.05-KU14",
+      "model": "Profi Wasserzähler 1 1/4\" mit Impuls aus *KUNSTSTOFF",
+      "group": "sensors",
+      "from_group": "controllers",
+      "attr": "wired",
+      "value": true,
+      "source": "shop_extract"
+    },
+    {
+      "article": "8.05-KU14",
+      "model": "Profi Wasserzähler 1 1/4\" mit Impuls aus *KUNSTSTOFF",
+      "group": "sensors",
+      "from_group": "controllers",
+      "attr": "wireless",
+      "value": false,
+      "source": "shop_extract"
+    },
+    {
+      "article": "8.05-KU12",
+      "model": "Profi Wasserzähler 1 1/2\" mit Impuls aus *KUNSTSTOFF",
+      "group": "sensors",
+      "from_group": "controllers",
+      "attr": "measurement_type",
+      "value": "flow",
+      "source": "shop_extract"
+    },
+    {
+      "article": "8.05-KU12",
+      "model": "Profi Wasserzähler 1 1/2\" mit Impuls aus *KUNSTSTOFF",
+      "group": "sensors",
+      "from_group": "controllers",
+      "attr": "wired",
+      "value": true,
+      "source": "shop_extract"
+    },
+    {
+      "article": "8.05-KU12",
+      "model": "Profi Wasserzähler 1 1/2\" mit Impuls aus *KUNSTSTOFF",
+      "group": "sensors",
+      "from_group": "controllers",
+      "attr": "wireless",
+      "value": false,
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.28-D85",
+      "model": "Standarddüsenset",
+      "group": "nozzles_rotators",
+      "attr": "pattern_type",
+      "value": "arc",
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.28-D86",
+      "model": "MPR-Düsenset",
+      "group": "nozzles_rotators",
+      "attr": "pattern_type",
+      "value": "arc",
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.28-D87",
+      "model": "MPR-Düse 25 Wurfweite 7,0 - 7,6 m rot",
+      "group": "nozzles_rotators",
+      "attr": "pattern_type",
+      "value": "arc",
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.28-D87",
+      "model": "MPR-Düse 25 Wurfweite 7,0 - 7,6 m rot",
+      "group": "nozzles_rotators",
+      "attr": "radius_min_m",
+      "value": 7,
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.28-D87",
+      "model": "MPR-Düse 25 Wurfweite 7,0 - 7,6 m rot",
+      "group": "nozzles_rotators",
+      "attr": "radius_max_m",
+      "value": 7.6,
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.28-D88",
+      "model": "MPR-Düse 30 Wurfweite 8,8 - 9,1 m grün",
+      "group": "nozzles_rotators",
+      "attr": "pattern_type",
+      "value": "arc",
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.28-D88",
+      "model": "MPR-Düse 30 Wurfweite 8,8 - 9,1 m grün",
+      "group": "nozzles_rotators",
+      "attr": "radius_min_m",
+      "value": 8.8,
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.28-D88",
+      "model": "MPR-Düse 30 Wurfweite 8,8 - 9,1 m grün",
+      "group": "nozzles_rotators",
+      "attr": "radius_max_m",
+      "value": 9.1,
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.28-D89",
+      "model": "MPR-Düse 35 Wurfweite 9,8 - 10,7 m beige",
+      "group": "nozzles_rotators",
+      "attr": "pattern_type",
+      "value": "arc",
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.28-D89",
+      "model": "MPR-Düse 35 Wurfweite 9,8 - 10,7 m beige",
+      "group": "nozzles_rotators",
+      "attr": "radius_min_m",
+      "value": 9.8,
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.28-D89",
+      "model": "MPR-Düse 35 Wurfweite 9,8 - 10,7 m beige",
+      "group": "nozzles_rotators",
+      "attr": "radius_max_m",
+      "value": 10.7,
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.28-D89",
+      "model": "MPR-Düse 35 Wurfweite 9,8 - 10,7 m beige",
+      "group": "nozzles_rotators",
+      "attr": "nozzle_thread_type",
+      "value": "female",
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.28-D90",
+      "model": "Auslaufspeerventil",
+      "group": "nozzles_rotators",
+      "attr": "pattern_type",
+      "value": "arc",
+      "source": "shop_extract"
+    },
+    {
+      "article": "3.112-RG11",
+      "model": "5004 PC30 Getriebergener 40°-360°, Aufsteiger 10 cm, Y5410730",
+      "group": "rotor_sprinklers",
+      "attr": "arc_min_deg",
+      "value": 40,
+      "source": "shop_extract"
+    },
+    {
+      "article": "3.112-RG11",
+      "model": "5004 PC30 Getriebergener 40°-360°, Aufsteiger 10 cm, Y5410730",
+      "group": "rotor_sprinklers",
+      "attr": "arc_max_deg",
+      "value": 360,
+      "source": "shop_extract"
+    },
+    {
+      "article": "3.112-RG12",
+      "model": "5004-PC-SAM Getriebergener mit Auslaufsperrventil , 40°-360°, Aufsteig",
+      "group": "rotor_sprinklers",
+      "attr": "arc_min_deg",
+      "value": 40,
+      "source": "shop_extract"
+    },
+    {
+      "article": "3.112-RG12",
+      "model": "5004-PC-SAM Getriebergener mit Auslaufsperrventil , 40°-360°, Aufsteig",
+      "group": "rotor_sprinklers",
+      "attr": "arc_max_deg",
+      "value": 360,
+      "source": "shop_extract"
+    },
+    {
+      "article": "3.112-RG15",
+      "model": "5006+PC, 5006 Plus, Getrieberegner, 40°-360°, Aufsteiger 15 cm, Y45800",
+      "group": "rotor_sprinklers",
+      "attr": "arc_min_deg",
+      "value": 40,
+      "source": "shop_extract"
+    },
+    {
+      "article": "3.112-RG15",
+      "model": "5006+PC, 5006 Plus, Getrieberegner, 40°-360°, Aufsteiger 15 cm, Y45800",
+      "group": "rotor_sprinklers",
+      "attr": "arc_max_deg",
+      "value": 360,
+      "source": "shop_extract"
+    },
+    {
+      "article": "3.112-RG16",
+      "model": "5006+PCSAMRSS, Getrieberegner, 40°-360°, EDELSTAHL-Aufsteiger 15 cm, Y",
+      "group": "rotor_sprinklers",
+      "attr": "arc_min_deg",
+      "value": 40,
+      "source": "shop_extract"
+    },
+    {
+      "article": "3.112-RG16",
+      "model": "5006+PCSAMRSS, Getrieberegner, 40°-360°, EDELSTAHL-Aufsteiger 15 cm, Y",
+      "group": "rotor_sprinklers",
+      "attr": "arc_max_deg",
+      "value": 360,
+      "source": "shop_extract"
+    },
+    {
+      "article": "3.112-RG17",
+      "model": "5004PCR, mit Druckregulierungssystem, PCR, 40°-360°, Aufsteiger 10 cm,",
+      "group": "rotor_sprinklers",
+      "attr": "arc_min_deg",
+      "value": 40,
+      "source": "shop_extract"
+    },
+    {
+      "article": "3.112-RG17",
+      "model": "5004PCR, mit Druckregulierungssystem, PCR, 40°-360°, Aufsteiger 10 cm,",
+      "group": "rotor_sprinklers",
+      "attr": "arc_max_deg",
+      "value": 360,
+      "source": "shop_extract"
+    },
+    {
+      "article": "3.112-RG19",
+      "model": "5012+PCSAMR Getriebergener , 40°-360°, Aufsteiger 30 cm, Y66050",
+      "group": "rotor_sprinklers",
+      "attr": "arc_min_deg",
+      "value": 40,
+      "source": "shop_extract"
+    },
+    {
+      "article": "3.112-RG19",
+      "model": "5012+PCSAMR Getriebergener , 40°-360°, Aufsteiger 30 cm, Y66050",
+      "group": "rotor_sprinklers",
+      "attr": "arc_max_deg",
+      "value": 360,
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.33-D133",
+      "model": "15CST Streifen-Mitte MPR-Düse",
+      "group": "nozzles_rotators",
+      "attr": "pattern_type",
+      "value": "strip",
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.33-D134",
+      "model": "15EST Streifen-Ende MPR-Düse",
+      "group": "nozzles_rotators",
+      "attr": "pattern_type",
+      "value": "strip",
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.33-D135",
+      "model": "15SST Streifen-Seite MPR-Düse",
+      "group": "nozzles_rotators",
+      "attr": "pattern_type",
+      "value": "strip",
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.33-D136",
+      "model": "15LCS Streifen-Eckpunkt links MPR-Düse",
+      "group": "nozzles_rotators",
+      "attr": "pattern_type",
+      "value": "strip",
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.33-D137",
+      "model": "15RCS Streifen-Eckpunkt rechts MPR-Düse",
+      "group": "nozzles_rotators",
+      "attr": "pattern_type",
+      "value": "strip",
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.33-D138",
+      "model": "9SST Streifen-Seite",
+      "group": "nozzles_rotators",
+      "attr": "pattern_type",
+      "value": "strip",
+      "source": "shop_extract"
+    },
+    {
+      "article": "3.104-RG34",
+      "model": "Falcon-PC",
+      "group": "rotor_sprinklers",
+      "from_group": "mounting_accessories",
+      "attr": "arc_adjustable",
+      "value": true,
+      "source": "shop_extract"
+    },
+    {
+      "article": "3.104-RG34",
+      "model": "Falcon-PC",
+      "group": "rotor_sprinklers",
+      "from_group": "mounting_accessories",
+      "attr": "arc_min_deg",
+      "value": 40,
+      "source": "shop_extract"
+    },
+    {
+      "article": "3.104-RG34",
+      "model": "Falcon-PC",
+      "group": "rotor_sprinklers",
+      "from_group": "mounting_accessories",
+      "attr": "arc_max_deg",
+      "value": 360,
+      "source": "shop_extract"
+    },
+    {
+      "article": "3.104-RG34",
+      "model": "Falcon-PC",
+      "group": "rotor_sprinklers",
+      "from_group": "mounting_accessories",
+      "attr": "full_circle_supported",
+      "value": true,
+      "source": "shop_extract"
+    },
+    {
+      "article": "3.104-RG34",
+      "model": "Falcon-PC",
+      "group": "rotor_sprinklers",
+      "from_group": "mounting_accessories",
+      "attr": "radius_min_m",
+      "value": 11.3,
+      "source": "manufacturer_datasheet"
+    },
+    {
+      "article": "3.104-RG34",
+      "model": "Falcon-PC",
+      "group": "rotor_sprinklers",
+      "from_group": "mounting_accessories",
+      "attr": "radius_max_m",
+      "value": 19.8,
+      "source": "manufacturer_datasheet"
+    },
+    {
+      "article": "3.104-RG34",
+      "model": "Falcon-PC",
+      "group": "rotor_sprinklers",
+      "from_group": "mounting_accessories",
+      "attr": "pressure_min_bar",
+      "value": 2.1,
+      "source": "manufacturer_datasheet"
+    },
+    {
+      "article": "3.104-RG34",
+      "model": "Falcon-PC",
+      "group": "rotor_sprinklers",
+      "from_group": "mounting_accessories",
+      "attr": "pressure_max_bar",
+      "value": 6.2,
+      "source": "manufacturer_datasheet"
+    },
+    {
+      "article": "3.104-RG34",
+      "model": "Falcon-PC",
+      "group": "rotor_sprinklers",
+      "from_group": "mounting_accessories",
+      "attr": "pop_up_height_mm",
+      "value": 100,
+      "source": "manufacturer_datasheet"
+    },
+    {
+      "article": "3.104-RG34",
+      "model": "Falcon-PC",
+      "group": "rotor_sprinklers",
+      "from_group": "mounting_accessories",
+      "attr": "check_valve_present",
+      "value": true,
+      "source": "manufacturer_datasheet"
+    },
+    {
+      "article": "3.104-RG34",
+      "model": "Falcon-PC",
+      "group": "rotor_sprinklers",
+      "from_group": "mounting_accessories",
+      "attr": "trajectory_deg",
+      "value": 25,
+      "source": "manufacturer_datasheet"
+    },
+    {
+      "article": "3.104-RG34",
+      "model": "Falcon-PC",
+      "group": "rotor_sprinklers",
+      "from_group": "mounting_accessories",
+      "attr": "stainless_riser",
+      "value": false,
+      "source": "shop_extract"
+    },
+    {
+      "article": "3.104-RG34",
+      "model": "Falcon-PC",
+      "group": "rotor_sprinklers",
+      "from_group": "mounting_accessories",
+      "attr": "nozzles_included",
+      "value": false,
+      "source": "shop_extract"
+    },
+    {
+      "article": "3.104-RG34",
+      "model": "Falcon-PC",
+      "group": "rotor_sprinklers",
+      "from_group": "mounting_accessories",
+      "attr": "check_valve_max_elevation_m",
+      "value": 3.1,
+      "source": "manufacturer_datasheet"
+    },
+    {
+      "article": "3.104-RG35",
+      "model": "Falcon-FC *Vollkreis",
+      "group": "rotor_sprinklers",
+      "from_group": "mounting_accessories",
+      "attr": "arc_adjustable",
+      "value": false,
+      "source": "shop_extract"
+    },
+    {
+      "article": "3.104-RG35",
+      "model": "Falcon-FC *Vollkreis",
+      "group": "rotor_sprinklers",
+      "from_group": "mounting_accessories",
+      "attr": "arc_min_deg",
+      "value": 360,
+      "source": "shop_extract"
+    },
+    {
+      "article": "3.104-RG35",
+      "model": "Falcon-FC *Vollkreis",
+      "group": "rotor_sprinklers",
+      "from_group": "mounting_accessories",
+      "attr": "arc_max_deg",
+      "value": 360,
+      "source": "shop_extract"
+    },
+    {
+      "article": "3.104-RG35",
+      "model": "Falcon-FC *Vollkreis",
+      "group": "rotor_sprinklers",
+      "from_group": "mounting_accessories",
+      "attr": "full_circle_supported",
+      "value": true,
+      "source": "shop_extract"
+    },
+    {
+      "article": "3.104-RG35",
+      "model": "Falcon-FC *Vollkreis",
+      "group": "rotor_sprinklers",
+      "from_group": "mounting_accessories",
+      "attr": "radius_min_m",
+      "value": 11.3,
+      "source": "manufacturer_datasheet"
+    },
+    {
+      "article": "3.104-RG35",
+      "model": "Falcon-FC *Vollkreis",
+      "group": "rotor_sprinklers",
+      "from_group": "mounting_accessories",
+      "attr": "radius_max_m",
+      "value": 19.8,
+      "source": "manufacturer_datasheet"
+    },
+    {
+      "article": "3.104-RG35",
+      "model": "Falcon-FC *Vollkreis",
+      "group": "rotor_sprinklers",
+      "from_group": "mounting_accessories",
+      "attr": "pressure_min_bar",
+      "value": 2.1,
+      "source": "manufacturer_datasheet"
+    },
+    {
+      "article": "3.104-RG35",
+      "model": "Falcon-FC *Vollkreis",
+      "group": "rotor_sprinklers",
+      "from_group": "mounting_accessories",
+      "attr": "pressure_max_bar",
+      "value": 6.2,
+      "source": "manufacturer_datasheet"
+    },
+    {
+      "article": "3.104-RG35",
+      "model": "Falcon-FC *Vollkreis",
+      "group": "rotor_sprinklers",
+      "from_group": "mounting_accessories",
+      "attr": "pop_up_height_mm",
+      "value": 100,
+      "source": "manufacturer_datasheet"
+    },
+    {
+      "article": "3.104-RG35",
+      "model": "Falcon-FC *Vollkreis",
+      "group": "rotor_sprinklers",
+      "from_group": "mounting_accessories",
+      "attr": "check_valve_present",
+      "value": true,
+      "source": "manufacturer_datasheet"
+    },
+    {
+      "article": "3.104-RG35",
+      "model": "Falcon-FC *Vollkreis",
+      "group": "rotor_sprinklers",
+      "from_group": "mounting_accessories",
+      "attr": "trajectory_deg",
+      "value": 25,
+      "source": "manufacturer_datasheet"
+    },
+    {
+      "article": "3.104-RG35",
+      "model": "Falcon-FC *Vollkreis",
+      "group": "rotor_sprinklers",
+      "from_group": "mounting_accessories",
+      "attr": "stainless_riser",
+      "value": false,
+      "source": "shop_extract"
+    },
+    {
+      "article": "3.104-RG35",
+      "model": "Falcon-FC *Vollkreis",
+      "group": "rotor_sprinklers",
+      "from_group": "mounting_accessories",
+      "attr": "nozzles_included",
+      "value": false,
+      "source": "shop_extract"
+    },
+    {
+      "article": "3.104-RG35",
+      "model": "Falcon-FC *Vollkreis",
+      "group": "rotor_sprinklers",
+      "from_group": "mounting_accessories",
+      "attr": "check_valve_max_elevation_m",
+      "value": 3.1,
+      "source": "manufacturer_datasheet"
+    },
+    {
+      "article": "3.104-RG36",
+      "model": "Falcon-SS-PC *Edelstahlaufsteiger",
+      "group": "rotor_sprinklers",
+      "from_group": "mounting_accessories",
+      "attr": "arc_adjustable",
+      "value": true,
+      "source": "shop_extract"
+    },
+    {
+      "article": "3.104-RG36",
+      "model": "Falcon-SS-PC *Edelstahlaufsteiger",
+      "group": "rotor_sprinklers",
+      "from_group": "mounting_accessories",
+      "attr": "arc_min_deg",
+      "value": 40,
+      "source": "shop_extract"
+    },
+    {
+      "article": "3.104-RG36",
+      "model": "Falcon-SS-PC *Edelstahlaufsteiger",
+      "group": "rotor_sprinklers",
+      "from_group": "mounting_accessories",
+      "attr": "arc_max_deg",
+      "value": 360,
+      "source": "shop_extract"
+    },
+    {
+      "article": "3.104-RG36",
+      "model": "Falcon-SS-PC *Edelstahlaufsteiger",
+      "group": "rotor_sprinklers",
+      "from_group": "mounting_accessories",
+      "attr": "full_circle_supported",
+      "value": true,
+      "source": "shop_extract"
+    },
+    {
+      "article": "3.104-RG36",
+      "model": "Falcon-SS-PC *Edelstahlaufsteiger",
+      "group": "rotor_sprinklers",
+      "from_group": "mounting_accessories",
+      "attr": "radius_min_m",
+      "value": 11.3,
+      "source": "manufacturer_datasheet"
+    },
+    {
+      "article": "3.104-RG36",
+      "model": "Falcon-SS-PC *Edelstahlaufsteiger",
+      "group": "rotor_sprinklers",
+      "from_group": "mounting_accessories",
+      "attr": "radius_max_m",
+      "value": 19.8,
+      "source": "manufacturer_datasheet"
+    },
+    {
+      "article": "3.104-RG36",
+      "model": "Falcon-SS-PC *Edelstahlaufsteiger",
+      "group": "rotor_sprinklers",
+      "from_group": "mounting_accessories",
+      "attr": "pressure_min_bar",
+      "value": 2.1,
+      "source": "manufacturer_datasheet"
+    },
+    {
+      "article": "3.104-RG36",
+      "model": "Falcon-SS-PC *Edelstahlaufsteiger",
+      "group": "rotor_sprinklers",
+      "from_group": "mounting_accessories",
+      "attr": "pressure_max_bar",
+      "value": 6.2,
+      "source": "manufacturer_datasheet"
+    },
+    {
+      "article": "3.104-RG36",
+      "model": "Falcon-SS-PC *Edelstahlaufsteiger",
+      "group": "rotor_sprinklers",
+      "from_group": "mounting_accessories",
+      "attr": "pop_up_height_mm",
+      "value": 100,
+      "source": "manufacturer_datasheet"
+    },
+    {
+      "article": "3.104-RG36",
+      "model": "Falcon-SS-PC *Edelstahlaufsteiger",
+      "group": "rotor_sprinklers",
+      "from_group": "mounting_accessories",
+      "attr": "check_valve_present",
+      "value": true,
+      "source": "manufacturer_datasheet"
+    },
+    {
+      "article": "3.104-RG36",
+      "model": "Falcon-SS-PC *Edelstahlaufsteiger",
+      "group": "rotor_sprinklers",
+      "from_group": "mounting_accessories",
+      "attr": "trajectory_deg",
+      "value": 25,
+      "source": "manufacturer_datasheet"
+    },
+    {
+      "article": "3.104-RG36",
+      "model": "Falcon-SS-PC *Edelstahlaufsteiger",
+      "group": "rotor_sprinklers",
+      "from_group": "mounting_accessories",
+      "attr": "stainless_riser",
+      "value": true,
+      "source": "shop_extract"
+    },
+    {
+      "article": "3.104-RG36",
+      "model": "Falcon-SS-PC *Edelstahlaufsteiger",
+      "group": "rotor_sprinklers",
+      "from_group": "mounting_accessories",
+      "attr": "nozzles_included",
+      "value": false,
+      "source": "shop_extract"
+    },
+    {
+      "article": "3.104-RG36",
+      "model": "Falcon-SS-PC *Edelstahlaufsteiger",
+      "group": "rotor_sprinklers",
+      "from_group": "mounting_accessories",
+      "attr": "check_valve_max_elevation_m",
+      "value": 3.1,
+      "source": "manufacturer_datasheet"
+    },
+    {
+      "article": "3.104-RG37",
+      "model": "Falcon-SS-FC *Edelstahlaufsteiger + Vollkreis",
+      "group": "rotor_sprinklers",
+      "from_group": "mounting_accessories",
+      "attr": "arc_adjustable",
+      "value": false,
+      "source": "shop_extract"
+    },
+    {
+      "article": "3.104-RG37",
+      "model": "Falcon-SS-FC *Edelstahlaufsteiger + Vollkreis",
+      "group": "rotor_sprinklers",
+      "from_group": "mounting_accessories",
+      "attr": "arc_min_deg",
+      "value": 360,
+      "source": "shop_extract"
+    },
+    {
+      "article": "3.104-RG37",
+      "model": "Falcon-SS-FC *Edelstahlaufsteiger + Vollkreis",
+      "group": "rotor_sprinklers",
+      "from_group": "mounting_accessories",
+      "attr": "arc_max_deg",
+      "value": 360,
+      "source": "shop_extract"
+    },
+    {
+      "article": "3.104-RG37",
+      "model": "Falcon-SS-FC *Edelstahlaufsteiger + Vollkreis",
+      "group": "rotor_sprinklers",
+      "from_group": "mounting_accessories",
+      "attr": "full_circle_supported",
+      "value": true,
+      "source": "shop_extract"
+    },
+    {
+      "article": "3.104-RG37",
+      "model": "Falcon-SS-FC *Edelstahlaufsteiger + Vollkreis",
+      "group": "rotor_sprinklers",
+      "from_group": "mounting_accessories",
+      "attr": "radius_min_m",
+      "value": 11.3,
+      "source": "manufacturer_datasheet"
+    },
+    {
+      "article": "3.104-RG37",
+      "model": "Falcon-SS-FC *Edelstahlaufsteiger + Vollkreis",
+      "group": "rotor_sprinklers",
+      "from_group": "mounting_accessories",
+      "attr": "radius_max_m",
+      "value": 19.8,
+      "source": "manufacturer_datasheet"
+    },
+    {
+      "article": "3.104-RG37",
+      "model": "Falcon-SS-FC *Edelstahlaufsteiger + Vollkreis",
+      "group": "rotor_sprinklers",
+      "from_group": "mounting_accessories",
+      "attr": "pressure_min_bar",
+      "value": 2.1,
+      "source": "manufacturer_datasheet"
+    },
+    {
+      "article": "3.104-RG37",
+      "model": "Falcon-SS-FC *Edelstahlaufsteiger + Vollkreis",
+      "group": "rotor_sprinklers",
+      "from_group": "mounting_accessories",
+      "attr": "pressure_max_bar",
+      "value": 6.2,
+      "source": "manufacturer_datasheet"
+    },
+    {
+      "article": "3.104-RG37",
+      "model": "Falcon-SS-FC *Edelstahlaufsteiger + Vollkreis",
+      "group": "rotor_sprinklers",
+      "from_group": "mounting_accessories",
+      "attr": "pop_up_height_mm",
+      "value": 100,
+      "source": "manufacturer_datasheet"
+    },
+    {
+      "article": "3.104-RG37",
+      "model": "Falcon-SS-FC *Edelstahlaufsteiger + Vollkreis",
+      "group": "rotor_sprinklers",
+      "from_group": "mounting_accessories",
+      "attr": "check_valve_present",
+      "value": true,
+      "source": "manufacturer_datasheet"
+    },
+    {
+      "article": "3.104-RG37",
+      "model": "Falcon-SS-FC *Edelstahlaufsteiger + Vollkreis",
+      "group": "rotor_sprinklers",
+      "from_group": "mounting_accessories",
+      "attr": "trajectory_deg",
+      "value": 25,
+      "source": "manufacturer_datasheet"
+    },
+    {
+      "article": "3.104-RG37",
+      "model": "Falcon-SS-FC *Edelstahlaufsteiger + Vollkreis",
+      "group": "rotor_sprinklers",
+      "from_group": "mounting_accessories",
+      "attr": "stainless_riser",
+      "value": true,
+      "source": "shop_extract"
+    },
+    {
+      "article": "3.104-RG37",
+      "model": "Falcon-SS-FC *Edelstahlaufsteiger + Vollkreis",
+      "group": "rotor_sprinklers",
+      "from_group": "mounting_accessories",
+      "attr": "nozzles_included",
+      "value": false,
+      "source": "shop_extract"
+    },
+    {
+      "article": "3.104-RG37",
+      "model": "Falcon-SS-FC *Edelstahlaufsteiger + Vollkreis",
+      "group": "rotor_sprinklers",
+      "from_group": "mounting_accessories",
+      "attr": "check_valve_max_elevation_m",
+      "value": 3.1,
+      "source": "manufacturer_datasheet"
+    },
+    {
+      "article": "3.104-RG39",
+      "model": "PVC-Regnergelenkanschlüssel 30cm, 1\" AG/AG",
+      "group": "sprinkler_connections",
+      "from_group": "mounting_accessories",
+      "attr": "length_m",
+      "value": 0.3,
+      "source": "shop_extract"
+    },
+    {
+      "article": "3.104-RG39",
+      "model": "PVC-Regnergelenkanschlüssel 30cm, 1\" AG/AG",
+      "group": "sprinkler_connections",
+      "from_group": "mounting_accessories",
+      "attr": "flexible",
+      "value": true,
+      "source": "shop_extract"
+    },
+    {
+      "article": "3.104-RG40",
+      "model": "Düsen Gr. 04 schwarz",
+      "group": "nozzles_rotators",
+      "from_group": "mounting_accessories",
+      "attr": "pattern_type",
+      "value": "arc",
+      "source": "shop_extract"
+    },
+    {
+      "article": "3.104-RG40",
+      "model": "Düsen Gr. 04 schwarz",
+      "group": "nozzles_rotators",
+      "from_group": "mounting_accessories",
+      "attr": "arc_adjustable",
+      "value": true,
+      "source": "shop_extract"
+    },
+    {
+      "article": "3.104-RG41",
+      "model": "Düsen Gr. 06 hellblau",
+      "group": "nozzles_rotators",
+      "from_group": "mounting_accessories",
+      "attr": "pattern_type",
+      "value": "arc",
+      "source": "shop_extract"
+    },
+    {
+      "article": "3.104-RG41",
+      "model": "Düsen Gr. 06 hellblau",
+      "group": "nozzles_rotators",
+      "from_group": "mounting_accessories",
+      "attr": "arc_adjustable",
+      "value": true,
+      "source": "shop_extract"
+    },
+    {
+      "article": "3.104-RG42",
+      "model": "Düsen Gr. 08 grün",
+      "group": "nozzles_rotators",
+      "from_group": "mounting_accessories",
+      "attr": "pattern_type",
+      "value": "arc",
+      "source": "shop_extract"
+    },
+    {
+      "article": "3.104-RG42",
+      "model": "Düsen Gr. 08 grün",
+      "group": "nozzles_rotators",
+      "from_group": "mounting_accessories",
+      "attr": "arc_adjustable",
+      "value": true,
+      "source": "shop_extract"
+    },
+    {
+      "article": "3.104-RG43",
+      "model": "Düsen Gr. 10 grau",
+      "group": "nozzles_rotators",
+      "from_group": "mounting_accessories",
+      "attr": "pattern_type",
+      "value": "arc",
+      "source": "shop_extract"
+    },
+    {
+      "article": "3.104-RG43",
+      "model": "Düsen Gr. 10 grau",
+      "group": "nozzles_rotators",
+      "from_group": "mounting_accessories",
+      "attr": "arc_adjustable",
+      "value": true,
+      "source": "shop_extract"
+    },
+    {
+      "article": "3.104-RG44",
+      "model": "Düsen Gr. 12 beige",
+      "group": "nozzles_rotators",
+      "from_group": "mounting_accessories",
+      "attr": "pattern_type",
+      "value": "arc",
+      "source": "shop_extract"
+    },
+    {
+      "article": "3.104-RG44",
+      "model": "Düsen Gr. 12 beige",
+      "group": "nozzles_rotators",
+      "from_group": "mounting_accessories",
+      "attr": "arc_adjustable",
+      "value": true,
+      "source": "shop_extract"
+    },
+    {
+      "article": "3.104-RG44",
+      "model": "Düsen Gr. 12 beige",
+      "group": "nozzles_rotators",
+      "from_group": "mounting_accessories",
+      "attr": "nozzle_thread_type",
+      "value": "female",
+      "source": "shop_extract"
+    },
+    {
+      "article": "3.104-RG45",
+      "model": "Düsen Gr. 14 hellgrün",
+      "group": "nozzles_rotators",
+      "from_group": "mounting_accessories",
+      "attr": "pattern_type",
+      "value": "arc",
+      "source": "shop_extract"
+    },
+    {
+      "article": "3.104-RG45",
+      "model": "Düsen Gr. 14 hellgrün",
+      "group": "nozzles_rotators",
+      "from_group": "mounting_accessories",
+      "attr": "arc_adjustable",
+      "value": true,
+      "source": "shop_extract"
+    },
+    {
+      "article": "3.104-RG46",
+      "model": "Düsen Gr. 16 braun",
+      "group": "nozzles_rotators",
+      "from_group": "mounting_accessories",
+      "attr": "pattern_type",
+      "value": "arc",
+      "source": "shop_extract"
+    },
+    {
+      "article": "3.104-RG46",
+      "model": "Düsen Gr. 16 braun",
+      "group": "nozzles_rotators",
+      "from_group": "mounting_accessories",
+      "attr": "arc_adjustable",
+      "value": true,
+      "source": "shop_extract"
+    },
+    {
+      "article": "3.104-RG47",
+      "model": "Düsen Gr. 18 dunkelblau",
+      "group": "nozzles_rotators",
+      "from_group": "mounting_accessories",
+      "attr": "pattern_type",
+      "value": "arc",
+      "source": "shop_extract"
+    },
+    {
+      "article": "3.104-RG47",
+      "model": "Düsen Gr. 18 dunkelblau",
+      "group": "nozzles_rotators",
+      "from_group": "mounting_accessories",
+      "attr": "arc_adjustable",
+      "value": true,
+      "source": "shop_extract"
+    },
+    {
+      "article": "4.29-S119",
+      "model": "3 Adern Kabel, Preis je m (lfdm)",
+      "group": "electrical_accessories",
+      "from_group": "valves",
+      "attr": "conductor_count",
+      "value": 3,
+      "source": "shop_extract"
+    },
+    {
+      "article": "4.29-S119",
+      "model": "3 Adern Kabel, Preis je m (lfdm)",
+      "group": "electrical_accessories",
+      "from_group": "valves",
+      "attr": "direct_burial_allowed",
+      "value": true,
+      "source": "shop_extract"
+    },
+    {
+      "article": "4.29-S120",
+      "model": "5 Adern Kabel, Preis je m (lfdm)",
+      "group": "electrical_accessories",
+      "from_group": "valves",
+      "attr": "conductor_count",
+      "value": 5,
+      "source": "shop_extract"
+    },
+    {
+      "article": "4.29-S120",
+      "model": "5 Adern Kabel, Preis je m (lfdm)",
+      "group": "electrical_accessories",
+      "from_group": "valves",
+      "attr": "direct_burial_allowed",
+      "value": true,
+      "source": "shop_extract"
+    },
+    {
+      "article": "4.29-S121",
+      "model": "7 Adern Kabel, Preis je m (lfdm)",
+      "group": "electrical_accessories",
+      "from_group": "valves",
+      "attr": "conductor_count",
+      "value": 7,
+      "source": "shop_extract"
+    },
+    {
+      "article": "4.29-S121",
+      "model": "7 Adern Kabel, Preis je m (lfdm)",
+      "group": "electrical_accessories",
+      "from_group": "valves",
+      "attr": "direct_burial_allowed",
+      "value": true,
+      "source": "shop_extract"
+    },
+    {
+      "article": "4.29-S122",
+      "model": "9 Adern Kabel, Preis je m (lfdm)",
+      "group": "electrical_accessories",
+      "from_group": "valves",
+      "attr": "conductor_count",
+      "value": 9,
+      "source": "shop_extract"
+    },
+    {
+      "article": "4.29-S122",
+      "model": "9 Adern Kabel, Preis je m (lfdm)",
+      "group": "electrical_accessories",
+      "from_group": "valves",
+      "attr": "direct_burial_allowed",
+      "value": true,
+      "source": "shop_extract"
+    },
+    {
+      "article": "4.29-S123",
+      "model": "13 Adern Kabel, Preis je m (lfdm)",
+      "group": "electrical_accessories",
+      "from_group": "valves",
+      "attr": "conductor_count",
+      "value": 13,
+      "source": "shop_extract"
+    },
+    {
+      "article": "4.29-S123",
+      "model": "13 Adern Kabel, Preis je m (lfdm)",
+      "group": "electrical_accessories",
+      "from_group": "valves",
+      "attr": "direct_burial_allowed",
+      "value": true,
+      "source": "shop_extract"
+    },
+    {
+      "article": "6.41-BFW20",
+      "model": "Winkel Lock 20 x 20 mm Lock x Lock",
+      "group": "pe_compression_fittings",
+      "from_group": "drip_irrigation",
+      "attr": "shape",
+      "value": "elbow",
+      "source": "shop_extract"
+    },
+    {
+      "article": "6.41-BFW20",
+      "model": "Winkel Lock 20 x 20 mm Lock x Lock",
+      "group": "pe_compression_fittings",
+      "from_group": "drip_irrigation",
+      "attr": "angle_deg",
+      "value": 90,
+      "source": "shop_extract"
+    },
+    {
+      "article": "6.41-BFW20",
+      "model": "Winkel Lock 20 x 20 mm Lock x Lock",
+      "group": "pe_compression_fittings",
+      "from_group": "drip_irrigation",
+      "attr": "body_material",
+      "value": "pp",
+      "source": "shop_extract"
+    },
+    {
+      "article": "6.41",
+      "model": "Gerade Lock Reduzierung 16 x 20 mm Lock x Lock",
+      "group": "pe_compression_fittings",
+      "from_group": "drip_irrigation",
+      "attr": "shape",
+      "value": "straight",
+      "source": "shop_extract"
+    },
+    {
+      "article": "6.41",
+      "model": "Gerade Lock Reduzierung 16 x 20 mm Lock x Lock",
+      "group": "pe_compression_fittings",
+      "from_group": "drip_irrigation",
+      "attr": "body_material",
+      "value": "pp",
+      "source": "shop_extract"
+    },
+    {
+      "article": "p1008-XFFELBOW",
+      "model": "XFF ELBOW Winkelverbinder-Steckkupplung 17 mm *ORIGINAL RAIN-BIRD",
+      "group": "pe_compression_fittings",
+      "from_group": "mounting_accessories",
+      "attr": "shape",
+      "value": "elbow",
+      "source": "shop_extract"
+    },
+    {
+      "article": "p1008-XFFELBOW",
+      "model": "XFF ELBOW Winkelverbinder-Steckkupplung 17 mm *ORIGINAL RAIN-BIRD",
+      "group": "pe_compression_fittings",
+      "from_group": "mounting_accessories",
+      "attr": "angle_deg",
+      "value": 90,
+      "source": "shop_extract"
+    },
+    {
+      "article": "p1008-XFFELBOW",
+      "model": "XFF ELBOW Winkelverbinder-Steckkupplung 17 mm *ORIGINAL RAIN-BIRD",
+      "group": "pe_compression_fittings",
+      "from_group": "mounting_accessories",
+      "attr": "body_material",
+      "value": "pp",
+      "source": "shop_extract"
+    },
+    {
+      "article": "p1008-XFFTEE",
+      "model": "XFF TEE T-Stück-Steckkupplung 17 mm *ORIGINAL RAIN-BIRD",
+      "group": "pe_compression_fittings",
+      "from_group": "mounting_accessories",
+      "attr": "shape",
+      "value": "tee",
+      "source": "shop_extract"
+    },
+    {
+      "article": "p1008-XFFTEE",
+      "model": "XFF TEE T-Stück-Steckkupplung 17 mm *ORIGINAL RAIN-BIRD",
+      "group": "pe_compression_fittings",
+      "from_group": "mounting_accessories",
+      "attr": "body_material",
+      "value": "pp",
+      "source": "shop_extract"
+    },
+    {
+      "article": "p1008-6.20",
+      "model": "T-Stück 16 x 3/4\" AG x 16 mm steck x Gewinde x steck *Kompatibel mit R",
+      "group": "pe_compression_fittings",
+      "from_group": "mounting_accessories",
+      "attr": "shape",
+      "value": "tee",
+      "source": "shop_extract"
+    },
+    {
+      "article": "p1008-6.20",
+      "model": "T-Stück 16 x 3/4\" AG x 16 mm steck x Gewinde x steck *Kompatibel mit R",
+      "group": "pe_compression_fittings",
+      "from_group": "mounting_accessories",
+      "attr": "body_material",
+      "value": "pp",
+      "source": "shop_extract"
+    },
+    {
+      "article": "6.64",
+      "model": "Winkel 16 x 16 mm, Steck x Steck",
+      "group": "pe_compression_fittings",
+      "from_group": "drip_irrigation",
+      "attr": "shape",
+      "value": "elbow",
+      "source": "shop_extract"
+    },
+    {
+      "article": "6.64",
+      "model": "Winkel 16 x 16 mm, Steck x Steck",
+      "group": "pe_compression_fittings",
+      "from_group": "drip_irrigation",
+      "attr": "angle_deg",
+      "value": 90,
+      "source": "shop_extract"
+    },
+    {
+      "article": "6.64",
+      "model": "Winkel 16 x 16 mm, Steck x Steck",
+      "group": "pe_compression_fittings",
+      "from_group": "drip_irrigation",
+      "attr": "body_material",
+      "value": "pp",
+      "source": "shop_extract"
+    },
+    {
+      "article": "6.64",
+      "model": "Winkel 17 x 17 mm, Steck x Steck",
+      "group": "pe_compression_fittings",
+      "from_group": "drip_irrigation",
+      "attr": "shape",
+      "value": "elbow",
+      "source": "shop_extract"
+    },
+    {
+      "article": "6.64",
+      "model": "Winkel 17 x 17 mm, Steck x Steck",
+      "group": "pe_compression_fittings",
+      "from_group": "drip_irrigation",
+      "attr": "angle_deg",
+      "value": 90,
+      "source": "shop_extract"
+    },
+    {
+      "article": "6.64",
+      "model": "Winkel 17 x 17 mm, Steck x Steck",
+      "group": "pe_compression_fittings",
+      "from_group": "drip_irrigation",
+      "attr": "body_material",
+      "value": "pp",
+      "source": "shop_extract"
+    },
+    {
+      "article": "6.64",
+      "model": "Winkel 20 x 20 mm, Steck x Steck",
+      "group": "pe_compression_fittings",
+      "from_group": "drip_irrigation",
+      "attr": "shape",
+      "value": "elbow",
+      "source": "shop_extract"
+    },
+    {
+      "article": "6.64",
+      "model": "Winkel 20 x 20 mm, Steck x Steck",
+      "group": "pe_compression_fittings",
+      "from_group": "drip_irrigation",
+      "attr": "angle_deg",
+      "value": 90,
+      "source": "shop_extract"
+    },
+    {
+      "article": "6.64",
+      "model": "Winkel 20 x 20 mm, Steck x Steck",
+      "group": "pe_compression_fittings",
+      "from_group": "drip_irrigation",
+      "attr": "body_material",
+      "value": "pp",
+      "source": "shop_extract"
+    },
+    {
+      "article": "6.64",
+      "model": "Winkel 25 x 25 mm, Steck x Steck",
+      "group": "pe_compression_fittings",
+      "from_group": "drip_irrigation",
+      "attr": "shape",
+      "value": "elbow",
+      "source": "shop_extract"
+    },
+    {
+      "article": "6.64",
+      "model": "Winkel 25 x 25 mm, Steck x Steck",
+      "group": "pe_compression_fittings",
+      "from_group": "drip_irrigation",
+      "attr": "angle_deg",
+      "value": 90,
+      "source": "shop_extract"
+    },
+    {
+      "article": "6.64",
+      "model": "Winkel 25 x 25 mm, Steck x Steck",
+      "group": "pe_compression_fittings",
+      "from_group": "drip_irrigation",
+      "attr": "body_material",
+      "value": "pp",
+      "source": "shop_extract"
+    },
+    {
+      "article": "6.64",
+      "model": "Winkel 16 mm x 3/4\" AG, Steck x Aussengewinde",
+      "group": "pe_compression_fittings",
+      "from_group": "drip_irrigation",
+      "attr": "shape",
+      "value": "elbow",
+      "source": "shop_extract"
+    },
+    {
+      "article": "6.64",
+      "model": "Winkel 16 mm x 3/4\" AG, Steck x Aussengewinde",
+      "group": "pe_compression_fittings",
+      "from_group": "drip_irrigation",
+      "attr": "angle_deg",
+      "value": 90,
+      "source": "shop_extract"
+    },
+    {
+      "article": "6.64",
+      "model": "Winkel 16 mm x 3/4\" AG, Steck x Aussengewinde",
+      "group": "pe_compression_fittings",
+      "from_group": "drip_irrigation",
+      "attr": "body_material",
+      "value": "pp",
+      "source": "shop_extract"
+    },
+    {
+      "article": "6.64",
+      "model": "Winkel 17 mm x 3/4\" AG, Steck x Aussengewinde",
+      "group": "pe_compression_fittings",
+      "from_group": "drip_irrigation",
+      "attr": "shape",
+      "value": "elbow",
+      "source": "shop_extract"
+    },
+    {
+      "article": "6.64",
+      "model": "Winkel 17 mm x 3/4\" AG, Steck x Aussengewinde",
+      "group": "pe_compression_fittings",
+      "from_group": "drip_irrigation",
+      "attr": "angle_deg",
+      "value": 90,
+      "source": "shop_extract"
+    },
+    {
+      "article": "6.64",
+      "model": "Winkel 17 mm x 3/4\" AG, Steck x Aussengewinde",
+      "group": "pe_compression_fittings",
+      "from_group": "drip_irrigation",
+      "attr": "body_material",
+      "value": "pp",
+      "source": "shop_extract"
+    },
+    {
+      "article": "6.64",
+      "model": "Winkel 20 mm x 3/4\" AG, Steck x Aussengewinde",
+      "group": "pe_compression_fittings",
+      "from_group": "drip_irrigation",
+      "attr": "shape",
+      "value": "elbow",
+      "source": "shop_extract"
+    },
+    {
+      "article": "6.64",
+      "model": "Winkel 20 mm x 3/4\" AG, Steck x Aussengewinde",
+      "group": "pe_compression_fittings",
+      "from_group": "drip_irrigation",
+      "attr": "angle_deg",
+      "value": 90,
+      "source": "shop_extract"
+    },
+    {
+      "article": "6.64",
+      "model": "Winkel 20 mm x 3/4\" AG, Steck x Aussengewinde",
+      "group": "pe_compression_fittings",
+      "from_group": "drip_irrigation",
+      "attr": "body_material",
+      "value": "pp",
+      "source": "shop_extract"
+    },
+    {
+      "article": "6.64",
+      "model": "Winkel 25 mm x 3/4\" AG, Steck x Aussengewinde",
+      "group": "pe_compression_fittings",
+      "from_group": "drip_irrigation",
+      "attr": "shape",
+      "value": "elbow",
+      "source": "shop_extract"
+    },
+    {
+      "article": "6.64",
+      "model": "Winkel 25 mm x 3/4\" AG, Steck x Aussengewinde",
+      "group": "pe_compression_fittings",
+      "from_group": "drip_irrigation",
+      "attr": "angle_deg",
+      "value": 90,
+      "source": "shop_extract"
+    },
+    {
+      "article": "6.64",
+      "model": "Winkel 25 mm x 3/4\" AG, Steck x Aussengewinde",
+      "group": "pe_compression_fittings",
+      "from_group": "drip_irrigation",
+      "attr": "body_material",
+      "value": "pp",
+      "source": "shop_extract"
+    },
+    {
+      "article": "6.64",
+      "model": "T-Stück 16 x 16 x 16 mm, Steck x Steck x Steck",
+      "group": "pe_compression_fittings",
+      "from_group": "drip_irrigation",
+      "attr": "shape",
+      "value": "tee",
+      "source": "shop_extract"
+    },
+    {
+      "article": "6.64",
+      "model": "T-Stück 16 x 16 x 16 mm, Steck x Steck x Steck",
+      "group": "pe_compression_fittings",
+      "from_group": "drip_irrigation",
+      "attr": "body_material",
+      "value": "pp",
+      "source": "shop_extract"
+    },
+    {
+      "article": "6.64",
+      "model": "T-Stück 17 x 17 x 17 mm, Steck x Steck x Steck",
+      "group": "pe_compression_fittings",
+      "from_group": "drip_irrigation",
+      "attr": "shape",
+      "value": "tee",
+      "source": "shop_extract"
+    },
+    {
+      "article": "6.64",
+      "model": "T-Stück 17 x 17 x 17 mm, Steck x Steck x Steck",
+      "group": "pe_compression_fittings",
+      "from_group": "drip_irrigation",
+      "attr": "body_material",
+      "value": "pp",
+      "source": "shop_extract"
+    },
+    {
+      "article": "6.64",
+      "model": "T-Stück 20 x 20 x 20 mm, Steck x Steck x Steck",
+      "group": "pe_compression_fittings",
+      "from_group": "drip_irrigation",
+      "attr": "shape",
+      "value": "tee",
+      "source": "shop_extract"
+    },
+    {
+      "article": "6.64",
+      "model": "T-Stück 20 x 20 x 20 mm, Steck x Steck x Steck",
+      "group": "pe_compression_fittings",
+      "from_group": "drip_irrigation",
+      "attr": "body_material",
+      "value": "pp",
+      "source": "shop_extract"
+    },
+    {
+      "article": "6.64",
+      "model": "T-Stück 25 x 25 x 25 mm, Steck x Steck x Steck",
+      "group": "pe_compression_fittings",
+      "from_group": "drip_irrigation",
+      "attr": "shape",
+      "value": "tee",
+      "source": "shop_extract"
+    },
+    {
+      "article": "6.64",
+      "model": "T-Stück 25 x 25 x 25 mm, Steck x Steck x Steck",
+      "group": "pe_compression_fittings",
+      "from_group": "drip_irrigation",
+      "attr": "body_material",
+      "value": "pp",
+      "source": "shop_extract"
+    },
+    {
+      "article": "6.64",
+      "model": "T-Stück 16 mm x 3/4\" AG x 16 mm, Steck x Aussengewinde x Steck",
+      "group": "pe_compression_fittings",
+      "from_group": "drip_irrigation",
+      "attr": "shape",
+      "value": "tee",
+      "source": "shop_extract"
+    },
+    {
+      "article": "6.64",
+      "model": "T-Stück 16 mm x 3/4\" AG x 16 mm, Steck x Aussengewinde x Steck",
+      "group": "pe_compression_fittings",
+      "from_group": "drip_irrigation",
+      "attr": "body_material",
+      "value": "pp",
+      "source": "shop_extract"
+    },
+    {
+      "article": "6.64",
+      "model": "T-Stück 25 mm x 3/4\" AG x 25 mm, Steck x Aussengewinde x Steck",
+      "group": "pe_compression_fittings",
+      "from_group": "drip_irrigation",
+      "attr": "shape",
+      "value": "tee",
+      "source": "shop_extract"
+    },
+    {
+      "article": "6.64",
+      "model": "T-Stück 25 mm x 3/4\" AG x 25 mm, Steck x Aussengewinde x Steck",
+      "group": "pe_compression_fittings",
+      "from_group": "drip_irrigation",
+      "attr": "body_material",
+      "value": "pp",
+      "source": "shop_extract"
+    },
+    {
+      "article": "p691-GT950",
+      "model": "950 E Getriebeeinsatz Eagle Teilkreis",
+      "group": "rotor_sprinklers",
+      "attr": "arc_min_deg",
+      "value": 40,
+      "source": "shop_extract"
+    },
+    {
+      "article": "p691-GT950",
+      "model": "950 E Getriebeeinsatz Eagle Teilkreis",
+      "group": "rotor_sprinklers",
+      "attr": "arc_max_deg",
+      "value": 360,
+      "source": "shop_extract"
+    },
+    {
+      "article": "p691-GT950",
+      "model": "950 E Getriebeeinsatz Eagle Teilkreis",
+      "group": "rotor_sprinklers",
+      "attr": "full_circle_supported",
+      "value": true,
+      "source": "shop_extract"
+    },
+    {
+      "article": "p691-GT900",
+      "model": "900 E Getriebeeinsatz Eagle Vollkreis",
+      "group": "rotor_sprinklers",
+      "attr": "arc_min_deg",
+      "value": 360,
+      "source": "shop_extract"
+    },
+    {
+      "article": "p691-GT900",
+      "model": "900 E Getriebeeinsatz Eagle Vollkreis",
+      "group": "rotor_sprinklers",
+      "attr": "arc_max_deg",
+      "value": 360,
+      "source": "shop_extract"
+    },
+    {
+      "article": "p691-GT900",
+      "model": "900 E Getriebeeinsatz Eagle Vollkreis",
+      "group": "rotor_sprinklers",
+      "attr": "full_circle_supported",
+      "value": true,
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.17-D106",
+      "model": "Düse 18, WEISS, 21,3 - 23,2 m, 5,86 m³/h 950E",
+      "group": "nozzles_rotators",
+      "from_group": "mounting_accessories",
+      "attr": "pattern_type",
+      "value": "arc",
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.17-D106",
+      "model": "Düse 18, WEISS, 21,3 - 23,2 m, 5,86 m³/h 950E",
+      "group": "nozzles_rotators",
+      "from_group": "mounting_accessories",
+      "attr": "radius_min_m",
+      "value": 21.3,
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.17-D106",
+      "model": "Düse 18, WEISS, 21,3 - 23,2 m, 5,86 m³/h 950E",
+      "group": "nozzles_rotators",
+      "from_group": "mounting_accessories",
+      "attr": "radius_max_m",
+      "value": 23.2,
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.17-D107",
+      "model": "Düse 20, GRAU, 21,9 - 24,4 m, 6,93 m³/h 950E",
+      "group": "nozzles_rotators",
+      "from_group": "mounting_accessories",
+      "attr": "pattern_type",
+      "value": "arc",
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.17-D107",
+      "model": "Düse 20, GRAU, 21,9 - 24,4 m, 6,93 m³/h 950E",
+      "group": "nozzles_rotators",
+      "from_group": "mounting_accessories",
+      "attr": "radius_min_m",
+      "value": 21.9,
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.17-D107",
+      "model": "Düse 20, GRAU, 21,9 - 24,4 m, 6,93 m³/h 950E",
+      "group": "nozzles_rotators",
+      "from_group": "mounting_accessories",
+      "attr": "radius_max_m",
+      "value": 24.4,
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.17-D109",
+      "model": "Düse 24, GELB, 23,2 - 27,4 m, 9,20 m³/h 950E",
+      "group": "nozzles_rotators",
+      "from_group": "mounting_accessories",
+      "attr": "pattern_type",
+      "value": "arc",
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.17-D109",
+      "model": "Düse 24, GELB, 23,2 - 27,4 m, 9,20 m³/h 950E",
+      "group": "nozzles_rotators",
+      "from_group": "mounting_accessories",
+      "attr": "radius_min_m",
+      "value": 23.2,
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.17-D109",
+      "model": "Düse 24, GELB, 23,2 - 27,4 m, 9,20 m³/h 950E",
+      "group": "nozzles_rotators",
+      "from_group": "mounting_accessories",
+      "attr": "radius_max_m",
+      "value": 27.4,
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.17-D110",
+      "model": "Düse 26, ORANGE, 23,8 - 26,8 m, 10,61 m³/h 950E",
+      "group": "nozzles_rotators",
+      "from_group": "mounting_accessories",
+      "attr": "pattern_type",
+      "value": "arc",
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.17-D110",
+      "model": "Düse 26, ORANGE, 23,8 - 26,8 m, 10,61 m³/h 950E",
+      "group": "nozzles_rotators",
+      "from_group": "mounting_accessories",
+      "attr": "radius_min_m",
+      "value": 23.8,
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.17-D110",
+      "model": "Düse 26, ORANGE, 23,8 - 26,8 m, 10,61 m³/h 950E",
+      "group": "nozzles_rotators",
+      "from_group": "mounting_accessories",
+      "attr": "radius_max_m",
+      "value": 26.8,
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.17-D111",
+      "model": "Düse 28, GRÜN, 25,2 - 27,7 m, 11,86 m³/h 950E",
+      "group": "nozzles_rotators",
+      "from_group": "mounting_accessories",
+      "attr": "pattern_type",
+      "value": "arc",
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.17-D111",
+      "model": "Düse 28, GRÜN, 25,2 - 27,7 m, 11,86 m³/h 950E",
+      "group": "nozzles_rotators",
+      "from_group": "mounting_accessories",
+      "attr": "radius_min_m",
+      "value": 25.2,
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.17-D111",
+      "model": "Düse 28, GRÜN, 25,2 - 27,7 m, 11,86 m³/h 950E",
+      "group": "nozzles_rotators",
+      "from_group": "mounting_accessories",
+      "attr": "radius_max_m",
+      "value": 27.7,
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.17-D112",
+      "model": "Düse 30, SCHWARZ, 25,2 -27,7 m, 12,67 m³/h 950E",
+      "group": "nozzles_rotators",
+      "from_group": "mounting_accessories",
+      "attr": "pattern_type",
+      "value": "arc",
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.17-D112",
+      "model": "Düse 30, SCHWARZ, 25,2 -27,7 m, 12,67 m³/h 950E",
+      "group": "nozzles_rotators",
+      "from_group": "mounting_accessories",
+      "attr": "radius_min_m",
+      "value": 25.2,
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.17-D112",
+      "model": "Düse 30, SCHWARZ, 25,2 -27,7 m, 12,67 m³/h 950E",
+      "group": "nozzles_rotators",
+      "from_group": "mounting_accessories",
+      "attr": "radius_max_m",
+      "value": 27.7,
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.17-D113",
+      "model": "Düse 32, BRAUN, 25,3 - 28,0 m, 13,49 m³/h 950E",
+      "group": "nozzles_rotators",
+      "from_group": "mounting_accessories",
+      "attr": "pattern_type",
+      "value": "arc",
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.17-D113",
+      "model": "Düse 32, BRAUN, 25,3 - 28,0 m, 13,49 m³/h 950E",
+      "group": "nozzles_rotators",
+      "from_group": "mounting_accessories",
+      "attr": "radius_min_m",
+      "value": 25.3,
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.17-D113",
+      "model": "Düse 32, BRAUN, 25,3 - 28,0 m, 13,49 m³/h 950E",
+      "group": "nozzles_rotators",
+      "from_group": "mounting_accessories",
+      "attr": "radius_max_m",
+      "value": 28,
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.17-D114",
+      "model": "Düse 44, BLAU, 19,2 - 22,3 m 900E",
+      "group": "nozzles_rotators",
+      "from_group": "mounting_accessories",
+      "attr": "pattern_type",
+      "value": "arc",
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.17-D114",
+      "model": "Düse 44, BLAU, 19,2 - 22,3 m 900E",
+      "group": "nozzles_rotators",
+      "from_group": "mounting_accessories",
+      "attr": "radius_min_m",
+      "value": 19.2,
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.17-D114",
+      "model": "Düse 44, BLAU, 19,2 - 22,3 m 900E",
+      "group": "nozzles_rotators",
+      "from_group": "mounting_accessories",
+      "attr": "radius_max_m",
+      "value": 22.3,
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.17-D115",
+      "model": "Düse 48, GELB, 22,3 - 23,5 m, 900E",
+      "group": "nozzles_rotators",
+      "from_group": "mounting_accessories",
+      "attr": "pattern_type",
+      "value": "arc",
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.17-D115",
+      "model": "Düse 48, GELB, 22,3 - 23,5 m, 900E",
+      "group": "nozzles_rotators",
+      "from_group": "mounting_accessories",
+      "attr": "radius_min_m",
+      "value": 22.3,
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.17-D115",
+      "model": "Düse 48, GELB, 22,3 - 23,5 m, 900E",
+      "group": "nozzles_rotators",
+      "from_group": "mounting_accessories",
+      "attr": "radius_max_m",
+      "value": 23.5,
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.17-D116",
+      "model": "Düse 52, ORANGE, 22,9 - 25,3 m, 900E",
+      "group": "nozzles_rotators",
+      "from_group": "mounting_accessories",
+      "attr": "pattern_type",
+      "value": "arc",
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.17-D116",
+      "model": "Düse 52, ORANGE, 22,9 - 25,3 m, 900E",
+      "group": "nozzles_rotators",
+      "from_group": "mounting_accessories",
+      "attr": "radius_min_m",
+      "value": 22.9,
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.17-D116",
+      "model": "Düse 52, ORANGE, 22,9 - 25,3 m, 900E",
+      "group": "nozzles_rotators",
+      "from_group": "mounting_accessories",
+      "attr": "radius_max_m",
+      "value": 25.3,
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.17-D117",
+      "model": "Düse 56, GRÜN, 24,7 - 27,1 m, 900E",
+      "group": "nozzles_rotators",
+      "from_group": "mounting_accessories",
+      "attr": "pattern_type",
+      "value": "arc",
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.17-D117",
+      "model": "Düse 56, GRÜN, 24,7 - 27,1 m, 900E",
+      "group": "nozzles_rotators",
+      "from_group": "mounting_accessories",
+      "attr": "radius_min_m",
+      "value": 24.7,
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.17-D117",
+      "model": "Düse 56, GRÜN, 24,7 - 27,1 m, 900E",
+      "group": "nozzles_rotators",
+      "from_group": "mounting_accessories",
+      "attr": "radius_max_m",
+      "value": 27.1,
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.17-D118",
+      "model": "Düse 60, SCHWARZ, 26,2 - 27,7 m 900E",
+      "group": "nozzles_rotators",
+      "from_group": "mounting_accessories",
+      "attr": "pattern_type",
+      "value": "arc",
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.17-D118",
+      "model": "Düse 60, SCHWARZ, 26,2 - 27,7 m 900E",
+      "group": "nozzles_rotators",
+      "from_group": "mounting_accessories",
+      "attr": "radius_min_m",
+      "value": 26.2,
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.17-D118",
+      "model": "Düse 60, SCHWARZ, 26,2 - 27,7 m 900E",
+      "group": "nozzles_rotators",
+      "from_group": "mounting_accessories",
+      "attr": "radius_max_m",
+      "value": 27.7,
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.17-D119",
+      "model": "Düse 64, ROT, 27,4 - 29,6 m 900E",
+      "group": "nozzles_rotators",
+      "from_group": "mounting_accessories",
+      "attr": "pattern_type",
+      "value": "arc",
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.17-D119",
+      "model": "Düse 64, ROT, 27,4 - 29,6 m 900E",
+      "group": "nozzles_rotators",
+      "from_group": "mounting_accessories",
+      "attr": "radius_min_m",
+      "value": 27.4,
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.17-D119",
+      "model": "Düse 64, ROT, 27,4 - 29,6 m 900E",
+      "group": "nozzles_rotators",
+      "from_group": "mounting_accessories",
+      "attr": "radius_max_m",
+      "value": 29.6,
+      "source": "shop_extract"
+    },
+    {
+      "article": "8.06-S22",
+      "model": "HC-75-Flow-B 3/4“ AG/AG Wasserzähler",
+      "group": "sensors",
+      "from_group": "controllers",
+      "attr": "measurement_type",
+      "value": "flow",
+      "source": "shop_extract"
+    },
+    {
+      "article": "8.06-S22",
+      "model": "HC-75-Flow-B 3/4“ AG/AG Wasserzähler",
+      "group": "sensors",
+      "from_group": "controllers",
+      "attr": "wired",
+      "value": false,
+      "source": "shop_extract"
+    },
+    {
+      "article": "8.06-S22",
+      "model": "HC-75-Flow-B 3/4“ AG/AG Wasserzähler",
+      "group": "sensors",
+      "from_group": "controllers",
+      "attr": "wireless",
+      "value": true,
+      "source": "shop_extract"
+    },
+    {
+      "article": "8.06-SK24",
+      "model": "Profi Wasserzähler 1\" mit Impulskabel aus KUNSTOFF *ALTERNATIVE ZU HUN",
+      "group": "sensors",
+      "from_group": "controllers",
+      "attr": "measurement_type",
+      "value": "flow",
+      "source": "shop_extract"
+    },
+    {
+      "article": "8.06-SK24",
+      "model": "Profi Wasserzähler 1\" mit Impulskabel aus KUNSTOFF *ALTERNATIVE ZU HUN",
+      "group": "sensors",
+      "from_group": "controllers",
+      "attr": "wired",
+      "value": false,
+      "source": "shop_extract"
+    },
+    {
+      "article": "8.06-SK24",
+      "model": "Profi Wasserzähler 1\" mit Impulskabel aus KUNSTOFF *ALTERNATIVE ZU HUN",
+      "group": "sensors",
+      "from_group": "controllers",
+      "attr": "wireless",
+      "value": true,
+      "source": "shop_extract"
+    },
+    {
+      "article": "8.06-S24",
+      "model": "HC-100-Flow-B 1“ AG/AG Wasserzähler",
+      "group": "sensors",
+      "from_group": "controllers",
+      "attr": "measurement_type",
+      "value": "flow",
+      "source": "shop_extract"
+    },
+    {
+      "article": "8.06-S24",
+      "model": "HC-100-Flow-B 1“ AG/AG Wasserzähler",
+      "group": "sensors",
+      "from_group": "controllers",
+      "attr": "wired",
+      "value": false,
+      "source": "shop_extract"
+    },
+    {
+      "article": "8.06-S24",
+      "model": "HC-100-Flow-B 1“ AG/AG Wasserzähler",
+      "group": "sensors",
+      "from_group": "controllers",
+      "attr": "wireless",
+      "value": true,
+      "source": "shop_extract"
+    },
+    {
+      "article": "8.06-S26",
+      "model": "HC-150-Flow-B 11/2“ AG/AG Wasserzähler",
+      "group": "sensors",
+      "from_group": "controllers",
+      "attr": "measurement_type",
+      "value": "flow",
+      "source": "shop_extract"
+    },
+    {
+      "article": "8.06-S26",
+      "model": "HC-150-Flow-B 11/2“ AG/AG Wasserzähler",
+      "group": "sensors",
+      "from_group": "controllers",
+      "attr": "wired",
+      "value": false,
+      "source": "shop_extract"
+    },
+    {
+      "article": "8.06-S26",
+      "model": "HC-150-Flow-B 11/2“ AG/AG Wasserzähler",
+      "group": "sensors",
+      "from_group": "controllers",
+      "attr": "wireless",
+      "value": true,
+      "source": "shop_extract"
+    },
+    {
+      "article": "8.06-S27",
+      "model": "HC-200-Flow-B 2“ AG/AG Wasserzähler",
+      "group": "sensors",
+      "from_group": "controllers",
+      "attr": "measurement_type",
+      "value": "flow",
+      "source": "shop_extract"
+    },
+    {
+      "article": "8.06-S27",
+      "model": "HC-200-Flow-B 2“ AG/AG Wasserzähler",
+      "group": "sensors",
+      "from_group": "controllers",
+      "attr": "wired",
+      "value": false,
+      "source": "shop_extract"
+    },
+    {
+      "article": "8.06-S27",
+      "model": "HC-200-Flow-B 2“ AG/AG Wasserzähler",
+      "group": "sensors",
+      "from_group": "controllers",
+      "attr": "wireless",
+      "value": true,
+      "source": "shop_extract"
+    },
+    {
+      "article": "8.06-S28",
+      "model": "Funk-Kit für HCflow W-HC-FLOW-IN",
+      "group": "sensors",
+      "from_group": "controllers",
+      "attr": "measurement_type",
+      "value": "flow",
+      "source": "shop_extract"
+    },
+    {
+      "article": "8.06-S28",
+      "model": "Funk-Kit für HCflow W-HC-FLOW-IN",
+      "group": "sensors",
+      "from_group": "controllers",
+      "attr": "wired",
+      "value": false,
+      "source": "shop_extract"
+    },
+    {
+      "article": "8.06-S28",
+      "model": "Funk-Kit für HCflow W-HC-FLOW-IN",
+      "group": "sensors",
+      "from_group": "controllers",
+      "attr": "wireless",
+      "value": true,
+      "source": "shop_extract"
+    },
+    {
+      "article": "8.06-S29",
+      "model": "Funk-Sender für HCflow W-HC-FLOW-TR-INT",
+      "group": "sensors",
+      "from_group": "controllers",
+      "attr": "measurement_type",
+      "value": "flow",
+      "source": "shop_extract"
+    },
+    {
+      "article": "8.06-S29",
+      "model": "Funk-Sender für HCflow W-HC-FLOW-TR-INT",
+      "group": "sensors",
+      "from_group": "controllers",
+      "attr": "wired",
+      "value": false,
+      "source": "shop_extract"
+    },
+    {
+      "article": "8.06-S29",
+      "model": "Funk-Sender für HCflow W-HC-FLOW-TR-INT",
+      "group": "sensors",
+      "from_group": "controllers",
+      "attr": "wireless",
+      "value": true,
+      "source": "shop_extract"
+    },
+    {
+      "article": "8.06-S30",
+      "model": "Funk-Empfänger für HCflow W-HC-FLOW-R-INT",
+      "group": "sensors",
+      "from_group": "controllers",
+      "attr": "measurement_type",
+      "value": "flow",
+      "source": "shop_extract"
+    },
+    {
+      "article": "8.06-S30",
+      "model": "Funk-Empfänger für HCflow W-HC-FLOW-R-INT",
+      "group": "sensors",
+      "from_group": "controllers",
+      "attr": "wired",
+      "value": false,
+      "source": "shop_extract"
+    },
+    {
+      "article": "8.06-S30",
+      "model": "Funk-Empfänger für HCflow W-HC-FLOW-R-INT",
+      "group": "sensors",
+      "from_group": "controllers",
+      "attr": "wireless",
+      "value": true,
+      "source": "shop_extract"
+    },
+    {
+      "article": "8.06-S23",
+      "model": "HC-Wasserzähler mit Verschraubung und beidseitigem PE-Anschluss Metall",
+      "group": "sensors",
+      "from_group": "controllers",
+      "attr": "measurement_type",
+      "value": "flow",
+      "source": "shop_extract"
+    },
+    {
+      "article": "8.06-S23",
+      "model": "HC-Wasserzähler mit Verschraubung und beidseitigem PE-Anschluss Metall",
+      "group": "sensors",
+      "from_group": "controllers",
+      "attr": "wired",
+      "value": false,
+      "source": "shop_extract"
+    },
+    {
+      "article": "8.06-S23",
+      "model": "HC-Wasserzähler mit Verschraubung und beidseitigem PE-Anschluss Metall",
+      "group": "sensors",
+      "from_group": "controllers",
+      "attr": "wireless",
+      "value": true,
+      "source": "shop_extract"
+    },
+    {
+      "article": "8.06-S25",
+      "model": "HC-Wasserzähler mit Verschraubung und beidseitigem PE-Anschluss 32 mm",
+      "group": "sensors",
+      "from_group": "controllers",
+      "attr": "measurement_type",
+      "value": "flow",
+      "source": "shop_extract"
+    },
+    {
+      "article": "8.06-S25",
+      "model": "HC-Wasserzähler mit Verschraubung und beidseitigem PE-Anschluss 32 mm",
+      "group": "sensors",
+      "from_group": "controllers",
+      "attr": "wired",
+      "value": false,
+      "source": "shop_extract"
+    },
+    {
+      "article": "8.06-S25",
+      "model": "HC-Wasserzähler mit Verschraubung und beidseitigem PE-Anschluss 32 mm",
+      "group": "sensors",
+      "from_group": "controllers",
+      "attr": "wireless",
+      "value": true,
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.54",
+      "model": "10x MP800 Radius 90° - 210 Wurfweite 1,8 - 3,5 m *10 Stk.*",
+      "group": "nozzles_rotators",
+      "attr": "pattern_type",
+      "value": "arc",
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.54",
+      "model": "10x MP800 Radius 360° Wurfweite 1,8 - 3,5 m *10 Stk.*",
+      "group": "nozzles_rotators",
+      "attr": "pattern_type",
+      "value": "full_circle",
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.54",
+      "model": "10x MP800 Radius 360° Wurfweite 1,8 - 3,5 m *10 Stk.*",
+      "group": "nozzles_rotators",
+      "attr": "arc_min_deg",
+      "value": 360,
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.54",
+      "model": "10x MP800 Radius 360° Wurfweite 1,8 - 3,5 m *10 Stk.*",
+      "group": "nozzles_rotators",
+      "attr": "arc_max_deg",
+      "value": 360,
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.54",
+      "model": "10x MP1000 Radius 210° - 270° Wurfweite 2,5 - 4,5 m *10 Stk.*",
+      "group": "nozzles_rotators",
+      "attr": "pattern_type",
+      "value": "arc",
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.54",
+      "model": "10x MP1000 Radius 90° - 210° Wurfweite 2,5 - 4,5 m *10 Stk.*",
+      "group": "nozzles_rotators",
+      "attr": "pattern_type",
+      "value": "arc",
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.54",
+      "model": "10x MP1000 Radius 360° Wurfweite 2,5 - 4,5 m *10 Stk.*",
+      "group": "nozzles_rotators",
+      "attr": "pattern_type",
+      "value": "full_circle",
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.54",
+      "model": "10x MP1000 Radius 360° Wurfweite 2,5 - 4,5 m *10 Stk.*",
+      "group": "nozzles_rotators",
+      "attr": "arc_min_deg",
+      "value": 360,
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.54",
+      "model": "10x MP1000 Radius 360° Wurfweite 2,5 - 4,5 m *10 Stk.*",
+      "group": "nozzles_rotators",
+      "attr": "arc_max_deg",
+      "value": 360,
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.54",
+      "model": "10x MP2000 Radius 90° - 210° Wurfweite 4 - 6,4 m *10 Stk.*",
+      "group": "nozzles_rotators",
+      "attr": "pattern_type",
+      "value": "arc",
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.54",
+      "model": "10x MP2000 Radius 210° - 270° Wurfweite 4 - 6,4 m *10 Stk.*",
+      "group": "nozzles_rotators",
+      "attr": "pattern_type",
+      "value": "arc",
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.54",
+      "model": "10x MP2000 Radius 360° Wurfweite 2,5 - 6,4 m *10 Stk.*",
+      "group": "nozzles_rotators",
+      "attr": "pattern_type",
+      "value": "full_circle",
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.54",
+      "model": "10x MP2000 Radius 360° Wurfweite 2,5 - 6,4 m *10 Stk.*",
+      "group": "nozzles_rotators",
+      "attr": "arc_min_deg",
+      "value": 360,
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.54",
+      "model": "10x MP2000 Radius 360° Wurfweite 2,5 - 6,4 m *10 Stk.*",
+      "group": "nozzles_rotators",
+      "attr": "arc_max_deg",
+      "value": 360,
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.54",
+      "model": "10x MP3000 Radius 90° - 210° Wurfweite 6,7 - 9,1 m *10 Stk.*",
+      "group": "nozzles_rotators",
+      "attr": "pattern_type",
+      "value": "arc",
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.54",
+      "model": "10x MP3000 Radius 210° - 270° Wurfweite 6,7 - 9,1 m *10 Stk.*",
+      "group": "nozzles_rotators",
+      "attr": "pattern_type",
+      "value": "arc",
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.54",
+      "model": "10x MP3000 Radius 360° Wurfweite 6,7 - 9,1 m *10 Stk.*",
+      "group": "nozzles_rotators",
+      "attr": "pattern_type",
+      "value": "full_circle",
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.54",
+      "model": "10x MP3000 Radius 360° Wurfweite 6,7 - 9,1 m *10 Stk.*",
+      "group": "nozzles_rotators",
+      "attr": "arc_min_deg",
+      "value": 360,
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.54",
+      "model": "10x MP3000 Radius 360° Wurfweite 6,7 - 9,1 m *10 Stk.*",
+      "group": "nozzles_rotators",
+      "attr": "arc_max_deg",
+      "value": 360,
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.54",
+      "model": "10x MP3500 Radius 90°-210° Wurfweite 9,40 - 10,70 m *10 Stk.*",
+      "group": "nozzles_rotators",
+      "attr": "pattern_type",
+      "value": "arc",
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.54",
+      "model": "10x MP815 Wurfweite 1,8 - 4,9 m, Radius 90° - 210° *10 Stk.*",
+      "group": "nozzles_rotators",
+      "attr": "pattern_type",
+      "value": "arc",
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.54",
+      "model": "10x MP815 Wurfweite 2,5 - 4,5 m, Radius 210° - 270° *10 Stk.*",
+      "group": "nozzles_rotators",
+      "attr": "pattern_type",
+      "value": "arc",
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.54",
+      "model": "10x MP815 Wurfweite 2,5 - 4,5 m, Radius 360° *10 Stk.*",
+      "group": "nozzles_rotators",
+      "attr": "pattern_type",
+      "value": "full_circle",
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.54",
+      "model": "10x MP815 Wurfweite 2,5 - 4,5 m, Radius 360° *10 Stk.*",
+      "group": "nozzles_rotators",
+      "attr": "arc_min_deg",
+      "value": 360,
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.54",
+      "model": "10x MP815 Wurfweite 2,5 - 4,5 m, Radius 360° *10 Stk.*",
+      "group": "nozzles_rotators",
+      "attr": "arc_max_deg",
+      "value": 360,
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.54",
+      "model": "10x MPSS530 Seitenstreifendüse Radius 1,5 x 9,1 m",
+      "group": "nozzles_rotators",
+      "attr": "pattern_type",
+      "value": "strip",
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.54",
+      "model": "10x MPSS530 Seitenstreifendüse Radius 1,5 x 9,1 m",
+      "group": "nozzles_rotators",
+      "attr": "strip_width_m",
+      "value": 1.5,
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.54",
+      "model": "10x MPSS530 Seitenstreifendüse Radius 1,5 x 9,1 m",
+      "group": "nozzles_rotators",
+      "attr": "strip_length_m",
+      "value": 9.1,
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.54",
+      "model": "10x MPLCS515 Streifendüse Ecke links Radius 1,5 x 4,6 m",
+      "group": "nozzles_rotators",
+      "attr": "pattern_type",
+      "value": "strip",
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.54",
+      "model": "10x MPLCS515 Streifendüse Ecke links Radius 1,5 x 4,6 m",
+      "group": "nozzles_rotators",
+      "attr": "strip_width_m",
+      "value": 1.5,
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.54",
+      "model": "10x MPLCS515 Streifendüse Ecke links Radius 1,5 x 4,6 m",
+      "group": "nozzles_rotators",
+      "attr": "strip_length_m",
+      "value": 4.6,
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.54",
+      "model": "10x MPRCS515 Streifendüse Ecke rechts Radius 1,5 x 4,6 m",
+      "group": "nozzles_rotators",
+      "attr": "pattern_type",
+      "value": "strip",
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.54",
+      "model": "10x MPRCS515 Streifendüse Ecke rechts Radius 1,5 x 4,6 m",
+      "group": "nozzles_rotators",
+      "attr": "strip_width_m",
+      "value": 1.5,
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.54",
+      "model": "10x MPRCS515 Streifendüse Ecke rechts Radius 1,5 x 4,6 m",
+      "group": "nozzles_rotators",
+      "attr": "strip_length_m",
+      "value": 4.6,
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.54",
+      "model": "10x MPCORNER Radius 2,5 bis 4,5 m",
+      "group": "nozzles_rotators",
+      "attr": "pattern_type",
+      "value": "arc",
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.15-D28",
+      "model": "MSBN-25Q Multistrahlenbubbler",
+      "group": "nozzles_rotators",
+      "from_group": "mounting_accessories",
+      "attr": "pattern_type",
+      "value": "bubbler",
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.15-D29",
+      "model": "MSBN-50Q Multistrahlenbubbler",
+      "group": "nozzles_rotators",
+      "from_group": "mounting_accessories",
+      "attr": "pattern_type",
+      "value": "bubbler",
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.15-D15",
+      "model": "MSBN-50H Multistrahlenbubbler",
+      "group": "nozzles_rotators",
+      "from_group": "mounting_accessories",
+      "attr": "pattern_type",
+      "value": "bubbler",
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.15-D16",
+      "model": "MSBN-10H Multistrahlenbubbler",
+      "group": "nozzles_rotators",
+      "from_group": "mounting_accessories",
+      "attr": "pattern_type",
+      "value": "bubbler",
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.15-D17",
+      "model": "MSBN-10F Multistrahlenbubbler",
+      "group": "nozzles_rotators",
+      "from_group": "mounting_accessories",
+      "attr": "pattern_type",
+      "value": "bubbler",
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.15-D18",
+      "model": "MSBN-20F Multistrahlenbubbler",
+      "group": "nozzles_rotators",
+      "from_group": "mounting_accessories",
+      "attr": "pattern_type",
+      "value": "bubbler",
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.15-D19",
+      "model": "PCN-25 Bubblerdüse",
+      "group": "nozzles_rotators",
+      "from_group": "mounting_accessories",
+      "attr": "pattern_type",
+      "value": "bubbler",
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.15-D20",
+      "model": "PCN-50 Bubblerdüse",
+      "group": "nozzles_rotators",
+      "from_group": "mounting_accessories",
+      "attr": "pattern_type",
+      "value": "bubbler",
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.15-D21",
+      "model": "PCN-10 Bubblerdüse",
+      "group": "nozzles_rotators",
+      "from_group": "mounting_accessories",
+      "attr": "pattern_type",
+      "value": "bubbler",
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.15-D22",
+      "model": "PCN-20 Bubblerdüse",
+      "group": "nozzles_rotators",
+      "from_group": "mounting_accessories",
+      "attr": "pattern_type",
+      "value": "bubbler",
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.15-D23",
+      "model": "PCB-25 Bubblerdüse",
+      "group": "nozzles_rotators",
+      "from_group": "mounting_accessories",
+      "attr": "pattern_type",
+      "value": "bubbler",
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.15-D24",
+      "model": "PCB-50 Bubblerdüse",
+      "group": "nozzles_rotators",
+      "from_group": "mounting_accessories",
+      "attr": "pattern_type",
+      "value": "bubbler",
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.15-D25",
+      "model": "PCB-10 Bubblerdüse",
+      "group": "nozzles_rotators",
+      "from_group": "mounting_accessories",
+      "attr": "pattern_type",
+      "value": "bubbler",
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.15-D26",
+      "model": "PCB-20 Bubblerdüse",
+      "group": "nozzles_rotators",
+      "from_group": "mounting_accessories",
+      "attr": "pattern_type",
+      "value": "bubbler",
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.15-D27",
+      "model": "AFB Bubblerdüse",
+      "group": "nozzles_rotators",
+      "from_group": "mounting_accessories",
+      "attr": "pattern_type",
+      "value": "bubbler",
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.16-D41",
+      "model": "Düse Typ 2-H Halbkreis",
+      "group": "nozzles_rotators",
+      "from_group": "filters_pressure_regulators",
+      "attr": "pattern_type",
+      "value": "arc",
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.16-D41",
+      "model": "Düse Typ 2-H Halbkreis",
+      "group": "nozzles_rotators",
+      "from_group": "filters_pressure_regulators",
+      "attr": "arc_adjustable",
+      "value": true,
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.16-D42",
+      "model": "Düse Typ 2-Q Viertelkreis",
+      "group": "nozzles_rotators",
+      "from_group": "filters_pressure_regulators",
+      "attr": "pattern_type",
+      "value": "arc",
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.16-D42",
+      "model": "Düse Typ 2-Q Viertelkreis",
+      "group": "nozzles_rotators",
+      "from_group": "filters_pressure_regulators",
+      "attr": "arc_adjustable",
+      "value": true,
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.16-D43",
+      "model": "Düse Typ 2-Q Viertelkreis",
+      "group": "nozzles_rotators",
+      "from_group": "filters_pressure_regulators",
+      "attr": "pattern_type",
+      "value": "arc",
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.16-D43",
+      "model": "Düse Typ 2-Q Viertelkreis",
+      "group": "nozzles_rotators",
+      "from_group": "filters_pressure_regulators",
+      "attr": "arc_adjustable",
+      "value": true,
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.16",
+      "model": "Düse Typ 4-H Halbkreis",
+      "group": "nozzles_rotators",
+      "from_group": "filters_pressure_regulators",
+      "attr": "pattern_type",
+      "value": "arc",
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.16",
+      "model": "Düse Typ 4-H Halbkreis",
+      "group": "nozzles_rotators",
+      "from_group": "filters_pressure_regulators",
+      "attr": "arc_adjustable",
+      "value": true,
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.16-D44",
+      "model": "Düse Typ 4-Q Viertelkreis",
+      "group": "nozzles_rotators",
+      "from_group": "filters_pressure_regulators",
+      "attr": "pattern_type",
+      "value": "arc",
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.16-D44",
+      "model": "Düse Typ 4-Q Viertelkreis",
+      "group": "nozzles_rotators",
+      "from_group": "filters_pressure_regulators",
+      "attr": "arc_adjustable",
+      "value": true,
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.16-D45",
+      "model": "Düse Typ 5-F Vollkreis",
+      "group": "nozzles_rotators",
+      "from_group": "filters_pressure_regulators",
+      "attr": "pattern_type",
+      "value": "full_circle",
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.16-D45",
+      "model": "Düse Typ 5-F Vollkreis",
+      "group": "nozzles_rotators",
+      "from_group": "filters_pressure_regulators",
+      "attr": "arc_adjustable",
+      "value": true,
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.16-D46",
+      "model": "Düse Typ 5-H Halbkreis",
+      "group": "nozzles_rotators",
+      "from_group": "filters_pressure_regulators",
+      "attr": "pattern_type",
+      "value": "arc",
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.16-D46",
+      "model": "Düse Typ 5-H Halbkreis",
+      "group": "nozzles_rotators",
+      "from_group": "filters_pressure_regulators",
+      "attr": "arc_adjustable",
+      "value": true,
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.16-D47",
+      "model": "Düse Typ 5-Q Viertelkreis",
+      "group": "nozzles_rotators",
+      "from_group": "filters_pressure_regulators",
+      "attr": "pattern_type",
+      "value": "arc",
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.16-D47",
+      "model": "Düse Typ 5-Q Viertelkreis",
+      "group": "nozzles_rotators",
+      "from_group": "filters_pressure_regulators",
+      "attr": "arc_adjustable",
+      "value": true,
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.16-D48",
+      "model": "Düse Typ 5-Q Viertelkreis",
+      "group": "nozzles_rotators",
+      "from_group": "filters_pressure_regulators",
+      "attr": "pattern_type",
+      "value": "arc",
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.16-D48",
+      "model": "Düse Typ 5-Q Viertelkreis",
+      "group": "nozzles_rotators",
+      "from_group": "filters_pressure_regulators",
+      "attr": "arc_adjustable",
+      "value": true,
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.16-D49",
+      "model": "Düse Typ 6-Q Viertelkreis",
+      "group": "nozzles_rotators",
+      "from_group": "filters_pressure_regulators",
+      "attr": "pattern_type",
+      "value": "arc",
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.16-D49",
+      "model": "Düse Typ 6-Q Viertelkreis",
+      "group": "nozzles_rotators",
+      "from_group": "filters_pressure_regulators",
+      "attr": "arc_adjustable",
+      "value": true,
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.16-D50",
+      "model": "Düse Typ 8-F Vollkreis",
+      "group": "nozzles_rotators",
+      "from_group": "filters_pressure_regulators",
+      "attr": "pattern_type",
+      "value": "full_circle",
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.16-D50",
+      "model": "Düse Typ 8-F Vollkreis",
+      "group": "nozzles_rotators",
+      "from_group": "filters_pressure_regulators",
+      "attr": "arc_adjustable",
+      "value": true,
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.16-D51",
+      "model": "Düse Typ 8-H Halbkreis",
+      "group": "nozzles_rotators",
+      "from_group": "filters_pressure_regulators",
+      "attr": "pattern_type",
+      "value": "arc",
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.16-D51",
+      "model": "Düse Typ 8-H Halbkreis",
+      "group": "nozzles_rotators",
+      "from_group": "filters_pressure_regulators",
+      "attr": "arc_adjustable",
+      "value": true,
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.16-D52",
+      "model": "Düse Typ 8-Q Viertelkreis",
+      "group": "nozzles_rotators",
+      "from_group": "filters_pressure_regulators",
+      "attr": "pattern_type",
+      "value": "arc",
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.16-D52",
+      "model": "Düse Typ 8-Q Viertelkreis",
+      "group": "nozzles_rotators",
+      "from_group": "filters_pressure_regulators",
+      "attr": "arc_adjustable",
+      "value": true,
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.16-D53",
+      "model": "Düse Typ 10-F Vollkreis",
+      "group": "nozzles_rotators",
+      "from_group": "filters_pressure_regulators",
+      "attr": "pattern_type",
+      "value": "full_circle",
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.16-D53",
+      "model": "Düse Typ 10-F Vollkreis",
+      "group": "nozzles_rotators",
+      "from_group": "filters_pressure_regulators",
+      "attr": "arc_adjustable",
+      "value": true,
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.16-D54",
+      "model": "Düse Typ 10-H Halbkreis",
+      "group": "nozzles_rotators",
+      "from_group": "filters_pressure_regulators",
+      "attr": "pattern_type",
+      "value": "arc",
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.16-D54",
+      "model": "Düse Typ 10-H Halbkreis",
+      "group": "nozzles_rotators",
+      "from_group": "filters_pressure_regulators",
+      "attr": "arc_adjustable",
+      "value": true,
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.16-D55",
+      "model": "Düse Typ 10-Q Viertelkreis",
+      "group": "nozzles_rotators",
+      "from_group": "filters_pressure_regulators",
+      "attr": "pattern_type",
+      "value": "arc",
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.16-D55",
+      "model": "Düse Typ 10-Q Viertelkreis",
+      "group": "nozzles_rotators",
+      "from_group": "filters_pressure_regulators",
+      "attr": "arc_adjustable",
+      "value": true,
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.16-D56",
+      "model": "Düse Typ 12-F Vollkreis",
+      "group": "nozzles_rotators",
+      "from_group": "filters_pressure_regulators",
+      "attr": "pattern_type",
+      "value": "full_circle",
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.16-D56",
+      "model": "Düse Typ 12-F Vollkreis",
+      "group": "nozzles_rotators",
+      "from_group": "filters_pressure_regulators",
+      "attr": "arc_adjustable",
+      "value": true,
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.16-D57",
+      "model": "Düse Typ 12-H Halbkreis",
+      "group": "nozzles_rotators",
+      "from_group": "filters_pressure_regulators",
+      "attr": "pattern_type",
+      "value": "arc",
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.16-D57",
+      "model": "Düse Typ 12-H Halbkreis",
+      "group": "nozzles_rotators",
+      "from_group": "filters_pressure_regulators",
+      "attr": "arc_adjustable",
+      "value": true,
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.16-D58",
+      "model": "Düse Typ 12-Q Viertelkreis",
+      "group": "nozzles_rotators",
+      "from_group": "filters_pressure_regulators",
+      "attr": "pattern_type",
+      "value": "arc",
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.16-D58",
+      "model": "Düse Typ 12-Q Viertelkreis",
+      "group": "nozzles_rotators",
+      "from_group": "filters_pressure_regulators",
+      "attr": "arc_adjustable",
+      "value": true,
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.16-D59",
+      "model": "Düse Typ 15-H Halbkreis",
+      "group": "nozzles_rotators",
+      "from_group": "filters_pressure_regulators",
+      "attr": "pattern_type",
+      "value": "arc",
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.16-D59",
+      "model": "Düse Typ 15-H Halbkreis",
+      "group": "nozzles_rotators",
+      "from_group": "filters_pressure_regulators",
+      "attr": "arc_adjustable",
+      "value": true,
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.16-D60",
+      "model": "Düse Typ 15-Q Viertelkreis",
+      "group": "nozzles_rotators",
+      "from_group": "filters_pressure_regulators",
+      "attr": "pattern_type",
+      "value": "arc",
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.16-D60",
+      "model": "Düse Typ 15-Q Viertelkreis",
+      "group": "nozzles_rotators",
+      "from_group": "filters_pressure_regulators",
+      "attr": "arc_adjustable",
+      "value": true,
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.16-D61",
+      "model": "Düse Typ 17-H Halbkreis",
+      "group": "nozzles_rotators",
+      "from_group": "filters_pressure_regulators",
+      "attr": "pattern_type",
+      "value": "arc",
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.16-D61",
+      "model": "Düse Typ 17-H Halbkreis",
+      "group": "nozzles_rotators",
+      "from_group": "filters_pressure_regulators",
+      "attr": "arc_adjustable",
+      "value": true,
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.16-D62",
+      "model": "Düse Typ 17-Q Viertelkreis",
+      "group": "nozzles_rotators",
+      "from_group": "filters_pressure_regulators",
+      "attr": "pattern_type",
+      "value": "arc",
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.16-D62",
+      "model": "Düse Typ 17-Q Viertelkreis",
+      "group": "nozzles_rotators",
+      "from_group": "filters_pressure_regulators",
+      "attr": "arc_adjustable",
+      "value": true,
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.68",
+      "model": "Hunter MP-Düse MP820-90°",
+      "group": "nozzles_rotators",
+      "attr": "pattern_type",
+      "value": "arc",
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.68",
+      "model": "Hunter MP-Düse MP820-90°",
+      "group": "nozzles_rotators",
+      "attr": "arc_min_deg",
+      "value": 820,
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.68",
+      "model": "Hunter MP-Düse MP820-90°",
+      "group": "nozzles_rotators",
+      "attr": "arc_max_deg",
+      "value": 90,
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.68",
+      "model": "Hunter MP-Düse MP820-210°",
+      "group": "nozzles_rotators",
+      "attr": "pattern_type",
+      "value": "arc",
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.68",
+      "model": "Hunter MP-Düse MP820-210°",
+      "group": "nozzles_rotators",
+      "attr": "arc_min_deg",
+      "value": 820,
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.68",
+      "model": "Hunter MP-Düse MP820-210°",
+      "group": "nozzles_rotators",
+      "attr": "arc_max_deg",
+      "value": 210,
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.68",
+      "model": "Hunter MP-Düse MP820-360°",
+      "group": "nozzles_rotators",
+      "attr": "pattern_type",
+      "value": "full_circle",
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.68",
+      "model": "Hunter MP-Düse MP820-360°",
+      "group": "nozzles_rotators",
+      "attr": "arc_min_deg",
+      "value": 820,
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.68",
+      "model": "Hunter MP-Düse MP820-360°",
+      "group": "nozzles_rotators",
+      "attr": "arc_max_deg",
+      "value": 360,
+      "source": "shop_extract"
+    },
+    {
+      "article": "3.199",
+      "model": "Hunter PSU-04 + Pro Düse 4A 1,2 m",
+      "group": "nozzles_rotators",
+      "attr": "pattern_type",
+      "value": "arc",
+      "source": "shop_extract"
+    },
+    {
+      "article": "3.199",
+      "model": "Hunter PSU-04 + Pro Düse 6A 1,8 m",
+      "group": "nozzles_rotators",
+      "attr": "pattern_type",
+      "value": "arc",
+      "source": "shop_extract"
+    },
+    {
+      "article": "3.199",
+      "model": "Hunter PSU-04 + Pro Düse 8A 2,4 m",
+      "group": "nozzles_rotators",
+      "attr": "pattern_type",
+      "value": "arc",
+      "source": "shop_extract"
+    },
+    {
+      "article": "3.199",
+      "model": "Hunter PSU-04 + Pro Düse 10A 3,0 m",
+      "group": "nozzles_rotators",
+      "attr": "pattern_type",
+      "value": "arc",
+      "source": "shop_extract"
+    },
+    {
+      "article": "3.199",
+      "model": "Hunter PSU-04 + Pro Düse 12A 3,7 m",
+      "group": "nozzles_rotators",
+      "attr": "pattern_type",
+      "value": "arc",
+      "source": "shop_extract"
+    },
+    {
+      "article": "3.199",
+      "model": "Hunter PSU-04 + Pro Düse 15A 4,6 m",
+      "group": "nozzles_rotators",
+      "attr": "pattern_type",
+      "value": "arc",
+      "source": "shop_extract"
+    },
+    {
+      "article": "3.199",
+      "model": "Hunter PSU-04 + Pro Düse 17A 5,2 m",
+      "group": "nozzles_rotators",
+      "attr": "pattern_type",
+      "value": "arc",
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.48-D189",
+      "model": "MP815 Radius 90° - 210 Wurfweite 2,5 - 4,9 m, MP Düse",
+      "group": "nozzles_rotators",
+      "attr": "pattern_type",
+      "value": "arc",
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.48-D189",
+      "model": "MP815 Radius 90° - 210 Wurfweite 2,5 - 4,9 m, MP Düse",
+      "group": "nozzles_rotators",
+      "attr": "radius_min_m",
+      "value": 2.5,
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.48-D189",
+      "model": "MP815 Radius 90° - 210 Wurfweite 2,5 - 4,9 m, MP Düse",
+      "group": "nozzles_rotators",
+      "attr": "radius_max_m",
+      "value": 4.9,
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.48-D190",
+      "model": "MP815 Radius 210° - 270° Wurfweite 2,5 - 4,9 m, MP Düse",
+      "group": "nozzles_rotators",
+      "attr": "pattern_type",
+      "value": "arc",
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.48-D190",
+      "model": "MP815 Radius 210° - 270° Wurfweite 2,5 - 4,9 m, MP Düse",
+      "group": "nozzles_rotators",
+      "attr": "radius_min_m",
+      "value": 2.5,
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.48-D190",
+      "model": "MP815 Radius 210° - 270° Wurfweite 2,5 - 4,9 m, MP Düse",
+      "group": "nozzles_rotators",
+      "attr": "radius_max_m",
+      "value": 4.9,
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.48-D191",
+      "model": "MP815 Radius 360° Wurfweite 2,5 - 4,9 m, MP Düse",
+      "group": "nozzles_rotators",
+      "attr": "pattern_type",
+      "value": "full_circle",
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.48-D191",
+      "model": "MP815 Radius 360° Wurfweite 2,5 - 4,9 m, MP Düse",
+      "group": "nozzles_rotators",
+      "attr": "arc_min_deg",
+      "value": 360,
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.48-D191",
+      "model": "MP815 Radius 360° Wurfweite 2,5 - 4,9 m, MP Düse",
+      "group": "nozzles_rotators",
+      "attr": "arc_max_deg",
+      "value": 360,
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.48-D191",
+      "model": "MP815 Radius 360° Wurfweite 2,5 - 4,9 m, MP Düse",
+      "group": "nozzles_rotators",
+      "attr": "radius_min_m",
+      "value": 2.5,
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.48-D191",
+      "model": "MP815 Radius 360° Wurfweite 2,5 - 4,9 m, MP Düse",
+      "group": "nozzles_rotators",
+      "attr": "radius_max_m",
+      "value": 4.9,
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.43-D161",
+      "model": "4A Wurfweite 1,2 m Düse Hunter",
+      "group": "nozzles_rotators",
+      "attr": "pattern_type",
+      "value": "arc",
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.43-D162",
+      "model": "6A Wurfweite 1,8 m Düse Hunter",
+      "group": "nozzles_rotators",
+      "attr": "pattern_type",
+      "value": "arc",
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.43-D163",
+      "model": "8A Wurfweite 2,4 m Düse Hunter",
+      "group": "nozzles_rotators",
+      "attr": "pattern_type",
+      "value": "arc",
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.43-D164",
+      "model": "10A Wurfweite 3,0 m Düse Hunter",
+      "group": "nozzles_rotators",
+      "attr": "pattern_type",
+      "value": "arc",
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.43-D165",
+      "model": "12A Wurfweite 3,7 m Düse Hunter",
+      "group": "nozzles_rotators",
+      "attr": "pattern_type",
+      "value": "arc",
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.43-D166",
+      "model": "15A Wurfweite 4,6 m Düse Hunter",
+      "group": "nozzles_rotators",
+      "attr": "pattern_type",
+      "value": "arc",
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.43-D167",
+      "model": "17A Wurfweite 5,2 m Düse Hunter",
+      "group": "nozzles_rotators",
+      "attr": "pattern_type",
+      "value": "arc",
+      "source": "shop_extract"
+    },
+    {
+      "article": "9.32",
+      "model": "Sginalregner mit MP800 Radius 90° - 210 Wurfweite 1,8 - 3,5 m",
+      "group": "nozzles_rotators",
+      "attr": "pattern_type",
+      "value": "arc",
+      "source": "shop_extract"
+    },
+    {
+      "article": "9.32",
+      "model": "Sginalregner mit MP800 Radius 90° - 210 Wurfweite 1,8 - 3,5 m",
+      "group": "nozzles_rotators",
+      "attr": "radius_min_m",
+      "value": 1.8,
+      "source": "shop_extract"
+    },
+    {
+      "article": "9.32",
+      "model": "Sginalregner mit MP800 Radius 90° - 210 Wurfweite 1,8 - 3,5 m",
+      "group": "nozzles_rotators",
+      "attr": "radius_max_m",
+      "value": 3.5,
+      "source": "shop_extract"
+    },
+    {
+      "article": "9.32",
+      "model": "Sginalregner mit MP800 Radius 360° Wurfweite 1,8 - 3,5 m",
+      "group": "nozzles_rotators",
+      "attr": "pattern_type",
+      "value": "full_circle",
+      "source": "shop_extract"
+    },
+    {
+      "article": "9.32",
+      "model": "Sginalregner mit MP800 Radius 360° Wurfweite 1,8 - 3,5 m",
+      "group": "nozzles_rotators",
+      "attr": "arc_min_deg",
+      "value": 360,
+      "source": "shop_extract"
+    },
+    {
+      "article": "9.32",
+      "model": "Sginalregner mit MP800 Radius 360° Wurfweite 1,8 - 3,5 m",
+      "group": "nozzles_rotators",
+      "attr": "arc_max_deg",
+      "value": 360,
+      "source": "shop_extract"
+    },
+    {
+      "article": "9.32",
+      "model": "Sginalregner mit MP800 Radius 360° Wurfweite 1,8 - 3,5 m",
+      "group": "nozzles_rotators",
+      "attr": "radius_min_m",
+      "value": 1.8,
+      "source": "shop_extract"
+    },
+    {
+      "article": "9.32",
+      "model": "Sginalregner mit MP800 Radius 360° Wurfweite 1,8 - 3,5 m",
+      "group": "nozzles_rotators",
+      "attr": "radius_max_m",
+      "value": 3.5,
+      "source": "shop_extract"
+    },
+    {
+      "article": "9.32",
+      "model": "Sginalregner mit MP1000 Radius 90° - 210° Wurfweite 2,5 - 4,5 m",
+      "group": "nozzles_rotators",
+      "attr": "pattern_type",
+      "value": "arc",
+      "source": "shop_extract"
+    },
+    {
+      "article": "9.32",
+      "model": "Sginalregner mit MP1000 Radius 90° - 210° Wurfweite 2,5 - 4,5 m",
+      "group": "nozzles_rotators",
+      "attr": "radius_min_m",
+      "value": 2.5,
+      "source": "shop_extract"
+    },
+    {
+      "article": "9.32",
+      "model": "Sginalregner mit MP1000 Radius 90° - 210° Wurfweite 2,5 - 4,5 m",
+      "group": "nozzles_rotators",
+      "attr": "radius_max_m",
+      "value": 4.5,
+      "source": "shop_extract"
+    },
+    {
+      "article": "9.32",
+      "model": "Sginalregner mit MP1000 Radius 210° - 270° Wurfweite 2,5 - 4,5 m",
+      "group": "nozzles_rotators",
+      "attr": "pattern_type",
+      "value": "arc",
+      "source": "shop_extract"
+    },
+    {
+      "article": "9.32",
+      "model": "Sginalregner mit MP1000 Radius 210° - 270° Wurfweite 2,5 - 4,5 m",
+      "group": "nozzles_rotators",
+      "attr": "radius_min_m",
+      "value": 2.5,
+      "source": "shop_extract"
+    },
+    {
+      "article": "9.32",
+      "model": "Sginalregner mit MP1000 Radius 210° - 270° Wurfweite 2,5 - 4,5 m",
+      "group": "nozzles_rotators",
+      "attr": "radius_max_m",
+      "value": 4.5,
+      "source": "shop_extract"
+    },
+    {
+      "article": "9.32",
+      "model": "Sginalregner mit MP1000 Radius 360° Wurfweite 2,5 - 4,5 m",
+      "group": "nozzles_rotators",
+      "attr": "pattern_type",
+      "value": "full_circle",
+      "source": "shop_extract"
+    },
+    {
+      "article": "9.32",
+      "model": "Sginalregner mit MP1000 Radius 360° Wurfweite 2,5 - 4,5 m",
+      "group": "nozzles_rotators",
+      "attr": "arc_min_deg",
+      "value": 360,
+      "source": "shop_extract"
+    },
+    {
+      "article": "9.32",
+      "model": "Sginalregner mit MP1000 Radius 360° Wurfweite 2,5 - 4,5 m",
+      "group": "nozzles_rotators",
+      "attr": "arc_max_deg",
+      "value": 360,
+      "source": "shop_extract"
+    },
+    {
+      "article": "9.32",
+      "model": "Sginalregner mit MP1000 Radius 360° Wurfweite 2,5 - 4,5 m",
+      "group": "nozzles_rotators",
+      "attr": "radius_min_m",
+      "value": 2.5,
+      "source": "shop_extract"
+    },
+    {
+      "article": "9.32",
+      "model": "Sginalregner mit MP1000 Radius 360° Wurfweite 2,5 - 4,5 m",
+      "group": "nozzles_rotators",
+      "attr": "radius_max_m",
+      "value": 4.5,
+      "source": "shop_extract"
+    },
+    {
+      "article": "9.32",
+      "model": "Sginalregner mit MP2000 Radius 90° - 210° Wurfweite 4 - 6,4 m",
+      "group": "nozzles_rotators",
+      "attr": "pattern_type",
+      "value": "arc",
+      "source": "shop_extract"
+    },
+    {
+      "article": "9.32",
+      "model": "Sginalregner mit MP2000 Radius 90° - 210° Wurfweite 4 - 6,4 m",
+      "group": "nozzles_rotators",
+      "attr": "radius_min_m",
+      "value": 4,
+      "source": "shop_extract"
+    },
+    {
+      "article": "9.32",
+      "model": "Sginalregner mit MP2000 Radius 90° - 210° Wurfweite 4 - 6,4 m",
+      "group": "nozzles_rotators",
+      "attr": "radius_max_m",
+      "value": 6.4,
+      "source": "shop_extract"
+    },
+    {
+      "article": "9.32",
+      "model": "Sginalregner mit MP2000 Radius 210° - 270° Wurfweite 4 - 6,4 m",
+      "group": "nozzles_rotators",
+      "attr": "pattern_type",
+      "value": "arc",
+      "source": "shop_extract"
+    },
+    {
+      "article": "9.32",
+      "model": "Sginalregner mit MP2000 Radius 210° - 270° Wurfweite 4 - 6,4 m",
+      "group": "nozzles_rotators",
+      "attr": "radius_min_m",
+      "value": 4,
+      "source": "shop_extract"
+    },
+    {
+      "article": "9.32",
+      "model": "Sginalregner mit MP2000 Radius 210° - 270° Wurfweite 4 - 6,4 m",
+      "group": "nozzles_rotators",
+      "attr": "radius_max_m",
+      "value": 6.4,
+      "source": "shop_extract"
+    },
+    {
+      "article": "9.32",
+      "model": "Sginalregner mit MP2000 Radius 360° Wurfweite 2,5 - 6,4 m",
+      "group": "nozzles_rotators",
+      "attr": "pattern_type",
+      "value": "full_circle",
+      "source": "shop_extract"
+    },
+    {
+      "article": "9.32",
+      "model": "Sginalregner mit MP2000 Radius 360° Wurfweite 2,5 - 6,4 m",
+      "group": "nozzles_rotators",
+      "attr": "arc_min_deg",
+      "value": 360,
+      "source": "shop_extract"
+    },
+    {
+      "article": "9.32",
+      "model": "Sginalregner mit MP2000 Radius 360° Wurfweite 2,5 - 6,4 m",
+      "group": "nozzles_rotators",
+      "attr": "arc_max_deg",
+      "value": 360,
+      "source": "shop_extract"
+    },
+    {
+      "article": "9.32",
+      "model": "Sginalregner mit MP2000 Radius 360° Wurfweite 2,5 - 6,4 m",
+      "group": "nozzles_rotators",
+      "attr": "radius_min_m",
+      "value": 2.5,
+      "source": "shop_extract"
+    },
+    {
+      "article": "9.32",
+      "model": "Sginalregner mit MP2000 Radius 360° Wurfweite 2,5 - 6,4 m",
+      "group": "nozzles_rotators",
+      "attr": "radius_max_m",
+      "value": 6.4,
+      "source": "shop_extract"
+    },
+    {
+      "article": "9.32",
+      "model": "Sginalregner mit MP3000 Radius 90° - 210° Wurfweite 6,7 - 9,1 m",
+      "group": "nozzles_rotators",
+      "attr": "pattern_type",
+      "value": "arc",
+      "source": "shop_extract"
+    },
+    {
+      "article": "9.32",
+      "model": "Sginalregner mit MP3000 Radius 90° - 210° Wurfweite 6,7 - 9,1 m",
+      "group": "nozzles_rotators",
+      "attr": "radius_min_m",
+      "value": 6.7,
+      "source": "shop_extract"
+    },
+    {
+      "article": "9.32",
+      "model": "Sginalregner mit MP3000 Radius 90° - 210° Wurfweite 6,7 - 9,1 m",
+      "group": "nozzles_rotators",
+      "attr": "radius_max_m",
+      "value": 9.1,
+      "source": "shop_extract"
+    },
+    {
+      "article": "9.32",
+      "model": "Sginalregner mit MP3000 Radius 210° - 270° Wurfweite 6,7 - 9,1 m",
+      "group": "nozzles_rotators",
+      "attr": "pattern_type",
+      "value": "arc",
+      "source": "shop_extract"
+    },
+    {
+      "article": "9.32",
+      "model": "Sginalregner mit MP3000 Radius 210° - 270° Wurfweite 6,7 - 9,1 m",
+      "group": "nozzles_rotators",
+      "attr": "radius_min_m",
+      "value": 6.7,
+      "source": "shop_extract"
+    },
+    {
+      "article": "9.32",
+      "model": "Sginalregner mit MP3000 Radius 210° - 270° Wurfweite 6,7 - 9,1 m",
+      "group": "nozzles_rotators",
+      "attr": "radius_max_m",
+      "value": 9.1,
+      "source": "shop_extract"
+    },
+    {
+      "article": "9.32",
+      "model": "Sginalregner mit MP3000 Radius 360° Wurfweite 6,7 - 9,1 m",
+      "group": "nozzles_rotators",
+      "attr": "pattern_type",
+      "value": "full_circle",
+      "source": "shop_extract"
+    },
+    {
+      "article": "9.32",
+      "model": "Sginalregner mit MP3000 Radius 360° Wurfweite 6,7 - 9,1 m",
+      "group": "nozzles_rotators",
+      "attr": "arc_min_deg",
+      "value": 360,
+      "source": "shop_extract"
+    },
+    {
+      "article": "9.32",
+      "model": "Sginalregner mit MP3000 Radius 360° Wurfweite 6,7 - 9,1 m",
+      "group": "nozzles_rotators",
+      "attr": "arc_max_deg",
+      "value": 360,
+      "source": "shop_extract"
+    },
+    {
+      "article": "9.32",
+      "model": "Sginalregner mit MP3000 Radius 360° Wurfweite 6,7 - 9,1 m",
+      "group": "nozzles_rotators",
+      "attr": "radius_min_m",
+      "value": 6.7,
+      "source": "shop_extract"
+    },
+    {
+      "article": "9.32",
+      "model": "Sginalregner mit MP3000 Radius 360° Wurfweite 6,7 - 9,1 m",
+      "group": "nozzles_rotators",
+      "attr": "radius_max_m",
+      "value": 9.1,
+      "source": "shop_extract"
+    },
+    {
+      "article": "9.32",
+      "model": "Sginalregner mit MP3500 Radius 90°-210° Wurfweite 9,40 - 10,70 m",
+      "group": "nozzles_rotators",
+      "attr": "pattern_type",
+      "value": "arc",
+      "source": "shop_extract"
+    },
+    {
+      "article": "9.32",
+      "model": "Sginalregner mit MP3500 Radius 90°-210° Wurfweite 9,40 - 10,70 m",
+      "group": "nozzles_rotators",
+      "attr": "radius_min_m",
+      "value": 9.4,
+      "source": "shop_extract"
+    },
+    {
+      "article": "9.32",
+      "model": "Sginalregner mit MP3500 Radius 90°-210° Wurfweite 9,40 - 10,70 m",
+      "group": "nozzles_rotators",
+      "attr": "radius_max_m",
+      "value": 10.7,
+      "source": "shop_extract"
+    },
+    {
+      "article": "9.32",
+      "model": "Sginalregner mit MPSS530 Seitenstreifendüse 1,5 x 9,1 m",
+      "group": "nozzles_rotators",
+      "attr": "pattern_type",
+      "value": "strip",
+      "source": "shop_extract"
+    },
+    {
+      "article": "9.32",
+      "model": "Sginalregner mit MPSS530 Seitenstreifendüse 1,5 x 9,1 m",
+      "group": "nozzles_rotators",
+      "attr": "strip_width_m",
+      "value": 1.5,
+      "source": "shop_extract"
+    },
+    {
+      "article": "9.32",
+      "model": "Sginalregner mit MPSS530 Seitenstreifendüse 1,5 x 9,1 m",
+      "group": "nozzles_rotators",
+      "attr": "strip_length_m",
+      "value": 9.1,
+      "source": "shop_extract"
+    },
+    {
+      "article": "9.32",
+      "model": "Sginalregner mit MPLCS515 Streifendüse Ecke links 1,5 x 4,6 m",
+      "group": "nozzles_rotators",
+      "attr": "pattern_type",
+      "value": "strip",
+      "source": "shop_extract"
+    },
+    {
+      "article": "9.32",
+      "model": "Sginalregner mit MPLCS515 Streifendüse Ecke links 1,5 x 4,6 m",
+      "group": "nozzles_rotators",
+      "attr": "strip_width_m",
+      "value": 1.5,
+      "source": "shop_extract"
+    },
+    {
+      "article": "9.32",
+      "model": "Sginalregner mit MPLCS515 Streifendüse Ecke links 1,5 x 4,6 m",
+      "group": "nozzles_rotators",
+      "attr": "strip_length_m",
+      "value": 4.6,
+      "source": "shop_extract"
+    },
+    {
+      "article": "9.32",
+      "model": "Sginalregner mit MPRCS515 Streifendüse Ecke rechts 1,5 x 4,6 m",
+      "group": "nozzles_rotators",
+      "attr": "pattern_type",
+      "value": "strip",
+      "source": "shop_extract"
+    },
+    {
+      "article": "9.32",
+      "model": "Sginalregner mit MPRCS515 Streifendüse Ecke rechts 1,5 x 4,6 m",
+      "group": "nozzles_rotators",
+      "attr": "strip_width_m",
+      "value": 1.5,
+      "source": "shop_extract"
+    },
+    {
+      "article": "9.32",
+      "model": "Sginalregner mit MPRCS515 Streifendüse Ecke rechts 1,5 x 4,6 m",
+      "group": "nozzles_rotators",
+      "attr": "strip_length_m",
+      "value": 4.6,
+      "source": "shop_extract"
+    },
+    {
+      "article": "3.139-D83",
+      "model": "SRM-04 10 cm Versenkregner, Gesamthöhe: 10 cm",
+      "group": "rotor_sprinklers",
+      "from_group": "mounting_accessories",
+      "attr": "arc_adjustable",
+      "value": true,
+      "source": "shop_extract"
+    },
+    {
+      "article": "3.139-D83",
+      "model": "SRM-04 10 cm Versenkregner, Gesamthöhe: 10 cm",
+      "group": "rotor_sprinklers",
+      "from_group": "mounting_accessories",
+      "attr": "full_circle_supported",
+      "value": true,
+      "source": "shop_extract"
+    },
+    {
+      "article": "3.139-D83",
+      "model": "SRM-04 10 cm Versenkregner, Gesamthöhe: 10 cm",
+      "group": "rotor_sprinklers",
+      "from_group": "mounting_accessories",
+      "attr": "check_valve_present",
+      "value": true,
+      "source": "shop_extract"
+    },
+    {
+      "article": "3.139-D83",
+      "model": "SRM-04 10 cm Versenkregner, Gesamthöhe: 10 cm",
+      "group": "rotor_sprinklers",
+      "from_group": "mounting_accessories",
+      "attr": "stainless_riser",
+      "value": false,
+      "source": "shop_extract"
+    },
+    {
+      "article": "3.139-D84",
+      "model": "SRM-Düsen; 8 Standarddüsen",
+      "group": "rotor_sprinklers",
+      "from_group": "mounting_accessories",
+      "attr": "arc_adjustable",
+      "value": true,
+      "source": "shop_extract"
+    },
+    {
+      "article": "3.139-D84",
+      "model": "SRM-Düsen; 8 Standarddüsen",
+      "group": "rotor_sprinklers",
+      "from_group": "mounting_accessories",
+      "attr": "full_circle_supported",
+      "value": true,
+      "source": "shop_extract"
+    },
+    {
+      "article": "3.139-D84",
+      "model": "SRM-Düsen; 8 Standarddüsen",
+      "group": "rotor_sprinklers",
+      "from_group": "mounting_accessories",
+      "attr": "stainless_riser",
+      "value": false,
+      "source": "shop_extract"
+    },
+    {
+      "article": "3.139-D84",
+      "model": "SRM-Düsen; 8 Standarddüsen",
+      "group": "rotor_sprinklers",
+      "from_group": "mounting_accessories",
+      "attr": "nozzles_included",
+      "value": true,
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.14-D30",
+      "model": "Düse Typ SS-530 Streifenrand Mitte",
+      "group": "nozzles_rotators",
+      "from_group": "filters_pressure_regulators",
+      "attr": "pattern_type",
+      "value": "strip",
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.14-D30",
+      "model": "Düse Typ SS-530 Streifenrand Mitte",
+      "group": "nozzles_rotators",
+      "from_group": "filters_pressure_regulators",
+      "attr": "arc_adjustable",
+      "value": true,
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.14-D31",
+      "model": "Düse Typ LCS-515 Streifenecke links",
+      "group": "nozzles_rotators",
+      "from_group": "filters_pressure_regulators",
+      "attr": "pattern_type",
+      "value": "strip",
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.14-D31",
+      "model": "Düse Typ LCS-515 Streifenecke links",
+      "group": "nozzles_rotators",
+      "from_group": "filters_pressure_regulators",
+      "attr": "arc_adjustable",
+      "value": true,
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.14-D32",
+      "model": "Düse Typ RCS-515 Streifenecke rechts",
+      "group": "nozzles_rotators",
+      "from_group": "filters_pressure_regulators",
+      "attr": "pattern_type",
+      "value": "strip",
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.14-D32",
+      "model": "Düse Typ RCS-515 Streifenecke rechts",
+      "group": "nozzles_rotators",
+      "from_group": "filters_pressure_regulators",
+      "attr": "arc_adjustable",
+      "value": true,
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.14-D33",
+      "model": "Düse Typ ES-515 Streifenende Mitte",
+      "group": "nozzles_rotators",
+      "from_group": "filters_pressure_regulators",
+      "attr": "pattern_type",
+      "value": "strip",
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.14-D33",
+      "model": "Düse Typ ES-515 Streifenende Mitte",
+      "group": "nozzles_rotators",
+      "from_group": "filters_pressure_regulators",
+      "attr": "arc_adjustable",
+      "value": true,
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.14-D34",
+      "model": "Düse Typ CS-530 Streifen Mitte",
+      "group": "nozzles_rotators",
+      "from_group": "filters_pressure_regulators",
+      "attr": "pattern_type",
+      "value": "strip",
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.14-D34",
+      "model": "Düse Typ CS-530 Streifen Mitte",
+      "group": "nozzles_rotators",
+      "from_group": "filters_pressure_regulators",
+      "attr": "arc_adjustable",
+      "value": true,
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.14-D35",
+      "model": "Düse Typ SS-918 Streifenrand Mitte",
+      "group": "nozzles_rotators",
+      "from_group": "filters_pressure_regulators",
+      "attr": "pattern_type",
+      "value": "strip",
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.14-D35",
+      "model": "Düse Typ SS-918 Streifenrand Mitte",
+      "group": "nozzles_rotators",
+      "from_group": "filters_pressure_regulators",
+      "attr": "arc_adjustable",
+      "value": true,
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.14-D36",
+      "model": "Düse Typ S-8-A Strahlendüse",
+      "group": "nozzles_rotators",
+      "from_group": "filters_pressure_regulators",
+      "attr": "pattern_type",
+      "value": "arc",
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.14-D36",
+      "model": "Düse Typ S-8-A Strahlendüse",
+      "group": "nozzles_rotators",
+      "from_group": "filters_pressure_regulators",
+      "attr": "arc_adjustable",
+      "value": true,
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.14-D37",
+      "model": "Düse Typ ST-16-A Strahlendüse",
+      "group": "nozzles_rotators",
+      "from_group": "filters_pressure_regulators",
+      "attr": "pattern_type",
+      "value": "arc",
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.14-D37",
+      "model": "Düse Typ ST-16-A Strahlendüse",
+      "group": "nozzles_rotators",
+      "from_group": "filters_pressure_regulators",
+      "attr": "arc_adjustable",
+      "value": true,
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.14-D38",
+      "model": "Düse Typ 5-CST-B Strahlenbubbler",
+      "group": "nozzles_rotators",
+      "from_group": "filters_pressure_regulators",
+      "attr": "pattern_type",
+      "value": "bubbler",
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.14-D38",
+      "model": "Düse Typ 5-CST-B Strahlenbubbler",
+      "group": "nozzles_rotators",
+      "from_group": "filters_pressure_regulators",
+      "attr": "arc_adjustable",
+      "value": true,
+      "source": "shop_extract"
+    },
+    {
+      "article": "6.12",
+      "model": "PP Kugelhahn, Hahnanschluss x 3/4\" AG + Druckminderer 2,5 bar + Lock 1",
+      "group": "filters_pressure_regulators",
+      "from_group": "valves",
+      "attr": "regulated_pressure_bar",
+      "value": 2.5,
+      "source": "shop_extract"
+    },
+    {
+      "article": "5.01-SF01",
+      "model": "Scheibenfilter 2\" 18-22 m³ mit Metallmanschette",
+      "group": "filters_pressure_regulators",
+      "from_group": "pe_compression_fittings",
+      "attr": "filtration_mesh",
+      "value": 120,
+      "source": "shop_extract"
+    },
+    {
+      "article": "5.01-SF01",
+      "model": "Scheibenfilter 2\" 18-22 m³ mit Metallmanschette",
+      "group": "filters_pressure_regulators",
+      "from_group": "pe_compression_fittings",
+      "attr": "filter_element_type",
+      "value": "disc",
+      "source": "shop_extract"
+    },
+    {
+      "article": "5.01-SF01",
+      "model": "Scheibenfilter 2\" 18-22 m³ mit Metallmanschette",
+      "group": "filters_pressure_regulators",
+      "from_group": "pe_compression_fittings",
+      "attr": "flow_max_l_min",
+      "value": 366.67,
+      "source": "shop_extract"
+    },
+    {
+      "article": "5.01-SF02",
+      "model": "Scheibenfilter 2\" + 2 Stück Manometer 0-10bar",
+      "group": "filters_pressure_regulators",
+      "from_group": "pe_compression_fittings",
+      "attr": "filtration_mesh",
+      "value": 120,
+      "source": "shop_extract"
+    },
+    {
+      "article": "5.01-SF02",
+      "model": "Scheibenfilter 2\" + 2 Stück Manometer 0-10bar",
+      "group": "filters_pressure_regulators",
+      "from_group": "pe_compression_fittings",
+      "attr": "filter_element_type",
+      "value": "disc",
+      "source": "shop_extract"
+    },
+    {
+      "article": "5.01-SF02",
+      "model": "Scheibenfilter 2\" + 2 Stück Manometer 0-10bar",
+      "group": "filters_pressure_regulators",
+      "from_group": "pe_compression_fittings",
+      "attr": "flow_max_l_min",
+      "value": 366.67,
+      "source": "shop_extract"
+    },
+    {
+      "article": "5.01-SF03",
+      "model": "Scheibenfilter 2\" + 2 St. PE-Kupplung 25 inkl. Reduzierung",
+      "group": "filters_pressure_regulators",
+      "from_group": "pe_compression_fittings",
+      "attr": "filtration_mesh",
+      "value": 120,
+      "source": "shop_extract"
+    },
+    {
+      "article": "5.01-SF03",
+      "model": "Scheibenfilter 2\" + 2 St. PE-Kupplung 25 inkl. Reduzierung",
+      "group": "filters_pressure_regulators",
+      "from_group": "pe_compression_fittings",
+      "attr": "filter_element_type",
+      "value": "disc",
+      "source": "shop_extract"
+    },
+    {
+      "article": "5.01-SF03",
+      "model": "Scheibenfilter 2\" + 2 St. PE-Kupplung 25 inkl. Reduzierung",
+      "group": "filters_pressure_regulators",
+      "from_group": "pe_compression_fittings",
+      "attr": "flow_max_l_min",
+      "value": 366.67,
+      "source": "shop_extract"
+    },
+    {
+      "article": "5.01-SF04",
+      "model": "Scheibenfilter 2\" + 2 St. PE-Kupplung 32 inkl. Reduzierung",
+      "group": "filters_pressure_regulators",
+      "from_group": "pe_compression_fittings",
+      "attr": "filtration_mesh",
+      "value": 120,
+      "source": "shop_extract"
+    },
+    {
+      "article": "5.01-SF04",
+      "model": "Scheibenfilter 2\" + 2 St. PE-Kupplung 32 inkl. Reduzierung",
+      "group": "filters_pressure_regulators",
+      "from_group": "pe_compression_fittings",
+      "attr": "filter_element_type",
+      "value": "disc",
+      "source": "shop_extract"
+    },
+    {
+      "article": "5.01-SF04",
+      "model": "Scheibenfilter 2\" + 2 St. PE-Kupplung 32 inkl. Reduzierung",
+      "group": "filters_pressure_regulators",
+      "from_group": "pe_compression_fittings",
+      "attr": "flow_max_l_min",
+      "value": 366.67,
+      "source": "shop_extract"
+    },
+    {
+      "article": "5.01-SF05",
+      "model": "Scheibenfilter 2\" + 2 St. PE-Kupplung 40 inkl. Reduzierung",
+      "group": "filters_pressure_regulators",
+      "from_group": "pe_compression_fittings",
+      "attr": "filtration_mesh",
+      "value": 120,
+      "source": "shop_extract"
+    },
+    {
+      "article": "5.01-SF05",
+      "model": "Scheibenfilter 2\" + 2 St. PE-Kupplung 40 inkl. Reduzierung",
+      "group": "filters_pressure_regulators",
+      "from_group": "pe_compression_fittings",
+      "attr": "filter_element_type",
+      "value": "disc",
+      "source": "shop_extract"
+    },
+    {
+      "article": "5.01-SF05",
+      "model": "Scheibenfilter 2\" + 2 St. PE-Kupplung 40 inkl. Reduzierung",
+      "group": "filters_pressure_regulators",
+      "from_group": "pe_compression_fittings",
+      "attr": "flow_max_l_min",
+      "value": 366.67,
+      "source": "shop_extract"
+    },
+    {
+      "article": "5.01-SF06",
+      "model": "Scheibenfilter 2\" + 2 St. PE-Kupplung 50 mm",
+      "group": "filters_pressure_regulators",
+      "from_group": "pe_compression_fittings",
+      "attr": "filtration_mesh",
+      "value": 120,
+      "source": "shop_extract"
+    },
+    {
+      "article": "5.01-SF06",
+      "model": "Scheibenfilter 2\" + 2 St. PE-Kupplung 50 mm",
+      "group": "filters_pressure_regulators",
+      "from_group": "pe_compression_fittings",
+      "attr": "filter_element_type",
+      "value": "disc",
+      "source": "shop_extract"
+    },
+    {
+      "article": "5.01-SF06",
+      "model": "Scheibenfilter 2\" + 2 St. PE-Kupplung 50 mm",
+      "group": "filters_pressure_regulators",
+      "from_group": "pe_compression_fittings",
+      "attr": "flow_max_l_min",
+      "value": 366.67,
+      "source": "shop_extract"
+    },
+    {
+      "article": "5.01-SF07",
+      "model": "Scheibenfilter 2\" + 2 St. PE-Kupplung 63 mm",
+      "group": "filters_pressure_regulators",
+      "from_group": "pe_compression_fittings",
+      "attr": "filtration_mesh",
+      "value": 120,
+      "source": "shop_extract"
+    },
+    {
+      "article": "5.01-SF07",
+      "model": "Scheibenfilter 2\" + 2 St. PE-Kupplung 63 mm",
+      "group": "filters_pressure_regulators",
+      "from_group": "pe_compression_fittings",
+      "attr": "filter_element_type",
+      "value": "disc",
+      "source": "shop_extract"
+    },
+    {
+      "article": "5.01-SF07",
+      "model": "Scheibenfilter 2\" + 2 St. PE-Kupplung 63 mm",
+      "group": "filters_pressure_regulators",
+      "from_group": "pe_compression_fittings",
+      "attr": "flow_max_l_min",
+      "value": 366.67,
+      "source": "shop_extract"
+    },
+    {
+      "article": "5.01-SF08",
+      "model": "Scheibenfilter 2\" + 2 St. PE-Kupplung 75 mm",
+      "group": "filters_pressure_regulators",
+      "from_group": "pe_compression_fittings",
+      "attr": "filtration_mesh",
+      "value": 120,
+      "source": "shop_extract"
+    },
+    {
+      "article": "5.01-SF08",
+      "model": "Scheibenfilter 2\" + 2 St. PE-Kupplung 75 mm",
+      "group": "filters_pressure_regulators",
+      "from_group": "pe_compression_fittings",
+      "attr": "filter_element_type",
+      "value": "disc",
+      "source": "shop_extract"
+    },
+    {
+      "article": "5.01-SF08",
+      "model": "Scheibenfilter 2\" + 2 St. PE-Kupplung 75 mm",
+      "group": "filters_pressure_regulators",
+      "from_group": "pe_compression_fittings",
+      "attr": "flow_max_l_min",
+      "value": 366.67,
+      "source": "shop_extract"
+    },
+    {
+      "article": "5.01-SF09",
+      "model": "Scheibenfilter 2\" + 2 St. PE-Kupplung 25 + 2 Stück Manometer",
+      "group": "filters_pressure_regulators",
+      "from_group": "pe_compression_fittings",
+      "attr": "filtration_mesh",
+      "value": 120,
+      "source": "shop_extract"
+    },
+    {
+      "article": "5.01-SF09",
+      "model": "Scheibenfilter 2\" + 2 St. PE-Kupplung 25 + 2 Stück Manometer",
+      "group": "filters_pressure_regulators",
+      "from_group": "pe_compression_fittings",
+      "attr": "filter_element_type",
+      "value": "disc",
+      "source": "shop_extract"
+    },
+    {
+      "article": "5.01-SF09",
+      "model": "Scheibenfilter 2\" + 2 St. PE-Kupplung 25 + 2 Stück Manometer",
+      "group": "filters_pressure_regulators",
+      "from_group": "pe_compression_fittings",
+      "attr": "flow_max_l_min",
+      "value": 366.67,
+      "source": "shop_extract"
+    },
+    {
+      "article": "5.01-SF10",
+      "model": "Scheibenfilter 2\" + 2 St. PE-Kupplung 32 + 2 Stück Manometer",
+      "group": "filters_pressure_regulators",
+      "from_group": "pe_compression_fittings",
+      "attr": "filtration_mesh",
+      "value": 120,
+      "source": "shop_extract"
+    },
+    {
+      "article": "5.01-SF10",
+      "model": "Scheibenfilter 2\" + 2 St. PE-Kupplung 32 + 2 Stück Manometer",
+      "group": "filters_pressure_regulators",
+      "from_group": "pe_compression_fittings",
+      "attr": "filter_element_type",
+      "value": "disc",
+      "source": "shop_extract"
+    },
+    {
+      "article": "5.01-SF10",
+      "model": "Scheibenfilter 2\" + 2 St. PE-Kupplung 32 + 2 Stück Manometer",
+      "group": "filters_pressure_regulators",
+      "from_group": "pe_compression_fittings",
+      "attr": "flow_max_l_min",
+      "value": 366.67,
+      "source": "shop_extract"
+    },
+    {
+      "article": "5.01-SF11",
+      "model": "Scheibenfilter 2\" + 2 St. PE-Kupplung 40 + 2 Stück Manometer",
+      "group": "filters_pressure_regulators",
+      "from_group": "pe_compression_fittings",
+      "attr": "filtration_mesh",
+      "value": 120,
+      "source": "shop_extract"
+    },
+    {
+      "article": "5.01-SF11",
+      "model": "Scheibenfilter 2\" + 2 St. PE-Kupplung 40 + 2 Stück Manometer",
+      "group": "filters_pressure_regulators",
+      "from_group": "pe_compression_fittings",
+      "attr": "filter_element_type",
+      "value": "disc",
+      "source": "shop_extract"
+    },
+    {
+      "article": "5.01-SF11",
+      "model": "Scheibenfilter 2\" + 2 St. PE-Kupplung 40 + 2 Stück Manometer",
+      "group": "filters_pressure_regulators",
+      "from_group": "pe_compression_fittings",
+      "attr": "flow_max_l_min",
+      "value": 366.67,
+      "source": "shop_extract"
+    },
+    {
+      "article": "5.01-SF12",
+      "model": "Scheibenfilter 2\" + 2 St. PE-Kupplung 50 + 2 Stück Manometer",
+      "group": "filters_pressure_regulators",
+      "from_group": "pe_compression_fittings",
+      "attr": "filtration_mesh",
+      "value": 120,
+      "source": "shop_extract"
+    },
+    {
+      "article": "5.01-SF12",
+      "model": "Scheibenfilter 2\" + 2 St. PE-Kupplung 50 + 2 Stück Manometer",
+      "group": "filters_pressure_regulators",
+      "from_group": "pe_compression_fittings",
+      "attr": "filter_element_type",
+      "value": "disc",
+      "source": "shop_extract"
+    },
+    {
+      "article": "5.01-SF12",
+      "model": "Scheibenfilter 2\" + 2 St. PE-Kupplung 50 + 2 Stück Manometer",
+      "group": "filters_pressure_regulators",
+      "from_group": "pe_compression_fittings",
+      "attr": "flow_max_l_min",
+      "value": 366.67,
+      "source": "shop_extract"
+    },
+    {
+      "article": "5.01-SF13",
+      "model": "Scheibenfilter 2\" + 2 St. PE-Kupplung 63 + 2 Stück Manometer",
+      "group": "filters_pressure_regulators",
+      "from_group": "pe_compression_fittings",
+      "attr": "filtration_mesh",
+      "value": 120,
+      "source": "shop_extract"
+    },
+    {
+      "article": "5.01-SF13",
+      "model": "Scheibenfilter 2\" + 2 St. PE-Kupplung 63 + 2 Stück Manometer",
+      "group": "filters_pressure_regulators",
+      "from_group": "pe_compression_fittings",
+      "attr": "filter_element_type",
+      "value": "disc",
+      "source": "shop_extract"
+    },
+    {
+      "article": "5.01-SF13",
+      "model": "Scheibenfilter 2\" + 2 St. PE-Kupplung 63 + 2 Stück Manometer",
+      "group": "filters_pressure_regulators",
+      "from_group": "pe_compression_fittings",
+      "attr": "flow_max_l_min",
+      "value": 366.67,
+      "source": "shop_extract"
+    },
+    {
+      "article": "5.01-SF14",
+      "model": "Scheibenfilter 2\" + 2 St. PE-Kupplung 75 + 2 Stück Manometer",
+      "group": "filters_pressure_regulators",
+      "from_group": "pe_compression_fittings",
+      "attr": "filtration_mesh",
+      "value": 120,
+      "source": "shop_extract"
+    },
+    {
+      "article": "5.01-SF14",
+      "model": "Scheibenfilter 2\" + 2 St. PE-Kupplung 75 + 2 Stück Manometer",
+      "group": "filters_pressure_regulators",
+      "from_group": "pe_compression_fittings",
+      "attr": "filter_element_type",
+      "value": "disc",
+      "source": "shop_extract"
+    },
+    {
+      "article": "5.01-SF14",
+      "model": "Scheibenfilter 2\" + 2 St. PE-Kupplung 75 + 2 Stück Manometer",
+      "group": "filters_pressure_regulators",
+      "from_group": "pe_compression_fittings",
+      "attr": "flow_max_l_min",
+      "value": 366.67,
+      "source": "shop_extract"
+    },
+    {
+      "article": "5.03-SF25",
+      "model": "Filter 16 mm steck x 16 mm steck (Wiederhaken)",
+      "group": "filters_pressure_regulators",
+      "from_group": "drip_irrigation",
+      "attr": "filter_element_type",
+      "value": "screen",
+      "source": "shop_extract"
+    },
+    {
+      "article": "5.03-SF26",
+      "model": "Filter 16 mm steck x 3/4\" IG Überwurfverschraubung",
+      "group": "filters_pressure_regulators",
+      "from_group": "drip_irrigation",
+      "attr": "filter_element_type",
+      "value": "screen",
+      "source": "shop_extract"
+    },
+    {
+      "article": "5.03-SF27",
+      "model": "Filter 16 mm steck x PE-Rohr 25 mm Verbinder",
+      "group": "filters_pressure_regulators",
+      "from_group": "pressure_pipes",
+      "attr": "filter_element_type",
+      "value": "screen",
+      "source": "shop_extract"
+    },
+    {
+      "article": "5.03-SF28",
+      "model": "Filter 16 mm steck x PE-Rohr 32 mm Verbinder",
+      "group": "filters_pressure_regulators",
+      "from_group": "pressure_pipes",
+      "attr": "filter_element_type",
+      "value": "screen",
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.26-PSI01",
+      "model": "1 bar ROT Druckminderer 3/4\" IG Überwurf x 3/4\" AG",
+      "group": "filters_pressure_regulators",
+      "from_group": "rotor_sprinklers",
+      "attr": "regulated_pressure_bar",
+      "value": 1,
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.26-PSI18",
+      "model": "1,8 bar SCHWARZ Druckminderer 3/4\" IG Überwurf x 3/4\" AG",
+      "group": "filters_pressure_regulators",
+      "from_group": "rotor_sprinklers",
+      "attr": "regulated_pressure_bar",
+      "value": 1.8,
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.26-PSI25",
+      "model": "2,5 bar GRÜN Druckminderer 3/4\" IG Überwurf x 3/4\" AG",
+      "group": "filters_pressure_regulators",
+      "from_group": "rotor_sprinklers",
+      "attr": "regulated_pressure_bar",
+      "value": 2.5,
+      "source": "shop_extract"
+    },
+    {
+      "article": "2.26-PSI125",
+      "model": "2,5 bar GRÜN Druckminderer mit Adapter auf 1\"AG, EIngang/Ausgang 1\"AG",
+      "group": "filters_pressure_regulators",
+      "from_group": "rotor_sprinklers",
+      "attr": "regulated_pressure_bar",
+      "value": 2.5,
+      "source": "shop_extract"
+    }
+  ]
+}

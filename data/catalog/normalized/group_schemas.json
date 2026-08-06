@@ -1,0 +1,2969 @@
+{
+  "schema_version": "1.0.0",
+  "generated_at": "2026-08-02T12:13:59.235Z",
+  "groups": [
+    {
+      "group_id": "nozzles_rotators",
+      "section_id": "irrigation",
+      "name": {
+        "de": "Düsen und Rotatoren"
+      },
+      "description": "Wechseldüsen und Rotatoren für Sprühgehäuse und teilweise Rotoren",
+      "allowed_subtypes": [
+        "fixed_spray_nozzle",
+        "adjustable_spray_nozzle",
+        "rotary_nozzle",
+        "strip_nozzle",
+        "bubbler_nozzle"
+      ],
+      "attributes": [
+        {
+          "attribute_id": "pattern_type",
+          "name": {
+            "de": "Muster"
+          },
+          "data_type": "enum",
+          "unit": null,
+          "required": false,
+          "nullable": true,
+          "multiple": false,
+          "allowed_values": [
+            "arc",
+            "full_circle",
+            "strip",
+            "bubbler"
+          ],
+          "minimum": null,
+          "maximum": null,
+          "calculation_role": "geometry",
+          "critical_for_calculation": true,
+          "description": "",
+          "example": null
+        },
+        {
+          "attribute_id": "arc_adjustable",
+          "name": {
+            "de": "Sektor einstellbar"
+          },
+          "data_type": "boolean",
+          "unit": null,
+          "required": false,
+          "nullable": true,
+          "multiple": false,
+          "allowed_values": null,
+          "minimum": null,
+          "maximum": null,
+          "calculation_role": "geometry",
+          "critical_for_calculation": false,
+          "description": "",
+          "example": null
+        },
+        {
+          "attribute_id": "arc_min_deg",
+          "name": {
+            "de": "Sektor min."
+          },
+          "data_type": "number",
+          "unit": "deg",
+          "required": false,
+          "nullable": true,
+          "multiple": false,
+          "allowed_values": null,
+          "minimum": null,
+          "maximum": null,
+          "calculation_role": "geometry",
+          "critical_for_calculation": true,
+          "description": "",
+          "example": 45
+        },
+        {
+          "attribute_id": "arc_max_deg",
+          "name": {
+            "de": "Sektor max."
+          },
+          "data_type": "number",
+          "unit": "deg",
+          "required": false,
+          "nullable": true,
+          "multiple": false,
+          "allowed_values": null,
+          "minimum": null,
+          "maximum": null,
+          "calculation_role": "geometry",
+          "critical_for_calculation": true,
+          "description": "",
+          "example": 270
+        },
+        {
+          "attribute_id": "radius_min_m",
+          "name": {
+            "de": "Wurfweite min."
+          },
+          "data_type": "number",
+          "unit": "m",
+          "required": false,
+          "nullable": true,
+          "multiple": false,
+          "allowed_values": null,
+          "minimum": null,
+          "maximum": null,
+          "calculation_role": "geometry",
+          "critical_for_calculation": true,
+          "description": "",
+          "example": 2.4
+        },
+        {
+          "attribute_id": "radius_max_m",
+          "name": {
+            "de": "Wurfweite max."
+          },
+          "data_type": "number",
+          "unit": "m",
+          "required": false,
+          "nullable": true,
+          "multiple": false,
+          "allowed_values": null,
+          "minimum": null,
+          "maximum": null,
+          "calculation_role": "geometry",
+          "critical_for_calculation": true,
+          "description": "",
+          "example": 4.6
+        },
+        {
+          "attribute_id": "pressure_min_bar",
+          "name": {
+            "de": "Druck min."
+          },
+          "data_type": "number",
+          "unit": "bar",
+          "required": false,
+          "nullable": true,
+          "multiple": false,
+          "allowed_values": null,
+          "minimum": null,
+          "maximum": null,
+          "calculation_role": "hydraulic",
+          "critical_for_calculation": true,
+          "description": "",
+          "example": null
+        },
+        {
+          "attribute_id": "pressure_max_bar",
+          "name": {
+            "de": "Druck max."
+          },
+          "data_type": "number",
+          "unit": "bar",
+          "required": false,
+          "nullable": true,
+          "multiple": false,
+          "allowed_values": null,
+          "minimum": null,
+          "maximum": null,
+          "calculation_role": "hydraulic",
+          "critical_for_calculation": true,
+          "description": "",
+          "example": null
+        },
+        {
+          "attribute_id": "pressure_recommended_bar",
+          "name": {
+            "de": "Empfohlener Druck"
+          },
+          "data_type": "number",
+          "unit": "bar",
+          "required": false,
+          "nullable": true,
+          "multiple": false,
+          "allowed_values": null,
+          "minimum": null,
+          "maximum": null,
+          "calculation_role": "hydraulic",
+          "critical_for_calculation": false,
+          "description": "",
+          "example": null
+        },
+        {
+          "attribute_id": "precipitation_rate_mm_h",
+          "name": {
+            "de": "Niederschlagsrate"
+          },
+          "data_type": "number",
+          "unit": "mm_h",
+          "required": false,
+          "nullable": true,
+          "multiple": false,
+          "allowed_values": null,
+          "minimum": null,
+          "maximum": null,
+          "calculation_role": "hydraulic",
+          "critical_for_calculation": false,
+          "description": "",
+          "example": null
+        },
+        {
+          "attribute_id": "trajectory_deg",
+          "name": {
+            "de": "Strahlanstieg"
+          },
+          "data_type": "number",
+          "unit": "deg",
+          "required": false,
+          "nullable": true,
+          "multiple": false,
+          "allowed_values": null,
+          "minimum": null,
+          "maximum": null,
+          "calculation_role": "geometry",
+          "critical_for_calculation": false,
+          "description": "",
+          "example": null
+        },
+        {
+          "attribute_id": "strip_length_m",
+          "name": {
+            "de": "Streifenlänge"
+          },
+          "data_type": "number",
+          "unit": "m",
+          "required": false,
+          "nullable": true,
+          "multiple": false,
+          "allowed_values": null,
+          "minimum": null,
+          "maximum": null,
+          "calculation_role": "geometry",
+          "critical_for_calculation": false,
+          "description": "",
+          "example": null
+        },
+        {
+          "attribute_id": "strip_width_m",
+          "name": {
+            "de": "Streifenbreite"
+          },
+          "data_type": "number",
+          "unit": "m",
+          "required": false,
+          "nullable": true,
+          "multiple": false,
+          "allowed_values": null,
+          "minimum": null,
+          "maximum": null,
+          "calculation_role": "geometry",
+          "critical_for_calculation": false,
+          "description": "",
+          "example": null
+        },
+        {
+          "attribute_id": "nozzle_thread_type",
+          "name": {
+            "de": "Düsengewinde"
+          },
+          "data_type": "string",
+          "unit": null,
+          "required": false,
+          "nullable": true,
+          "multiple": false,
+          "allowed_values": null,
+          "minimum": null,
+          "maximum": null,
+          "calculation_role": "compatibility",
+          "critical_for_calculation": true,
+          "description": "",
+          "example": null
+        }
+      ],
+      "calculation_roles": [
+        "geometry",
+        "hydraulic",
+        "compatibility",
+        "bill_of_materials"
+      ]
+    },
+    {
+      "group_id": "spray_bodies",
+      "section_id": "irrigation",
+      "name": {
+        "de": "Versenksprühgehäuse"
+      },
+      "description": "Pop-up-Gehäuse ohne Düse; Wurfweite/Durchfluss bestimmt die Düse",
+      "allowed_subtypes": [
+        "pop_up_spray_body",
+        "shrub_adapter",
+        "pressure_regulating_spray_body"
+      ],
+      "attributes": [
+        {
+          "attribute_id": "pop_up_height_mm",
+          "name": {
+            "de": "Aufsteigerhöhe"
+          },
+          "data_type": "number",
+          "unit": "mm",
+          "required": false,
+          "nullable": true,
+          "multiple": false,
+          "allowed_values": null,
+          "minimum": null,
+          "maximum": null,
+          "calculation_role": "geometry",
+          "critical_for_calculation": true,
+          "description": "",
+          "example": 100
+        },
+        {
+          "attribute_id": "inlet_position",
+          "name": {
+            "de": "Anschlussposition"
+          },
+          "data_type": "enum",
+          "unit": null,
+          "required": false,
+          "nullable": true,
+          "multiple": false,
+          "allowed_values": [
+            "bottom",
+            "side"
+          ],
+          "minimum": null,
+          "maximum": null,
+          "calculation_role": "compatibility",
+          "critical_for_calculation": false,
+          "description": "",
+          "example": null
+        },
+        {
+          "attribute_id": "pressure_regulator_present",
+          "name": {
+            "de": "PRS vorhanden"
+          },
+          "data_type": "boolean",
+          "unit": null,
+          "required": false,
+          "nullable": true,
+          "multiple": false,
+          "allowed_values": null,
+          "minimum": null,
+          "maximum": null,
+          "calculation_role": "hydraulic",
+          "critical_for_calculation": false,
+          "description": "",
+          "example": null
+        },
+        {
+          "attribute_id": "regulated_pressure_bar",
+          "name": {
+            "de": "Geregelter Druck"
+          },
+          "data_type": "number",
+          "unit": "bar",
+          "required": false,
+          "nullable": true,
+          "multiple": false,
+          "allowed_values": null,
+          "minimum": null,
+          "maximum": null,
+          "calculation_role": "hydraulic",
+          "critical_for_calculation": false,
+          "description": "",
+          "example": null
+        },
+        {
+          "attribute_id": "check_valve_present",
+          "name": {
+            "de": "Auslaufsperrventil"
+          },
+          "data_type": "boolean",
+          "unit": null,
+          "required": false,
+          "nullable": true,
+          "multiple": false,
+          "allowed_values": null,
+          "minimum": null,
+          "maximum": null,
+          "calculation_role": "hydraulic",
+          "critical_for_calculation": false,
+          "description": "",
+          "example": null
+        },
+        {
+          "attribute_id": "check_valve_max_elevation_m",
+          "name": {
+            "de": "SAM max. Höhendifferenz"
+          },
+          "data_type": "number",
+          "unit": "m",
+          "required": false,
+          "nullable": true,
+          "multiple": false,
+          "allowed_values": null,
+          "minimum": null,
+          "maximum": null,
+          "calculation_role": "hydraulic",
+          "critical_for_calculation": false,
+          "description": "",
+          "example": null
+        },
+        {
+          "attribute_id": "pressure_max_bar",
+          "name": {
+            "de": "Druck max."
+          },
+          "data_type": "number",
+          "unit": "bar",
+          "required": false,
+          "nullable": true,
+          "multiple": false,
+          "allowed_values": null,
+          "minimum": null,
+          "maximum": null,
+          "calculation_role": "hydraulic",
+          "critical_for_calculation": false,
+          "description": "",
+          "example": null
+        },
+        {
+          "attribute_id": "body_height_mm",
+          "name": {
+            "de": "Gehäusehöhe"
+          },
+          "data_type": "number",
+          "unit": "mm",
+          "required": false,
+          "nullable": true,
+          "multiple": false,
+          "allowed_values": null,
+          "minimum": null,
+          "maximum": null,
+          "calculation_role": "geometry",
+          "critical_for_calculation": false,
+          "description": "",
+          "example": null
+        },
+        {
+          "attribute_id": "body_diameter_mm",
+          "name": {
+            "de": "Gehäusedurchmesser"
+          },
+          "data_type": "number",
+          "unit": "mm",
+          "required": false,
+          "nullable": true,
+          "multiple": false,
+          "allowed_values": null,
+          "minimum": null,
+          "maximum": null,
+          "calculation_role": "geometry",
+          "critical_for_calculation": false,
+          "description": "",
+          "example": null
+        },
+        {
+          "attribute_id": "top_thread_type",
+          "name": {
+            "de": "Obergewinde"
+          },
+          "data_type": "string",
+          "unit": null,
+          "required": false,
+          "nullable": true,
+          "multiple": false,
+          "allowed_values": null,
+          "minimum": null,
+          "maximum": null,
+          "calculation_role": "compatibility",
+          "critical_for_calculation": true,
+          "description": "",
+          "example": null
+        }
+      ],
+      "calculation_roles": [
+        "geometry",
+        "hydraulic",
+        "compatibility",
+        "bill_of_materials"
+      ]
+    },
+    {
+      "group_id": "rotor_sprinklers",
+      "section_id": "irrigation",
+      "name": {
+        "de": "Getrieberegner"
+      },
+      "description": "Getrieberegner mit Düsensatz; Leistungstabellen sind für die Berechnung erforderlich",
+      "allowed_subtypes": [
+        "gear_drive_rotor",
+        "impact_sprinkler",
+        "long_range_rotor"
+      ],
+      "attributes": [
+        {
+          "attribute_id": "arc_adjustable",
+          "name": {
+            "de": "Sektor einstellbar"
+          },
+          "data_type": "boolean",
+          "unit": null,
+          "required": false,
+          "nullable": true,
+          "multiple": false,
+          "allowed_values": null,
+          "minimum": null,
+          "maximum": null,
+          "calculation_role": "geometry",
+          "critical_for_calculation": false,
+          "description": "",
+          "example": null
+        },
+        {
+          "attribute_id": "arc_min_deg",
+          "name": {
+            "de": "Sektor min."
+          },
+          "data_type": "number",
+          "unit": "deg",
+          "required": false,
+          "nullable": true,
+          "multiple": false,
+          "allowed_values": null,
+          "minimum": null,
+          "maximum": null,
+          "calculation_role": "geometry",
+          "critical_for_calculation": true,
+          "description": "",
+          "example": null
+        },
+        {
+          "attribute_id": "arc_max_deg",
+          "name": {
+            "de": "Sektor max."
+          },
+          "data_type": "number",
+          "unit": "deg",
+          "required": false,
+          "nullable": true,
+          "multiple": false,
+          "allowed_values": null,
+          "minimum": null,
+          "maximum": null,
+          "calculation_role": "geometry",
+          "critical_for_calculation": true,
+          "description": "",
+          "example": null
+        },
+        {
+          "attribute_id": "full_circle_supported",
+          "name": {
+            "de": "Vollkreis"
+          },
+          "data_type": "boolean",
+          "unit": null,
+          "required": false,
+          "nullable": true,
+          "multiple": false,
+          "allowed_values": null,
+          "minimum": null,
+          "maximum": null,
+          "calculation_role": "geometry",
+          "critical_for_calculation": false,
+          "description": "",
+          "example": null
+        },
+        {
+          "attribute_id": "radius_min_m",
+          "name": {
+            "de": "Wurfweite min."
+          },
+          "data_type": "number",
+          "unit": "m",
+          "required": false,
+          "nullable": true,
+          "multiple": false,
+          "allowed_values": null,
+          "minimum": null,
+          "maximum": null,
+          "calculation_role": "geometry",
+          "critical_for_calculation": true,
+          "description": "",
+          "example": null
+        },
+        {
+          "attribute_id": "radius_max_m",
+          "name": {
+            "de": "Wurfweite max."
+          },
+          "data_type": "number",
+          "unit": "m",
+          "required": false,
+          "nullable": true,
+          "multiple": false,
+          "allowed_values": null,
+          "minimum": null,
+          "maximum": null,
+          "calculation_role": "geometry",
+          "critical_for_calculation": true,
+          "description": "",
+          "example": null
+        },
+        {
+          "attribute_id": "pressure_min_bar",
+          "name": {
+            "de": "Druck min."
+          },
+          "data_type": "number",
+          "unit": "bar",
+          "required": false,
+          "nullable": true,
+          "multiple": false,
+          "allowed_values": null,
+          "minimum": null,
+          "maximum": null,
+          "calculation_role": "hydraulic",
+          "critical_for_calculation": true,
+          "description": "",
+          "example": null
+        },
+        {
+          "attribute_id": "pressure_max_bar",
+          "name": {
+            "de": "Druck max."
+          },
+          "data_type": "number",
+          "unit": "bar",
+          "required": false,
+          "nullable": true,
+          "multiple": false,
+          "allowed_values": null,
+          "minimum": null,
+          "maximum": null,
+          "calculation_role": "hydraulic",
+          "critical_for_calculation": true,
+          "description": "",
+          "example": null
+        },
+        {
+          "attribute_id": "pressure_recommended_bar",
+          "name": {
+            "de": "Empfohlener Druck"
+          },
+          "data_type": "number",
+          "unit": "bar",
+          "required": false,
+          "nullable": true,
+          "multiple": false,
+          "allowed_values": null,
+          "minimum": null,
+          "maximum": null,
+          "calculation_role": "hydraulic",
+          "critical_for_calculation": false,
+          "description": "",
+          "example": null
+        },
+        {
+          "attribute_id": "pop_up_height_mm",
+          "name": {
+            "de": "Aufsteigerhöhe"
+          },
+          "data_type": "number",
+          "unit": "mm",
+          "required": false,
+          "nullable": true,
+          "multiple": false,
+          "allowed_values": null,
+          "minimum": null,
+          "maximum": null,
+          "calculation_role": "geometry",
+          "critical_for_calculation": false,
+          "description": "",
+          "example": null
+        },
+        {
+          "attribute_id": "check_valve_present",
+          "name": {
+            "de": "Auslaufsperrventil"
+          },
+          "data_type": "boolean",
+          "unit": null,
+          "required": false,
+          "nullable": true,
+          "multiple": false,
+          "allowed_values": null,
+          "minimum": null,
+          "maximum": null,
+          "calculation_role": "hydraulic",
+          "critical_for_calculation": false,
+          "description": "",
+          "example": null
+        },
+        {
+          "attribute_id": "trajectory_deg",
+          "name": {
+            "de": "Strahlanstieg"
+          },
+          "data_type": "number",
+          "unit": "deg",
+          "required": false,
+          "nullable": true,
+          "multiple": false,
+          "allowed_values": null,
+          "minimum": null,
+          "maximum": null,
+          "calculation_role": "geometry",
+          "critical_for_calculation": false,
+          "description": "",
+          "example": null
+        },
+        {
+          "attribute_id": "stainless_riser",
+          "name": {
+            "de": "Edelstahl-Aufsteiger"
+          },
+          "data_type": "boolean",
+          "unit": null,
+          "required": false,
+          "nullable": true,
+          "multiple": false,
+          "allowed_values": null,
+          "minimum": null,
+          "maximum": null,
+          "calculation_role": "none",
+          "critical_for_calculation": false,
+          "description": "",
+          "example": null
+        },
+        {
+          "attribute_id": "nozzles_included",
+          "name": {
+            "de": "Düsen inklusive"
+          },
+          "data_type": "boolean",
+          "unit": null,
+          "required": false,
+          "nullable": true,
+          "multiple": false,
+          "allowed_values": null,
+          "minimum": null,
+          "maximum": null,
+          "calculation_role": "bill_of_materials",
+          "critical_for_calculation": false,
+          "description": "",
+          "example": null
+        }
+      ],
+      "calculation_roles": [
+        "geometry",
+        "hydraulic",
+        "compatibility",
+        "bill_of_materials"
+      ]
+    },
+    {
+      "group_id": "drip_irrigation",
+      "section_id": "irrigation",
+      "name": {
+        "de": "Tropfbewässerung"
+      },
+      "description": "Tropfrohre, Tropfer, Mikroschläuche und Tropfbewässerungsfittings",
+      "allowed_subtypes": [
+        "dripline",
+        "online_emitter",
+        "micro_tube",
+        "drip_fitting",
+        "flush_end"
+      ],
+      "attributes": [
+        {
+          "attribute_id": "outer_diameter_mm",
+          "name": {
+            "de": "Außendurchmesser"
+          },
+          "data_type": "number",
+          "unit": "mm",
+          "required": false,
+          "nullable": true,
+          "multiple": false,
+          "allowed_values": null,
+          "minimum": null,
+          "maximum": null,
+          "calculation_role": "compatibility",
+          "critical_for_calculation": true,
+          "description": "",
+          "example": null
+        },
+        {
+          "attribute_id": "inner_diameter_mm",
+          "name": {
+            "de": "Innendurchmesser"
+          },
+          "data_type": "number",
+          "unit": "mm",
+          "required": false,
+          "nullable": true,
+          "multiple": false,
+          "allowed_values": null,
+          "minimum": null,
+          "maximum": null,
+          "calculation_role": "hydraulic",
+          "critical_for_calculation": false,
+          "description": "",
+          "example": null
+        },
+        {
+          "attribute_id": "emitter_flow_l_h",
+          "name": {
+            "de": "Tropferdurchfluss"
+          },
+          "data_type": "number",
+          "unit": "l_h",
+          "required": false,
+          "nullable": true,
+          "multiple": false,
+          "allowed_values": null,
+          "minimum": null,
+          "maximum": null,
+          "calculation_role": "hydraulic",
+          "critical_for_calculation": true,
+          "description": "",
+          "example": null
+        },
+        {
+          "attribute_id": "emitter_spacing_m",
+          "name": {
+            "de": "Tropferabstand"
+          },
+          "data_type": "number",
+          "unit": "m",
+          "required": false,
+          "nullable": true,
+          "multiple": false,
+          "allowed_values": null,
+          "minimum": null,
+          "maximum": null,
+          "calculation_role": "geometry",
+          "critical_for_calculation": true,
+          "description": "",
+          "example": null
+        },
+        {
+          "attribute_id": "pressure_compensating",
+          "name": {
+            "de": "Druckkompensierend"
+          },
+          "data_type": "boolean",
+          "unit": null,
+          "required": false,
+          "nullable": true,
+          "multiple": false,
+          "allowed_values": null,
+          "minimum": null,
+          "maximum": null,
+          "calculation_role": "hydraulic",
+          "critical_for_calculation": false,
+          "description": "",
+          "example": null
+        },
+        {
+          "attribute_id": "pressure_min_bar",
+          "name": {
+            "de": "Druck min."
+          },
+          "data_type": "number",
+          "unit": "bar",
+          "required": false,
+          "nullable": true,
+          "multiple": false,
+          "allowed_values": null,
+          "minimum": null,
+          "maximum": null,
+          "calculation_role": "hydraulic",
+          "critical_for_calculation": false,
+          "description": "",
+          "example": null
+        },
+        {
+          "attribute_id": "pressure_max_bar",
+          "name": {
+            "de": "Druck max."
+          },
+          "data_type": "number",
+          "unit": "bar",
+          "required": false,
+          "nullable": true,
+          "multiple": false,
+          "allowed_values": null,
+          "minimum": null,
+          "maximum": null,
+          "calculation_role": "hydraulic",
+          "critical_for_calculation": false,
+          "description": "",
+          "example": null
+        },
+        {
+          "attribute_id": "coil_length_m",
+          "name": {
+            "de": "Rollenlänge"
+          },
+          "data_type": "number",
+          "unit": "m",
+          "required": false,
+          "nullable": true,
+          "multiple": false,
+          "allowed_values": null,
+          "minimum": null,
+          "maximum": null,
+          "calculation_role": "bill_of_materials",
+          "critical_for_calculation": false,
+          "description": "",
+          "example": null
+        },
+        {
+          "attribute_id": "sold_by_meter",
+          "name": {
+            "de": "Meterware"
+          },
+          "data_type": "boolean",
+          "unit": null,
+          "required": false,
+          "nullable": true,
+          "multiple": false,
+          "allowed_values": null,
+          "minimum": null,
+          "maximum": null,
+          "calculation_role": "bill_of_materials",
+          "critical_for_calculation": false,
+          "description": "",
+          "example": null
+        }
+      ],
+      "calculation_roles": [
+        "geometry",
+        "hydraulic",
+        "compatibility",
+        "bill_of_materials"
+      ]
+    },
+    {
+      "group_id": "pressure_pipes",
+      "section_id": "hydraulics",
+      "name": {
+        "de": "Druckrohre"
+      },
+      "description": "PE/PVC-Druckrohre; für Hydraulik ist der Innendurchmesser erforderlich",
+      "allowed_subtypes": [
+        "pe_pressure_pipe",
+        "pe_soft_pipe",
+        "pvc_pressure_pipe"
+      ],
+      "attributes": [
+        {
+          "attribute_id": "material",
+          "name": {
+            "de": "Material"
+          },
+          "data_type": "string",
+          "unit": null,
+          "required": true,
+          "nullable": true,
+          "multiple": false,
+          "allowed_values": null,
+          "minimum": null,
+          "maximum": null,
+          "calculation_role": "compatibility",
+          "critical_for_calculation": false,
+          "description": "",
+          "example": null
+        },
+        {
+          "attribute_id": "outer_diameter_mm",
+          "name": {
+            "de": "Außendurchmesser"
+          },
+          "data_type": "number",
+          "unit": "mm",
+          "required": true,
+          "nullable": true,
+          "multiple": false,
+          "allowed_values": null,
+          "minimum": null,
+          "maximum": null,
+          "calculation_role": "compatibility",
+          "critical_for_calculation": true,
+          "description": "",
+          "example": null
+        },
+        {
+          "attribute_id": "wall_thickness_mm",
+          "name": {
+            "de": "Wandstärke"
+          },
+          "data_type": "number",
+          "unit": "mm",
+          "required": false,
+          "nullable": true,
+          "multiple": false,
+          "allowed_values": null,
+          "minimum": null,
+          "maximum": null,
+          "calculation_role": "hydraulic",
+          "critical_for_calculation": false,
+          "description": "",
+          "example": null
+        },
+        {
+          "attribute_id": "internal_diameter_mm",
+          "name": {
+            "de": "Innendurchmesser"
+          },
+          "data_type": "number",
+          "unit": "mm",
+          "required": false,
+          "nullable": true,
+          "multiple": false,
+          "allowed_values": null,
+          "minimum": null,
+          "maximum": null,
+          "calculation_role": "hydraulic",
+          "critical_for_calculation": true,
+          "description": "",
+          "example": null
+        },
+        {
+          "attribute_id": "sdr",
+          "name": {
+            "de": "SDR"
+          },
+          "data_type": "number",
+          "unit": null,
+          "required": false,
+          "nullable": true,
+          "multiple": false,
+          "allowed_values": null,
+          "minimum": null,
+          "maximum": null,
+          "calculation_role": "hydraulic",
+          "critical_for_calculation": false,
+          "description": "",
+          "example": null
+        },
+        {
+          "attribute_id": "pressure_rating_bar",
+          "name": {
+            "de": "Nenndruck"
+          },
+          "data_type": "number",
+          "unit": "bar",
+          "required": false,
+          "nullable": true,
+          "multiple": false,
+          "allowed_values": null,
+          "minimum": null,
+          "maximum": null,
+          "calculation_role": "compatibility",
+          "critical_for_calculation": true,
+          "description": "",
+          "example": null
+        },
+        {
+          "attribute_id": "roughness_coefficient",
+          "name": {
+            "de": "Rauheit"
+          },
+          "data_type": "number",
+          "unit": null,
+          "required": false,
+          "nullable": true,
+          "multiple": false,
+          "allowed_values": null,
+          "minimum": null,
+          "maximum": null,
+          "calculation_role": "hydraulic",
+          "critical_for_calculation": false,
+          "description": "",
+          "example": null
+        },
+        {
+          "attribute_id": "length_m",
+          "name": {
+            "de": "Länge"
+          },
+          "data_type": "number",
+          "unit": "m",
+          "required": false,
+          "nullable": true,
+          "multiple": false,
+          "allowed_values": null,
+          "minimum": null,
+          "maximum": null,
+          "calculation_role": "bill_of_materials",
+          "critical_for_calculation": false,
+          "description": "",
+          "example": null
+        },
+        {
+          "attribute_id": "potable_water_approved",
+          "name": {
+            "de": "Trinkwassergeeignet"
+          },
+          "data_type": "boolean",
+          "unit": null,
+          "required": false,
+          "nullable": true,
+          "multiple": false,
+          "allowed_values": null,
+          "minimum": null,
+          "maximum": null,
+          "calculation_role": "none",
+          "critical_for_calculation": false,
+          "description": "",
+          "example": null
+        }
+      ],
+      "calculation_roles": [
+        "hydraulic",
+        "compatibility",
+        "bill_of_materials"
+      ]
+    },
+    {
+      "group_id": "sprinkler_connections",
+      "section_id": "hydraulics",
+      "name": {
+        "de": "Regneranschlüsse"
+      },
+      "description": "Swing Joint / SPX-FLEX / Anbohrschellen / Steigrohre",
+      "allowed_subtypes": [
+        "swing_pipe",
+        "swing_elbow",
+        "funny_pipe_fitting",
+        "tapping_saddle",
+        "riser"
+      ],
+      "attributes": [
+        {
+          "attribute_id": "material",
+          "name": {
+            "de": "Material"
+          },
+          "data_type": "string",
+          "unit": null,
+          "required": false,
+          "nullable": true,
+          "multiple": false,
+          "allowed_values": null,
+          "minimum": null,
+          "maximum": null,
+          "calculation_role": "none",
+          "critical_for_calculation": false,
+          "description": "",
+          "example": null
+        },
+        {
+          "attribute_id": "length_m",
+          "name": {
+            "de": "Länge"
+          },
+          "data_type": "number",
+          "unit": "m",
+          "required": false,
+          "nullable": true,
+          "multiple": false,
+          "allowed_values": null,
+          "minimum": null,
+          "maximum": null,
+          "calculation_role": "bill_of_materials",
+          "critical_for_calculation": false,
+          "description": "",
+          "example": null
+        },
+        {
+          "attribute_id": "angle_deg",
+          "name": {
+            "de": "Winkel"
+          },
+          "data_type": "number",
+          "unit": "deg",
+          "required": false,
+          "nullable": true,
+          "multiple": false,
+          "allowed_values": null,
+          "minimum": null,
+          "maximum": null,
+          "calculation_role": "geometry",
+          "critical_for_calculation": false,
+          "description": "",
+          "example": null
+        },
+        {
+          "attribute_id": "pressure_rating_bar",
+          "name": {
+            "de": "Nenndruck"
+          },
+          "data_type": "number",
+          "unit": "bar",
+          "required": false,
+          "nullable": true,
+          "multiple": false,
+          "allowed_values": null,
+          "minimum": null,
+          "maximum": null,
+          "calculation_role": "compatibility",
+          "critical_for_calculation": false,
+          "description": "",
+          "example": null
+        },
+        {
+          "attribute_id": "flexible",
+          "name": {
+            "de": "Flexibel"
+          },
+          "data_type": "boolean",
+          "unit": null,
+          "required": false,
+          "nullable": true,
+          "multiple": false,
+          "allowed_values": null,
+          "minimum": null,
+          "maximum": null,
+          "calculation_role": "none",
+          "critical_for_calculation": false,
+          "description": "",
+          "example": null
+        }
+      ],
+      "calculation_roles": [
+        "compatibility",
+        "bill_of_materials"
+      ]
+    },
+    {
+      "group_id": "pe_compression_fittings",
+      "section_id": "hydraulics",
+      "name": {
+        "de": "PE-Klemmverschraubungen"
+      },
+      "description": "Klemmverschraubungen für PE-Rohre",
+      "allowed_subtypes": [
+        "straight_coupling",
+        "reducing_coupling",
+        "elbow_90",
+        "tee",
+        "end_cap",
+        "threaded_adapter",
+        "tapping_saddle"
+      ],
+      "attributes": [
+        {
+          "attribute_id": "shape",
+          "name": {
+            "de": "Form"
+          },
+          "data_type": "enum",
+          "unit": null,
+          "required": true,
+          "nullable": true,
+          "multiple": false,
+          "allowed_values": [
+            "straight",
+            "elbow",
+            "tee",
+            "end_cap",
+            "reducer",
+            "cross",
+            "adapter"
+          ],
+          "minimum": null,
+          "maximum": null,
+          "calculation_role": "compatibility",
+          "critical_for_calculation": false,
+          "description": "",
+          "example": null
+        },
+        {
+          "attribute_id": "angle_deg",
+          "name": {
+            "de": "Winkel"
+          },
+          "data_type": "number",
+          "unit": "deg",
+          "required": false,
+          "nullable": true,
+          "multiple": false,
+          "allowed_values": null,
+          "minimum": null,
+          "maximum": null,
+          "calculation_role": "geometry",
+          "critical_for_calculation": false,
+          "description": "",
+          "example": null
+        },
+        {
+          "attribute_id": "pressure_rating_bar",
+          "name": {
+            "de": "Nenndruck"
+          },
+          "data_type": "number",
+          "unit": "bar",
+          "required": true,
+          "nullable": true,
+          "multiple": false,
+          "allowed_values": null,
+          "minimum": null,
+          "maximum": null,
+          "calculation_role": "compatibility",
+          "critical_for_calculation": true,
+          "description": "",
+          "example": 10
+        },
+        {
+          "attribute_id": "body_material",
+          "name": {
+            "de": "Gehäusewerkstoff"
+          },
+          "data_type": "string",
+          "unit": null,
+          "required": false,
+          "nullable": true,
+          "multiple": false,
+          "allowed_values": null,
+          "minimum": null,
+          "maximum": null,
+          "calculation_role": "none",
+          "critical_for_calculation": false,
+          "description": "",
+          "example": null
+        },
+        {
+          "attribute_id": "seal_material",
+          "name": {
+            "de": "Dichtungswerkstoff"
+          },
+          "data_type": "string",
+          "unit": null,
+          "required": false,
+          "nullable": true,
+          "multiple": false,
+          "allowed_values": null,
+          "minimum": null,
+          "maximum": null,
+          "calculation_role": "none",
+          "critical_for_calculation": false,
+          "description": "",
+          "example": null
+        },
+        {
+          "attribute_id": "uv_resistant",
+          "name": {
+            "de": "UV-beständig"
+          },
+          "data_type": "boolean",
+          "unit": null,
+          "required": false,
+          "nullable": true,
+          "multiple": false,
+          "allowed_values": null,
+          "minimum": null,
+          "maximum": null,
+          "calculation_role": "none",
+          "critical_for_calculation": false,
+          "description": "",
+          "example": null
+        },
+        {
+          "attribute_id": "potable_water_approved",
+          "name": {
+            "de": "Trinkwassergeeignet"
+          },
+          "data_type": "boolean",
+          "unit": null,
+          "required": false,
+          "nullable": true,
+          "multiple": false,
+          "allowed_values": null,
+          "minimum": null,
+          "maximum": null,
+          "calculation_role": "none",
+          "critical_for_calculation": false,
+          "description": "",
+          "example": null
+        },
+        {
+          "attribute_id": "manufacturing_standard",
+          "name": {
+            "de": "Norm"
+          },
+          "data_type": "string",
+          "unit": null,
+          "required": false,
+          "nullable": true,
+          "multiple": false,
+          "allowed_values": null,
+          "minimum": null,
+          "maximum": null,
+          "calculation_role": "none",
+          "critical_for_calculation": false,
+          "description": "",
+          "example": null
+        },
+        {
+          "attribute_id": "country_of_origin",
+          "name": {
+            "de": "Herkunftsland"
+          },
+          "data_type": "string",
+          "unit": null,
+          "required": false,
+          "nullable": true,
+          "multiple": false,
+          "allowed_values": null,
+          "minimum": null,
+          "maximum": null,
+          "calculation_role": "none",
+          "critical_for_calculation": false,
+          "description": "",
+          "example": null
+        }
+      ],
+      "calculation_roles": [
+        "compatibility",
+        "bill_of_materials"
+      ]
+    },
+    {
+      "group_id": "threaded_fittings_manifolds",
+      "section_id": "hydraulics",
+      "name": {
+        "de": "Gewindefittings und Verteiler"
+      },
+      "description": "Nippel, Überwürfe, T-Stücke, Verteiler aus PVC/Messing",
+      "allowed_subtypes": [
+        "nipple",
+        "threaded_coupling",
+        "union",
+        "elbow",
+        "tee",
+        "cross",
+        "plug",
+        "cap",
+        "manifold",
+        "adapter"
+      ],
+      "attributes": [
+        {
+          "attribute_id": "shape",
+          "name": {
+            "de": "Form"
+          },
+          "data_type": "string",
+          "unit": null,
+          "required": true,
+          "nullable": true,
+          "multiple": false,
+          "allowed_values": null,
+          "minimum": null,
+          "maximum": null,
+          "calculation_role": "none",
+          "critical_for_calculation": false,
+          "description": "",
+          "example": null
+        },
+        {
+          "attribute_id": "outlet_count",
+          "name": {
+            "de": "Anzahl Auslässe"
+          },
+          "data_type": "integer",
+          "unit": null,
+          "required": false,
+          "nullable": true,
+          "multiple": false,
+          "allowed_values": null,
+          "minimum": null,
+          "maximum": null,
+          "calculation_role": "bill_of_materials",
+          "critical_for_calculation": false,
+          "description": "",
+          "example": null
+        },
+        {
+          "attribute_id": "union_present",
+          "name": {
+            "de": "Überwurf"
+          },
+          "data_type": "boolean",
+          "unit": null,
+          "required": false,
+          "nullable": true,
+          "multiple": false,
+          "allowed_values": null,
+          "minimum": null,
+          "maximum": null,
+          "calculation_role": "none",
+          "critical_for_calculation": false,
+          "description": "",
+          "example": null
+        },
+        {
+          "attribute_id": "pressure_rating_bar",
+          "name": {
+            "de": "Nenndruck"
+          },
+          "data_type": "number",
+          "unit": "bar",
+          "required": false,
+          "nullable": true,
+          "multiple": false,
+          "allowed_values": null,
+          "minimum": null,
+          "maximum": null,
+          "calculation_role": "compatibility",
+          "critical_for_calculation": false,
+          "description": "",
+          "example": null
+        },
+        {
+          "attribute_id": "body_material",
+          "name": {
+            "de": "Material"
+          },
+          "data_type": "string",
+          "unit": null,
+          "required": false,
+          "nullable": true,
+          "multiple": false,
+          "allowed_values": null,
+          "minimum": null,
+          "maximum": null,
+          "calculation_role": "none",
+          "critical_for_calculation": false,
+          "description": "",
+          "example": null
+        },
+        {
+          "attribute_id": "seal_material",
+          "name": {
+            "de": "Dichtung"
+          },
+          "data_type": "string",
+          "unit": null,
+          "required": false,
+          "nullable": true,
+          "multiple": false,
+          "allowed_values": null,
+          "minimum": null,
+          "maximum": null,
+          "calculation_role": "none",
+          "critical_for_calculation": false,
+          "description": "",
+          "example": null
+        },
+        {
+          "attribute_id": "seal_included",
+          "name": {
+            "de": "Dichtung inklusive"
+          },
+          "data_type": "boolean",
+          "unit": null,
+          "required": false,
+          "nullable": true,
+          "multiple": false,
+          "allowed_values": null,
+          "minimum": null,
+          "maximum": null,
+          "calculation_role": "none",
+          "critical_for_calculation": false,
+          "description": "",
+          "example": null
+        }
+      ],
+      "calculation_roles": [
+        "compatibility",
+        "bill_of_materials"
+      ]
+    },
+    {
+      "group_id": "valves",
+      "section_id": "hydraulics",
+      "name": {
+        "de": "Ventile"
+      },
+      "description": "Magnetventile, Kugelhähne, Rückschlag- und Masterventile",
+      "allowed_subtypes": [
+        "solenoid_valve",
+        "manual_ball_valve",
+        "check_valve",
+        "master_valve",
+        "quick_coupling_valve"
+      ],
+      "attributes": [
+        {
+          "attribute_id": "actuation_type",
+          "name": {
+            "de": "Betätigung"
+          },
+          "data_type": "enum",
+          "unit": null,
+          "required": false,
+          "nullable": true,
+          "multiple": false,
+          "allowed_values": [
+            "solenoid",
+            "manual",
+            "hydraulic"
+          ],
+          "minimum": null,
+          "maximum": null,
+          "calculation_role": "control_logic",
+          "critical_for_calculation": true,
+          "description": "",
+          "example": null
+        },
+        {
+          "attribute_id": "normal_state",
+          "name": {
+            "de": "Ruhestellung"
+          },
+          "data_type": "enum",
+          "unit": null,
+          "required": false,
+          "nullable": true,
+          "multiple": false,
+          "allowed_values": [
+            "normally_closed",
+            "normally_open"
+          ],
+          "minimum": null,
+          "maximum": null,
+          "calculation_role": "none",
+          "critical_for_calculation": false,
+          "description": "",
+          "example": null
+        },
+        {
+          "attribute_id": "coil_voltage_v",
+          "name": {
+            "de": "Spulenspannung"
+          },
+          "data_type": "number",
+          "unit": "v",
+          "required": false,
+          "nullable": true,
+          "multiple": false,
+          "allowed_values": null,
+          "minimum": null,
+          "maximum": null,
+          "calculation_role": "electrical",
+          "critical_for_calculation": true,
+          "description": "",
+          "example": null
+        },
+        {
+          "attribute_id": "coil_current_inrush_a",
+          "name": {
+            "de": "Einschaltstrom"
+          },
+          "data_type": "number",
+          "unit": "a",
+          "required": false,
+          "nullable": true,
+          "multiple": false,
+          "allowed_values": null,
+          "minimum": null,
+          "maximum": null,
+          "calculation_role": "electrical",
+          "critical_for_calculation": false,
+          "description": "",
+          "example": null
+        },
+        {
+          "attribute_id": "coil_current_holding_a",
+          "name": {
+            "de": "Haltestrom"
+          },
+          "data_type": "number",
+          "unit": "a",
+          "required": false,
+          "nullable": true,
+          "multiple": false,
+          "allowed_values": null,
+          "minimum": null,
+          "maximum": null,
+          "calculation_role": "electrical",
+          "critical_for_calculation": false,
+          "description": "",
+          "example": null
+        },
+        {
+          "attribute_id": "pressure_min_bar",
+          "name": {
+            "de": "Druck min."
+          },
+          "data_type": "number",
+          "unit": "bar",
+          "required": false,
+          "nullable": true,
+          "multiple": false,
+          "allowed_values": null,
+          "minimum": null,
+          "maximum": null,
+          "calculation_role": "hydraulic",
+          "critical_for_calculation": false,
+          "description": "",
+          "example": null
+        },
+        {
+          "attribute_id": "pressure_max_bar",
+          "name": {
+            "de": "Druck max."
+          },
+          "data_type": "number",
+          "unit": "bar",
+          "required": false,
+          "nullable": true,
+          "multiple": false,
+          "allowed_values": null,
+          "minimum": null,
+          "maximum": null,
+          "calculation_role": "hydraulic",
+          "critical_for_calculation": true,
+          "description": "",
+          "example": null
+        },
+        {
+          "attribute_id": "flow_min_l_min",
+          "name": {
+            "de": "Durchfluss min."
+          },
+          "data_type": "number",
+          "unit": "l_min",
+          "required": false,
+          "nullable": true,
+          "multiple": false,
+          "allowed_values": null,
+          "minimum": null,
+          "maximum": null,
+          "calculation_role": "hydraulic",
+          "critical_for_calculation": false,
+          "description": "",
+          "example": null
+        },
+        {
+          "attribute_id": "flow_max_l_min",
+          "name": {
+            "de": "Durchfluss max."
+          },
+          "data_type": "number",
+          "unit": "l_min",
+          "required": false,
+          "nullable": true,
+          "multiple": false,
+          "allowed_values": null,
+          "minimum": null,
+          "maximum": null,
+          "calculation_role": "hydraulic",
+          "critical_for_calculation": false,
+          "description": "",
+          "example": null
+        },
+        {
+          "attribute_id": "flow_control_present",
+          "name": {
+            "de": "Durchflussregulierung"
+          },
+          "data_type": "boolean",
+          "unit": null,
+          "required": false,
+          "nullable": true,
+          "multiple": false,
+          "allowed_values": null,
+          "minimum": null,
+          "maximum": null,
+          "calculation_role": "none",
+          "critical_for_calculation": false,
+          "description": "",
+          "example": null
+        },
+        {
+          "attribute_id": "manual_opening",
+          "name": {
+            "de": "Manuelle Öffnung"
+          },
+          "data_type": "boolean",
+          "unit": null,
+          "required": false,
+          "nullable": true,
+          "multiple": false,
+          "allowed_values": null,
+          "minimum": null,
+          "maximum": null,
+          "calculation_role": "none",
+          "critical_for_calculation": false,
+          "description": "",
+          "example": null
+        },
+        {
+          "attribute_id": "body_material",
+          "name": {
+            "de": "Gehäusewerkstoff"
+          },
+          "data_type": "string",
+          "unit": null,
+          "required": false,
+          "nullable": true,
+          "multiple": false,
+          "allowed_values": null,
+          "minimum": null,
+          "maximum": null,
+          "calculation_role": "none",
+          "critical_for_calculation": false,
+          "description": "",
+          "example": null
+        },
+        {
+          "attribute_id": "pressure_loss_table",
+          "name": {
+            "de": "Druckverlusttabelle"
+          },
+          "data_type": "performance_table",
+          "unit": null,
+          "required": false,
+          "nullable": true,
+          "multiple": false,
+          "allowed_values": null,
+          "minimum": null,
+          "maximum": null,
+          "calculation_role": "hydraulic",
+          "critical_for_calculation": true,
+          "description": "Druckverlust über Durchfluss (Globe/Angle), Basis: l/min und bar",
+          "example": null
+        }
+      ],
+      "calculation_roles": [
+        "hydraulic",
+        "electrical",
+        "compatibility",
+        "bill_of_materials",
+        "control_logic"
+      ]
+    },
+    {
+      "group_id": "filters_pressure_regulators",
+      "section_id": "hydraulics",
+      "name": {
+        "de": "Filter und Druckminderer"
+      },
+      "description": "Filter, Druckminderer und Filter-/Druckminderer-Kombinationen",
+      "allowed_subtypes": [
+        "disc_filter",
+        "screen_filter",
+        "pressure_regulator",
+        "filter_regulator",
+        "valve_filter_regulator_assembly"
+      ],
+      "attributes": [
+        {
+          "attribute_id": "filtration_micron",
+          "name": {
+            "de": "Filterfeinheit"
+          },
+          "data_type": "number",
+          "unit": "micron",
+          "required": false,
+          "nullable": true,
+          "multiple": false,
+          "allowed_values": null,
+          "minimum": null,
+          "maximum": null,
+          "calculation_role": "hydraulic",
+          "critical_for_calculation": false,
+          "description": "",
+          "example": null
+        },
+        {
+          "attribute_id": "filtration_mesh",
+          "name": {
+            "de": "Mesh"
+          },
+          "data_type": "number",
+          "unit": null,
+          "required": false,
+          "nullable": true,
+          "multiple": false,
+          "allowed_values": null,
+          "minimum": null,
+          "maximum": null,
+          "calculation_role": "hydraulic",
+          "critical_for_calculation": false,
+          "description": "",
+          "example": null
+        },
+        {
+          "attribute_id": "filter_element_type",
+          "name": {
+            "de": "Filterelement"
+          },
+          "data_type": "string",
+          "unit": null,
+          "required": false,
+          "nullable": true,
+          "multiple": false,
+          "allowed_values": null,
+          "minimum": null,
+          "maximum": null,
+          "calculation_role": "none",
+          "critical_for_calculation": false,
+          "description": "",
+          "example": null
+        },
+        {
+          "attribute_id": "pressure_min_bar",
+          "name": {
+            "de": "Druck min."
+          },
+          "data_type": "number",
+          "unit": "bar",
+          "required": false,
+          "nullable": true,
+          "multiple": false,
+          "allowed_values": null,
+          "minimum": null,
+          "maximum": null,
+          "calculation_role": "hydraulic",
+          "critical_for_calculation": false,
+          "description": "",
+          "example": null
+        },
+        {
+          "attribute_id": "pressure_max_bar",
+          "name": {
+            "de": "Druck max."
+          },
+          "data_type": "number",
+          "unit": "bar",
+          "required": false,
+          "nullable": true,
+          "multiple": false,
+          "allowed_values": null,
+          "minimum": null,
+          "maximum": null,
+          "calculation_role": "hydraulic",
+          "critical_for_calculation": false,
+          "description": "",
+          "example": null
+        },
+        {
+          "attribute_id": "regulated_pressure_bar",
+          "name": {
+            "de": "Ausgangdruck"
+          },
+          "data_type": "number",
+          "unit": "bar",
+          "required": false,
+          "nullable": true,
+          "multiple": false,
+          "allowed_values": null,
+          "minimum": null,
+          "maximum": null,
+          "calculation_role": "hydraulic",
+          "critical_for_calculation": true,
+          "description": "",
+          "example": null
+        },
+        {
+          "attribute_id": "flow_max_l_min",
+          "name": {
+            "de": "Durchfluss max."
+          },
+          "data_type": "number",
+          "unit": "l_min",
+          "required": false,
+          "nullable": true,
+          "multiple": false,
+          "allowed_values": null,
+          "minimum": null,
+          "maximum": null,
+          "calculation_role": "hydraulic",
+          "critical_for_calculation": false,
+          "description": "",
+          "example": null
+        }
+      ],
+      "calculation_roles": [
+        "hydraulic",
+        "compatibility",
+        "bill_of_materials"
+      ]
+    },
+    {
+      "group_id": "pumps_water_supply",
+      "section_id": "hydraulics",
+      "name": {
+        "de": "Pumpen und Wasserversorgung"
+      },
+      "description": "Pumpen, Relais, Rückfluss und Quelladapter",
+      "allowed_subtypes": [
+        "surface_pump",
+        "submersible_pump",
+        "booster_pump",
+        "pump_start_relay",
+        "water_source_adapter",
+        "backflow_prevention_device",
+        "pressure_tank"
+      ],
+      "attributes": [
+        {
+          "attribute_id": "power_w",
+          "name": {
+            "de": "Leistung"
+          },
+          "data_type": "number",
+          "unit": "w",
+          "required": false,
+          "nullable": true,
+          "multiple": false,
+          "allowed_values": null,
+          "minimum": null,
+          "maximum": null,
+          "calculation_role": "electrical",
+          "critical_for_calculation": false,
+          "description": "",
+          "example": null
+        },
+        {
+          "attribute_id": "supply_voltage_v",
+          "name": {
+            "de": "Versorgungsspannung"
+          },
+          "data_type": "number",
+          "unit": "v",
+          "required": false,
+          "nullable": true,
+          "multiple": false,
+          "allowed_values": null,
+          "minimum": null,
+          "maximum": null,
+          "calculation_role": "electrical",
+          "critical_for_calculation": false,
+          "description": "",
+          "example": null
+        },
+        {
+          "attribute_id": "max_flow_l_min",
+          "name": {
+            "de": "Max. Durchfluss"
+          },
+          "data_type": "number",
+          "unit": "l_min",
+          "required": false,
+          "nullable": true,
+          "multiple": false,
+          "allowed_values": null,
+          "minimum": null,
+          "maximum": null,
+          "calculation_role": "hydraulic",
+          "critical_for_calculation": false,
+          "description": "",
+          "example": null
+        },
+        {
+          "attribute_id": "max_head_m",
+          "name": {
+            "de": "Max. Förderhöhe"
+          },
+          "data_type": "number",
+          "unit": "m",
+          "required": false,
+          "nullable": true,
+          "multiple": false,
+          "allowed_values": null,
+          "minimum": null,
+          "maximum": null,
+          "calculation_role": "hydraulic",
+          "critical_for_calculation": false,
+          "description": "",
+          "example": null
+        }
+      ],
+      "calculation_roles": [
+        "hydraulic",
+        "electrical",
+        "compatibility",
+        "bill_of_materials"
+      ]
+    },
+    {
+      "group_id": "controllers",
+      "section_id": "control",
+      "name": {
+        "de": "Steuergeräte"
+      },
+      "description": "Bewässerungssteuerungen, Erweiterungsmodule und WLAN",
+      "allowed_subtypes": [
+        "irrigation_controller",
+        "expansion_module",
+        "wifi_module",
+        "decoder_controller",
+        "battery_controller"
+      ],
+      "attributes": [
+        {
+          "attribute_id": "station_count",
+          "name": {
+            "de": "Stationen Basis"
+          },
+          "data_type": "integer",
+          "unit": null,
+          "required": false,
+          "nullable": true,
+          "multiple": false,
+          "allowed_values": null,
+          "minimum": null,
+          "maximum": null,
+          "calculation_role": "control_logic",
+          "critical_for_calculation": true,
+          "description": "",
+          "example": null
+        },
+        {
+          "attribute_id": "station_count_max",
+          "name": {
+            "de": "Stationen max."
+          },
+          "data_type": "integer",
+          "unit": null,
+          "required": false,
+          "nullable": true,
+          "multiple": false,
+          "allowed_values": null,
+          "minimum": null,
+          "maximum": null,
+          "calculation_role": "control_logic",
+          "critical_for_calculation": true,
+          "description": "",
+          "example": null
+        },
+        {
+          "attribute_id": "stations_added",
+          "name": {
+            "de": "Zusatzstationen"
+          },
+          "data_type": "integer",
+          "unit": null,
+          "required": false,
+          "nullable": true,
+          "multiple": false,
+          "allowed_values": null,
+          "minimum": null,
+          "maximum": null,
+          "calculation_role": "control_logic",
+          "critical_for_calculation": false,
+          "description": "",
+          "example": null
+        },
+        {
+          "attribute_id": "supply_voltage_v",
+          "name": {
+            "de": "Versorgungsspannung"
+          },
+          "data_type": "number",
+          "unit": "v",
+          "required": false,
+          "nullable": true,
+          "multiple": false,
+          "allowed_values": null,
+          "minimum": null,
+          "maximum": null,
+          "calculation_role": "electrical",
+          "critical_for_calculation": true,
+          "description": "",
+          "example": null
+        },
+        {
+          "attribute_id": "output_voltage_v",
+          "name": {
+            "de": "Ausgangsspannung"
+          },
+          "data_type": "number",
+          "unit": "v",
+          "required": false,
+          "nullable": true,
+          "multiple": false,
+          "allowed_values": null,
+          "minimum": null,
+          "maximum": null,
+          "calculation_role": "electrical",
+          "critical_for_calculation": true,
+          "description": "",
+          "example": 24
+        },
+        {
+          "attribute_id": "indoor_outdoor",
+          "name": {
+            "de": "Innen/Außen"
+          },
+          "data_type": "enum",
+          "unit": null,
+          "required": false,
+          "nullable": true,
+          "multiple": false,
+          "allowed_values": [
+            "indoor",
+            "outdoor",
+            "both"
+          ],
+          "minimum": null,
+          "maximum": null,
+          "calculation_role": "none",
+          "critical_for_calculation": false,
+          "description": "",
+          "example": null
+        },
+        {
+          "attribute_id": "wifi_integrated",
+          "name": {
+            "de": "WLAN integriert"
+          },
+          "data_type": "boolean",
+          "unit": null,
+          "required": false,
+          "nullable": true,
+          "multiple": false,
+          "allowed_values": null,
+          "minimum": null,
+          "maximum": null,
+          "calculation_role": "control_logic",
+          "critical_for_calculation": false,
+          "description": "",
+          "example": null
+        },
+        {
+          "attribute_id": "wifi_module_supported",
+          "name": {
+            "de": "WLAN-Modul unterstützt"
+          },
+          "data_type": "boolean",
+          "unit": null,
+          "required": false,
+          "nullable": true,
+          "multiple": false,
+          "allowed_values": null,
+          "minimum": null,
+          "maximum": null,
+          "calculation_role": "compatibility",
+          "critical_for_calculation": false,
+          "description": "",
+          "example": null
+        },
+        {
+          "attribute_id": "rain_sensor_supported",
+          "name": {
+            "de": "Regensensor"
+          },
+          "data_type": "boolean",
+          "unit": null,
+          "required": false,
+          "nullable": true,
+          "multiple": false,
+          "allowed_values": null,
+          "minimum": null,
+          "maximum": null,
+          "calculation_role": "compatibility",
+          "critical_for_calculation": false,
+          "description": "",
+          "example": null
+        },
+        {
+          "attribute_id": "flow_sensor_supported",
+          "name": {
+            "de": "Durchflusssensor"
+          },
+          "data_type": "boolean",
+          "unit": null,
+          "required": false,
+          "nullable": true,
+          "multiple": false,
+          "allowed_values": null,
+          "minimum": null,
+          "maximum": null,
+          "calculation_role": "none",
+          "critical_for_calculation": false,
+          "description": "",
+          "example": null
+        },
+        {
+          "attribute_id": "master_valve_supported",
+          "name": {
+            "de": "Hauptventil"
+          },
+          "data_type": "boolean",
+          "unit": null,
+          "required": false,
+          "nullable": true,
+          "multiple": false,
+          "allowed_values": null,
+          "minimum": null,
+          "maximum": null,
+          "calculation_role": "control_logic",
+          "critical_for_calculation": false,
+          "description": "",
+          "example": null
+        },
+        {
+          "attribute_id": "pump_start_supported",
+          "name": {
+            "de": "Pumpenstart"
+          },
+          "data_type": "boolean",
+          "unit": null,
+          "required": false,
+          "nullable": true,
+          "multiple": false,
+          "allowed_values": null,
+          "minimum": null,
+          "maximum": null,
+          "calculation_role": "control_logic",
+          "critical_for_calculation": false,
+          "description": "",
+          "example": null
+        }
+      ],
+      "calculation_roles": [
+        "control_logic",
+        "electrical",
+        "compatibility",
+        "bill_of_materials"
+      ]
+    },
+    {
+      "group_id": "sensors",
+      "section_id": "control",
+      "name": {
+        "de": "Sensoren"
+      },
+      "description": "Regen, Durchfluss, Feuchte, Frost, Wetter",
+      "allowed_subtypes": [
+        "rain_sensor",
+        "flow_sensor",
+        "soil_moisture_sensor",
+        "freeze_sensor",
+        "weather_sensor"
+      ],
+      "attributes": [
+        {
+          "attribute_id": "measurement_type",
+          "name": {
+            "de": "Messgröße"
+          },
+          "data_type": "string",
+          "unit": null,
+          "required": true,
+          "nullable": true,
+          "multiple": false,
+          "allowed_values": null,
+          "minimum": null,
+          "maximum": null,
+          "calculation_role": "control_logic",
+          "critical_for_calculation": false,
+          "description": "",
+          "example": null
+        },
+        {
+          "attribute_id": "wired",
+          "name": {
+            "de": "Kabelgebunden"
+          },
+          "data_type": "boolean",
+          "unit": null,
+          "required": false,
+          "nullable": true,
+          "multiple": false,
+          "allowed_values": null,
+          "minimum": null,
+          "maximum": null,
+          "calculation_role": "none",
+          "critical_for_calculation": false,
+          "description": "",
+          "example": null
+        },
+        {
+          "attribute_id": "wireless",
+          "name": {
+            "de": "Funk"
+          },
+          "data_type": "boolean",
+          "unit": null,
+          "required": false,
+          "nullable": true,
+          "multiple": false,
+          "allowed_values": null,
+          "minimum": null,
+          "maximum": null,
+          "calculation_role": "none",
+          "critical_for_calculation": false,
+          "description": "",
+          "example": null
+        },
+        {
+          "attribute_id": "supply_voltage_v",
+          "name": {
+            "de": "Versorgungsspannung"
+          },
+          "data_type": "number",
+          "unit": "v",
+          "required": false,
+          "nullable": true,
+          "multiple": false,
+          "allowed_values": null,
+          "minimum": null,
+          "maximum": null,
+          "calculation_role": "electrical",
+          "critical_for_calculation": false,
+          "description": "",
+          "example": null
+        },
+        {
+          "attribute_id": "cable_length_m",
+          "name": {
+            "de": "Kabellänge"
+          },
+          "data_type": "number",
+          "unit": "m",
+          "required": false,
+          "nullable": true,
+          "multiple": false,
+          "allowed_values": null,
+          "minimum": null,
+          "maximum": null,
+          "calculation_role": "none",
+          "critical_for_calculation": false,
+          "description": "",
+          "example": null
+        },
+        {
+          "attribute_id": "ip_rating",
+          "name": {
+            "de": "IP-Schutzart"
+          },
+          "data_type": "string",
+          "unit": null,
+          "required": false,
+          "nullable": true,
+          "multiple": false,
+          "allowed_values": null,
+          "minimum": null,
+          "maximum": null,
+          "calculation_role": "none",
+          "critical_for_calculation": false,
+          "description": "",
+          "example": null
+        }
+      ],
+      "calculation_roles": [
+        "control_logic",
+        "electrical",
+        "compatibility",
+        "bill_of_materials"
+      ]
+    },
+    {
+      "group_id": "electrical_accessories",
+      "section_id": "control",
+      "name": {
+        "de": "Elektrisches Zubehör"
+      },
+      "description": "Kabel, Gelverbinder, Schutzschläuche, Relais, Spulen",
+      "allowed_subtypes": [
+        "control_cable",
+        "waterproof_connector",
+        "conduit",
+        "pump_start_relay",
+        "solenoid_coil"
+      ],
+      "attributes": [
+        {
+          "attribute_id": "conductor_count",
+          "name": {
+            "de": "Adernanzahl"
+          },
+          "data_type": "integer",
+          "unit": null,
+          "required": false,
+          "nullable": true,
+          "multiple": false,
+          "allowed_values": null,
+          "minimum": null,
+          "maximum": null,
+          "calculation_role": "electrical",
+          "critical_for_calculation": true,
+          "description": "",
+          "example": null
+        },
+        {
+          "attribute_id": "conductor_cross_section_mm2",
+          "name": {
+            "de": "Querschnitt"
+          },
+          "data_type": "number",
+          "unit": "mm2",
+          "required": false,
+          "nullable": true,
+          "multiple": false,
+          "allowed_values": null,
+          "minimum": null,
+          "maximum": null,
+          "calculation_role": "electrical",
+          "critical_for_calculation": false,
+          "description": "",
+          "example": null
+        },
+        {
+          "attribute_id": "length_m",
+          "name": {
+            "de": "Länge"
+          },
+          "data_type": "number",
+          "unit": "m",
+          "required": false,
+          "nullable": true,
+          "multiple": false,
+          "allowed_values": null,
+          "minimum": null,
+          "maximum": null,
+          "calculation_role": "bill_of_materials",
+          "critical_for_calculation": false,
+          "description": "",
+          "example": null
+        },
+        {
+          "attribute_id": "direct_burial_allowed",
+          "name": {
+            "de": "Erdverlegung"
+          },
+          "data_type": "boolean",
+          "unit": null,
+          "required": false,
+          "nullable": true,
+          "multiple": false,
+          "allowed_values": null,
+          "minimum": null,
+          "maximum": null,
+          "calculation_role": "none",
+          "critical_for_calculation": false,
+          "description": "",
+          "example": null
+        },
+        {
+          "attribute_id": "waterproof",
+          "name": {
+            "de": "Wasserdicht"
+          },
+          "data_type": "boolean",
+          "unit": null,
+          "required": false,
+          "nullable": true,
+          "multiple": false,
+          "allowed_values": null,
+          "minimum": null,
+          "maximum": null,
+          "calculation_role": "none",
+          "critical_for_calculation": false,
+          "description": "",
+          "example": null
+        },
+        {
+          "attribute_id": "voltage_rating_v",
+          "name": {
+            "de": "Nennspannung"
+          },
+          "data_type": "number",
+          "unit": "v",
+          "required": false,
+          "nullable": true,
+          "multiple": false,
+          "allowed_values": null,
+          "minimum": null,
+          "maximum": null,
+          "calculation_role": "electrical",
+          "critical_for_calculation": false,
+          "description": "",
+          "example": null
+        }
+      ],
+      "calculation_roles": [
+        "electrical",
+        "compatibility",
+        "bill_of_materials"
+      ]
+    },
+    {
+      "group_id": "valve_boxes",
+      "section_id": "installation",
+      "name": {
+        "de": "Ventilkästen"
+      },
+      "description": "Runde/rechteckige Ventilkästen und Aufsätze",
+      "allowed_subtypes": [
+        "round_valve_box",
+        "rectangular_valve_box",
+        "valve_box_extension"
+      ],
+      "attributes": [
+        {
+          "attribute_id": "outer_length_mm",
+          "name": {
+            "de": "Länge außen"
+          },
+          "data_type": "number",
+          "unit": "mm",
+          "required": false,
+          "nullable": true,
+          "multiple": false,
+          "allowed_values": null,
+          "minimum": null,
+          "maximum": null,
+          "calculation_role": "geometry",
+          "critical_for_calculation": false,
+          "description": "",
+          "example": null
+        },
+        {
+          "attribute_id": "outer_width_mm",
+          "name": {
+            "de": "Breite außen"
+          },
+          "data_type": "number",
+          "unit": "mm",
+          "required": false,
+          "nullable": true,
+          "multiple": false,
+          "allowed_values": null,
+          "minimum": null,
+          "maximum": null,
+          "calculation_role": "geometry",
+          "critical_for_calculation": false,
+          "description": "",
+          "example": null
+        },
+        {
+          "attribute_id": "outer_height_mm",
+          "name": {
+            "de": "Höhe außen"
+          },
+          "data_type": "number",
+          "unit": "mm",
+          "required": false,
+          "nullable": true,
+          "multiple": false,
+          "allowed_values": null,
+          "minimum": null,
+          "maximum": null,
+          "calculation_role": "geometry",
+          "critical_for_calculation": false,
+          "description": "",
+          "example": null
+        },
+        {
+          "attribute_id": "outer_diameter_mm",
+          "name": {
+            "de": "Durchmesser außen"
+          },
+          "data_type": "number",
+          "unit": "mm",
+          "required": false,
+          "nullable": true,
+          "multiple": false,
+          "allowed_values": null,
+          "minimum": null,
+          "maximum": null,
+          "calculation_role": "geometry",
+          "critical_for_calculation": false,
+          "description": "",
+          "example": null
+        },
+        {
+          "attribute_id": "max_valve_count",
+          "name": {
+            "de": "Max. Ventile"
+          },
+          "data_type": "integer",
+          "unit": null,
+          "required": false,
+          "nullable": true,
+          "multiple": false,
+          "allowed_values": null,
+          "minimum": null,
+          "maximum": null,
+          "calculation_role": "bill_of_materials",
+          "critical_for_calculation": false,
+          "description": "",
+          "example": null
+        },
+        {
+          "attribute_id": "lid_load_class",
+          "name": {
+            "de": "Deckelklasse"
+          },
+          "data_type": "string",
+          "unit": null,
+          "required": false,
+          "nullable": true,
+          "multiple": false,
+          "allowed_values": null,
+          "minimum": null,
+          "maximum": null,
+          "calculation_role": "none",
+          "critical_for_calculation": false,
+          "description": "",
+          "example": null
+        },
+        {
+          "attribute_id": "body_material",
+          "name": {
+            "de": "Material"
+          },
+          "data_type": "string",
+          "unit": null,
+          "required": false,
+          "nullable": true,
+          "multiple": false,
+          "allowed_values": null,
+          "minimum": null,
+          "maximum": null,
+          "calculation_role": "none",
+          "critical_for_calculation": false,
+          "description": "",
+          "example": null
+        },
+        {
+          "attribute_id": "base_included",
+          "name": {
+            "de": "Boden inklusive"
+          },
+          "data_type": "boolean",
+          "unit": null,
+          "required": false,
+          "nullable": true,
+          "multiple": false,
+          "allowed_values": null,
+          "minimum": null,
+          "maximum": null,
+          "calculation_role": "none",
+          "critical_for_calculation": false,
+          "description": "",
+          "example": null
+        }
+      ],
+      "calculation_roles": [
+        "geometry",
+        "bill_of_materials"
+      ]
+    },
+    {
+      "group_id": "mounting_accessories",
+      "section_id": "installation",
+      "name": {
+        "de": "Montagezubehör"
+      },
+      "description": "Erdspieße, Werkzeuge, Dichtungen, Manometer, Winterfestmachung",
+      "allowed_subtypes": [
+        "stake",
+        "mounting_bracket",
+        "installation_tool",
+        "thread_seal",
+        "winterization_adapter",
+        "pressure_gauge"
+      ],
+      "attributes": [
+        {
+          "attribute_id": "material",
+          "name": {
+            "de": "Material"
+          },
+          "data_type": "string",
+          "unit": null,
+          "required": false,
+          "nullable": true,
+          "multiple": false,
+          "allowed_values": null,
+          "minimum": null,
+          "maximum": null,
+          "calculation_role": "none",
+          "critical_for_calculation": false,
+          "description": "",
+          "example": null
+        },
+        {
+          "attribute_id": "compatible_diameter_mm",
+          "name": {
+            "de": "Für Durchmesser"
+          },
+          "data_type": "number",
+          "unit": "mm",
+          "required": false,
+          "nullable": true,
+          "multiple": true,
+          "allowed_values": null,
+          "minimum": null,
+          "maximum": null,
+          "calculation_role": "compatibility",
+          "critical_for_calculation": false,
+          "description": "",
+          "example": null
+        }
+      ],
+      "calculation_roles": [
+        "compatibility",
+        "bill_of_materials"
+      ]
+    },
+    {
+      "group_id": "preassembled_modules",
+      "section_id": "assemblies",
+      "name": {
+        "de": "Vormontierte Baugruppen"
+      },
+      "description": "Ventilbaugruppen, Tropfzonen und Komplettsets — über BOM",
+      "allowed_subtypes": [
+        "sprinkler_installation_set",
+        "valve_manifold_assembly",
+        "drip_control_zone_kit",
+        "water_source_connection_kit",
+        "complete_irrigation_package"
+      ],
+      "attributes": [
+        {
+          "attribute_id": "function",
+          "name": {
+            "de": "Funktion"
+          },
+          "data_type": "string",
+          "unit": null,
+          "required": true,
+          "nullable": true,
+          "multiple": false,
+          "allowed_values": null,
+          "minimum": null,
+          "maximum": null,
+          "calculation_role": "none",
+          "critical_for_calculation": false,
+          "description": "",
+          "example": null
+        },
+        {
+          "attribute_id": "zone_count",
+          "name": {
+            "de": "Zonenanzahl"
+          },
+          "data_type": "integer",
+          "unit": null,
+          "required": false,
+          "nullable": true,
+          "multiple": false,
+          "allowed_values": null,
+          "minimum": null,
+          "maximum": null,
+          "calculation_role": "control_logic",
+          "critical_for_calculation": false,
+          "description": "",
+          "example": null
+        },
+        {
+          "attribute_id": "preassembled",
+          "name": {
+            "de": "Vormontiert"
+          },
+          "data_type": "boolean",
+          "unit": null,
+          "required": false,
+          "nullable": true,
+          "multiple": false,
+          "allowed_values": null,
+          "minimum": null,
+          "maximum": null,
+          "calculation_role": "none",
+          "critical_for_calculation": false,
+          "description": "",
+          "example": null
+        },
+        {
+          "attribute_id": "installation_ready",
+          "name": {
+            "de": "Einbaufertig"
+          },
+          "data_type": "boolean",
+          "unit": null,
+          "required": false,
+          "nullable": true,
+          "multiple": false,
+          "allowed_values": null,
+          "minimum": null,
+          "maximum": null,
+          "calculation_role": "none",
+          "critical_for_calculation": false,
+          "description": "",
+          "example": null
+        },
+        {
+          "attribute_id": "included_filter",
+          "name": {
+            "de": "Filter inklusive"
+          },
+          "data_type": "boolean",
+          "unit": null,
+          "required": false,
+          "nullable": true,
+          "multiple": false,
+          "allowed_values": null,
+          "minimum": null,
+          "maximum": null,
+          "calculation_role": "none",
+          "critical_for_calculation": false,
+          "description": "",
+          "example": null
+        },
+        {
+          "attribute_id": "included_pressure_regulator",
+          "name": {
+            "de": "Druckminderer inklusive"
+          },
+          "data_type": "boolean",
+          "unit": null,
+          "required": false,
+          "nullable": true,
+          "multiple": false,
+          "allowed_values": null,
+          "minimum": null,
+          "maximum": null,
+          "calculation_role": "none",
+          "critical_for_calculation": false,
+          "description": "",
+          "example": null
+        },
+        {
+          "attribute_id": "included_winterization",
+          "name": {
+            "de": "Druckluftanschluss inklusive"
+          },
+          "data_type": "boolean",
+          "unit": null,
+          "required": false,
+          "nullable": true,
+          "multiple": false,
+          "allowed_values": null,
+          "minimum": null,
+          "maximum": null,
+          "calculation_role": "none",
+          "critical_for_calculation": false,
+          "description": "",
+          "example": null
+        }
+      ],
+      "calculation_roles": [
+        "bill_of_materials",
+        "compatibility",
+        "control_logic"
+      ]
+    }
+  ]
+}

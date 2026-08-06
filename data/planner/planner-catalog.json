@@ -1,0 +1,3542 @@
+{
+  "generated_at": "2026-08-06T13:07:30.103Z",
+  "source": "RegnerWerk_universal.json + products-ai.json + variant-prices/ + Hunter I-20 blue standard chart",
+  "defaultBrand": "hunter",
+  "images": {
+    "1804": "https://www.wasserundgruen.de/images/product_images/original_images/R-Van14.jpg",
+    "3504": "https://www.wasserundgruen.de/images/product_images/original_images/3504%20mit%20Logo_cleanup.png",
+    "R-VAN14": "https://www.wasserundgruen.de/images/product_images/original_images/R-Van14.jpg",
+    "R-VAN18": "https://www.wasserundgruen.de/images/product_images/original_images/R-VAN18.jpg",
+    "R-VAN24": "https://www.wasserundgruen.de/images/product_images/original_images/R-Van24.jpg",
+    "R-VAN-LCS": "https://www.wasserundgruen.de/images/product_images/original_images/R-VAN%20Hauptbild_385_1_cleanup.png",
+    "R-VAN-RCS": "https://www.wasserundgruen.de/images/product_images/original_images/R-VAN%20Hauptbild_cleanup.png",
+    "R-VAN-SST": "https://www.wasserundgruen.de/images/product_images/original_images/R-VAN%20Hauptbild_cleanup.png",
+    "PROS-04": "https://www.wasserundgruen.de/images/product_images/original_images/Hauptbild%20PRS40%2010cm%2015cm%2020cm_cleanup.png",
+    "I-20": "https://www.wasserundgruen.de/images/product_images/original_images/I-20-04%2010cm%20(002)_cleanup.png",
+    "I-20-04": "https://www.wasserundgruen.de/images/product_images/original_images/I-20-04%2010cm%20(002)_cleanup.png",
+    "MP800SR": "https://www.wasserundgruen.de/images/product_images/original_images/mp800sr-90001_rt.jpg",
+    "MP815": "https://www.wasserundgruen.de/images/product_images/original_images/Mp%20hauptbild_cleanup.png",
+    "MP1000": "https://www.wasserundgruen.de/images/product_images/original_images/mp1000-90_001_rt.jpg",
+    "MP2000": "https://www.wasserundgruen.de/images/product_images/original_images/mp2000-90_001_rt.jpg",
+    "MP3000": "https://www.wasserundgruen.de/images/product_images/original_images/mp3000-90_001_rt.jpg",
+    "MP3500": "https://www.wasserundgruen.de/images/product_images/original_images/mp3500-90_001_rt.jpg",
+    "MPCORNER": "https://www.wasserundgruen.de/images/product_images/original_images/Mp%20Corner.png",
+    "MPSS530": "https://www.wasserundgruen.de/images/product_images/original_images/MPSS.jpg",
+    "MPLCS515": "https://www.wasserundgruen.de/images/product_images/original_images/MPLC.jpg",
+    "MPRCS515": "https://www.wasserundgruen.de/images/product_images/original_images/RCS.png"
+  },
+  "brands": {
+    "rainbird": {
+      "sprayHead": {
+        "setArticle": "3.191",
+        "bodyLabel": "Rain-Bird 1804-SAM 3,1 bar + Swing-Joint",
+        "variants": [
+          {
+            "nozzleKey": "R-VAN14",
+            "anschluss": "elbow",
+            "label": "Rain-Bird 1804-SAM 3,1 Bar + Swing-Joint | Winkel 25 mm | R-VAN 14, Rotationsabweiser, blau, Wurfweite 2,4 bis 4,6 m, Sektor 45 bis 270°",
+            "priceEur": 23.6
+          },
+          {
+            "nozzleKey": "R-VAN18",
+            "anschluss": "elbow",
+            "label": "Rain-Bird 1804-SAM 3,1 Bar + Swing-Joint | Winkel 25 mm | R-VAN 18, Rotationsabweiser, beige, Wurfweite 4,0 bis 5,5 m, Sektor 45 bis 270°",
+            "priceEur": 23.6
+          },
+          {
+            "nozzleKey": "R-VAN24",
+            "anschluss": "elbow",
+            "label": "Rain-Bird 1804-SAM 3,1 Bar + Swing-Joint | Winkel 25 mm | R-VAN 24, Rotationsabweiser, gelb, Wurfweite 5,2 bis 7,3 m, Sektor 45 bis 270°",
+            "priceEur": 23.7
+          },
+          {
+            "nozzleKey": "R-VAN14-360",
+            "anschluss": "elbow",
+            "label": "Rain-Bird 1804-SAM 3,1 Bar + Swing-Joint | Winkel 25 mm | R-VAN14-360, Rotationsabweiser, blau, Wurfweite 2,4 bis 4,6 m, Sektor 360°",
+            "priceEur": 23.7
+          },
+          {
+            "nozzleKey": "R-VAN18-360",
+            "anschluss": "elbow",
+            "label": "Rain-Bird 1804-SAM 3,1 Bar + Swing-Joint | Winkel 25 mm | R-VAN 18-360, Rotationsabweiser, beige, Wurfweite 4,0 bis 5,5 m, Sektor 360°",
+            "priceEur": 23.6
+          },
+          {
+            "nozzleKey": "R-VAN24-360",
+            "anschluss": "elbow",
+            "label": "Rain-Bird 1804-SAM 3,1 Bar + Swing-Joint | Winkel 25 mm | R-VAN 24-360, Rotationsabweiser, violett, Wurfweite 5,2 bis 7,3 m, Sektor 360°",
+            "priceEur": 23.6
+          },
+          {
+            "nozzleKey": "R-VAN-LCS",
+            "anschluss": "elbow",
+            "label": "Rain-Bird 1804-SAM 3,1 Bar + Swing-Joint | Winkel 25 mm | R-VAN-LCS, 1.5 X 4.6m",
+            "priceEur": 23.81
+          },
+          {
+            "nozzleKey": "R-VAN-SST",
+            "anschluss": "elbow",
+            "label": "Rain-Bird 1804-SAM 3,1 Bar + Swing-Joint | Winkel 25 mm | R-VAN-SST, 1.5 X 9.1m",
+            "priceEur": 23.81
+          },
+          {
+            "nozzleKey": "R-VAN-RCS",
+            "anschluss": "elbow",
+            "label": "Rain-Bird 1804-SAM 3,1 Bar + Swing-Joint | Winkel 25 mm | R-VAN-RCS, 1.5 X 4.6m",
+            "priceEur": 23.81
+          },
+          {
+            "nozzleKey": "R-VAN14",
+            "anschluss": "tee",
+            "label": "Rain-Bird 1804-SAM 3,1 Bar + Swing-Joint | T-Stück 25 mm | R-VAN 14, Rotationsabweiser, blau, Wurfweite 2,4 bis 4,6 m, Sektor 45 bis 270°",
+            "priceEur": 24.29
+          },
+          {
+            "nozzleKey": "R-VAN18",
+            "anschluss": "tee",
+            "label": "Rain-Bird 1804-SAM 3,1 Bar + Swing-Joint | T-Stück 25 mm | R-VAN 18, Rotationsabweiser, beige, Wurfweite 4,0 bis 5,5 m, Sektor 45 bis 270°",
+            "priceEur": 24.29
+          },
+          {
+            "nozzleKey": "R-VAN24",
+            "anschluss": "tee",
+            "label": "Rain-Bird 1804-SAM 3,1 Bar + Swing-Joint | T-Stück 25 mm | R-VAN 24, Rotationsabweiser, gelb, Wurfweite 5,2 bis 7,3 m, Sektor 45 bis 270°",
+            "priceEur": 24.39
+          },
+          {
+            "nozzleKey": "R-VAN14-360",
+            "anschluss": "tee",
+            "label": "Rain-Bird 1804-SAM 3,1 Bar + Swing-Joint | T-Stück 25 mm | R-VAN14-360, Rotationsabweiser, blau, Wurfweite 2,4 bis 4,6 m, Sektor 360°",
+            "priceEur": 24.39
+          },
+          {
+            "nozzleKey": "R-VAN18-360",
+            "anschluss": "tee",
+            "label": "Rain-Bird 1804-SAM 3,1 Bar + Swing-Joint | T-Stück 25 mm | R-VAN 18-360, Rotationsabweiser, beige, Wurfweite 4,0 bis 5,5 m, Sektor 360°",
+            "priceEur": 24.29
+          },
+          {
+            "nozzleKey": "R-VAN24-360",
+            "anschluss": "tee",
+            "label": "Rain-Bird 1804-SAM 3,1 Bar + Swing-Joint | T-Stück 25 mm | R-VAN 24-360, Rotationsabweiser, violett, Wurfweite 5,2 bis 7,3 m, Sektor 360°",
+            "priceEur": 24.29
+          },
+          {
+            "nozzleKey": "R-VAN-LCS",
+            "anschluss": "tee",
+            "label": "Rain-Bird 1804-SAM 3,1 Bar + Swing-Joint | T-Stück 25 mm | R-VAN-LCS, 1.5 X 4.6m",
+            "priceEur": 24.5
+          },
+          {
+            "nozzleKey": "R-VAN-SST",
+            "anschluss": "tee",
+            "label": "Rain-Bird 1804-SAM 3,1 Bar + Swing-Joint | T-Stück 25 mm | R-VAN-SST, 1.5 X 9.1m",
+            "priceEur": 24.5
+          },
+          {
+            "nozzleKey": "R-VAN-RCS",
+            "anschluss": "tee",
+            "label": "Rain-Bird 1804-SAM 3,1 Bar + Swing-Joint | T-Stück 25 mm | R-VAN-RCS, 1.5 X 4.6m",
+            "priceEur": 24.5
+          }
+        ],
+        "nozzles": {
+          "R-VAN14": {
+            "radiusMinM": 2.4,
+            "radiusMaxM": 4.6,
+            "arcMinDeg": 45,
+            "arcMaxDeg": 270,
+            "flow360LMin": 4.75,
+            "pressureBar": 3.1,
+            "pressureMinBar": 2.1,
+            "pressureRecommendedBar": 3.1,
+            "pressureMaxBar": 3.8,
+            "precipMmH": 16.2,
+            "matchedPrecipitation": true,
+            "precipitationFamily": "rvan",
+            "hydraulicZoneGroup": "rvan_matched",
+            "patternType": "sector",
+            "performance": [
+              {
+                "pressureBar": 2.1,
+                "arcDeg": 90,
+                "radiusM": 4,
+                "flowLMin": 1.06,
+                "precipSquareMmH": 16,
+                "precipTriangleMmH": 19
+              },
+              {
+                "pressureBar": 2.1,
+                "arcDeg": 180,
+                "radiusM": 4,
+                "flowLMin": 2.12,
+                "precipSquareMmH": 16,
+                "precipTriangleMmH": 19
+              },
+              {
+                "pressureBar": 2.1,
+                "arcDeg": 210,
+                "radiusM": 4,
+                "flowLMin": 2.46,
+                "precipSquareMmH": 16,
+                "precipTriangleMmH": 19
+              },
+              {
+                "pressureBar": 2.1,
+                "arcDeg": 270,
+                "radiusM": 4,
+                "flowLMin": 3.18,
+                "precipSquareMmH": 16,
+                "precipTriangleMmH": 19
+              },
+              {
+                "pressureBar": 2.4,
+                "arcDeg": 90,
+                "radiusM": 4,
+                "flowLMin": 1.1,
+                "precipSquareMmH": 17,
+                "precipTriangleMmH": 19
+              },
+              {
+                "pressureBar": 2.4,
+                "arcDeg": 180,
+                "radiusM": 4,
+                "flowLMin": 2.2,
+                "precipSquareMmH": 17,
+                "precipTriangleMmH": 19
+              },
+              {
+                "pressureBar": 2.4,
+                "arcDeg": 210,
+                "radiusM": 4,
+                "flowLMin": 2.57,
+                "precipSquareMmH": 17,
+                "precipTriangleMmH": 19
+              },
+              {
+                "pressureBar": 2.4,
+                "arcDeg": 270,
+                "radiusM": 4,
+                "flowLMin": 3.29,
+                "precipSquareMmH": 17,
+                "precipTriangleMmH": 19
+              },
+              {
+                "pressureBar": 2.8,
+                "arcDeg": 90,
+                "radiusM": 4.3,
+                "flowLMin": 1.17,
+                "precipSquareMmH": 16,
+                "precipTriangleMmH": 18
+              },
+              {
+                "pressureBar": 2.8,
+                "arcDeg": 180,
+                "radiusM": 4.3,
+                "flowLMin": 2.31,
+                "precipSquareMmH": 15,
+                "precipTriangleMmH": 18
+              },
+              {
+                "pressureBar": 2.8,
+                "arcDeg": 210,
+                "radiusM": 4.3,
+                "flowLMin": 2.73,
+                "precipSquareMmH": 15,
+                "precipTriangleMmH": 18
+              },
+              {
+                "pressureBar": 2.8,
+                "arcDeg": 270,
+                "radiusM": 4.3,
+                "flowLMin": 3.48,
+                "precipSquareMmH": 15,
+                "precipTriangleMmH": 18
+              },
+              {
+                "pressureBar": 3.1,
+                "arcDeg": 90,
+                "radiusM": 4.3,
+                "flowLMin": 1.21,
+                "precipSquareMmH": 15,
+                "precipTriangleMmH": 18
+              },
+              {
+                "pressureBar": 3.1,
+                "arcDeg": 180,
+                "radiusM": 4.3,
+                "flowLMin": 2.38,
+                "precipSquareMmH": 16,
+                "precipTriangleMmH": 18
+              },
+              {
+                "pressureBar": 3.1,
+                "arcDeg": 210,
+                "radiusM": 4.3,
+                "flowLMin": 2.76,
+                "precipSquareMmH": 16,
+                "precipTriangleMmH": 18
+              },
+              {
+                "pressureBar": 3.1,
+                "arcDeg": 270,
+                "radiusM": 4.3,
+                "flowLMin": 3.56,
+                "precipSquareMmH": 16,
+                "precipTriangleMmH": 18
+              },
+              {
+                "pressureBar": 3.4,
+                "arcDeg": 90,
+                "radiusM": 4.6,
+                "flowLMin": 1.4,
+                "precipSquareMmH": 16,
+                "precipTriangleMmH": 19
+              },
+              {
+                "pressureBar": 3.4,
+                "arcDeg": 180,
+                "radiusM": 4.6,
+                "flowLMin": 2.8,
+                "precipSquareMmH": 16,
+                "precipTriangleMmH": 19
+              },
+              {
+                "pressureBar": 3.4,
+                "arcDeg": 210,
+                "radiusM": 4.6,
+                "flowLMin": 3.26,
+                "precipSquareMmH": 16,
+                "precipTriangleMmH": 19
+              },
+              {
+                "pressureBar": 3.4,
+                "arcDeg": 270,
+                "radiusM": 4.6,
+                "flowLMin": 4.2,
+                "precipSquareMmH": 16,
+                "precipTriangleMmH": 19
+              },
+              {
+                "pressureBar": 3.8,
+                "arcDeg": 90,
+                "radiusM": 4.6,
+                "flowLMin": 1.48,
+                "precipSquareMmH": 17,
+                "precipTriangleMmH": 20
+              },
+              {
+                "pressureBar": 3.8,
+                "arcDeg": 180,
+                "radiusM": 4.6,
+                "flowLMin": 2.95,
+                "precipSquareMmH": 17,
+                "precipTriangleMmH": 20
+              },
+              {
+                "pressureBar": 3.8,
+                "arcDeg": 210,
+                "radiusM": 4.6,
+                "flowLMin": 3.44,
+                "precipSquareMmH": 17,
+                "precipTriangleMmH": 20
+              },
+              {
+                "pressureBar": 3.8,
+                "arcDeg": 270,
+                "radiusM": 4.6,
+                "flowLMin": 4.43,
+                "precipSquareMmH": 17,
+                "precipTriangleMmH": 20
+              }
+            ]
+          },
+          "R-VAN18": {
+            "radiusMinM": 4,
+            "radiusMaxM": 5.5,
+            "arcMinDeg": 45,
+            "arcMaxDeg": 270,
+            "flow360LMin": 7.63,
+            "pressureBar": 3.1,
+            "pressureMinBar": 2.1,
+            "pressureRecommendedBar": 3.1,
+            "pressureMaxBar": 3.8,
+            "precipMmH": 16,
+            "matchedPrecipitation": true,
+            "precipitationFamily": "rvan",
+            "hydraulicZoneGroup": "rvan_matched",
+            "patternType": "sector",
+            "performance": [
+              {
+                "pressureBar": 2.1,
+                "arcDeg": 90,
+                "radiusM": 4.9,
+                "flowLMin": 1.59,
+                "precipSquareMmH": 17,
+                "precipTriangleMmH": 19
+              },
+              {
+                "pressureBar": 2.1,
+                "arcDeg": 180,
+                "radiusM": 4.9,
+                "flowLMin": 3.22,
+                "precipSquareMmH": 17,
+                "precipTriangleMmH": 19
+              },
+              {
+                "pressureBar": 2.1,
+                "arcDeg": 210,
+                "radiusM": 4.9,
+                "flowLMin": 3.71,
+                "precipSquareMmH": 16,
+                "precipTriangleMmH": 19
+              },
+              {
+                "pressureBar": 2.1,
+                "arcDeg": 270,
+                "radiusM": 4.9,
+                "flowLMin": 4.77,
+                "precipSquareMmH": 17,
+                "precipTriangleMmH": 19
+              },
+              {
+                "pressureBar": 2.4,
+                "arcDeg": 90,
+                "radiusM": 4.9,
+                "flowLMin": 1.78,
+                "precipSquareMmH": 16,
+                "precipTriangleMmH": 19
+              },
+              {
+                "pressureBar": 2.4,
+                "arcDeg": 180,
+                "radiusM": 4.9,
+                "flowLMin": 3.44,
+                "precipSquareMmH": 16,
+                "precipTriangleMmH": 19
+              },
+              {
+                "pressureBar": 2.4,
+                "arcDeg": 210,
+                "radiusM": 4.9,
+                "flowLMin": 3.97,
+                "precipSquareMmH": 17,
+                "precipTriangleMmH": 20
+              },
+              {
+                "pressureBar": 2.4,
+                "arcDeg": 270,
+                "radiusM": 4.9,
+                "flowLMin": 5.11,
+                "precipSquareMmH": 16,
+                "precipTriangleMmH": 19
+              },
+              {
+                "pressureBar": 2.8,
+                "arcDeg": 90,
+                "radiusM": 5.2,
+                "flowLMin": 1.89,
+                "precipSquareMmH": 16,
+                "precipTriangleMmH": 19
+              },
+              {
+                "pressureBar": 2.8,
+                "arcDeg": 180,
+                "radiusM": 5.2,
+                "flowLMin": 3.71,
+                "precipSquareMmH": 16,
+                "precipTriangleMmH": 19
+              },
+              {
+                "pressureBar": 2.8,
+                "arcDeg": 210,
+                "radiusM": 5.2,
+                "flowLMin": 4.16,
+                "precipSquareMmH": 16,
+                "precipTriangleMmH": 19
+              },
+              {
+                "pressureBar": 2.8,
+                "arcDeg": 270,
+                "radiusM": 5.2,
+                "flowLMin": 5.38,
+                "precipSquareMmH": 16,
+                "precipTriangleMmH": 19
+              },
+              {
+                "pressureBar": 3.1,
+                "arcDeg": 90,
+                "radiusM": 5.2,
+                "flowLMin": 1.89,
+                "precipSquareMmH": 16,
+                "precipTriangleMmH": 19
+              },
+              {
+                "pressureBar": 3.1,
+                "arcDeg": 180,
+                "radiusM": 5.2,
+                "flowLMin": 3.82,
+                "precipSquareMmH": 16,
+                "precipTriangleMmH": 19
+              },
+              {
+                "pressureBar": 3.1,
+                "arcDeg": 210,
+                "radiusM": 5.2,
+                "flowLMin": 4.43,
+                "precipSquareMmH": 16,
+                "precipTriangleMmH": 20
+              },
+              {
+                "pressureBar": 3.1,
+                "arcDeg": 270,
+                "radiusM": 5.2,
+                "flowLMin": 5.72,
+                "precipSquareMmH": 16,
+                "precipTriangleMmH": 19
+              },
+              {
+                "pressureBar": 3.4,
+                "arcDeg": 90,
+                "radiusM": 5.5,
+                "flowLMin": 2.04,
+                "precipSquareMmH": 15,
+                "precipTriangleMmH": 18
+              },
+              {
+                "pressureBar": 3.4,
+                "arcDeg": 180,
+                "radiusM": 5.5,
+                "flowLMin": 4.05,
+                "precipSquareMmH": 15,
+                "precipTriangleMmH": 18
+              },
+              {
+                "pressureBar": 3.4,
+                "arcDeg": 210,
+                "radiusM": 5.5,
+                "flowLMin": 4.62,
+                "precipSquareMmH": 16,
+                "precipTriangleMmH": 18
+              },
+              {
+                "pressureBar": 3.4,
+                "arcDeg": 270,
+                "radiusM": 5.5,
+                "flowLMin": 5.94,
+                "precipSquareMmH": 15,
+                "precipTriangleMmH": 18
+              },
+              {
+                "pressureBar": 3.8,
+                "arcDeg": 90,
+                "radiusM": 5.5,
+                "flowLMin": 2.2,
+                "precipSquareMmH": 15,
+                "precipTriangleMmH": 18
+              },
+              {
+                "pressureBar": 3.8,
+                "arcDeg": 180,
+                "radiusM": 5.5,
+                "flowLMin": 4.13,
+                "precipSquareMmH": 15,
+                "precipTriangleMmH": 18
+              },
+              {
+                "pressureBar": 3.8,
+                "arcDeg": 210,
+                "radiusM": 5.5,
+                "flowLMin": 4.77,
+                "precipSquareMmH": 16,
+                "precipTriangleMmH": 19
+              },
+              {
+                "pressureBar": 3.8,
+                "arcDeg": 270,
+                "radiusM": 5.5,
+                "flowLMin": 6.13,
+                "precipSquareMmH": 15,
+                "precipTriangleMmH": 18
+              }
+            ]
+          },
+          "R-VAN24": {
+            "radiusMinM": 5.2,
+            "radiusMaxM": 7.3,
+            "arcMinDeg": 45,
+            "arcMaxDeg": 270,
+            "flow360LMin": 12.72,
+            "pressureBar": 3.1,
+            "pressureMinBar": 2.1,
+            "pressureRecommendedBar": 3.1,
+            "pressureMaxBar": 3.8,
+            "precipMmH": 15.7,
+            "matchedPrecipitation": true,
+            "precipitationFamily": "rvan",
+            "hydraulicZoneGroup": "rvan_matched",
+            "patternType": "sector",
+            "performance": [
+              {
+                "pressureBar": 2.1,
+                "arcDeg": 90,
+                "radiusM": 5.8,
+                "flowLMin": 2.27,
+                "precipSquareMmH": 16,
+                "precipTriangleMmH": 19
+              },
+              {
+                "pressureBar": 2.1,
+                "arcDeg": 180,
+                "radiusM": 5.8,
+                "flowLMin": 4.54,
+                "precipSquareMmH": 16,
+                "precipTriangleMmH": 19
+              },
+              {
+                "pressureBar": 2.1,
+                "arcDeg": 210,
+                "radiusM": 5.8,
+                "flowLMin": 5.3,
+                "precipSquareMmH": 16,
+                "precipTriangleMmH": 19
+              },
+              {
+                "pressureBar": 2.1,
+                "arcDeg": 270,
+                "radiusM": 5.8,
+                "flowLMin": 6.81,
+                "precipSquareMmH": 16,
+                "precipTriangleMmH": 19
+              },
+              {
+                "pressureBar": 2.4,
+                "arcDeg": 90,
+                "radiusM": 6.1,
+                "flowLMin": 2.46,
+                "precipSquareMmH": 16,
+                "precipTriangleMmH": 18
+              },
+              {
+                "pressureBar": 2.4,
+                "arcDeg": 180,
+                "radiusM": 6.1,
+                "flowLMin": 4.92,
+                "precipSquareMmH": 16,
+                "precipTriangleMmH": 18
+              },
+              {
+                "pressureBar": 2.4,
+                "arcDeg": 210,
+                "radiusM": 6.1,
+                "flowLMin": 5.75,
+                "precipSquareMmH": 16,
+                "precipTriangleMmH": 18
+              },
+              {
+                "pressureBar": 2.4,
+                "arcDeg": 270,
+                "radiusM": 6.1,
+                "flowLMin": 7.38,
+                "precipSquareMmH": 16,
+                "precipTriangleMmH": 18
+              },
+              {
+                "pressureBar": 2.8,
+                "arcDeg": 90,
+                "radiusM": 6.7,
+                "flowLMin": 2.91,
+                "precipSquareMmH": 15,
+                "precipTriangleMmH": 18
+              },
+              {
+                "pressureBar": 2.8,
+                "arcDeg": 180,
+                "radiusM": 6.7,
+                "flowLMin": 5.83,
+                "precipSquareMmH": 15,
+                "precipTriangleMmH": 18
+              },
+              {
+                "pressureBar": 2.8,
+                "arcDeg": 210,
+                "radiusM": 6.7,
+                "flowLMin": 6.81,
+                "precipSquareMmH": 15,
+                "precipTriangleMmH": 18
+              },
+              {
+                "pressureBar": 2.8,
+                "arcDeg": 270,
+                "radiusM": 6.7,
+                "flowLMin": 8.74,
+                "precipSquareMmH": 15,
+                "precipTriangleMmH": 18
+              },
+              {
+                "pressureBar": 3.1,
+                "arcDeg": 90,
+                "radiusM": 7,
+                "flowLMin": 3.18,
+                "precipSquareMmH": 15,
+                "precipTriangleMmH": 18
+              },
+              {
+                "pressureBar": 3.1,
+                "arcDeg": 180,
+                "radiusM": 7,
+                "flowLMin": 6.36,
+                "precipSquareMmH": 15,
+                "precipTriangleMmH": 18
+              },
+              {
+                "pressureBar": 3.1,
+                "arcDeg": 210,
+                "radiusM": 7,
+                "flowLMin": 7.42,
+                "precipSquareMmH": 15,
+                "precipTriangleMmH": 18
+              },
+              {
+                "pressureBar": 3.1,
+                "arcDeg": 270,
+                "radiusM": 7,
+                "flowLMin": 9.54,
+                "precipSquareMmH": 15,
+                "precipTriangleMmH": 18
+              },
+              {
+                "pressureBar": 3.4,
+                "arcDeg": 90,
+                "radiusM": 7.3,
+                "flowLMin": 3.56,
+                "precipSquareMmH": 16,
+                "precipTriangleMmH": 19
+              },
+              {
+                "pressureBar": 3.4,
+                "arcDeg": 180,
+                "radiusM": 7.3,
+                "flowLMin": 7.12,
+                "precipSquareMmH": 16,
+                "precipTriangleMmH": 19
+              },
+              {
+                "pressureBar": 3.4,
+                "arcDeg": 210,
+                "radiusM": 7.3,
+                "flowLMin": 8.29,
+                "precipSquareMmH": 16,
+                "precipTriangleMmH": 19
+              },
+              {
+                "pressureBar": 3.4,
+                "arcDeg": 270,
+                "radiusM": 7.3,
+                "flowLMin": 10.67,
+                "precipSquareMmH": 16,
+                "precipTriangleMmH": 19
+              },
+              {
+                "pressureBar": 3.8,
+                "arcDeg": 90,
+                "radiusM": 7.3,
+                "flowLMin": 3.63,
+                "precipSquareMmH": 16,
+                "precipTriangleMmH": 19
+              },
+              {
+                "pressureBar": 3.8,
+                "arcDeg": 180,
+                "radiusM": 7.3,
+                "flowLMin": 7.27,
+                "precipSquareMmH": 16,
+                "precipTriangleMmH": 19
+              },
+              {
+                "pressureBar": 3.8,
+                "arcDeg": 210,
+                "radiusM": 7.3,
+                "flowLMin": 8.48,
+                "precipSquareMmH": 16,
+                "precipTriangleMmH": 19
+              },
+              {
+                "pressureBar": 3.8,
+                "arcDeg": 270,
+                "radiusM": 7.3,
+                "flowLMin": 10.9,
+                "precipSquareMmH": 16,
+                "precipTriangleMmH": 19
+              }
+            ]
+          }
+        },
+        "strips": {
+          "R-VAN-LCS": {
+            "pattern": "left_corner_strip",
+            "patternType": "left_corner_strip",
+            "widthM": 1.5,
+            "lengthM": 4.6,
+            "flowLMin": 0.91,
+            "pressureBar": 3.1,
+            "pressureMinBar": 2.1,
+            "pressureRecommendedBar": 3.1,
+            "pressureMaxBar": 3.8,
+            "precipMmH": 15.2,
+            "precipSquareMmH": 16,
+            "precipTriangleMmH": 16,
+            "matchedPrecipitation": true,
+            "precipitationFamily": null,
+            "hydraulicZoneGroup": null,
+            "performance": [
+              {
+                "pressureBar": 2.1,
+                "widthM": 1.2,
+                "lengthM": 4.3,
+                "flowLMin": 0.68,
+                "precipSquareMmH": 16,
+                "precipTriangleMmH": 16
+              },
+              {
+                "pressureBar": 2.4,
+                "widthM": 1.5,
+                "lengthM": 4.6,
+                "flowLMin": 0.83,
+                "precipSquareMmH": 14,
+                "precipTriangleMmH": 14
+              },
+              {
+                "pressureBar": 2.8,
+                "widthM": 1.5,
+                "lengthM": 4.6,
+                "flowLMin": 0.87,
+                "precipSquareMmH": 15,
+                "precipTriangleMmH": 15
+              },
+              {
+                "pressureBar": 3.1,
+                "widthM": 1.5,
+                "lengthM": 4.6,
+                "flowLMin": 0.91,
+                "precipSquareMmH": 16,
+                "precipTriangleMmH": 16
+              },
+              {
+                "pressureBar": 3.4,
+                "widthM": 1.5,
+                "lengthM": 4.6,
+                "flowLMin": 0.95,
+                "precipSquareMmH": 16,
+                "precipTriangleMmH": 16
+              },
+              {
+                "pressureBar": 3.8,
+                "widthM": 1.8,
+                "lengthM": 4.9,
+                "flowLMin": 1.06,
+                "precipSquareMmH": 14,
+                "precipTriangleMmH": 14
+              }
+            ]
+          },
+          "R-VAN-RCS": {
+            "pattern": "right_corner_strip",
+            "patternType": "right_corner_strip",
+            "widthM": 1.5,
+            "lengthM": 4.6,
+            "flowLMin": 0.91,
+            "pressureBar": 3.1,
+            "pressureMinBar": 2.1,
+            "pressureRecommendedBar": 3.1,
+            "pressureMaxBar": 3.8,
+            "precipMmH": 15.2,
+            "precipSquareMmH": 16,
+            "precipTriangleMmH": 16,
+            "matchedPrecipitation": true,
+            "precipitationFamily": null,
+            "hydraulicZoneGroup": null,
+            "performance": [
+              {
+                "pressureBar": 2.1,
+                "widthM": 1.2,
+                "lengthM": 4.3,
+                "flowLMin": 0.68,
+                "precipSquareMmH": 16,
+                "precipTriangleMmH": 16
+              },
+              {
+                "pressureBar": 2.4,
+                "widthM": 1.5,
+                "lengthM": 4.6,
+                "flowLMin": 0.83,
+                "precipSquareMmH": 14,
+                "precipTriangleMmH": 14
+              },
+              {
+                "pressureBar": 2.8,
+                "widthM": 1.5,
+                "lengthM": 4.6,
+                "flowLMin": 0.87,
+                "precipSquareMmH": 15,
+                "precipTriangleMmH": 15
+              },
+              {
+                "pressureBar": 3.1,
+                "widthM": 1.5,
+                "lengthM": 4.6,
+                "flowLMin": 0.91,
+                "precipSquareMmH": 16,
+                "precipTriangleMmH": 16
+              },
+              {
+                "pressureBar": 3.4,
+                "widthM": 1.5,
+                "lengthM": 4.6,
+                "flowLMin": 0.95,
+                "precipSquareMmH": 16,
+                "precipTriangleMmH": 16
+              },
+              {
+                "pressureBar": 3.8,
+                "widthM": 1.8,
+                "lengthM": 4.9,
+                "flowLMin": 1.06,
+                "precipSquareMmH": 14,
+                "precipTriangleMmH": 14
+              }
+            ]
+          },
+          "R-VAN-SST": {
+            "pattern": "side_strip",
+            "patternType": "side_strip",
+            "widthM": 1.5,
+            "lengthM": 9.1,
+            "flowLMin": 1.82,
+            "pressureBar": 3.1,
+            "pressureMinBar": 2.1,
+            "pressureRecommendedBar": 3.1,
+            "pressureMaxBar": 3.8,
+            "precipMmH": 15.2,
+            "precipSquareMmH": 16,
+            "precipTriangleMmH": 16,
+            "matchedPrecipitation": true,
+            "precipitationFamily": null,
+            "hydraulicZoneGroup": null,
+            "performance": [
+              {
+                "pressureBar": 2.1,
+                "widthM": 1.2,
+                "lengthM": 8.5,
+                "flowLMin": 1.36,
+                "precipSquareMmH": 16,
+                "precipTriangleMmH": 16
+              },
+              {
+                "pressureBar": 2.4,
+                "widthM": 1.5,
+                "lengthM": 9.1,
+                "flowLMin": 1.67,
+                "precipSquareMmH": 14,
+                "precipTriangleMmH": 14
+              },
+              {
+                "pressureBar": 2.8,
+                "widthM": 1.5,
+                "lengthM": 9.1,
+                "flowLMin": 1.74,
+                "precipSquareMmH": 15,
+                "precipTriangleMmH": 15
+              },
+              {
+                "pressureBar": 3.1,
+                "widthM": 1.5,
+                "lengthM": 9.1,
+                "flowLMin": 1.82,
+                "precipSquareMmH": 16,
+                "precipTriangleMmH": 16
+              },
+              {
+                "pressureBar": 3.4,
+                "widthM": 1.5,
+                "lengthM": 9.1,
+                "flowLMin": 1.89,
+                "precipSquareMmH": 16,
+                "precipTriangleMmH": 16
+              },
+              {
+                "pressureBar": 3.8,
+                "widthM": 1.8,
+                "lengthM": 9.8,
+                "flowLMin": 2.12,
+                "precipSquareMmH": 14,
+                "precipTriangleMmH": 14
+              }
+            ]
+          }
+        }
+      },
+      "rotor": {
+        "article": "Y34500",
+        "label": "3504-PC-SAM",
+        "priceEur": 22.3,
+        "imageUrl": "https://www.wasserundgruen.de/images/product_images/original_images/3504%20mit%20Logo_cleanup.png",
+        "radiusMinM": 4.6,
+        "radiusMaxM": 10.7,
+        "arcMinDeg": 40,
+        "arcMaxDeg": 360,
+        "pressureMinBar": 1.7,
+        "pressureRecommendedBar": null,
+        "pressureMaxBar": 3.8,
+        "precipitationFamily": "rotor_3504",
+        "hydraulicZoneGroup": "rotor",
+        "options": [
+          {
+            "nozzle": "0.75",
+            "pressureBar": 1.7,
+            "radiusM": 4.6,
+            "flowLMin": 2.04,
+            "precipSquareMmH": 12,
+            "precipTriangleMmH": 14
+          },
+          {
+            "nozzle": "0.75",
+            "pressureBar": 2,
+            "radiusM": 4.8,
+            "flowLMin": 2.24,
+            "precipSquareMmH": 12,
+            "precipTriangleMmH": 13
+          },
+          {
+            "nozzle": "0.75",
+            "pressureBar": 2.5,
+            "radiusM": 5.2,
+            "flowLMin": 2.58,
+            "precipSquareMmH": 12,
+            "precipTriangleMmH": 13
+          },
+          {
+            "nozzle": "0.75",
+            "pressureBar": 3,
+            "radiusM": 5.2,
+            "flowLMin": 2.86,
+            "precipSquareMmH": 13,
+            "precipTriangleMmH": 15
+          },
+          {
+            "nozzle": "0.75",
+            "pressureBar": 3.5,
+            "radiusM": 5.4,
+            "flowLMin": 3.09,
+            "precipSquareMmH": 13,
+            "precipTriangleMmH": 15
+          },
+          {
+            "nozzle": "0.75",
+            "pressureBar": 3.8,
+            "radiusM": 5.5,
+            "flowLMin": 3.22,
+            "precipSquareMmH": 13,
+            "precipTriangleMmH": 15
+          },
+          {
+            "nozzle": "1",
+            "pressureBar": 1.7,
+            "radiusM": 6.1,
+            "flowLMin": 2.91,
+            "precipSquareMmH": 9,
+            "precipTriangleMmH": 11
+          },
+          {
+            "nozzle": "1",
+            "pressureBar": 2,
+            "radiusM": 6.2,
+            "flowLMin": 3.14,
+            "precipSquareMmH": 10,
+            "precipTriangleMmH": 11
+          },
+          {
+            "nozzle": "1",
+            "pressureBar": 2.5,
+            "radiusM": 6.4,
+            "flowLMin": 3.55,
+            "precipSquareMmH": 10,
+            "precipTriangleMmH": 12
+          },
+          {
+            "nozzle": "1",
+            "pressureBar": 3,
+            "radiusM": 6.4,
+            "flowLMin": 3.93,
+            "precipSquareMmH": 12,
+            "precipTriangleMmH": 13
+          },
+          {
+            "nozzle": "1",
+            "pressureBar": 3.5,
+            "radiusM": 6.6,
+            "flowLMin": 4.27,
+            "precipSquareMmH": 12,
+            "precipTriangleMmH": 14
+          },
+          {
+            "nozzle": "1",
+            "pressureBar": 3.8,
+            "radiusM": 6.7,
+            "flowLMin": 4.47,
+            "precipSquareMmH": 12,
+            "precipTriangleMmH": 14
+          },
+          {
+            "nozzle": "1.5",
+            "pressureBar": 1.7,
+            "radiusM": 7,
+            "flowLMin": 4.01,
+            "precipSquareMmH": 10,
+            "precipTriangleMmH": 11
+          },
+          {
+            "nozzle": "1.5",
+            "pressureBar": 2,
+            "radiusM": 7,
+            "flowLMin": 4.35,
+            "precipSquareMmH": 11,
+            "precipTriangleMmH": 12
+          },
+          {
+            "nozzle": "1.5",
+            "pressureBar": 2.5,
+            "radiusM": 7,
+            "flowLMin": 4.94,
+            "precipSquareMmH": 12,
+            "precipTriangleMmH": 14
+          },
+          {
+            "nozzle": "1.5",
+            "pressureBar": 3,
+            "radiusM": 7.3,
+            "flowLMin": 5.49,
+            "precipSquareMmH": 12,
+            "precipTriangleMmH": 14
+          },
+          {
+            "nozzle": "1.5",
+            "pressureBar": 3.5,
+            "radiusM": 7.3,
+            "flowLMin": 5.97,
+            "precipSquareMmH": 13,
+            "precipTriangleMmH": 15
+          },
+          {
+            "nozzle": "1.5",
+            "pressureBar": 3.8,
+            "radiusM": 7.3,
+            "flowLMin": 6.25,
+            "precipSquareMmH": 14,
+            "precipTriangleMmH": 16
+          },
+          {
+            "nozzle": "2",
+            "pressureBar": 1.7,
+            "radiusM": 8.2,
+            "flowLMin": 5.3,
+            "precipSquareMmH": 9,
+            "precipTriangleMmH": 11
+          },
+          {
+            "nozzle": "2",
+            "pressureBar": 2,
+            "radiusM": 8.2,
+            "flowLMin": 5.74,
+            "precipSquareMmH": 10,
+            "precipTriangleMmH": 12
+          },
+          {
+            "nozzle": "2",
+            "pressureBar": 2.5,
+            "radiusM": 8.2,
+            "flowLMin": 6.51,
+            "precipSquareMmH": 12,
+            "precipTriangleMmH": 13
+          },
+          {
+            "nozzle": "2",
+            "pressureBar": 3,
+            "radiusM": 8.2,
+            "flowLMin": 7.17,
+            "precipSquareMmH": 13,
+            "precipTriangleMmH": 15
+          },
+          {
+            "nozzle": "2",
+            "pressureBar": 3.5,
+            "radiusM": 8.4,
+            "flowLMin": 7.79,
+            "precipSquareMmH": 13,
+            "precipTriangleMmH": 15
+          },
+          {
+            "nozzle": "2",
+            "pressureBar": 3.8,
+            "radiusM": 8.5,
+            "flowLMin": 8.14,
+            "precipSquareMmH": 13,
+            "precipTriangleMmH": 15
+          },
+          {
+            "nozzle": "3",
+            "pressureBar": 1.7,
+            "radiusM": 8.8,
+            "flowLMin": 8.21,
+            "precipSquareMmH": 13,
+            "precipTriangleMmH": 15
+          },
+          {
+            "nozzle": "3",
+            "pressureBar": 2,
+            "radiusM": 9.1,
+            "flowLMin": 8.87,
+            "precipSquareMmH": 13,
+            "precipTriangleMmH": 15
+          },
+          {
+            "nozzle": "3",
+            "pressureBar": 2.5,
+            "radiusM": 9.4,
+            "flowLMin": 10.03,
+            "precipSquareMmH": 13,
+            "precipTriangleMmH": 16
+          },
+          {
+            "nozzle": "3",
+            "pressureBar": 3,
+            "radiusM": 9.4,
+            "flowLMin": 11.13,
+            "precipSquareMmH": 15,
+            "precipTriangleMmH": 17
+          },
+          {
+            "nozzle": "3",
+            "pressureBar": 3.5,
+            "radiusM": 9.6,
+            "flowLMin": 11.9,
+            "precipSquareMmH": 15,
+            "precipTriangleMmH": 18
+          },
+          {
+            "nozzle": "3",
+            "pressureBar": 3.8,
+            "radiusM": 9.8,
+            "flowLMin": 12.3,
+            "precipSquareMmH": 16,
+            "precipTriangleMmH": 18
+          },
+          {
+            "nozzle": "4",
+            "pressureBar": 1.7,
+            "radiusM": 9.4,
+            "flowLMin": 11.24,
+            "precipSquareMmH": 15,
+            "precipTriangleMmH": 17
+          },
+          {
+            "nozzle": "4",
+            "pressureBar": 2,
+            "radiusM": 9.7,
+            "flowLMin": 12.17,
+            "precipSquareMmH": 16,
+            "precipTriangleMmH": 18
+          },
+          {
+            "nozzle": "4",
+            "pressureBar": 2.5,
+            "radiusM": 10.1,
+            "flowLMin": 13.82,
+            "precipSquareMmH": 16,
+            "precipTriangleMmH": 19
+          },
+          {
+            "nozzle": "4",
+            "pressureBar": 3,
+            "radiusM": 10.6,
+            "flowLMin": 15.32,
+            "precipSquareMmH": 16,
+            "precipTriangleMmH": 19
+          },
+          {
+            "nozzle": "4",
+            "pressureBar": 3.5,
+            "radiusM": 10.7,
+            "flowLMin": 16.66,
+            "precipSquareMmH": 18,
+            "precipTriangleMmH": 20
+          },
+          {
+            "nozzle": "4",
+            "pressureBar": 3.8,
+            "radiusM": 10.7,
+            "flowLMin": 17.41,
+            "precipSquareMmH": 18,
+            "precipTriangleMmH": 21
+          }
+        ],
+        "accessories": [
+          {
+            "article": "1.06-T02",
+            "label": "T-Stück 25 x 25 x 25 Klemm x Klemm x Klemm PN10",
+            "priceEur": null,
+            "imageUrl": "https://www.wasserundgruen.de/images/product_images/original_images/T-Stueck%20Klemm%20x%20Klemm%20x%20Klemm_cleanup.png"
+          },
+          {
+            "article": null,
+            "label": "SBE-075 Flexanschluss ¾\" AG (im Rotor-Set)",
+            "priceEur": null,
+            "imageUrl": "https://www.wasserundgruen.de/images/product_images/original_images/3504%20mit%20Logo_cleanup.png"
+          }
+        ]
+      }
+    },
+    "hunter": {
+      "sprayHead": {
+        "setArticle": "3.131-RG65",
+        "bodyLabel": "Hunter PROS-04-PRS40-CV + Swing-Joint",
+        "variants": [
+          {
+            "nozzleKey": "MP800SR",
+            "anschluss": "elbow",
+            "label": "Hunter Pros-04-PRS40 CV + Swing-Joint | Winkel 25 mm | MP800 90 - 210°",
+            "priceEur": 20.16
+          },
+          {
+            "nozzleKey": "MP1000",
+            "anschluss": "elbow",
+            "label": "Hunter Pros-04-PRS40 CV + Swing-Joint | Winkel 25 mm | MP1000 90 - 210°",
+            "priceEur": 20.16
+          },
+          {
+            "nozzleKey": "MP2000",
+            "anschluss": "elbow",
+            "label": "Hunter Pros-04-PRS40 CV + Swing-Joint | Winkel 25 mm | MP2000 90 - 210°",
+            "priceEur": 20.16
+          },
+          {
+            "nozzleKey": "MP3000",
+            "anschluss": "elbow",
+            "label": "Hunter Pros-04-PRS40 CV + Swing-Joint | Winkel 25 mm | MP3000 90 - 210°",
+            "priceEur": 20.16
+          },
+          {
+            "nozzleKey": "MP3500",
+            "anschluss": "elbow",
+            "label": "Hunter Pros-04-PRS40 CV + Swing-Joint | Winkel 25 mm | MP3500 90 - 210°",
+            "priceEur": 20.16
+          },
+          {
+            "nozzleKey": "MPSS530",
+            "anschluss": "elbow",
+            "label": "Hunter Pros-04-PRS40 CV + Swing-Joint | Winkel 25 mm | MPSS530 Seitenstreifendüse, Eckdüse",
+            "priceEur": 21.92
+          },
+          {
+            "nozzleKey": "MPLCS515",
+            "anschluss": "elbow",
+            "label": "Hunter Pros-04-PRS40 CV + Swing-Joint | Winkel 25 mm | MPLCS515 Streifendüse, Eckdüse Links",
+            "priceEur": 21.92
+          },
+          {
+            "nozzleKey": "MPRCS515",
+            "anschluss": "elbow",
+            "label": "Hunter Pros-04-PRS40 CV + Swing-Joint | Winkel 25 mm | MPRCS515 Streifendüse, Eckdüse Rechts",
+            "priceEur": 20.16
+          },
+          {
+            "nozzleKey": "MPCORNER",
+            "anschluss": "elbow",
+            "label": "Hunter Pros-04-PRS40 CV + Swing-Joint | Winkel 25 mm | MPCORNER",
+            "priceEur": 20.99
+          },
+          {
+            "nozzleKey": "MP815",
+            "anschluss": "elbow",
+            "label": "Hunter Pros-04-PRS40 CV + Swing-Joint | Winkel 25 mm | MP815 90 - 210°",
+            "priceEur": 20.16
+          },
+          {
+            "nozzleKey": "MP800SR",
+            "anschluss": "tee",
+            "label": "Hunter Pros-04-PRS40 CV + Swing-Joint | T-Stück 25 mm | MP800 90 - 210°",
+            "priceEur": 20.85
+          },
+          {
+            "nozzleKey": "MP1000",
+            "anschluss": "tee",
+            "label": "Hunter Pros-04-PRS40 CV + Swing-Joint | T-Stück 25 mm | MP1000 90 - 210°",
+            "priceEur": 20.85
+          },
+          {
+            "nozzleKey": "MP2000",
+            "anschluss": "tee",
+            "label": "Hunter Pros-04-PRS40 CV + Swing-Joint | T-Stück 25 mm | MP2000 90 - 210°",
+            "priceEur": 20.85
+          },
+          {
+            "nozzleKey": "MP3000",
+            "anschluss": "tee",
+            "label": "Hunter Pros-04-PRS40 CV + Swing-Joint | T-Stück 25 mm | MP3000 90 - 210°",
+            "priceEur": 20.85
+          },
+          {
+            "nozzleKey": "MP3500",
+            "anschluss": "tee",
+            "label": "Hunter Pros-04-PRS40 CV + Swing-Joint | T-Stück 25 mm | MP3500 90 - 210°",
+            "priceEur": 20.85
+          },
+          {
+            "nozzleKey": "MPSS530",
+            "anschluss": "tee",
+            "label": "Hunter Pros-04-PRS40 CV + Swing-Joint | T-Stück 25 mm | MPSS530 Seitenstreifendüse, Eckdüse",
+            "priceEur": 22.61
+          },
+          {
+            "nozzleKey": "MPLCS515",
+            "anschluss": "tee",
+            "label": "Hunter Pros-04-PRS40 CV + Swing-Joint | T-Stück 25 mm | MPLCS515 Streifendüse, Eckdüse Links",
+            "priceEur": 22.61
+          },
+          {
+            "nozzleKey": "MPRCS515",
+            "anschluss": "tee",
+            "label": "Hunter Pros-04-PRS40 CV + Swing-Joint | T-Stück 25 mm | MPRCS515 Streifendüse, Eckdüse Rechts",
+            "priceEur": 20.85
+          },
+          {
+            "nozzleKey": "MPCORNER",
+            "anschluss": "tee",
+            "label": "Hunter Pros-04-PRS40 CV + Swing-Joint | T-Stück 25 mm | MPCORNER",
+            "priceEur": 21.68
+          },
+          {
+            "nozzleKey": "MP815",
+            "anschluss": "tee",
+            "label": "Hunter Pros-04-PRS40 CV + Swing-Joint | T-Stück 25 mm | MP815 90 - 210°",
+            "priceEur": 20.85
+          }
+        ],
+        "nozzles": {
+          "MP800SR": {
+            "radiusMinM": 1.8,
+            "radiusMaxM": 3.5,
+            "arcMinDeg": 90,
+            "arcMaxDeg": 210,
+            "flow360LMin": 2.95,
+            "pressureBar": 2.8,
+            "pressureMinBar": 1.7,
+            "pressureRecommendedBar": 2.8,
+            "pressureMaxBar": 3.8,
+            "precipMmH": 20,
+            "matchedPrecipitation": true,
+            "precipitationFamily": "mp800",
+            "hydraulicZoneGroup": "mp800_20mmh",
+            "patternType": "sector",
+            "performance": [
+              {
+                "pressureBar": 2.8,
+                "arcDeg": 90,
+                "radiusM": 2.91,
+                "flowLMin": 0.74,
+                "precipSquareMmH": 20,
+                "precipTriangleMmH": 23
+              },
+              {
+                "pressureBar": 2.8,
+                "arcDeg": 180,
+                "radiusM": 2.91,
+                "flowLMin": 1.48,
+                "precipSquareMmH": 20,
+                "precipTriangleMmH": 23
+              },
+              {
+                "pressureBar": 2.8,
+                "arcDeg": 210,
+                "radiusM": 2.91,
+                "flowLMin": 1.72,
+                "precipSquareMmH": 20,
+                "precipTriangleMmH": 23
+              }
+            ]
+          },
+          "MP815": {
+            "radiusMinM": 2.5,
+            "radiusMaxM": 4.9,
+            "arcMinDeg": 90,
+            "arcMaxDeg": 360,
+            "flow360LMin": 7.08,
+            "pressureBar": 2.8,
+            "pressureMinBar": 1.7,
+            "pressureRecommendedBar": 2.8,
+            "pressureMaxBar": 3.8,
+            "precipMmH": 20,
+            "matchedPrecipitation": true,
+            "precipitationFamily": "mp800",
+            "hydraulicZoneGroup": "mp800_20mmh",
+            "patternType": "sector",
+            "performance": [
+              {
+                "pressureBar": 2.8,
+                "arcDeg": 90,
+                "radiusM": 4.06,
+                "flowLMin": 1.77,
+                "precipSquareMmH": 20,
+                "precipTriangleMmH": 23
+              },
+              {
+                "pressureBar": 2.8,
+                "arcDeg": 180,
+                "radiusM": 4.06,
+                "flowLMin": 3.54,
+                "precipSquareMmH": 20,
+                "precipTriangleMmH": 23
+              },
+              {
+                "pressureBar": 2.8,
+                "arcDeg": 210,
+                "radiusM": 4.06,
+                "flowLMin": 4.13,
+                "precipSquareMmH": 20,
+                "precipTriangleMmH": 23
+              },
+              {
+                "pressureBar": 2.8,
+                "arcDeg": 270,
+                "radiusM": 4.06,
+                "flowLMin": 5.31,
+                "precipSquareMmH": 20,
+                "precipTriangleMmH": 23
+              },
+              {
+                "pressureBar": 2.8,
+                "arcDeg": 360,
+                "radiusM": 4.06,
+                "flowLMin": 7.08,
+                "precipSquareMmH": 20,
+                "precipTriangleMmH": 23
+              }
+            ]
+          },
+          "MP1000": {
+            "radiusMinM": 2.5,
+            "radiusMaxM": 4.5,
+            "arcMinDeg": 90,
+            "arcMaxDeg": 360,
+            "flow360LMin": 3.18,
+            "pressureBar": 2.8,
+            "pressureMinBar": 1.7,
+            "pressureRecommendedBar": 2.8,
+            "pressureMaxBar": 3.8,
+            "precipMmH": 10,
+            "matchedPrecipitation": true,
+            "precipitationFamily": "mp_standard",
+            "hydraulicZoneGroup": "mp_standard_10mmh",
+            "patternType": "sector",
+            "performance": [
+              {
+                "pressureBar": 2.8,
+                "arcDeg": 90,
+                "radiusM": 3.8,
+                "flowLMin": 0.79,
+                "precipSquareMmH": 10,
+                "precipTriangleMmH": 12
+              },
+              {
+                "pressureBar": 2.8,
+                "arcDeg": 180,
+                "radiusM": 3.8,
+                "flowLMin": 1.59,
+                "precipSquareMmH": 10,
+                "precipTriangleMmH": 12
+              },
+              {
+                "pressureBar": 2.8,
+                "arcDeg": 210,
+                "radiusM": 3.8,
+                "flowLMin": 1.86,
+                "precipSquareMmH": 10,
+                "precipTriangleMmH": 12
+              },
+              {
+                "pressureBar": 2.8,
+                "arcDeg": 270,
+                "radiusM": 3.8,
+                "flowLMin": 2.39,
+                "precipSquareMmH": 10,
+                "precipTriangleMmH": 12
+              },
+              {
+                "pressureBar": 2.8,
+                "arcDeg": 360,
+                "radiusM": 3.8,
+                "flowLMin": 3.18,
+                "precipSquareMmH": 10,
+                "precipTriangleMmH": 12
+              }
+            ]
+          },
+          "MP2000": {
+            "radiusMinM": 4,
+            "radiusMaxM": 6.7,
+            "arcMinDeg": 90,
+            "arcMaxDeg": 360,
+            "flow360LMin": 6.59,
+            "pressureBar": 2.8,
+            "pressureMinBar": 1.7,
+            "pressureRecommendedBar": 2.8,
+            "pressureMaxBar": 3.8,
+            "precipMmH": 10,
+            "matchedPrecipitation": true,
+            "precipitationFamily": "mp_standard",
+            "hydraulicZoneGroup": "mp_standard_10mmh",
+            "patternType": "sector",
+            "performance": [
+              {
+                "pressureBar": 2.8,
+                "arcDeg": 90,
+                "radiusM": 5.75,
+                "flowLMin": 1.65,
+                "precipSquareMmH": 10,
+                "precipTriangleMmH": 12
+              },
+              {
+                "pressureBar": 2.8,
+                "arcDeg": 180,
+                "radiusM": 5.75,
+                "flowLMin": 3.29,
+                "precipSquareMmH": 10,
+                "precipTriangleMmH": 12
+              },
+              {
+                "pressureBar": 2.8,
+                "arcDeg": 210,
+                "radiusM": 5.75,
+                "flowLMin": 3.84,
+                "precipSquareMmH": 10,
+                "precipTriangleMmH": 12
+              },
+              {
+                "pressureBar": 2.8,
+                "arcDeg": 270,
+                "radiusM": 5.75,
+                "flowLMin": 4.94,
+                "precipSquareMmH": 10,
+                "precipTriangleMmH": 12
+              },
+              {
+                "pressureBar": 2.8,
+                "arcDeg": 360,
+                "radiusM": 5.75,
+                "flowLMin": 6.59,
+                "precipSquareMmH": 10,
+                "precipTriangleMmH": 12
+              }
+            ]
+          },
+          "MP3000": {
+            "radiusMinM": 6.7,
+            "radiusMaxM": 9.1,
+            "arcMinDeg": 90,
+            "arcMaxDeg": 360,
+            "flow360LMin": 16.18,
+            "pressureBar": 2.8,
+            "pressureMinBar": 1.7,
+            "pressureRecommendedBar": 2.8,
+            "pressureMaxBar": 3.8,
+            "precipMmH": 10,
+            "matchedPrecipitation": true,
+            "precipitationFamily": "mp_standard",
+            "hydraulicZoneGroup": "mp_standard_10mmh",
+            "patternType": "sector",
+            "performance": [
+              {
+                "pressureBar": 2.8,
+                "arcDeg": 90,
+                "radiusM": 8.26,
+                "flowLMin": 4.04,
+                "precipSquareMmH": 10,
+                "precipTriangleMmH": 12
+              },
+              {
+                "pressureBar": 2.8,
+                "arcDeg": 180,
+                "radiusM": 8.26,
+                "flowLMin": 8.09,
+                "precipSquareMmH": 10,
+                "precipTriangleMmH": 12
+              },
+              {
+                "pressureBar": 2.8,
+                "arcDeg": 210,
+                "radiusM": 8.26,
+                "flowLMin": 9.44,
+                "precipSquareMmH": 10,
+                "precipTriangleMmH": 12
+              },
+              {
+                "pressureBar": 2.8,
+                "arcDeg": 270,
+                "radiusM": 8.26,
+                "flowLMin": 12.14,
+                "precipSquareMmH": 10,
+                "precipTriangleMmH": 12
+              },
+              {
+                "pressureBar": 2.8,
+                "arcDeg": 360,
+                "radiusM": 8.26,
+                "flowLMin": 16.18,
+                "precipSquareMmH": 10,
+                "precipTriangleMmH": 12
+              }
+            ]
+          },
+          "MP3500": {
+            "radiusMinM": 9.4,
+            "radiusMaxM": 10.7,
+            "arcMinDeg": 90,
+            "arcMaxDeg": 210,
+            "flow360LMin": 12.45,
+            "pressureBar": 2.8,
+            "pressureMinBar": 1.7,
+            "pressureRecommendedBar": 2.8,
+            "pressureMaxBar": 3.8,
+            "precipMmH": 10,
+            "matchedPrecipitation": true,
+            "precipitationFamily": "mp_standard",
+            "hydraulicZoneGroup": "mp_standard_10mmh",
+            "patternType": "sector",
+            "performance": [
+              {
+                "pressureBar": 2.8,
+                "arcDeg": 90,
+                "radiusM": 10.24,
+                "flowLMin": 3.11,
+                "precipSquareMmH": 10,
+                "precipTriangleMmH": 12
+              },
+              {
+                "pressureBar": 2.8,
+                "arcDeg": 180,
+                "radiusM": 10.24,
+                "flowLMin": 6.22,
+                "precipSquareMmH": 10,
+                "precipTriangleMmH": 12
+              },
+              {
+                "pressureBar": 2.8,
+                "arcDeg": 210,
+                "radiusM": 10.24,
+                "flowLMin": 7.26,
+                "precipSquareMmH": 10,
+                "precipTriangleMmH": 12
+              }
+            ]
+          }
+        },
+        "strips": {
+          "MPLCS515": {
+            "pattern": "left_corner_strip",
+            "patternType": "left_corner_strip",
+            "widthM": 1.5,
+            "lengthM": 4.6,
+            "flowLMin": 0.61,
+            "pressureBar": 2.8,
+            "pressureMinBar": 1.7,
+            "pressureRecommendedBar": 2.8,
+            "pressureMaxBar": 3.8,
+            "precipMmH": 10,
+            "precipSquareMmH": 10,
+            "precipTriangleMmH": null,
+            "matchedPrecipitation": false,
+            "precipitationFamily": "mp_strip",
+            "hydraulicZoneGroup": "mp_standard_10mmh",
+            "performance": [
+              {
+                "pressureBar": 2.8,
+                "widthM": 1.5,
+                "lengthM": 4.6,
+                "flowLMin": 0.61,
+                "precipSquareMmH": 10
+              }
+            ]
+          },
+          "MPRCS515": {
+            "pattern": "right_corner_strip",
+            "patternType": "right_corner_strip",
+            "widthM": 1.5,
+            "lengthM": 4.6,
+            "flowLMin": 0.61,
+            "pressureBar": 2.8,
+            "pressureMinBar": 1.7,
+            "pressureRecommendedBar": 2.8,
+            "pressureMaxBar": 3.8,
+            "precipMmH": 10,
+            "precipSquareMmH": 10,
+            "precipTriangleMmH": null,
+            "matchedPrecipitation": false,
+            "precipitationFamily": "mp_strip",
+            "hydraulicZoneGroup": "mp_standard_10mmh",
+            "performance": [
+              {
+                "pressureBar": 2.8,
+                "widthM": 1.5,
+                "lengthM": 4.6,
+                "flowLMin": 0.61,
+                "precipSquareMmH": 10
+              }
+            ]
+          },
+          "MPSS530": {
+            "pattern": "side_strip",
+            "patternType": "side_strip",
+            "widthM": 1.5,
+            "lengthM": 9.1,
+            "flowLMin": 0.87,
+            "pressureBar": 2.8,
+            "pressureMinBar": 1.7,
+            "pressureRecommendedBar": 2.8,
+            "pressureMaxBar": 3.8,
+            "precipMmH": 10,
+            "precipSquareMmH": 10,
+            "precipTriangleMmH": null,
+            "matchedPrecipitation": false,
+            "precipitationFamily": "mp_strip",
+            "hydraulicZoneGroup": "mp_standard_10mmh",
+            "performance": [
+              {
+                "pressureBar": 2.8,
+                "widthM": 1.5,
+                "lengthM": 9.1,
+                "flowLMin": 0.87,
+                "precipSquareMmH": 10
+              }
+            ]
+          }
+        }
+      },
+      "rotor": {
+        "article": "3.146",
+        "label": "I-20-04",
+        "priceEur": 14.99,
+        "imageUrl": "https://www.wasserundgruen.de/images/product_images/original_images/I-20-04%2010cm%20(002)_cleanup.png",
+        "radiusMinM": 4.9,
+        "radiusMaxM": 14,
+        "arcMinDeg": 50,
+        "arcMaxDeg": 360,
+        "pressureMinBar": 1.7,
+        "pressureRecommendedBar": 2.8,
+        "pressureMaxBar": 4.5,
+        "precipitationFamily": "rotor_i20",
+        "hydraulicZoneGroup": "rotor",
+        "options": [
+          {
+            "nozzle": "1.5",
+            "pressureBar": 1.7,
+            "radiusM": 8.8,
+            "flowLMin": 4.5,
+            "precipSquareMmH": 7,
+            "precipTriangleMmH": 8
+          },
+          {
+            "nozzle": "1.5",
+            "pressureBar": 2,
+            "radiusM": 9.1,
+            "flowLMin": 4.8,
+            "precipSquareMmH": 7,
+            "precipTriangleMmH": 8
+          },
+          {
+            "nozzle": "1.5",
+            "pressureBar": 2.5,
+            "radiusM": 9.4,
+            "flowLMin": 5.4,
+            "precipSquareMmH": 7,
+            "precipTriangleMmH": 8
+          },
+          {
+            "nozzle": "1.5",
+            "pressureBar": 3,
+            "radiusM": 9.8,
+            "flowLMin": 5.9,
+            "precipSquareMmH": 7,
+            "precipTriangleMmH": 9
+          },
+          {
+            "nozzle": "1.5",
+            "pressureBar": 3.5,
+            "radiusM": 9.8,
+            "flowLMin": 6.4,
+            "precipSquareMmH": 8,
+            "precipTriangleMmH": 9
+          },
+          {
+            "nozzle": "1.5",
+            "pressureBar": 4,
+            "radiusM": 9.8,
+            "flowLMin": 6.8,
+            "precipSquareMmH": 9,
+            "precipTriangleMmH": 10
+          },
+          {
+            "nozzle": "1.5",
+            "pressureBar": 4.5,
+            "radiusM": 9.4,
+            "flowLMin": 7.2,
+            "precipSquareMmH": 10,
+            "precipTriangleMmH": 11
+          },
+          {
+            "nozzle": "2.0",
+            "pressureBar": 1.7,
+            "radiusM": 10.1,
+            "flowLMin": 5.4,
+            "precipSquareMmH": 6,
+            "precipTriangleMmH": 7
+          },
+          {
+            "nozzle": "2.0",
+            "pressureBar": 2,
+            "radiusM": 10.1,
+            "flowLMin": 5.8,
+            "precipSquareMmH": 7,
+            "precipTriangleMmH": 8
+          },
+          {
+            "nozzle": "2.0",
+            "pressureBar": 2.5,
+            "radiusM": 10.1,
+            "flowLMin": 6.5,
+            "precipSquareMmH": 8,
+            "precipTriangleMmH": 9
+          },
+          {
+            "nozzle": "2.0",
+            "pressureBar": 3,
+            "radiusM": 10.4,
+            "flowLMin": 7.2,
+            "precipSquareMmH": 8,
+            "precipTriangleMmH": 9
+          },
+          {
+            "nozzle": "2.0",
+            "pressureBar": 3.5,
+            "radiusM": 10.4,
+            "flowLMin": 7.8,
+            "precipSquareMmH": 9,
+            "precipTriangleMmH": 10
+          },
+          {
+            "nozzle": "2.0",
+            "pressureBar": 4,
+            "radiusM": 10.4,
+            "flowLMin": 8.3,
+            "precipSquareMmH": 9,
+            "precipTriangleMmH": 11
+          },
+          {
+            "nozzle": "2.0",
+            "pressureBar": 4.5,
+            "radiusM": 10.4,
+            "flowLMin": 8.8,
+            "precipSquareMmH": 10,
+            "precipTriangleMmH": 11
+          },
+          {
+            "nozzle": "2.5",
+            "pressureBar": 1.7,
+            "radiusM": 10.1,
+            "flowLMin": 6.6,
+            "precipSquareMmH": 8,
+            "precipTriangleMmH": 9
+          },
+          {
+            "nozzle": "2.5",
+            "pressureBar": 2,
+            "radiusM": 10.4,
+            "flowLMin": 7.1,
+            "precipSquareMmH": 8,
+            "precipTriangleMmH": 9
+          },
+          {
+            "nozzle": "2.5",
+            "pressureBar": 2.5,
+            "radiusM": 10.7,
+            "flowLMin": 8,
+            "precipSquareMmH": 8,
+            "precipTriangleMmH": 10
+          },
+          {
+            "nozzle": "2.5",
+            "pressureBar": 3,
+            "radiusM": 10.7,
+            "flowLMin": 8.9,
+            "precipSquareMmH": 9,
+            "precipTriangleMmH": 11
+          },
+          {
+            "nozzle": "2.5",
+            "pressureBar": 3.5,
+            "radiusM": 10.7,
+            "flowLMin": 9.7,
+            "precipSquareMmH": 10,
+            "precipTriangleMmH": 12
+          },
+          {
+            "nozzle": "2.5",
+            "pressureBar": 4,
+            "radiusM": 10.7,
+            "flowLMin": 10.4,
+            "precipSquareMmH": 11,
+            "precipTriangleMmH": 13
+          },
+          {
+            "nozzle": "2.5",
+            "pressureBar": 4.5,
+            "radiusM": 10.7,
+            "flowLMin": 11.1,
+            "precipSquareMmH": 12,
+            "precipTriangleMmH": 13
+          },
+          {
+            "nozzle": "3.0",
+            "pressureBar": 1.7,
+            "radiusM": 10.7,
+            "flowLMin": 8.4,
+            "precipSquareMmH": 9,
+            "precipTriangleMmH": 10
+          },
+          {
+            "nozzle": "3.0",
+            "pressureBar": 2,
+            "radiusM": 10.7,
+            "flowLMin": 9.1,
+            "precipSquareMmH": 10,
+            "precipTriangleMmH": 11
+          },
+          {
+            "nozzle": "3.0",
+            "pressureBar": 2.5,
+            "radiusM": 11,
+            "flowLMin": 10.2,
+            "precipSquareMmH": 10,
+            "precipTriangleMmH": 12
+          },
+          {
+            "nozzle": "3.0",
+            "pressureBar": 3,
+            "radiusM": 11.6,
+            "flowLMin": 11.4,
+            "precipSquareMmH": 10,
+            "precipTriangleMmH": 12
+          },
+          {
+            "nozzle": "3.0",
+            "pressureBar": 3.5,
+            "radiusM": 11.9,
+            "flowLMin": 12.3,
+            "precipSquareMmH": 10,
+            "precipTriangleMmH": 12
+          },
+          {
+            "nozzle": "3.0",
+            "pressureBar": 4,
+            "radiusM": 11.9,
+            "flowLMin": 13.2,
+            "precipSquareMmH": 11,
+            "precipTriangleMmH": 13
+          },
+          {
+            "nozzle": "3.0",
+            "pressureBar": 4.5,
+            "radiusM": 11.9,
+            "flowLMin": 14,
+            "precipSquareMmH": 12,
+            "precipTriangleMmH": 14
+          },
+          {
+            "nozzle": "4.0",
+            "pressureBar": 1.7,
+            "radiusM": 11.3,
+            "flowLMin": 11.3,
+            "precipSquareMmH": 11,
+            "precipTriangleMmH": 12
+          },
+          {
+            "nozzle": "4.0",
+            "pressureBar": 2,
+            "radiusM": 11.6,
+            "flowLMin": 12.2,
+            "precipSquareMmH": 11,
+            "precipTriangleMmH": 13
+          },
+          {
+            "nozzle": "4.0",
+            "pressureBar": 2.5,
+            "radiusM": 11.9,
+            "flowLMin": 13.6,
+            "precipSquareMmH": 12,
+            "precipTriangleMmH": 13
+          },
+          {
+            "nozzle": "4.0",
+            "pressureBar": 3,
+            "radiusM": 12.2,
+            "flowLMin": 15,
+            "precipSquareMmH": 12,
+            "precipTriangleMmH": 14
+          },
+          {
+            "nozzle": "4.0",
+            "pressureBar": 3.5,
+            "radiusM": 12.2,
+            "flowLMin": 16.2,
+            "precipSquareMmH": 13,
+            "precipTriangleMmH": 15
+          },
+          {
+            "nozzle": "4.0",
+            "pressureBar": 4,
+            "radiusM": 12.5,
+            "flowLMin": 17.3,
+            "precipSquareMmH": 13,
+            "precipTriangleMmH": 15
+          },
+          {
+            "nozzle": "4.0",
+            "pressureBar": 4.5,
+            "radiusM": 12.5,
+            "flowLMin": 18.3,
+            "precipSquareMmH": 14,
+            "precipTriangleMmH": 16
+          },
+          {
+            "nozzle": "5.0",
+            "pressureBar": 1.7,
+            "radiusM": 11.3,
+            "flowLMin": 14,
+            "precipSquareMmH": 13,
+            "precipTriangleMmH": 15
+          },
+          {
+            "nozzle": "5.0",
+            "pressureBar": 2,
+            "radiusM": 11.6,
+            "flowLMin": 15.2,
+            "precipSquareMmH": 14,
+            "precipTriangleMmH": 16
+          },
+          {
+            "nozzle": "5.0",
+            "pressureBar": 2.5,
+            "radiusM": 11.9,
+            "flowLMin": 17.1,
+            "precipSquareMmH": 15,
+            "precipTriangleMmH": 17
+          },
+          {
+            "nozzle": "5.0",
+            "pressureBar": 3,
+            "radiusM": 12.8,
+            "flowLMin": 19,
+            "precipSquareMmH": 14,
+            "precipTriangleMmH": 16
+          },
+          {
+            "nozzle": "5.0",
+            "pressureBar": 3.5,
+            "radiusM": 12.8,
+            "flowLMin": 20.6,
+            "precipSquareMmH": 15,
+            "precipTriangleMmH": 17
+          },
+          {
+            "nozzle": "5.0",
+            "pressureBar": 4,
+            "radiusM": 12.8,
+            "flowLMin": 22.1,
+            "precipSquareMmH": 16,
+            "precipTriangleMmH": 19
+          },
+          {
+            "nozzle": "5.0",
+            "pressureBar": 4.5,
+            "radiusM": 12.8,
+            "flowLMin": 23.4,
+            "precipSquareMmH": 17,
+            "precipTriangleMmH": 20
+          },
+          {
+            "nozzle": "6.0",
+            "pressureBar": 1.7,
+            "radiusM": 11.6,
+            "flowLMin": 16.8,
+            "precipSquareMmH": 15,
+            "precipTriangleMmH": 17
+          },
+          {
+            "nozzle": "6.0",
+            "pressureBar": 2,
+            "radiusM": 11.9,
+            "flowLMin": 18.2,
+            "precipSquareMmH": 15,
+            "precipTriangleMmH": 18
+          },
+          {
+            "nozzle": "6.0",
+            "pressureBar": 2.5,
+            "radiusM": 12.2,
+            "flowLMin": 20.4,
+            "precipSquareMmH": 16,
+            "precipTriangleMmH": 19
+          },
+          {
+            "nozzle": "6.0",
+            "pressureBar": 3,
+            "radiusM": 13.1,
+            "flowLMin": 22.7,
+            "precipSquareMmH": 16,
+            "precipTriangleMmH": 18
+          },
+          {
+            "nozzle": "6.0",
+            "pressureBar": 3.5,
+            "radiusM": 13.1,
+            "flowLMin": 24.5,
+            "precipSquareMmH": 17,
+            "precipTriangleMmH": 20
+          },
+          {
+            "nozzle": "6.0",
+            "pressureBar": 4,
+            "radiusM": 13.4,
+            "flowLMin": 26.2,
+            "precipSquareMmH": 18,
+            "precipTriangleMmH": 20
+          },
+          {
+            "nozzle": "6.0",
+            "pressureBar": 4.5,
+            "radiusM": 13.4,
+            "flowLMin": 27.9,
+            "precipSquareMmH": 19,
+            "precipTriangleMmH": 21
+          },
+          {
+            "nozzle": "8.0",
+            "pressureBar": 1.7,
+            "radiusM": 11.3,
+            "flowLMin": 22.5,
+            "precipSquareMmH": 21,
+            "precipTriangleMmH": 25
+          },
+          {
+            "nozzle": "8.0",
+            "pressureBar": 2,
+            "radiusM": 11.9,
+            "flowLMin": 24.3,
+            "precipSquareMmH": 21,
+            "precipTriangleMmH": 24
+          },
+          {
+            "nozzle": "8.0",
+            "pressureBar": 2.5,
+            "radiusM": 12.5,
+            "flowLMin": 27.2,
+            "precipSquareMmH": 21,
+            "precipTriangleMmH": 24
+          },
+          {
+            "nozzle": "8.0",
+            "pressureBar": 3,
+            "radiusM": 13.4,
+            "flowLMin": 30.2,
+            "precipSquareMmH": 20,
+            "precipTriangleMmH": 23
+          },
+          {
+            "nozzle": "8.0",
+            "pressureBar": 3.5,
+            "radiusM": 13.7,
+            "flowLMin": 32.6,
+            "precipSquareMmH": 21,
+            "precipTriangleMmH": 24
+          },
+          {
+            "nozzle": "8.0",
+            "pressureBar": 4,
+            "radiusM": 14,
+            "flowLMin": 34.8,
+            "precipSquareMmH": 21,
+            "precipTriangleMmH": 25
+          },
+          {
+            "nozzle": "8.0",
+            "pressureBar": 4.5,
+            "radiusM": 14,
+            "flowLMin": 36.9,
+            "precipSquareMmH": 23,
+            "precipTriangleMmH": 26
+          }
+        ],
+        "accessories": [
+          {
+            "article": "2.61-HSBE-075",
+            "label": "HSBE-075 Flexanschluss ¾\"",
+            "priceEur": 0.33,
+            "imageUrl": "https://www.wasserundgruen.de/images/product_images/original_images/Flex.png"
+          },
+          {
+            "article": "2.61-FlexSG",
+            "label": "FlexSG Anschlussschlauch (Meterware)",
+            "priceEur": null,
+            "imageUrl": "https://www.wasserundgruen.de/images/product_images/original_images/Flex.png"
+          }
+        ]
+      }
+    }
+  },
+  "sprayHead": {
+    "setArticle": "3.131-RG65",
+    "bodyLabel": "Hunter PROS-04-PRS40-CV + Swing-Joint",
+    "variants": [
+      {
+        "nozzleKey": "MP800SR",
+        "anschluss": "elbow",
+        "label": "Hunter Pros-04-PRS40 CV + Swing-Joint | Winkel 25 mm | MP800 90 - 210°",
+        "priceEur": 20.16
+      },
+      {
+        "nozzleKey": "MP1000",
+        "anschluss": "elbow",
+        "label": "Hunter Pros-04-PRS40 CV + Swing-Joint | Winkel 25 mm | MP1000 90 - 210°",
+        "priceEur": 20.16
+      },
+      {
+        "nozzleKey": "MP2000",
+        "anschluss": "elbow",
+        "label": "Hunter Pros-04-PRS40 CV + Swing-Joint | Winkel 25 mm | MP2000 90 - 210°",
+        "priceEur": 20.16
+      },
+      {
+        "nozzleKey": "MP3000",
+        "anschluss": "elbow",
+        "label": "Hunter Pros-04-PRS40 CV + Swing-Joint | Winkel 25 mm | MP3000 90 - 210°",
+        "priceEur": 20.16
+      },
+      {
+        "nozzleKey": "MP3500",
+        "anschluss": "elbow",
+        "label": "Hunter Pros-04-PRS40 CV + Swing-Joint | Winkel 25 mm | MP3500 90 - 210°",
+        "priceEur": 20.16
+      },
+      {
+        "nozzleKey": "MPSS530",
+        "anschluss": "elbow",
+        "label": "Hunter Pros-04-PRS40 CV + Swing-Joint | Winkel 25 mm | MPSS530 Seitenstreifendüse, Eckdüse",
+        "priceEur": 21.92
+      },
+      {
+        "nozzleKey": "MPLCS515",
+        "anschluss": "elbow",
+        "label": "Hunter Pros-04-PRS40 CV + Swing-Joint | Winkel 25 mm | MPLCS515 Streifendüse, Eckdüse Links",
+        "priceEur": 21.92
+      },
+      {
+        "nozzleKey": "MPRCS515",
+        "anschluss": "elbow",
+        "label": "Hunter Pros-04-PRS40 CV + Swing-Joint | Winkel 25 mm | MPRCS515 Streifendüse, Eckdüse Rechts",
+        "priceEur": 20.16
+      },
+      {
+        "nozzleKey": "MPCORNER",
+        "anschluss": "elbow",
+        "label": "Hunter Pros-04-PRS40 CV + Swing-Joint | Winkel 25 mm | MPCORNER",
+        "priceEur": 20.99
+      },
+      {
+        "nozzleKey": "MP815",
+        "anschluss": "elbow",
+        "label": "Hunter Pros-04-PRS40 CV + Swing-Joint | Winkel 25 mm | MP815 90 - 210°",
+        "priceEur": 20.16
+      },
+      {
+        "nozzleKey": "MP800SR",
+        "anschluss": "tee",
+        "label": "Hunter Pros-04-PRS40 CV + Swing-Joint | T-Stück 25 mm | MP800 90 - 210°",
+        "priceEur": 20.85
+      },
+      {
+        "nozzleKey": "MP1000",
+        "anschluss": "tee",
+        "label": "Hunter Pros-04-PRS40 CV + Swing-Joint | T-Stück 25 mm | MP1000 90 - 210°",
+        "priceEur": 20.85
+      },
+      {
+        "nozzleKey": "MP2000",
+        "anschluss": "tee",
+        "label": "Hunter Pros-04-PRS40 CV + Swing-Joint | T-Stück 25 mm | MP2000 90 - 210°",
+        "priceEur": 20.85
+      },
+      {
+        "nozzleKey": "MP3000",
+        "anschluss": "tee",
+        "label": "Hunter Pros-04-PRS40 CV + Swing-Joint | T-Stück 25 mm | MP3000 90 - 210°",
+        "priceEur": 20.85
+      },
+      {
+        "nozzleKey": "MP3500",
+        "anschluss": "tee",
+        "label": "Hunter Pros-04-PRS40 CV + Swing-Joint | T-Stück 25 mm | MP3500 90 - 210°",
+        "priceEur": 20.85
+      },
+      {
+        "nozzleKey": "MPSS530",
+        "anschluss": "tee",
+        "label": "Hunter Pros-04-PRS40 CV + Swing-Joint | T-Stück 25 mm | MPSS530 Seitenstreifendüse, Eckdüse",
+        "priceEur": 22.61
+      },
+      {
+        "nozzleKey": "MPLCS515",
+        "anschluss": "tee",
+        "label": "Hunter Pros-04-PRS40 CV + Swing-Joint | T-Stück 25 mm | MPLCS515 Streifendüse, Eckdüse Links",
+        "priceEur": 22.61
+      },
+      {
+        "nozzleKey": "MPRCS515",
+        "anschluss": "tee",
+        "label": "Hunter Pros-04-PRS40 CV + Swing-Joint | T-Stück 25 mm | MPRCS515 Streifendüse, Eckdüse Rechts",
+        "priceEur": 20.85
+      },
+      {
+        "nozzleKey": "MPCORNER",
+        "anschluss": "tee",
+        "label": "Hunter Pros-04-PRS40 CV + Swing-Joint | T-Stück 25 mm | MPCORNER",
+        "priceEur": 21.68
+      },
+      {
+        "nozzleKey": "MP815",
+        "anschluss": "tee",
+        "label": "Hunter Pros-04-PRS40 CV + Swing-Joint | T-Stück 25 mm | MP815 90 - 210°",
+        "priceEur": 20.85
+      }
+    ],
+    "nozzles": {
+      "MP800SR": {
+        "radiusMinM": 1.8,
+        "radiusMaxM": 3.5,
+        "arcMinDeg": 90,
+        "arcMaxDeg": 210,
+        "flow360LMin": 2.95,
+        "pressureBar": 2.8,
+        "pressureMinBar": 1.7,
+        "pressureRecommendedBar": 2.8,
+        "pressureMaxBar": 3.8,
+        "precipMmH": 20,
+        "matchedPrecipitation": true,
+        "precipitationFamily": "mp800",
+        "hydraulicZoneGroup": "mp800_20mmh",
+        "patternType": "sector",
+        "performance": [
+          {
+            "pressureBar": 2.8,
+            "arcDeg": 90,
+            "radiusM": 2.91,
+            "flowLMin": 0.74,
+            "precipSquareMmH": 20,
+            "precipTriangleMmH": 23
+          },
+          {
+            "pressureBar": 2.8,
+            "arcDeg": 180,
+            "radiusM": 2.91,
+            "flowLMin": 1.48,
+            "precipSquareMmH": 20,
+            "precipTriangleMmH": 23
+          },
+          {
+            "pressureBar": 2.8,
+            "arcDeg": 210,
+            "radiusM": 2.91,
+            "flowLMin": 1.72,
+            "precipSquareMmH": 20,
+            "precipTriangleMmH": 23
+          }
+        ]
+      },
+      "MP815": {
+        "radiusMinM": 2.5,
+        "radiusMaxM": 4.9,
+        "arcMinDeg": 90,
+        "arcMaxDeg": 360,
+        "flow360LMin": 7.08,
+        "pressureBar": 2.8,
+        "pressureMinBar": 1.7,
+        "pressureRecommendedBar": 2.8,
+        "pressureMaxBar": 3.8,
+        "precipMmH": 20,
+        "matchedPrecipitation": true,
+        "precipitationFamily": "mp800",
+        "hydraulicZoneGroup": "mp800_20mmh",
+        "patternType": "sector",
+        "performance": [
+          {
+            "pressureBar": 2.8,
+            "arcDeg": 90,
+            "radiusM": 4.06,
+            "flowLMin": 1.77,
+            "precipSquareMmH": 20,
+            "precipTriangleMmH": 23
+          },
+          {
+            "pressureBar": 2.8,
+            "arcDeg": 180,
+            "radiusM": 4.06,
+            "flowLMin": 3.54,
+            "precipSquareMmH": 20,
+            "precipTriangleMmH": 23
+          },
+          {
+            "pressureBar": 2.8,
+            "arcDeg": 210,
+            "radiusM": 4.06,
+            "flowLMin": 4.13,
+            "precipSquareMmH": 20,
+            "precipTriangleMmH": 23
+          },
+          {
+            "pressureBar": 2.8,
+            "arcDeg": 270,
+            "radiusM": 4.06,
+            "flowLMin": 5.31,
+            "precipSquareMmH": 20,
+            "precipTriangleMmH": 23
+          },
+          {
+            "pressureBar": 2.8,
+            "arcDeg": 360,
+            "radiusM": 4.06,
+            "flowLMin": 7.08,
+            "precipSquareMmH": 20,
+            "precipTriangleMmH": 23
+          }
+        ]
+      },
+      "MP1000": {
+        "radiusMinM": 2.5,
+        "radiusMaxM": 4.5,
+        "arcMinDeg": 90,
+        "arcMaxDeg": 360,
+        "flow360LMin": 3.18,
+        "pressureBar": 2.8,
+        "pressureMinBar": 1.7,
+        "pressureRecommendedBar": 2.8,
+        "pressureMaxBar": 3.8,
+        "precipMmH": 10,
+        "matchedPrecipitation": true,
+        "precipitationFamily": "mp_standard",
+        "hydraulicZoneGroup": "mp_standard_10mmh",
+        "patternType": "sector",
+        "performance": [
+          {
+            "pressureBar": 2.8,
+            "arcDeg": 90,
+            "radiusM": 3.8,
+            "flowLMin": 0.79,
+            "precipSquareMmH": 10,
+            "precipTriangleMmH": 12
+          },
+          {
+            "pressureBar": 2.8,
+            "arcDeg": 180,
+            "radiusM": 3.8,
+            "flowLMin": 1.59,
+            "precipSquareMmH": 10,
+            "precipTriangleMmH": 12
+          },
+          {
+            "pressureBar": 2.8,
+            "arcDeg": 210,
+            "radiusM": 3.8,
+            "flowLMin": 1.86,
+            "precipSquareMmH": 10,
+            "precipTriangleMmH": 12
+          },
+          {
+            "pressureBar": 2.8,
+            "arcDeg": 270,
+            "radiusM": 3.8,
+            "flowLMin": 2.39,
+            "precipSquareMmH": 10,
+            "precipTriangleMmH": 12
+          },
+          {
+            "pressureBar": 2.8,
+            "arcDeg": 360,
+            "radiusM": 3.8,
+            "flowLMin": 3.18,
+            "precipSquareMmH": 10,
+            "precipTriangleMmH": 12
+          }
+        ]
+      },
+      "MP2000": {
+        "radiusMinM": 4,
+        "radiusMaxM": 6.7,
+        "arcMinDeg": 90,
+        "arcMaxDeg": 360,
+        "flow360LMin": 6.59,
+        "pressureBar": 2.8,
+        "pressureMinBar": 1.7,
+        "pressureRecommendedBar": 2.8,
+        "pressureMaxBar": 3.8,
+        "precipMmH": 10,
+        "matchedPrecipitation": true,
+        "precipitationFamily": "mp_standard",
+        "hydraulicZoneGroup": "mp_standard_10mmh",
+        "patternType": "sector",
+        "performance": [
+          {
+            "pressureBar": 2.8,
+            "arcDeg": 90,
+            "radiusM": 5.75,
+            "flowLMin": 1.65,
+            "precipSquareMmH": 10,
+            "precipTriangleMmH": 12
+          },
+          {
+            "pressureBar": 2.8,
+            "arcDeg": 180,
+            "radiusM": 5.75,
+            "flowLMin": 3.29,
+            "precipSquareMmH": 10,
+            "precipTriangleMmH": 12
+          },
+          {
+            "pressureBar": 2.8,
+            "arcDeg": 210,
+            "radiusM": 5.75,
+            "flowLMin": 3.84,
+            "precipSquareMmH": 10,
+            "precipTriangleMmH": 12
+          },
+          {
+            "pressureBar": 2.8,
+            "arcDeg": 270,
+            "radiusM": 5.75,
+            "flowLMin": 4.94,
+            "precipSquareMmH": 10,
+            "precipTriangleMmH": 12
+          },
+          {
+            "pressureBar": 2.8,
+            "arcDeg": 360,
+            "radiusM": 5.75,
+            "flowLMin": 6.59,
+            "precipSquareMmH": 10,
+            "precipTriangleMmH": 12
+          }
+        ]
+      },
+      "MP3000": {
+        "radiusMinM": 6.7,
+        "radiusMaxM": 9.1,
+        "arcMinDeg": 90,
+        "arcMaxDeg": 360,
+        "flow360LMin": 16.18,
+        "pressureBar": 2.8,
+        "pressureMinBar": 1.7,
+        "pressureRecommendedBar": 2.8,
+        "pressureMaxBar": 3.8,
+        "precipMmH": 10,
+        "matchedPrecipitation": true,
+        "precipitationFamily": "mp_standard",
+        "hydraulicZoneGroup": "mp_standard_10mmh",
+        "patternType": "sector",
+        "performance": [
+          {
+            "pressureBar": 2.8,
+            "arcDeg": 90,
+            "radiusM": 8.26,
+            "flowLMin": 4.04,
+            "precipSquareMmH": 10,
+            "precipTriangleMmH": 12
+          },
+          {
+            "pressureBar": 2.8,
+            "arcDeg": 180,
+            "radiusM": 8.26,
+            "flowLMin": 8.09,
+            "precipSquareMmH": 10,
+            "precipTriangleMmH": 12
+          },
+          {
+            "pressureBar": 2.8,
+            "arcDeg": 210,
+            "radiusM": 8.26,
+            "flowLMin": 9.44,
+            "precipSquareMmH": 10,
+            "precipTriangleMmH": 12
+          },
+          {
+            "pressureBar": 2.8,
+            "arcDeg": 270,
+            "radiusM": 8.26,
+            "flowLMin": 12.14,
+            "precipSquareMmH": 10,
+            "precipTriangleMmH": 12
+          },
+          {
+            "pressureBar": 2.8,
+            "arcDeg": 360,
+            "radiusM": 8.26,
+            "flowLMin": 16.18,
+            "precipSquareMmH": 10,
+            "precipTriangleMmH": 12
+          }
+        ]
+      },
+      "MP3500": {
+        "radiusMinM": 9.4,
+        "radiusMaxM": 10.7,
+        "arcMinDeg": 90,
+        "arcMaxDeg": 210,
+        "flow360LMin": 12.45,
+        "pressureBar": 2.8,
+        "pressureMinBar": 1.7,
+        "pressureRecommendedBar": 2.8,
+        "pressureMaxBar": 3.8,
+        "precipMmH": 10,
+        "matchedPrecipitation": true,
+        "precipitationFamily": "mp_standard",
+        "hydraulicZoneGroup": "mp_standard_10mmh",
+        "patternType": "sector",
+        "performance": [
+          {
+            "pressureBar": 2.8,
+            "arcDeg": 90,
+            "radiusM": 10.24,
+            "flowLMin": 3.11,
+            "precipSquareMmH": 10,
+            "precipTriangleMmH": 12
+          },
+          {
+            "pressureBar": 2.8,
+            "arcDeg": 180,
+            "radiusM": 10.24,
+            "flowLMin": 6.22,
+            "precipSquareMmH": 10,
+            "precipTriangleMmH": 12
+          },
+          {
+            "pressureBar": 2.8,
+            "arcDeg": 210,
+            "radiusM": 10.24,
+            "flowLMin": 7.26,
+            "precipSquareMmH": 10,
+            "precipTriangleMmH": 12
+          }
+        ]
+      }
+    },
+    "strips": {
+      "MPLCS515": {
+        "pattern": "left_corner_strip",
+        "patternType": "left_corner_strip",
+        "widthM": 1.5,
+        "lengthM": 4.6,
+        "flowLMin": 0.61,
+        "pressureBar": 2.8,
+        "pressureMinBar": 1.7,
+        "pressureRecommendedBar": 2.8,
+        "pressureMaxBar": 3.8,
+        "precipMmH": 10,
+        "precipSquareMmH": 10,
+        "precipTriangleMmH": null,
+        "matchedPrecipitation": false,
+        "precipitationFamily": "mp_strip",
+        "hydraulicZoneGroup": "mp_standard_10mmh",
+        "performance": [
+          {
+            "pressureBar": 2.8,
+            "widthM": 1.5,
+            "lengthM": 4.6,
+            "flowLMin": 0.61,
+            "precipSquareMmH": 10
+          }
+        ]
+      },
+      "MPRCS515": {
+        "pattern": "right_corner_strip",
+        "patternType": "right_corner_strip",
+        "widthM": 1.5,
+        "lengthM": 4.6,
+        "flowLMin": 0.61,
+        "pressureBar": 2.8,
+        "pressureMinBar": 1.7,
+        "pressureRecommendedBar": 2.8,
+        "pressureMaxBar": 3.8,
+        "precipMmH": 10,
+        "precipSquareMmH": 10,
+        "precipTriangleMmH": null,
+        "matchedPrecipitation": false,
+        "precipitationFamily": "mp_strip",
+        "hydraulicZoneGroup": "mp_standard_10mmh",
+        "performance": [
+          {
+            "pressureBar": 2.8,
+            "widthM": 1.5,
+            "lengthM": 4.6,
+            "flowLMin": 0.61,
+            "precipSquareMmH": 10
+          }
+        ]
+      },
+      "MPSS530": {
+        "pattern": "side_strip",
+        "patternType": "side_strip",
+        "widthM": 1.5,
+        "lengthM": 9.1,
+        "flowLMin": 0.87,
+        "pressureBar": 2.8,
+        "pressureMinBar": 1.7,
+        "pressureRecommendedBar": 2.8,
+        "pressureMaxBar": 3.8,
+        "precipMmH": 10,
+        "precipSquareMmH": 10,
+        "precipTriangleMmH": null,
+        "matchedPrecipitation": false,
+        "precipitationFamily": "mp_strip",
+        "hydraulicZoneGroup": "mp_standard_10mmh",
+        "performance": [
+          {
+            "pressureBar": 2.8,
+            "widthM": 1.5,
+            "lengthM": 9.1,
+            "flowLMin": 0.87,
+            "precipSquareMmH": 10
+          }
+        ]
+      }
+    }
+  },
+  "rotor": {
+    "article": "3.146",
+    "label": "I-20-04",
+    "priceEur": 14.99,
+    "imageUrl": "https://www.wasserundgruen.de/images/product_images/original_images/I-20-04%2010cm%20(002)_cleanup.png",
+    "radiusMinM": 4.9,
+    "radiusMaxM": 14,
+    "arcMinDeg": 50,
+    "arcMaxDeg": 360,
+    "pressureMinBar": 1.7,
+    "pressureRecommendedBar": 2.8,
+    "pressureMaxBar": 4.5,
+    "precipitationFamily": "rotor_i20",
+    "hydraulicZoneGroup": "rotor",
+    "options": [
+      {
+        "nozzle": "1.5",
+        "pressureBar": 1.7,
+        "radiusM": 8.8,
+        "flowLMin": 4.5,
+        "precipSquareMmH": 7,
+        "precipTriangleMmH": 8
+      },
+      {
+        "nozzle": "1.5",
+        "pressureBar": 2,
+        "radiusM": 9.1,
+        "flowLMin": 4.8,
+        "precipSquareMmH": 7,
+        "precipTriangleMmH": 8
+      },
+      {
+        "nozzle": "1.5",
+        "pressureBar": 2.5,
+        "radiusM": 9.4,
+        "flowLMin": 5.4,
+        "precipSquareMmH": 7,
+        "precipTriangleMmH": 8
+      },
+      {
+        "nozzle": "1.5",
+        "pressureBar": 3,
+        "radiusM": 9.8,
+        "flowLMin": 5.9,
+        "precipSquareMmH": 7,
+        "precipTriangleMmH": 9
+      },
+      {
+        "nozzle": "1.5",
+        "pressureBar": 3.5,
+        "radiusM": 9.8,
+        "flowLMin": 6.4,
+        "precipSquareMmH": 8,
+        "precipTriangleMmH": 9
+      },
+      {
+        "nozzle": "1.5",
+        "pressureBar": 4,
+        "radiusM": 9.8,
+        "flowLMin": 6.8,
+        "precipSquareMmH": 9,
+        "precipTriangleMmH": 10
+      },
+      {
+        "nozzle": "1.5",
+        "pressureBar": 4.5,
+        "radiusM": 9.4,
+        "flowLMin": 7.2,
+        "precipSquareMmH": 10,
+        "precipTriangleMmH": 11
+      },
+      {
+        "nozzle": "2.0",
+        "pressureBar": 1.7,
+        "radiusM": 10.1,
+        "flowLMin": 5.4,
+        "precipSquareMmH": 6,
+        "precipTriangleMmH": 7
+      },
+      {
+        "nozzle": "2.0",
+        "pressureBar": 2,
+        "radiusM": 10.1,
+        "flowLMin": 5.8,
+        "precipSquareMmH": 7,
+        "precipTriangleMmH": 8
+      },
+      {
+        "nozzle": "2.0",
+        "pressureBar": 2.5,
+        "radiusM": 10.1,
+        "flowLMin": 6.5,
+        "precipSquareMmH": 8,
+        "precipTriangleMmH": 9
+      },
+      {
+        "nozzle": "2.0",
+        "pressureBar": 3,
+        "radiusM": 10.4,
+        "flowLMin": 7.2,
+        "precipSquareMmH": 8,
+        "precipTriangleMmH": 9
+      },
+      {
+        "nozzle": "2.0",
+        "pressureBar": 3.5,
+        "radiusM": 10.4,
+        "flowLMin": 7.8,
+        "precipSquareMmH": 9,
+        "precipTriangleMmH": 10
+      },
+      {
+        "nozzle": "2.0",
+        "pressureBar": 4,
+        "radiusM": 10.4,
+        "flowLMin": 8.3,
+        "precipSquareMmH": 9,
+        "precipTriangleMmH": 11
+      },
+      {
+        "nozzle": "2.0",
+        "pressureBar": 4.5,
+        "radiusM": 10.4,
+        "flowLMin": 8.8,
+        "precipSquareMmH": 10,
+        "precipTriangleMmH": 11
+      },
+      {
+        "nozzle": "2.5",
+        "pressureBar": 1.7,
+        "radiusM": 10.1,
+        "flowLMin": 6.6,
+        "precipSquareMmH": 8,
+        "precipTriangleMmH": 9
+      },
+      {
+        "nozzle": "2.5",
+        "pressureBar": 2,
+        "radiusM": 10.4,
+        "flowLMin": 7.1,
+        "precipSquareMmH": 8,
+        "precipTriangleMmH": 9
+      },
+      {
+        "nozzle": "2.5",
+        "pressureBar": 2.5,
+        "radiusM": 10.7,
+        "flowLMin": 8,
+        "precipSquareMmH": 8,
+        "precipTriangleMmH": 10
+      },
+      {
+        "nozzle": "2.5",
+        "pressureBar": 3,
+        "radiusM": 10.7,
+        "flowLMin": 8.9,
+        "precipSquareMmH": 9,
+        "precipTriangleMmH": 11
+      },
+      {
+        "nozzle": "2.5",
+        "pressureBar": 3.5,
+        "radiusM": 10.7,
+        "flowLMin": 9.7,
+        "precipSquareMmH": 10,
+        "precipTriangleMmH": 12
+      },
+      {
+        "nozzle": "2.5",
+        "pressureBar": 4,
+        "radiusM": 10.7,
+        "flowLMin": 10.4,
+        "precipSquareMmH": 11,
+        "precipTriangleMmH": 13
+      },
+      {
+        "nozzle": "2.5",
+        "pressureBar": 4.5,
+        "radiusM": 10.7,
+        "flowLMin": 11.1,
+        "precipSquareMmH": 12,
+        "precipTriangleMmH": 13
+      },
+      {
+        "nozzle": "3.0",
+        "pressureBar": 1.7,
+        "radiusM": 10.7,
+        "flowLMin": 8.4,
+        "precipSquareMmH": 9,
+        "precipTriangleMmH": 10
+      },
+      {
+        "nozzle": "3.0",
+        "pressureBar": 2,
+        "radiusM": 10.7,
+        "flowLMin": 9.1,
+        "precipSquareMmH": 10,
+        "precipTriangleMmH": 11
+      },
+      {
+        "nozzle": "3.0",
+        "pressureBar": 2.5,
+        "radiusM": 11,
+        "flowLMin": 10.2,
+        "precipSquareMmH": 10,
+        "precipTriangleMmH": 12
+      },
+      {
+        "nozzle": "3.0",
+        "pressureBar": 3,
+        "radiusM": 11.6,
+        "flowLMin": 11.4,
+        "precipSquareMmH": 10,
+        "precipTriangleMmH": 12
+      },
+      {
+        "nozzle": "3.0",
+        "pressureBar": 3.5,
+        "radiusM": 11.9,
+        "flowLMin": 12.3,
+        "precipSquareMmH": 10,
+        "precipTriangleMmH": 12
+      },
+      {
+        "nozzle": "3.0",
+        "pressureBar": 4,
+        "radiusM": 11.9,
+        "flowLMin": 13.2,
+        "precipSquareMmH": 11,
+        "precipTriangleMmH": 13
+      },
+      {
+        "nozzle": "3.0",
+        "pressureBar": 4.5,
+        "radiusM": 11.9,
+        "flowLMin": 14,
+        "precipSquareMmH": 12,
+        "precipTriangleMmH": 14
+      },
+      {
+        "nozzle": "4.0",
+        "pressureBar": 1.7,
+        "radiusM": 11.3,
+        "flowLMin": 11.3,
+        "precipSquareMmH": 11,
+        "precipTriangleMmH": 12
+      },
+      {
+        "nozzle": "4.0",
+        "pressureBar": 2,
+        "radiusM": 11.6,
+        "flowLMin": 12.2,
+        "precipSquareMmH": 11,
+        "precipTriangleMmH": 13
+      },
+      {
+        "nozzle": "4.0",
+        "pressureBar": 2.5,
+        "radiusM": 11.9,
+        "flowLMin": 13.6,
+        "precipSquareMmH": 12,
+        "precipTriangleMmH": 13
+      },
+      {
+        "nozzle": "4.0",
+        "pressureBar": 3,
+        "radiusM": 12.2,
+        "flowLMin": 15,
+        "precipSquareMmH": 12,
+        "precipTriangleMmH": 14
+      },
+      {
+        "nozzle": "4.0",
+        "pressureBar": 3.5,
+        "radiusM": 12.2,
+        "flowLMin": 16.2,
+        "precipSquareMmH": 13,
+        "precipTriangleMmH": 15
+      },
+      {
+        "nozzle": "4.0",
+        "pressureBar": 4,
+        "radiusM": 12.5,
+        "flowLMin": 17.3,
+        "precipSquareMmH": 13,
+        "precipTriangleMmH": 15
+      },
+      {
+        "nozzle": "4.0",
+        "pressureBar": 4.5,
+        "radiusM": 12.5,
+        "flowLMin": 18.3,
+        "precipSquareMmH": 14,
+        "precipTriangleMmH": 16
+      },
+      {
+        "nozzle": "5.0",
+        "pressureBar": 1.7,
+        "radiusM": 11.3,
+        "flowLMin": 14,
+        "precipSquareMmH": 13,
+        "precipTriangleMmH": 15
+      },
+      {
+        "nozzle": "5.0",
+        "pressureBar": 2,
+        "radiusM": 11.6,
+        "flowLMin": 15.2,
+        "precipSquareMmH": 14,
+        "precipTriangleMmH": 16
+      },
+      {
+        "nozzle": "5.0",
+        "pressureBar": 2.5,
+        "radiusM": 11.9,
+        "flowLMin": 17.1,
+        "precipSquareMmH": 15,
+        "precipTriangleMmH": 17
+      },
+      {
+        "nozzle": "5.0",
+        "pressureBar": 3,
+        "radiusM": 12.8,
+        "flowLMin": 19,
+        "precipSquareMmH": 14,
+        "precipTriangleMmH": 16
+      },
+      {
+        "nozzle": "5.0",
+        "pressureBar": 3.5,
+        "radiusM": 12.8,
+        "flowLMin": 20.6,
+        "precipSquareMmH": 15,
+        "precipTriangleMmH": 17
+      },
+      {
+        "nozzle": "5.0",
+        "pressureBar": 4,
+        "radiusM": 12.8,
+        "flowLMin": 22.1,
+        "precipSquareMmH": 16,
+        "precipTriangleMmH": 19
+      },
+      {
+        "nozzle": "5.0",
+        "pressureBar": 4.5,
+        "radiusM": 12.8,
+        "flowLMin": 23.4,
+        "precipSquareMmH": 17,
+        "precipTriangleMmH": 20
+      },
+      {
+        "nozzle": "6.0",
+        "pressureBar": 1.7,
+        "radiusM": 11.6,
+        "flowLMin": 16.8,
+        "precipSquareMmH": 15,
+        "precipTriangleMmH": 17
+      },
+      {
+        "nozzle": "6.0",
+        "pressureBar": 2,
+        "radiusM": 11.9,
+        "flowLMin": 18.2,
+        "precipSquareMmH": 15,
+        "precipTriangleMmH": 18
+      },
+      {
+        "nozzle": "6.0",
+        "pressureBar": 2.5,
+        "radiusM": 12.2,
+        "flowLMin": 20.4,
+        "precipSquareMmH": 16,
+        "precipTriangleMmH": 19
+      },
+      {
+        "nozzle": "6.0",
+        "pressureBar": 3,
+        "radiusM": 13.1,
+        "flowLMin": 22.7,
+        "precipSquareMmH": 16,
+        "precipTriangleMmH": 18
+      },
+      {
+        "nozzle": "6.0",
+        "pressureBar": 3.5,
+        "radiusM": 13.1,
+        "flowLMin": 24.5,
+        "precipSquareMmH": 17,
+        "precipTriangleMmH": 20
+      },
+      {
+        "nozzle": "6.0",
+        "pressureBar": 4,
+        "radiusM": 13.4,
+        "flowLMin": 26.2,
+        "precipSquareMmH": 18,
+        "precipTriangleMmH": 20
+      },
+      {
+        "nozzle": "6.0",
+        "pressureBar": 4.5,
+        "radiusM": 13.4,
+        "flowLMin": 27.9,
+        "precipSquareMmH": 19,
+        "precipTriangleMmH": 21
+      },
+      {
+        "nozzle": "8.0",
+        "pressureBar": 1.7,
+        "radiusM": 11.3,
+        "flowLMin": 22.5,
+        "precipSquareMmH": 21,
+        "precipTriangleMmH": 25
+      },
+      {
+        "nozzle": "8.0",
+        "pressureBar": 2,
+        "radiusM": 11.9,
+        "flowLMin": 24.3,
+        "precipSquareMmH": 21,
+        "precipTriangleMmH": 24
+      },
+      {
+        "nozzle": "8.0",
+        "pressureBar": 2.5,
+        "radiusM": 12.5,
+        "flowLMin": 27.2,
+        "precipSquareMmH": 21,
+        "precipTriangleMmH": 24
+      },
+      {
+        "nozzle": "8.0",
+        "pressureBar": 3,
+        "radiusM": 13.4,
+        "flowLMin": 30.2,
+        "precipSquareMmH": 20,
+        "precipTriangleMmH": 23
+      },
+      {
+        "nozzle": "8.0",
+        "pressureBar": 3.5,
+        "radiusM": 13.7,
+        "flowLMin": 32.6,
+        "precipSquareMmH": 21,
+        "precipTriangleMmH": 24
+      },
+      {
+        "nozzle": "8.0",
+        "pressureBar": 4,
+        "radiusM": 14,
+        "flowLMin": 34.8,
+        "precipSquareMmH": 21,
+        "precipTriangleMmH": 25
+      },
+      {
+        "nozzle": "8.0",
+        "pressureBar": 4.5,
+        "radiusM": 14,
+        "flowLMin": 36.9,
+        "precipSquareMmH": 23,
+        "precipTriangleMmH": 26
+      }
+    ],
+    "accessories": [
+      {
+        "article": "2.61-HSBE-075",
+        "label": "HSBE-075 Flexanschluss ¾\"",
+        "priceEur": 0.33,
+        "imageUrl": "https://www.wasserundgruen.de/images/product_images/original_images/Flex.png"
+      },
+      {
+        "article": "2.61-FlexSG",
+        "label": "FlexSG Anschlussschlauch (Meterware)",
+        "priceEur": null,
+        "imageUrl": "https://www.wasserundgruen.de/images/product_images/original_images/Flex.png"
+      }
+    ]
+  },
+  "pipes": {
+    "pe25Rolls": [
+      {
+        "article": "p337-PE251012",
+        "label": "10 m/Rolle PE-Rohr 25 mm PN10 Schwarz/Blau",
+        "lengthM": 10,
+        "priceEur": 24.95,
+        "imageUrl": "https://www.wasserundgruen.de/images/product_images/original_images/PE%20Rohr%20mit%20Logo_cleanup.png"
+      },
+      {
+        "article": "p337-PE252512",
+        "label": "25 m/Rolle PE-Rohr 25 mm PN10 Schwarz/Blau",
+        "lengthM": 25,
+        "priceEur": 34.99,
+        "imageUrl": "https://www.wasserundgruen.de/images/product_images/original_images/PE%20Rohr%20mit%20Logo_cleanup.png"
+      },
+      {
+        "article": "p337-PE255012",
+        "label": "50 m/Rolle PE-Rohr 25 mm PN10 Schwarz/Blau",
+        "lengthM": 50,
+        "priceEur": 51.35,
+        "imageUrl": "https://www.wasserundgruen.de/images/product_images/original_images/PE%20Rohr%20mit%20Logo_cleanup.png"
+      },
+      {
+        "article": "p337-PE251001",
+        "label": "100 m/Rolle PE-Rohr 25 mm PN10 Schwarz/Blau",
+        "lengthM": 100,
+        "priceEur": 94.39,
+        "imageUrl": "https://www.wasserundgruen.de/images/product_images/original_images/PE%20Rohr%20mit%20Logo_cleanup.png"
+      }
+    ],
+    "pe32Rolls": [
+      {
+        "article": "PE2516100_2-PE3225",
+        "label": "25 m/Rolle PE-Rohr 32 mm PN10",
+        "lengthM": 25,
+        "priceEur": 54.9,
+        "imageUrl": "https://www.wasserundgruen.de/images/product_images/original_images/PE-Rohr%20Blau%20Hauptbild_497_0_cleanup.png"
+      },
+      {
+        "article": "PE2516100_2-PE3250",
+        "label": "50 m/Rolle PE-Rohr 32 mm PN10",
+        "lengthM": 50,
+        "priceEur": 79.9,
+        "imageUrl": "https://www.wasserundgruen.de/images/product_images/original_images/PE-Rohr%20Blau%20Hauptbild_497_0_cleanup.png"
+      },
+      {
+        "article": "PE2516100_2-PE32100",
+        "label": "100 m/Rolle PE-Rohr 32 mm PN10",
+        "lengthM": 100,
+        "priceEur": 139,
+        "imageUrl": "https://www.wasserundgruen.de/images/product_images/original_images/PE-Rohr%20Blau%20Hauptbild_497_0_cleanup.png"
+      }
+    ]
+  },
+  "hydraulics": {
+    "defaultSourceFlowM3h": 2,
+    "zoneFillFactor": 0.85,
+    "recommendedPressureBar": 2.8,
+    "assumedVerteilerPressureBar": 3.5,
+    "pe25InternalDiameterMm": 20.4,
+    "pe32InternalDiameterMm": 26.2,
+    "hazenWilliamsC": 150,
+    "maxVelocityMps": 1.5,
+    "spacingFactor": 1,
+    "catalogVersion": "planner-2026.08-perf"
+  },
+  "pipeSizes": [
+    {
+      "odMm": 25,
+      "idMm": 20.4,
+      "rollsKey": "pe25Rolls"
+    },
+    {
+      "odMm": 32,
+      "idMm": 26.2,
+      "rollsKey": "pe32Rolls"
+    }
+  ],
+  "zoneParts": {
+    "valve": {
+      "article": "100-DV-MM",
+      "label": "Rain-Bird 100-DV-MM Magnetventil 1\" 24 VAC",
+      "priceEur": 33.89,
+      "imageUrl": "https://www.wasserundgruen.de/images/product_images/original_images/DV%20MM%20ohne%20Spulen-Hebel%20(2).png"
+    },
+    "adapterPe25Valve": {
+      "article": "1.05-K34",
+      "label": "Kupplung 25 x 1 Zoll IG Klemm x Innengewinde PN10",
+      "priceEur": 1.24,
+      "imageUrl": "https://www.wasserundgruen.de/images/product_images/original_images/Kupplung%20gerade%20mit%20IG_cleanup.png"
+    },
+    "adapterPe32Valve": {
+      "article": "1.05-K37",
+      "label": "Kupplung 32 X 1 Zoll IG Klemm x Innengewinde PN10",
+      "priceEur": 1.53,
+      "imageUrl": "https://www.wasserundgruen.de/images/product_images/original_images/Kupplung%20gerade%20mit%20IG_cleanup.png"
+    },
+    "verteiler": [
+      {
+        "article": "2.00-P07",
+        "label": "PVC Verteiler 2 Fach 3 x 1 Zoll IG x 1 Zoll AG, Inneng. x Innenge. x Innenge. x ",
+        "outlets": 2,
+        "priceEur": 9.89,
+        "imageUrl": "https://www.wasserundgruen.de/images/product_images/original_images/Hauptbild%20PVC%20Verschrubung_cleanup.png"
+      },
+      {
+        "article": "2.00-P08",
+        "label": "PVC Verteiler 3 Fach 4 x 1 Zoll IG x 1 Zoll AG, Inneng. x Inneng. x Inneng. x In",
+        "outlets": 3,
+        "priceEur": 14.73,
+        "imageUrl": "https://www.wasserundgruen.de/images/product_images/original_images/Hauptbild%20PVC%20Verschrubung_cleanup.png"
+      },
+      {
+        "article": "2.00-P09",
+        "label": "PVC Verteiler 4 Fach 5 x 1 Zoll IG x 1 Zoll AG, Inneng. x Inneng. x Inneng. x In",
+        "outlets": 4,
+        "priceEur": 16.49,
+        "imageUrl": "https://www.wasserundgruen.de/images/product_images/original_images/Hauptbild%20PVC%20Verschrubung_cleanup.png"
+      }
+    ],
+    "valveBox": {
+      "article": null,
+      "label": "Rain-Bird Ventilkasten Standard groß eckig, Maße: 600 x 430 x 300 mm, Original R",
+      "priceEur": null,
+      "imageUrl": "https://www.wasserundgruen.de/images/product_images/original_images/RB%20VBA.png"
+    }
+  },
+  "controls": {
+    "controllers": [
+      {
+        "article": "3.86-S70",
+        "label": "TM2-4-230V / ESP-TM2 Steuergerät mit 4 Zonen",
+        "stations": 4,
+        "priceEur": 114.9,
+        "imageUrl": "https://www.wasserundgruen.de/images/product_images/original_images/TM1.jpg"
+      },
+      {
+        "article": "3.86-S71",
+        "label": "TM2-6-230V / ESP-TM2 Steuergerät mit 6 Zonen",
+        "stations": 6,
+        "priceEur": 133.59,
+        "imageUrl": "https://www.wasserundgruen.de/images/product_images/original_images/TM1.jpg"
+      },
+      {
+        "article": "3.86-S72",
+        "label": "TM2-8-230V / ESP-TM2 Steuergerät mit 8 Zonen",
+        "stations": 8,
+        "priceEur": 158.99,
+        "imageUrl": "https://www.wasserundgruen.de/images/product_images/original_images/TM1.jpg"
+      },
+      {
+        "article": "3.86-S73",
+        "label": "TM2-12-230V / ESP-TM2 Steuergerät mit 12 Zonen",
+        "stations": 12,
+        "priceEur": 214.95,
+        "imageUrl": "https://www.wasserundgruen.de/images/product_images/original_images/TM1.jpg"
+      }
+    ],
+    "wirePerMeter": [
+      {
+        "article": "4.29-S119",
+        "label": "3 Adern Kabel, Preis je m (lfdm)",
+        "cores": 3,
+        "priceEurPerM": 1.82,
+        "imageUrl": "https://www.wasserundgruen.de/images/product_images/original_images/Kabel%20Irricable.jpg"
+      },
+      {
+        "article": "4.29-S120",
+        "label": "5 Adern Kabel, Preis je m (lfdm)",
+        "cores": 5,
+        "priceEurPerM": 2.05,
+        "imageUrl": "https://www.wasserundgruen.de/images/product_images/original_images/Kabel%20Irricable.jpg"
+      },
+      {
+        "article": "4.29-S121",
+        "label": "7 Adern Kabel, Preis je m (lfdm)",
+        "cores": 7,
+        "priceEurPerM": 3.05,
+        "imageUrl": "https://www.wasserundgruen.de/images/product_images/original_images/Kabel%20Irricable.jpg"
+      },
+      {
+        "article": "4.29-S122",
+        "label": "9 Adern Kabel, Preis je m (lfdm)",
+        "cores": 9,
+        "priceEurPerM": 4.25,
+        "imageUrl": "https://www.wasserundgruen.de/images/product_images/original_images/Kabel%20Irricable.jpg"
+      },
+      {
+        "article": "4.29-S123",
+        "label": "13 Adern Kabel, Preis je m (lfdm)",
+        "cores": 13,
+        "priceEurPerM": 5.25,
+        "imageUrl": "https://www.wasserundgruen.de/images/product_images/original_images/Kabel%20Irricable.jpg"
+      }
+    ],
+    "splice": {
+      "article": null,
+      "label": "DBRY-6 Rain-Bird und Hunter Wasserdichte Anschluss, Kabelverbinder",
+      "priceEur": 1.71,
+      "imageUrl": "https://www.wasserundgruen.de/images/product_images/original_images/DBRY%20Kabelverbinder_cleanup.png"
+    }
+  },
+  "sourceParts": {
+    "ballValve": {
+      "article": "4.03-KH44",
+      "label": "1\" Kugelhahn IG/IG Messing",
+      "priceEur": 10.99,
+      "imageUrl": "https://www.wasserundgruen.de/images/product_images/original_images/Kugelhahn%20IG%20Innengewinde_cleanup.png"
+    },
+    "checkValve": {
+      "article": "40_4-RV53",
+      "label": "Rückschlagventil mit Innengewinde aus Kunststoff 1\"",
+      "priceEur": 22.9,
+      "imageUrl": "https://www.wasserundgruen.de/images/product_images/original_images/R%C3%BCckschlagventil_cleanup.png"
+    }
+  },
+  "drip": {
+    "tube": {
+      "article": null,
+      "label": "Tropfrohr HydroPC 16mm 25 m/Rolle Gartenbauprofi, Tropferabstand 33 cm, Wasserab",
+      "priceEur": 0.7,
+      "imageUrl": "https://www.wasserundgruen.de/images/product_images/original_images/Hydro%20PC%20Braun%20gartenbau_449_0%20(1)_cleanup.png",
+      "emitterSpacingM": 0.33,
+      "emitterFlowLh": 2.2
+    },
+    "controlKit": {
+      "article": "3.18-M31",
+      "label": "XCZ-075-PRF 3/4 Zoll / Magnetventil DV + Druckminderer / Filter",
+      "priceEur": 37.39,
+      "imageUrl": "https://www.wasserundgruen.de/images/product_images/original_images/Filter_cleanup.png"
+    },
+    "rowSpacingM": 0.35
+  }
+}
