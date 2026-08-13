@@ -11,6 +11,7 @@ import {
   mainOdFromPipes,
   manifoldInletAdapter,
   selectValveBox,
+  sourceDiscFilter,
   sourcePeAdapter,
   spliceConnectorQty,
   wireMetersWithSpare,
@@ -74,6 +75,7 @@ function shortSprayLabel(
     return `PROS-04-PRS40-CV · Swing · ${nozzle} · ${fit}`;
   }
   const nozzle = nozzleKey.replace("R-VAN", "R-VAN ");
+  // 3.191 body is 1804-SAM-PRS-45 (3,1 bar) — name must state PRS explicitly
   return `1804-SAM-PRS-45 · 3,1 bar · Swing · ${nozzle} · ${fit}`;
 }
 
@@ -106,6 +108,133 @@ function line(
   };
 }
 
+export type ManifoldKitSelection = {
+  outletsNeeded: number;
+  articles: string[];
+  valveBoxQty: number;
+  note: string;
+  lines: BomLine[];
+};
+
+/**
+ * Select PVC-Verteiler + Ventilkasten for N valve zones.
+ * zoneCount ≥ 2 → mandatory collector with outlets ≥ zoneCount (or combination).
+ */
+export function selectManifoldKit(zoneCount: number): ManifoldKitSelection {
+  const zp = CATALOG.zoneParts;
+  const boxSel = selectValveBox(zoneCount);
+  const valveBoxQty = boxSel.qty;
+  const lines: BomLine[] = [];
+  const articles: string[] = [];
+
+  if (zoneCount <= 0) {
+    return {
+      outletsNeeded: 0,
+      articles: [],
+      valveBoxQty: 0,
+      note: "",
+      lines: [],
+    };
+  }
+
+  // Prefer single Verteiler with enough outlets; else combine largest-first.
+  const sortedAsc = [...zp.verteiler].sort((a, b) => a.outlets - b.outlets);
+  const exact = sortedAsc.find((v) => v.outlets >= zoneCount);
+  const picks: Array<{
+    article: string | null;
+    outlets: number;
+    priceEur: number | null;
+    qty: number;
+    imageUrl?: string | null;
+  }> = [];
+
+  if (zoneCount === 1) {
+    // Optional 2-fach as spare capacity — still include for consistent Ventilkasten kit
+    const v2 = sortedAsc.find((v) => v.outlets >= 2) ?? sortedAsc[0];
+    if (v2) {
+      picks.push({
+        article: v2.article,
+        outlets: v2.outlets,
+        priceEur: v2.priceEur,
+        qty: 1,
+        imageUrl: v2.imageUrl,
+      });
+    }
+  } else if (exact) {
+    picks.push({
+      article: exact.article,
+      outlets: exact.outlets,
+      priceEur: exact.priceEur,
+      qty: 1,
+      imageUrl: exact.imageUrl,
+    });
+  } else {
+    const sortedDesc = [...zp.verteiler].sort((a, b) => b.outlets - a.outlets);
+    let need = zoneCount;
+    for (const v of sortedDesc) {
+      if (need <= 0) break;
+      if (v.outlets <= 0) continue;
+      const isLast = v === sortedDesc[sortedDesc.length - 1];
+      const qty = isLast
+        ? Math.ceil(need / v.outlets)
+        : Math.floor(need / v.outlets);
+      if (qty <= 0) continue;
+      picks.push({
+        article: v.article,
+        outlets: v.outlets,
+        priceEur: v.priceEur,
+        qty,
+        imageUrl: v.imageUrl,
+      });
+      need -= qty * v.outlets;
+    }
+  }
+
+  for (const p of picks) {
+    if (p.article) articles.push(p.article);
+    lines.push(
+      line({
+        key: `verteiler-${p.article ?? p.outlets}`,
+        article: p.article,
+        label: `PVC-Verteiler ${p.outlets}-fach`,
+        qty: p.qty,
+        unit: "piece",
+        priceEur: p.priceEur,
+        group: "ventile",
+        imageUrl: partImage(
+          { article: p.article, imageUrl: p.imageUrl },
+          p.article ?? undefined,
+        ),
+        linkFixtureKind: "wasserverteiler",
+        note: `Kollektor im Ventilkasten für ${zoneCount} Zonen`,
+      }),
+    );
+  }
+
+  lines.push(
+    line({
+      key: "valvebox",
+      article: boxSel.part.article,
+      label: shortGeneric(boxSel.part.label, 48),
+      qty: valveBoxQty,
+      unit: "piece",
+      priceEur: boxSel.part.priceEur,
+      group: "ventile",
+      imageUrl: partImage(boxSel.part),
+      linkFixtureKind: "wasserverteiler",
+      note: `Bis ${boxSel.maxValveCount} Ventile / Ausgänge`,
+    }),
+  );
+
+  return {
+    outletsNeeded: zoneCount,
+    articles,
+    valveBoxQty,
+    note: `Kollektor im Ventilkasten für ${zoneCount} Zonen`,
+    lines,
+  };
+}
+
 export function buildBom(params: {
   heads: SprinklerHead[];
   pipes: PipeRun[];
@@ -113,7 +242,12 @@ export function buildBom(params: {
   wireLengthM: number;
   dripTubeLengthM: number;
   brand?: SprinklerBrand;
-}): { bom: BomLine[]; totalKnownEur: number; hasUnknownPrices: boolean } {
+}): {
+  bom: BomLine[];
+  totalKnownEur: number;
+  hasUnknownPrices: boolean;
+  manifoldSummary: ManifoldKitSelection | undefined;
+} {
   const {
     heads,
     pipes,
@@ -124,6 +258,7 @@ export function buildBom(params: {
   } = params;
   const emitters = brandEmitters(brand);
   const bom: BomLine[] = [];
+  let manifoldSummary: ManifoldKitSelection | undefined;
 
   // ── Regner ─────────────────────────────────────────────────────────────────
   const sprayGroups = new Map<
@@ -205,43 +340,34 @@ export function buildBom(params: {
   }
 
   // ── Rohr ───────────────────────────────────────────────────────────────────
-  const lateralM =
-    pipes
-      .filter((p) => p.kind === "lateral")
-      .reduce((s, p) => s + p.lengthM, 0) * 1.1;
-  const mainM =
-    pipes.filter((p) => p.kind === "main").reduce((s, p) => s + p.lengthM, 0) *
-    1.1;
-
-  for (const { roll, qty } of pickRolls(Math.ceil(lateralM), CATALOG.pipes.pe25Rolls)) {
-    bom.push(
-      line({
-        key: `pe25-${roll.article}`,
-        article: roll.article,
-        label: shortPipeLabel(roll.label),
-        qty,
-        unit: "roll",
-        priceEur: roll.priceEur,
-        group: "rohr",
-        note: `ca. ${Math.ceil(lateralM)} m Zonenleitung`,
-        imageUrl: partImage(roll),
-      }),
-    );
+  // ── Rohr: group by sized OD when present (v2), else PE25 lateral / PE32 main ──
+  const byOd = new Map<number, number>();
+  for (const p of pipes) {
+    const od = p.odMm ?? (p.kind === "main" ? 32 : 25);
+    byOd.set(od, (byOd.get(od) ?? 0) + p.lengthM * MATERIAL_SPARE_FACTOR);
   }
-  for (const { roll, qty } of pickRolls(Math.ceil(mainM), CATALOG.pipes.pe32Rolls)) {
-    bom.push(
-      line({
-        key: `pe32-${roll.article}`,
-        article: roll.article,
-        label: shortPipeLabel(roll.label),
-        qty,
-        unit: "roll",
-        priceEur: roll.priceEur,
-        group: "rohr",
-        note: `ca. ${Math.ceil(mainM)} m Hauptleitung`,
-        imageUrl: partImage(roll),
-      }),
-    );
+  if (byOd.size === 0) {
+    // no pipes
+  } else {
+    for (const [od, lenM] of byOd) {
+      const rolls =
+        od >= 32 ? CATALOG.pipes.pe32Rolls : CATALOG.pipes.pe25Rolls;
+      for (const { roll, qty } of pickRolls(Math.ceil(lenM), rolls)) {
+        bom.push(
+          line({
+            key: `pe${od}-${roll.article}`,
+            article: roll.article,
+            label: shortPipeLabel(roll.label),
+            qty,
+            unit: "roll",
+            priceEur: roll.priceEur,
+            group: "rohr",
+            note: `ca. ${Math.ceil(lenM)} m PE ${od}`,
+            imageUrl: partImage(roll),
+          }),
+        );
+      }
+    }
   }
 
   // ── Ventile / Verteiler ─────────────────────────────────────────────────────
@@ -290,43 +416,9 @@ export function buildBom(params: {
         imageUrl: partImage(inlet.part),
       }),
     );
-    const sorted = [...zp.verteiler].sort((a, b) => b.outlets - a.outlets);
-    let need = zoneCount;
-    for (const v of sorted) {
-      if (need <= 0) break;
-      if (v.outlets <= 0) continue;
-      const isLast = v === sorted[sorted.length - 1];
-      const qty = isLast ? Math.ceil(need / v.outlets) : Math.floor(need / v.outlets);
-      if (qty <= 0) continue;
-      bom.push(
-        line({
-          key: `verteiler-${v.article}`,
-          article: v.article,
-          label: `PVC-Verteiler ${v.outlets}-fach`,
-          qty,
-          unit: "piece",
-          priceEur: v.priceEur,
-          group: "ventile",
-          imageUrl: partImage(v),
-          linkFixtureKind: "wasserverteiler",
-        }),
-      );
-      need -= qty * v.outlets;
-    }
-    const boxSel = selectValveBox(zoneCount);
-    bom.push(
-      line({
-        key: "valvebox",
-        article: boxSel.part.article,
-        label: "Ventilkasten",
-        qty: boxSel.qty,
-        unit: "piece",
-        priceEur: boxSel.part.priceEur,
-        group: "ventile",
-        imageUrl: partImage(boxSel.part),
-        linkFixtureKind: "wasserverteiler",
-      }),
-    );
+    const kit = selectManifoldKit(zoneCount);
+    manifoldSummary = kit;
+    bom.push(...kit.lines);
   }
 
   // ── Steuerung ───────────────────────────────────────────────────────────────
@@ -369,17 +461,31 @@ export function buildBom(params: {
         }),
       );
     }
+    const spliceQty = spliceConnectorQty(zoneCount);
     bom.push(
       line({
         key: "splice",
         article: CATALOG.controls.splice.article,
         label: "DBRY-6 wasserdichte Kabelverbinder",
-        qty: spliceConnectorQty(zoneCount),
+        qty: spliceQty,
         unit: "piece",
         priceEur: CATALOG.controls.splice.priceEur,
         group: "steuerung",
         note: `${zoneCount} Zonenleitungen + 1 Common (3M DBR/Y-6)`,
         imageUrl: partImage(CATALOG.controls.splice),
+        linkFixtureKind: "smarthome",
+      }),
+    );
+    bom.push(
+      line({
+        key: "controller-power-review",
+        article: null,
+        label: "230-V-Anschluss Steuergerät – durch Elektrofachkraft",
+        qty: 1,
+        unit: "piece",
+        priceEur: null,
+        group: "steuerung",
+        note: "Nicht im Materialpreis — Fachanschluss vor Ort.",
         linkFixtureKind: "smarthome",
       }),
     );
@@ -425,11 +531,12 @@ export function buildBom(params: {
       unit: "piece",
       priceEur: CATALOG.sourceParts.threadSeal.priceEur,
       group: "quelle",
+      note: "DIN EN 751-3 / DVGW — für Messing-/Gewindeanschlüsse.",
       imageUrl: partImage(CATALOG.sourceParts.threadSeal),
       linkFixtureKind: "wasserquelle",
     }),
   );
-  // Prefer Fachbetrieb backflow over a generic check valve (DIN EN 1717).
+  // v2 §13: do not treat a generic check valve as sufficient backflow protection
   bom.push(
     line({
       key: "backflow-review",
@@ -443,6 +550,21 @@ export function buildBom(params: {
       linkFixtureKind: "wasserquelle",
     }),
   );
+  const discFilter = sourceDiscFilter(mainOdForSource);
+  bom.push(
+    line({
+      key: "source-filter",
+      article: discFilter.article,
+      label: shortGeneric(discFilter.label, 48),
+      qty: 1,
+      unit: "piece",
+      priceEur: discFilter.priceEur,
+      group: "quelle",
+      note: "Empfohlen bei Brunnen/Zisterne/verschmutztem Wasser; bei klarem Stadtwasser optional.",
+      imageUrl: partImage(discFilter),
+      linkFixtureKind: "wasserquelle",
+    }),
+  );
   bom.push(
     line({
       key: "winter-drain",
@@ -452,8 +574,21 @@ export function buildBom(params: {
       unit: "piece",
       priceEur: CATALOG.sourceParts.winterDrain.priceEur,
       group: "quelle",
+      note: "Einwinterung / Druckluftanschluss vor dem Verteiler.",
       imageUrl: partImage(CATALOG.sourceParts.winterDrain),
       linkFixtureKind: "wasserquelle",
+    }),
+  );
+  bom.push(
+    line({
+      key: "route-fittings-review",
+      article: null,
+      label: "Zusätzliche PE-Winkel/Muffen für Trassenknicke",
+      qty: 1,
+      unit: "piece",
+      priceEur: null,
+      group: "rohr",
+      note: "T/Winkel an Köpfen decken nur Regner-Anschlüsse — 90°-Knicke und Extra-Abzweige der Trasse vor Ort ergänzen.",
     }),
   );
 
@@ -490,5 +625,5 @@ export function buildBom(params: {
   );
   const hasUnknownPrices = bom.some((l) => l.priceEur == null);
 
-  return { bom, totalKnownEur, hasUnknownPrices };
+  return { bom, totalKnownEur, hasUnknownPrices, manifoldSummary };
 }

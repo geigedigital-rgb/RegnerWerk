@@ -142,7 +142,10 @@ export type PlannerCatalog = {
     adapterPe25Valve: SimplePart;
     adapterPe32Valve: SimplePart;
     verteiler: Array<SimplePart & { outlets: number }>;
+    /** Default / legacy single box (smallest common). Prefer valveBoxes. */
     valveBox: SimplePart;
+    /** Sized boxes: pick smallest with maxValveCount ≥ zones. */
+    valveBoxes?: Array<SimplePart & { maxValveCount: number }>;
   };
   controls: {
     controllers: Array<SimplePart & { stations: number }>;
@@ -155,7 +158,20 @@ export type PlannerCatalog = {
     }>;
     splice: SimplePart;
   };
-  sourceParts: { ballValve: SimplePart; checkValve: SimplePart };
+  sourceParts: {
+    ballValve: SimplePart;
+    checkValve: SimplePart;
+    /** PE Klemm × 1″ AG — into Kugelhahn IG (matches main OD). */
+    adapterPe25Source: SimplePart;
+    adapterPe32Source: SimplePart;
+    /** Winter blow-out / drain tee with ball valve (catalog). */
+    winterDrain: SimplePart;
+    /** PTFE thread seal tape (DVGW), shop Art. Teflon_1. */
+    threadSeal: SimplePart;
+    /** Disc filter with PE25 / PE32 unions (match main OD). */
+    discFilterPe25: SimplePart;
+    discFilterPe32: SimplePart;
+  };
   drip: {
     tube: SimplePart & { emitterSpacingM: number; emitterFlowLh: number };
     controlKit: SimplePart;

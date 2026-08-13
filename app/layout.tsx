@@ -1,7 +1,5 @@
 import type { Metadata } from "next";
 import { Caveat, Plus_Jakarta_Sans } from "next/font/google";
-import { Footer } from "@/components/layout/Footer";
-import { Header } from "@/components/layout/Header";
 import "./globals.css";
 
 const plusJakarta = Plus_Jakarta_Sans({
@@ -18,18 +16,11 @@ const caveat = Caveat({
 
 export const metadata: Metadata = {
   title: {
-    default: "RegnerWerk – Intelligente Bewässerung",
+    default: "RegnerWerk Konfigurator",
     template: "%s | RegnerWerk",
   },
   description:
-    "Planung, Installation und Smart-Steuerung von Bewässerungssystemen für Gärten in Deutschland. Klar, sparsam, unsichtbar.",
-  openGraph: {
-    title: "RegnerWerk – Intelligente Bewässerung",
-    description:
-      "Planung, Installation und Smart-Steuerung von Bewässerungssystemen für Gärten in Deutschland.",
-    locale: "de_DE",
-    type: "website",
-  },
+    "Sofort-Bewässerungsplan: Garten auf der Karte öffnen, Flächen einzeichnen, Materialliste erhalten.",
 };
 
 export default function RootLayout({
@@ -42,11 +33,7 @@ export default function RootLayout({
       lang="de"
       className={`${plusJakarta.variable} ${caveat.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col font-sans text-forest">
-        <Header />
-        <main className="flex-1">{children}</main>
-        <Footer />
-      </body>
+      <body className="min-h-full font-sans text-forest">{children}</body>
     </html>
   );
 }

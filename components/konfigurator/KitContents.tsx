@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { formatEuro } from "@/lib/content";
+import { formatEuro } from "@/lib/format";
 import { kitItems, type ConfigState } from "@/lib/configurator";
 
 type Props = {

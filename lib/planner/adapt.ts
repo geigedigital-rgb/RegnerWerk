@@ -1,12 +1,35 @@
 import type { SofortPlan } from "./types";
 import type { SofortPlanV2 } from "./v2/types";
+import type { SofortPlanV3 } from "./v3/types";
 import { ZONE_COLORS } from "./v1/hydraulics";
 
-/** Map full v2 engineering model → shared UI / persistence SofortPlan. */
-export function adaptV2ToViewModel(plan: SofortPlanV2): SofortPlan {
+type EngineeringPlan = SofortPlanV2 | SofortPlanV3;
+
+/** Map full v2/v3 engineering model → shared UI / persistence SofortPlan. */
+export function adaptV2ToViewModel(plan: EngineeringPlan): SofortPlan {
+  const zoneDecisions =
+    "zoneDecisions" in plan && plan.zoneDecisions
+      ? plan.zoneDecisions.map((d) => ({
+          zoneId: d.zoneId,
+          primaryReason: d.primaryReason,
+          explanation: d.explanation,
+          flowLpm: d.flowLpm,
+        }))
+      : undefined;
+  const rawManifold =
+    "manifoldSummary" in plan ? plan.manifoldSummary : undefined;
+  const manifoldSummary = rawManifold
+    ? {
+        outletsNeeded: rawManifold.outletsNeeded,
+        articles: rawManifold.articles,
+        valveBoxQty: rawManifold.valveBoxQty,
+        note: rawManifold.note,
+      }
+    : undefined;
+
   return {
     version: 1,
-    algorithmVersion: "v2",
+    algorithmVersion: plan.algorithmVersion === "v3" ? "v3" : "v2",
     createdAt: plan.createdAt,
     brand: plan.brand,
     heads: plan.heads.map((h) => ({
@@ -68,6 +91,8 @@ export function adaptV2ToViewModel(plan: SofortPlanV2): SofortPlan {
     requiresBackflowProtectionReview: plan.requiresBackflowProtectionReview,
     catalogVersion: plan.catalogVersion,
     algorithmBuild: plan.algorithmBuild,
+    zoneDecisions,
+    manifoldSummary,
   };
 }
 

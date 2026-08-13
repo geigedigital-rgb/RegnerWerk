@@ -6,20 +6,23 @@ import type { FixtureKind } from "@/lib/mapbox";
 
 const META: Record<
   FixtureKind,
-  { label: string; Icon: typeof Droplets; accent: string }
+  { label: string; shortLabel: string; Icon: typeof Droplets; accent: string }
 > = {
   wasserquelle: {
     label: "Wasserquelle",
+    shortLabel: "Wasser",
     Icon: Droplets,
     accent: "#00FFCF",
   },
   smarthome: {
-    label: "Smarthome",
+    label: "Elektrik / Smarthome",
+    shortLabel: "Elektrik",
     Icon: Smartphone,
     accent: "#5B8DEF",
   },
   wasserverteiler: {
-    label: "Verteiler",
+    label: "Ventilkasten",
+    shortLabel: "Kasten",
     Icon: GitBranch,
     accent: "#E8B84A",
   },
@@ -111,57 +114,68 @@ export function FixtureMarker({
         }`}
         style={{ left: x, top: y }}
       >
-        <button
-          type="button"
-          disabled={!onSelect}
-          onClick={(e) => {
-            e.stopPropagation();
-            onSelect?.();
-          }}
-          className={`group relative block rounded-full focus-visible:outline-none ${
-            onSelect ? "cursor-pointer" : "cursor-default"
-          }`}
-          title={caption}
-        >
-          {onRemove ? (
-            <span
-              role="button"
-              tabIndex={0}
-              onClick={(e) => {
-                e.stopPropagation();
-                onRemove();
-              }}
-              onKeyDown={(e) => {
-                if (e.key === "Enter" || e.key === " ") {
+        <div className="flex flex-col items-center">
+          <button
+            type="button"
+            disabled={!onSelect}
+            onClick={(e) => {
+              e.stopPropagation();
+              onSelect?.();
+            }}
+            className={`group relative block rounded-full focus-visible:outline-none ${
+              onSelect ? "cursor-pointer" : "cursor-default"
+            }`}
+            title={caption}
+          >
+            {onRemove ? (
+              <span
+                role="button"
+                tabIndex={0}
+                onClick={(e) => {
                   e.stopPropagation();
                   onRemove();
-                }
+                }}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" || e.key === " ") {
+                    e.stopPropagation();
+                    onRemove();
+                  }
+                }}
+                className="absolute -right-2.5 -top-2.5 z-10 hidden h-4 w-4 items-center justify-center rounded-full bg-forest text-white shadow-soft ring-1 ring-white group-hover:flex"
+                title="Entfernen"
+              >
+                <X size={9} strokeWidth={2.5} />
+              </span>
+            ) : null}
+            <span
+              className={`block rounded-full border-2 shadow-soft transition ${
+                selected || active ? "scale-125" : ""
+              }`}
+              style={{
+                width: selected ? 14 : 10,
+                height: selected ? 14 : 10,
+                backgroundColor: accent,
+                borderColor: selected ? accent : "#0b2414",
+                boxShadow: selected
+                  ? `0 0 0 2px #fff, 0 0 0 4px ${accent}`
+                  : `0 0 0 2px rgba(255,255,255,0.9), 0 0 0 3px ${accent}55`,
               }}
-              className="absolute -right-2.5 -top-2.5 z-10 hidden h-4 w-4 items-center justify-center rounded-full bg-forest text-white shadow-soft ring-1 ring-white group-hover:flex"
-              title="Entfernen"
-            >
-              <X size={9} strokeWidth={2.5} />
-            </span>
-          ) : null}
+            />
+          </button>
           <span
-            className={`block rounded-full border-2 shadow-soft transition ${
-              selected || active ? "scale-125" : ""
+            className={`pointer-events-none mt-1 max-w-[5.5rem] truncate rounded-md px-1.5 py-0.5 text-center text-[9px] font-bold leading-tight shadow-soft ${
+              selected || active
+                ? "bg-forest text-lime"
+                : "bg-white/95 text-forest ring-1 ring-forest/12"
             }`}
-            style={{
-              width: selected ? 14 : 10,
-              height: selected ? 14 : 10,
-              backgroundColor: accent,
-              borderColor: selected ? accent : "#0b2414",
-              boxShadow: selected
-                ? `0 0 0 2px #fff, 0 0 0 4px ${accent}`
-                : `0 0 0 2px rgba(255,255,255,0.9), 0 0 0 3px ${accent}55`,
-            }}
-          />
-        </button>
+          >
+            {META[kind].shortLabel}
+          </span>
+        </div>
 
         {selected ? (
           <div
-            className="pointer-events-auto absolute left-1/2 top-5 z-10 w-[14.5rem] -translate-x-1/2 rounded-2xl border border-forest/15 bg-white p-2.5 shadow-soft"
+            className="pointer-events-auto absolute left-1/2 top-8 z-10 w-[14.5rem] -translate-x-1/2 rounded-2xl border border-forest/15 bg-white p-2.5 shadow-soft"
             onPointerDown={(e) => e.stopPropagation()}
           >
             <div className="flex gap-2.5">

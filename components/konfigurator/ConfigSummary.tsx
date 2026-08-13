@@ -10,7 +10,7 @@ import {
   type LucideIcon,
 } from "lucide-react";
 import { Button } from "@/components/ui/Button";
-import { formatEuro } from "@/lib/content";
+import { formatEuro } from "@/lib/format";
 import {
   approxArea,
   BASE_PRICE,
@@ -152,7 +152,7 @@ export function ConfigSummary({
 
           <div className="border-t border-gray-100 pt-4">
             <Button
-              href="/#beratung"
+              href={`${process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") || "http://localhost:3000"}/#beratung`}
               variant="primary"
               className="w-full !shadow-none"
             >
@@ -175,7 +175,7 @@ export function ConfigSummary({
       ) : (
         <div className="flex gap-3 border-t border-gray-100 px-5 py-3">
           <Button
-            href="/#beratung"
+            href={`${process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") || "http://localhost:3000"}/#beratung`}
             variant="primary"
             className="w-full !shadow-none"
           >

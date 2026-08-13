@@ -20,6 +20,9 @@ export type HeadProductInfo = {
   radiusMaxM: number | null;
   arcMinDeg: number | null;
   arcMaxDeg: number | null;
+  /** Strip footprint (m); set only for Streifendüsen. */
+  stripWidthM?: number | null;
+  stripLengthM?: number | null;
   note: string;
   radiusInSpec: boolean;
   arcInSpec: boolean;
@@ -81,10 +84,12 @@ export function resolveHeadProduct(
       article: emitters.sprayHead.setArticle,
       imageUrl: imageFor(key, brand) ?? imageFor(base, brand),
       bodyLabel: emitters.sprayHead.bodyLabel,
-      radiusMinM: strip?.lengthM ?? null,
-      radiusMaxM: strip?.lengthM ?? null,
+      radiusMinM: null,
+      radiusMaxM: null,
       arcMinDeg: null,
       arcMaxDeg: null,
+      stripWidthM: strip?.widthM ?? null,
+      stripLengthM: strip?.lengthM ?? null,
       note: strip
         ? `Streifendüse ${strip.widthM}×${strip.lengthM} m (Herstellermaß).`
         : "Streifendüse.",

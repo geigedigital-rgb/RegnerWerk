@@ -61,15 +61,15 @@ export const FIXTURE_STEPS: {
   },
   {
     id: "smarthome",
-    label: "Smarthome-Steuerung",
-    short: "Smart",
-    hint: "Platzieren Sie die Smarthome-Steuerung (Controller / App-Anschluss).",
+    label: "Elektrik / Smarthome",
+    short: "Elektrik",
+    hint: "Platzieren Sie den Stromanschluss / die Smarthome-Steuerung (Controller).",
   },
   {
     id: "wasserverteiler",
-    label: "Wasserverteiler",
-    short: "Verteiler",
-    hint: "Platzieren Sie den Wasserverteiler (Ventilbox / Verteilereinheit).",
+    label: "Ventilkasten",
+    short: "Kasten",
+    hint: "Platzieren Sie den Ventilkasten (Verteilereinheit).",
   },
 ];
 

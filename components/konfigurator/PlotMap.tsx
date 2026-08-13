@@ -1887,9 +1887,9 @@ export function PlotMap({
             cardTitle={bomLine?.label}
             cardNote={
               f.kind === "smarthome"
-                ? "Steuergerät / Smarthome-Modul"
+                ? "Elektrik / Steuergerät"
                 : f.kind === "wasserverteiler"
-                  ? "Ventilverteiler"
+                  ? "Ventilkasten / Verteiler"
                   : "Wasseranschluss"
             }
             onCloseCard={

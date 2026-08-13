@@ -124,6 +124,9 @@ function price(
   ...fallbacks: Array<RegExp | number | null>
 ): number | null {
   if (typeof p?.price_eur === "number") return p.price_eur;
+  const bomPrice = (p as Product & { bom?: Array<{ price_eur?: number }> })?.bom?.[0]
+    ?.price_eur;
+  if (typeof bomPrice === "number") return bomPrice;
   for (const fb of fallbacks) {
     if (typeof fb === "number") return fb;
     if (fb == null) continue;
@@ -638,8 +641,48 @@ function simple(article: string, ...fallbacks: Array<RegExp | number | null>) {
   };
 }
 
-const valveBoxP = products.find((p) => p.group_id === "valve_boxes");
+const valveBoxByArticle = (article: string) =>
+  products.find((p) => p.article === article);
+const valveBoxSmall =
+  valveBoxByArticle("VENT-EK") ??
+  products.find(
+    (p) =>
+      p.group_id === "valve_boxes" && /520\s*x\s*400|VENT-EK/i.test(p.model ?? ""),
+  );
+const valveBoxMedium =
+  valveBoxByArticle("VBA02675") ??
+  products.find(
+    (p) =>
+      p.group_id === "valve_boxes" &&
+      /600\s*x\s*430|VBA02675/i.test(p.model ?? ""),
+  );
+const valveBoxLarge =
+  valveBoxByArticle("VENT-EG") ??
+  products.find(
+    (p) =>
+      p.group_id === "valve_boxes" && /660\s*x\s*555|VENT-EG/i.test(p.model ?? ""),
+  );
+const valveBoxJumbo =
+  valveBoxByArticle("VENT-EJ") ??
+  products.find(
+    (p) =>
+      p.group_id === "valve_boxes" && /810\s*x\s*590|VENT-EJ|Jumbo/i.test(p.model ?? ""),
+  );
+const valveBoxP = valveBoxSmall ?? valveBoxMedium ?? products.find((p) => p.group_id === "valve_boxes");
 const dbryP = products.find((p) => /DBRY/i.test(p.model ?? p.name ?? ""));
+const teflonP =
+  products.find((p) => p.article === "Teflon_1") ??
+  products.find((p) => /PTFE-Gewindedichtband|Teflon Dichtband/i.test(p.model ?? ""));
+const sourceFilterPe25 =
+  products.find((p) => p.article === "5.02-SF19") ??
+  products.find((p) =>
+    /Scheibenfilter 1.?".*PE Anschluss 25/i.test(p.model ?? ""),
+  );
+const sourceFilterPe32 =
+  products.find((p) => p.article === "5.02-SF20") ??
+  products.find((p) =>
+    /Scheibenfilter 1.?".*PE Anschluss 32/i.test(p.model ?? ""),
+  );
 const rotor3504 = products.find((p) => p.article === "Y34500");
 const dripTube = products.find(
   (p) =>
@@ -675,7 +718,7 @@ const dripPerM =
       : null;
 
 const splicePrice =
-  price(dbryP, /DBRY-6/i) ??
+  price(dbryP, /DBRY-6/i, 2.69) ??
   aiPrice(/DBM und Gel-Kabelverbinder/i) ??
   variantPrice(/DBM|Kabelverbinder/i);
 
@@ -1029,33 +1072,118 @@ const catalog = {
       priceEur: price(byArticle("100-DV-MM"), valveComplete, /100-DV-MM/i),
       imageUrl: productImage(byArticle("100-DV-MM")),
     },
-    adapterPe25Valve: simple("1.05-K34"),
-    adapterPe32Valve: simple("1.05-K37"),
+    adapterPe25Valve: simple("1.05-K34", /Kupplung 25 x 1 Zoll IG/i),
+    adapterPe32Valve: simple("1.05-K37", /Kupplung 32 X 1 Zoll IG/i),
     verteiler,
     valveBox: {
-      article: valveBoxP?.article ?? null,
-      label: valveBoxP?.model ?? "Rain-Bird Ventilkasten Standard groß",
+      article: valveBoxP?.article ?? "VENT-EK",
+      label:
+        valveBoxP?.model ??
+        "Ventilkasten Standard eckig klein 520×400×330 mm (VENT-EK)",
       priceEur: price(
         valveBoxP,
-        /Ventilkasten Standard groß/i,
-        /Ventilkasten.*600\s*x\s*430/i,
+        /Ventilkasten.*520\s*x\s*400|VENT-EK/i,
+        25.99,
       ),
       imageUrl: productImage(valveBoxP),
     },
+    valveBoxes: [
+      {
+        article: "VENT-EK",
+        label:
+          valveBoxSmall?.model ??
+          "Ventilkasten Standard eckig klein 520×400×330 mm (VENT-EK)",
+        priceEur: price(valveBoxSmall, /VENT-EK|520\s*x\s*400/i, 25.99),
+        imageUrl: productImage(valveBoxSmall),
+        maxValveCount: 4,
+      },
+      {
+        article: "VBA02675",
+        label:
+          valveBoxMedium?.model ??
+          "Rain-Bird Ventilkasten Standard groß eckig 600×430×300 mm (VBA02675)",
+        priceEur: price(valveBoxMedium, /VBA02675|600\s*x\s*430/i, 54.99),
+        imageUrl: productImage(valveBoxMedium),
+        maxValveCount: 4,
+      },
+      {
+        article: "VENT-EG",
+        label:
+          valveBoxLarge?.model ??
+          "Ventilkasten Standard groß eckig 660×555×330 mm (VENT-EG)",
+        priceEur: price(valveBoxLarge, /VENT-EG|660\s*x\s*555/i, 63.99),
+        imageUrl: productImage(valveBoxLarge),
+        maxValveCount: 12,
+      },
+      {
+        article: "VENT-EJ",
+        label:
+          valveBoxJumbo?.model ??
+          "Ventilkasten Green Jumbo eckig 810×590×415 mm (VENT-EJ)",
+        priceEur: price(valveBoxJumbo, /VENT-EJ|810\s*x\s*590|Jumbo/i, 119.61),
+        imageUrl: productImage(valveBoxJumbo),
+        maxValveCount: 12,
+      },
+    ],
   },
   controls: {
     controllers,
     wirePerMeter,
     splice: {
-      article: dbryP?.article ?? null,
+      article: dbryP?.article ?? "DBRY-6",
       label: dbryP?.model ?? "DBRY-6 / DBM wasserdichte Kabelverbinder",
       priceEur: splicePrice,
       imageUrl: productImage(dbryP),
     },
   },
   sourceParts: {
-    ballValve: simple("4.03-KH44"),
+    ballValve: simple("4.03-KH44", /1" Kugelhahn IG\/IG/i),
     checkValve: simple("40_4-RV53"),
+    // PE Klemm × 1″ AG → screws into 1″ IG Kugelhahn (Wasser&Grün 1.04-K13/K16)
+    adapterPe25Source: simple(
+      "1.04-K13",
+      /Kupplung 25 x 1 Zoll AG Klemm x Außengewinde PN10/i,
+    ),
+    adapterPe32Source: simple(
+      "1.04-K16",
+      /Kupplung 32 x 1 Zoll AG Klemm x Außengewinde PN10/i,
+    ),
+    winterDrain: simple(
+      "9.15-DRTS",
+      /Druckluftanschluss T-Stück Überwurf-Set mit Kugelhahn/i,
+    ),
+    threadSeal: {
+      article: teflonP?.article ?? "Teflon_1",
+      label:
+        teflonP?.model ??
+        "Teflon Dichtband PTFE-Gewindedichtband DVGW 0,1 mm × 12 m",
+      priceEur: price(teflonP, /Teflon Dichtband|PTFE-Gewindedichtband/i, 1.19),
+      imageUrl: productImage(teflonP),
+    },
+    discFilterPe25: {
+      article: sourceFilterPe25?.article ?? "5.02-SF19",
+      label:
+        sourceFilterPe25?.model ??
+        'Scheibenfilter 1" mit PE Anschluss 25 mm + Verschraubung',
+      priceEur: price(
+        sourceFilterPe25,
+        /Scheibenfilter 1.?".*PE Anschluss 25/i,
+        20.99,
+      ),
+      imageUrl: productImage(sourceFilterPe25),
+    },
+    discFilterPe32: {
+      article: sourceFilterPe32?.article ?? "5.02-SF20",
+      label:
+        sourceFilterPe32?.model ??
+        'Scheibenfilter 1" mit PE Anschluss 32 mm + Verschraubung',
+      priceEur: price(
+        sourceFilterPe32,
+        /Scheibenfilter 1.?".*PE Anschluss 32/i,
+        22.99,
+      ),
+      imageUrl: productImage(sourceFilterPe32),
+    },
   },
   drip: {
     tube: {

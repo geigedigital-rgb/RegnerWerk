@@ -6,6 +6,15 @@ import {
   type RollSpec,
   type SprinklerBrand,
 } from "../catalog";
+import {
+  MATERIAL_SPARE_FACTOR,
+  mainOdFromPipes,
+  manifoldInletAdapter,
+  selectValveBox,
+  sourcePeAdapter,
+  spliceConnectorQty,
+  wireMetersWithSpare,
+} from "../bomRules";
 import type { BomLine, PipeRun, SprinklerHead } from "../types";
 
 /** Pick rolls covering `lengthM` with a simple greedy (cheap and readable). */
@@ -62,10 +71,10 @@ function shortSprayLabel(
   const fit = anschluss === "tee" ? "T-Stück" : "Winkel";
   if (brand === "hunter") {
     const nozzle = nozzleKey.replace(/SR$/, "");
-    return `PROS-04-PRS40-CV · ${nozzle} · ${fit}`;
+    return `PROS-04-PRS40-CV · Swing · ${nozzle} · ${fit}`;
   }
   const nozzle = nozzleKey.replace("R-VAN", "R-VAN ");
-  return `1804-SAM · ${nozzle} · ${fit}`;
+  return `1804-SAM-PRS-45 · 3,1 bar · Swing · ${nozzle} · ${fit}`;
 }
 
 function shortPipeLabel(label: string): string {
@@ -200,7 +209,7 @@ export function buildBom(params: {
   const byOd = new Map<number, number>();
   for (const p of pipes) {
     const od = p.odMm ?? (p.kind === "main" ? 32 : 25);
-    byOd.set(od, (byOd.get(od) ?? 0) + p.lengthM * 1.1);
+    byOd.set(od, (byOd.get(od) ?? 0) + p.lengthM * MATERIAL_SPARE_FACTOR);
   }
   if (byOd.size === 0) {
     // no pipes
@@ -254,16 +263,22 @@ export function buildBom(params: {
         imageUrl: partImage(zp.adapterPe25Valve),
       }),
     );
+    const mainOd = mainOdFromPipes(pipes);
+    const inlet = manifoldInletAdapter(mainOd);
     bom.push(
       line({
-        key: "adapter32",
-        article: zp.adapterPe32Valve.article,
-        label: "Kupplung PE 32 → Verteiler",
+        key: `adapter-main-${inlet.odMm}`,
+        article: inlet.part.article,
+        label: inlet.label,
         qty: 1,
         unit: "piece",
-        priceEur: zp.adapterPe32Valve.priceEur,
+        priceEur: inlet.part.priceEur,
         group: "ventile",
-        imageUrl: partImage(zp.adapterPe32Valve),
+        note:
+          inlet.odMm >= 32
+            ? "Hauptleitung PE32 laut Hydraulik — Rolle PE32 muss in Rohr-Gruppe stehen."
+            : "Hauptleitung PE25 ausreichend laut Hydraulik — kein PE32-Adapter.",
+        imageUrl: partImage(inlet.part),
       }),
     );
     const sorted = [...zp.verteiler].sort((a, b) => b.outlets - a.outlets);
@@ -289,16 +304,17 @@ export function buildBom(params: {
       );
       need -= qty * v.outlets;
     }
+    const boxSel = selectValveBox(zoneCount);
     bom.push(
       line({
         key: "valvebox",
-        article: zp.valveBox.article,
+        article: boxSel.part.article,
         label: "Ventilkasten",
-        qty: Math.ceil(zoneCount / 4),
+        qty: boxSel.qty,
         unit: "piece",
-        priceEur: zp.valveBox.priceEur,
+        priceEur: boxSel.part.priceEur,
         group: "ventile",
-        imageUrl: partImage(zp.valveBox),
+        imageUrl: partImage(boxSel.part),
         linkFixtureKind: "wasserverteiler",
       }),
     );
@@ -328,7 +344,7 @@ export function buildBom(params: {
       CATALOG.controls.wirePerMeter.find((w) => w.cores >= zoneCount + 1) ??
       CATALOG.controls.wirePerMeter[CATALOG.controls.wirePerMeter.length - 1];
     if (wire) {
-      const qty = Math.max(5, Math.ceil(wireLengthM));
+      const qty = wireMetersWithSpare(wireLengthM);
       bom.push(
         line({
           key: "wire",
@@ -338,6 +354,7 @@ export function buildBom(params: {
           unit: "meter",
           priceEur: wire.priceEurPerM,
           group: "steuerung",
+          note: `inkl. ${Math.round((MATERIAL_SPARE_FACTOR - 1) * 100)} % Reserve`,
           imageUrl: partImage(wire),
           linkFixtureKind: "smarthome",
         }),
@@ -347,11 +364,12 @@ export function buildBom(params: {
       line({
         key: "splice",
         article: CATALOG.controls.splice.article,
-        label: shortGeneric(CATALOG.controls.splice.label, 40),
-        qty: Math.max(1, Math.ceil(zoneCount / 3)),
+        label: "DBRY-6 wasserdichte Kabelverbinder",
+        qty: spliceConnectorQty(zoneCount),
         unit: "piece",
         priceEur: CATALOG.controls.splice.priceEur,
         group: "steuerung",
+        note: `${zoneCount} Zonenleitungen + 1 Common (3M DBR/Y-6)`,
         imageUrl: partImage(CATALOG.controls.splice),
         linkFixtureKind: "smarthome",
       }),
@@ -359,16 +377,46 @@ export function buildBom(params: {
   }
 
   // ── Quelle ──────────────────────────────────────────────────────────────────
+  const mainOdForSource = mainOdFromPipes(pipes);
+  const sourceAdapter = sourcePeAdapter(mainOdForSource);
   bom.push(
     line({
       key: "ballvalve",
       article: CATALOG.sourceParts.ballValve.article,
-      label: "Kugelhahn Absperrung",
+      label: 'Kugelhahn 1″ IG/IG Absperrung',
       qty: 1,
       unit: "piece",
       priceEur: CATALOG.sourceParts.ballValve.priceEur,
       group: "quelle",
+      note: "Kette: Quelle → Sicherung → Kugelhahn → PE-AG → Hauptleitung → Verteiler",
       imageUrl: partImage(CATALOG.sourceParts.ballValve),
+      linkFixtureKind: "wasserquelle",
+    }),
+  );
+  bom.push(
+    line({
+      key: `source-adapter-pe${sourceAdapter.odMm}`,
+      article: sourceAdapter.part.article,
+      label: sourceAdapter.label,
+      qty: 1,
+      unit: "piece",
+      priceEur: sourceAdapter.part.priceEur,
+      group: "quelle",
+      note: "PE Klemm × 1″ AG in Kugelhahn-IG; Übergang vom Wasseranschluss durch Fachbetrieb.",
+      imageUrl: partImage(sourceAdapter.part),
+      linkFixtureKind: "wasserquelle",
+    }),
+  );
+  bom.push(
+    line({
+      key: "thread-seal",
+      article: CATALOG.sourceParts.threadSeal.article,
+      label: shortGeneric(CATALOG.sourceParts.threadSeal.label, 48),
+      qty: 1,
+      unit: "piece",
+      priceEur: CATALOG.sourceParts.threadSeal.priceEur,
+      group: "quelle",
+      imageUrl: partImage(CATALOG.sourceParts.threadSeal),
       linkFixtureKind: "wasserquelle",
     }),
   );
@@ -382,7 +430,20 @@ export function buildBom(params: {
       unit: "piece",
       priceEur: null,
       group: "quelle",
-      note: "DIN EN 1717 / DVGW — Typ nach Anschluss und System wählen.",
+      note: "Kein Shop-SKU — DIN EN 1717 / DVGW; Rain Bird DV schützt Trinkwasser nicht vor Rückfluss.",
+      linkFixtureKind: "wasserquelle",
+    }),
+  );
+  bom.push(
+    line({
+      key: "winter-drain",
+      article: CATALOG.sourceParts.winterDrain.article,
+      label: shortGeneric(CATALOG.sourceParts.winterDrain.label, 48),
+      qty: 1,
+      unit: "piece",
+      priceEur: CATALOG.sourceParts.winterDrain.priceEur,
+      group: "quelle",
+      imageUrl: partImage(CATALOG.sourceParts.winterDrain),
       linkFixtureKind: "wasserquelle",
     }),
   );

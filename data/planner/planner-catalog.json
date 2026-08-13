@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-06T13:07:30.103Z",
+  "generated_at": "2026-08-07T18:22:13.056Z",
   "source": "RegnerWerk_universal.json + products-ai.json + variant-prices/ + Hunter I-20 blue standard chart",
   "defaultBrand": "hunter",
   "images": {
@@ -3427,11 +3427,41 @@
       }
     ],
     "valveBox": {
-      "article": null,
-      "label": "Rain-Bird Ventilkasten Standard groß eckig, Maße: 600 x 430 x 300 mm, Original R",
-      "priceEur": null,
-      "imageUrl": "https://www.wasserundgruen.de/images/product_images/original_images/RB%20VBA.png"
-    }
+      "article": "VENT-EK",
+      "label": "Ventilkasten Standard eckig klein, Masse: 520 x 400 x 330 mm, kompatibel mit Rain-Bird / Hunter Magnetventilen, Ventilbox vergleichbar VBA0264",
+      "priceEur": 25.99,
+      "imageUrl": "https://www.wasserundgruen.de/images/product_images/original_images/Ventilkasten%20eckig%20klein.jpg"
+    },
+    "valveBoxes": [
+      {
+        "article": "VENT-EK",
+        "label": "Ventilkasten Standard eckig klein, Masse: 520 x 400 x 330 mm, kompatibel mit Rain-Bird / Hunter Magnetventilen, Ventilbox vergleichbar VBA0264",
+        "priceEur": 25.99,
+        "imageUrl": "https://www.wasserundgruen.de/images/product_images/original_images/Ventilkasten%20eckig%20klein.jpg",
+        "maxValveCount": 4
+      },
+      {
+        "article": "VBA02675",
+        "label": "Rain-Bird Ventilkasten Standard groß eckig, Maße: 600 x 430 x 300 mm, Original Rain-Bird VBA02675",
+        "priceEur": 54.99,
+        "imageUrl": "https://www.wasserundgruen.de/images/product_images/original_images/RB%20VBA.png",
+        "maxValveCount": 4
+      },
+      {
+        "article": "VENT-EG",
+        "label": "*Spezial* Ventilkasten Standart groß eckig mit beidseitig Löchern und 2x Feuchtraumdose, groß eckig, Masse, 660 x 555 x 330 mm VENT-EG Kompatibel mit Rain-Bird / Hunter Magnetventilen",
+        "priceEur": 63.99,
+        "imageUrl": "https://www.wasserundgruen.de/images/product_images/original_images/Design%20ohne%20Titel(3)%20(1).png",
+        "maxValveCount": 12
+      },
+      {
+        "article": "VENT-EJ",
+        "label": "Ventilkasten Green Jumbo eckig, GreenJumbo eckig, Masse: 810 x 590 x 415 mm mm, kompatibel mit Rain-Bird / Hunter Magnetventilen, Ventilbox vergleichbar zu VBA",
+        "priceEur": 119.61,
+        "imageUrl": "https://www.wasserundgruen.de/images/product_images/original_images/Jumbo%20Bild%201.png",
+        "maxValveCount": 12
+      }
+    ]
   },
   "controls": {
     "controllers": [
@@ -3470,41 +3500,41 @@
         "label": "3 Adern Kabel, Preis je m (lfdm)",
         "cores": 3,
         "priceEurPerM": 1.82,
-        "imageUrl": "https://www.wasserundgruen.de/images/product_images/original_images/Kabel%20Irricable.jpg"
+        "imageUrl": "https://www.wasserundgruen.de/images/product_images/original_images/Kabel%20lfdm%20Irricable%20(1).jpg"
       },
       {
         "article": "4.29-S120",
         "label": "5 Adern Kabel, Preis je m (lfdm)",
         "cores": 5,
         "priceEurPerM": 2.05,
-        "imageUrl": "https://www.wasserundgruen.de/images/product_images/original_images/Kabel%20Irricable.jpg"
+        "imageUrl": "https://www.wasserundgruen.de/images/product_images/original_images/Kabel%20lfdm%20Irricable%20(4).jpg"
       },
       {
         "article": "4.29-S121",
         "label": "7 Adern Kabel, Preis je m (lfdm)",
         "cores": 7,
         "priceEurPerM": 3.05,
-        "imageUrl": "https://www.wasserundgruen.de/images/product_images/original_images/Kabel%20Irricable.jpg"
+        "imageUrl": "https://www.wasserundgruen.de/images/product_images/original_images/Kabel%20lfdm%20Irricable%20(3).jpg"
       },
       {
         "article": "4.29-S122",
         "label": "9 Adern Kabel, Preis je m (lfdm)",
         "cores": 9,
         "priceEurPerM": 4.25,
-        "imageUrl": "https://www.wasserundgruen.de/images/product_images/original_images/Kabel%20Irricable.jpg"
+        "imageUrl": "https://www.wasserundgruen.de/images/product_images/original_images/Kabel%20lfdm%20Irricable%20(5).jpg"
       },
       {
         "article": "4.29-S123",
         "label": "13 Adern Kabel, Preis je m (lfdm)",
         "cores": 13,
         "priceEurPerM": 5.25,
-        "imageUrl": "https://www.wasserundgruen.de/images/product_images/original_images/Kabel%20Irricable.jpg"
+        "imageUrl": "https://www.wasserundgruen.de/images/product_images/original_images/Kabel%20lfdm%20Irricable%20(6).jpg"
       }
     ],
     "splice": {
-      "article": null,
+      "article": "6.59",
       "label": "DBRY-6 Rain-Bird und Hunter Wasserdichte Anschluss, Kabelverbinder",
-      "priceEur": 1.71,
+      "priceEur": 2.69,
       "imageUrl": "https://www.wasserundgruen.de/images/product_images/original_images/DBRY%20Kabelverbinder_cleanup.png"
     }
   },
@@ -3520,6 +3550,42 @@
       "label": "Rückschlagventil mit Innengewinde aus Kunststoff 1\"",
       "priceEur": 22.9,
       "imageUrl": "https://www.wasserundgruen.de/images/product_images/original_images/R%C3%BCckschlagventil_cleanup.png"
+    },
+    "adapterPe25Source": {
+      "article": "1.04-K13",
+      "label": "Kupplung 25 x 1 Zoll AG Klemm x Außengewinde PN10",
+      "priceEur": 1.22,
+      "imageUrl": "https://www.wasserundgruen.de/images/product_images/original_images/Kupplung%20x%20AG%20(1)_cleanup.png"
+    },
+    "adapterPe32Source": {
+      "article": "1.04-K16",
+      "label": "Kupplung 32 x 1 Zoll AG Klemm x Außengewinde PN10",
+      "priceEur": 1.42,
+      "imageUrl": "https://www.wasserundgruen.de/images/product_images/original_images/Kupplung%20x%20AG%20(1)_cleanup.png"
+    },
+    "winterDrain": {
+      "article": "9.15-DRTS",
+      "label": "Druckluftanschluss T-Stück Überwurf-Set mit Kugelhahn",
+      "priceEur": 39.9,
+      "imageUrl": "https://www.wasserundgruen.de/images/product_images/original_images/Druckluftaschluss%20%C3%BCberwurf%20T-St%C3%BCck.png"
+    },
+    "threadSeal": {
+      "article": "Teflon_1",
+      "label": "Teflon Dichtband PTFE-Gewindedichtband DVGW 0,1 mm × 12 m (gelb)",
+      "priceEur": 1.19,
+      "imageUrl": "https://www.wasserundgruen.de/images/product_images/original_images/9100309_hauptbild.jpg"
+    },
+    "discFilterPe25": {
+      "article": "5.02-SF19",
+      "label": "Scheibenfilter 1\" mit PE Anschluss 25 mm + Verschraubung beidseitig",
+      "priceEur": 20.99,
+      "imageUrl": "https://www.wasserundgruen.de/images/product_images/original_images/FilterMit2x25%C3%9Cberwurf%20%281%29.png"
+    },
+    "discFilterPe32": {
+      "article": "5.02-SF20",
+      "label": "Scheibenfilter 1\" mit PE Anschluss 32 mm + Verschraubung beidseitig",
+      "priceEur": 22.99,
+      "imageUrl": "https://www.wasserundgruen.de/images/product_images/original_images/FilterMit2x25%C3%9Cberwurf%20%282%29.png"
     }
   },
   "drip": {

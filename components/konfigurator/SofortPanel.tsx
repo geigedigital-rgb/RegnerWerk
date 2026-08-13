@@ -207,6 +207,7 @@ export function SofortPanel({
                 [
                   ["v1", "Algo v1"],
                   ["v2", "Algo v2"],
+                  ["v3", "Algo v3"],
                 ] as const
               ).map(([id, label]) => {
                 const active = algorithmVersion === id;
@@ -228,6 +229,11 @@ export function SofortPanel({
             </div>
           ) : null}
         </div>
+        {plan.zoneDecisions?.[0]?.explanation ? (
+          <p className="mt-2 text-[11px] leading-snug text-forest/55">
+            {plan.zoneDecisions[0].explanation}
+          </p>
+        ) : null}
       </div>
 
       <div className="min-h-0 flex-1 overflow-y-auto px-4 py-3">

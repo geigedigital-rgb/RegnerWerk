@@ -10,6 +10,10 @@ import {
   computeSofortPlanV2,
   recomputeAfterEditV2,
 } from "./v2";
+import {
+  computeSofortPlanV3,
+  recomputeAfterEditV3,
+} from "./v3";
 
 export type {
   SofortPlan,
@@ -21,6 +25,8 @@ export type {
   ProjectLevel,
   PlanMetrics,
   HydraulicSummary,
+  ZoneDecisionSummary,
+  ManifoldSummary,
 } from "./types";
 
 export { ZONE_COLORS, ZONE_COLORS_CANVAS, zoneColor } from "./v1/hydraulics";
@@ -34,6 +40,11 @@ export {
   computeSofortPlanV2Raw,
   recomputeAfterEditV2,
 } from "./v2";
+export {
+  computeSofortPlanV3,
+  computeSofortPlanV3Raw,
+  recomputeAfterEditV3,
+} from "./v3";
 
 export type ComputeSofortOpts = {
   brand?: SprinklerBrand;
@@ -41,7 +52,7 @@ export type ComputeSofortOpts = {
 };
 
 /**
- * Public router: dispatch to frozen v1 or engineering v2.
+ * Public router: dispatch to frozen v1, engineering v2, or zoning v3.
  * Default algorithm remains v1 until explicitly switched.
  */
 export function computeSofortPlan(
@@ -51,6 +62,9 @@ export function computeSofortPlan(
 ): SofortPlan {
   const brand = opts?.brand ?? DEFAULT_BRAND;
   const algorithmVersion = opts?.algorithmVersion ?? "v1";
+  if (algorithmVersion === "v3") {
+    return computeSofortPlanV3(zones, fixtures, { brand });
+  }
   if (algorithmVersion === "v2") {
     return computeSofortPlanV2(zones, fixtures, { brand });
   }
@@ -63,6 +77,9 @@ export function recomputeAfterEdit(
   zones: DrawnZone[],
 ): SofortPlan {
   const version = plan.algorithmVersion ?? "v1";
+  if (version === "v3") {
+    return recomputeAfterEditV3(plan, fixtures, zones);
+  }
   if (version === "v2") {
     return recomputeAfterEditV2(plan, fixtures, zones);
   }

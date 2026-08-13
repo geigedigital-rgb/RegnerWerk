@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import { describe, it } from "node:test";
 import type { DrawnZone, PlotFixture } from "@/lib/mapbox";
-import { computeSofortPlan, computeSofortPlanV2Raw } from "../index";
+import { computeSofortPlan, computeSofortPlanV3Raw } from "../index";
 import { pointInPolygon } from "./geometry";
 import { layoutLawnZone } from "./layout";
 import { pickPipeSize } from "./hydraulics";
@@ -42,13 +42,13 @@ function fixtures(flowM3h = 2.5, pressureBar?: number): PlotFixture[] {
   ];
 }
 
-describe("computeSofortPlan v2", () => {
-  it("returns algorithmVersion v2 and ESTIMATE without Q–P curve", () => {
+describe("computeSofortPlan v3", () => {
+  it("returns algorithmVersion v3 and ESTIMATE without Q–P curve", () => {
     const plan = computeSofortPlan([rectLawn(12, 8)], fixtures(2.5), {
-      algorithmVersion: "v2",
+      algorithmVersion: "v3",
       brand: "hunter",
     });
-    assert.equal(plan.algorithmVersion, "v2");
+    assert.equal(plan.algorithmVersion, "v3");
     assert.equal(plan.projectLevel, "ESTIMATE");
     assert.ok(plan.heads.length > 0);
     assert.ok(
@@ -59,7 +59,7 @@ describe("computeSofortPlan v2", () => {
   });
 
   it("raises to PRELIMINARY when flow+dynamic pressure present", () => {
-    const raw = computeSofortPlanV2Raw(
+    const raw = computeSofortPlanV3Raw(
       [rectLawn(12, 8)],
       fixtures(2.5, 3.2),
       { brand: "hunter" },
@@ -70,7 +70,7 @@ describe("computeSofortPlan v2", () => {
 
   it("sizes pipe diameters on segments", () => {
     const plan = computeSofortPlan([rectLawn(14, 10)], fixtures(3), {
-      algorithmVersion: "v2",
+      algorithmVersion: "v3",
     });
     const laterals = plan.pipes.filter((p) => p.kind === "lateral");
     assert.ok(laterals.length > 0);
@@ -96,7 +96,7 @@ describe("computeSofortPlan v2", () => {
       coordinates: [m(7, 7), m(15, 7), m(15, 13), m(7, 13)],
     };
     const plan = computeSofortPlan([lawn, bldg], fixtures(3), {
-      algorithmVersion: "v2",
+      algorithmVersion: "v3",
       brand: "hunter",
     });
     const origin = lawn.coordinates[0];
@@ -151,11 +151,11 @@ describe("computeSofortPlan v2", () => {
     const zones = [rectLawn(15, 10)];
     const fx = fixtures(3);
     const h = computeSofortPlan(zones, fx, {
-      algorithmVersion: "v2",
+      algorithmVersion: "v3",
       brand: "hunter",
     });
     const r = computeSofortPlan(zones, fx, {
-      algorithmVersion: "v2",
+      algorithmVersion: "v3",
       brand: "rainbird",
     });
     const hKeys = h.heads.map((x) => x.configKey).sort().join(",");
@@ -183,7 +183,7 @@ describe("computeSofortPlan v2", () => {
   });
 });
 
-describe("v2 geometry helpers", () => {
+describe("v3 geometry helpers", () => {
   it("pointInPolygon basic", () => {
     const ring = [
       { x: 0, y: 0 },

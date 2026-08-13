@@ -477,8 +477,24 @@ export function SofortOverlay({
                   {" · "}
                   Zone {selectedHead.hydraulicZone + 1}
                 </p>
-                {selectedProduct.radiusMinM != null &&
-                selectedProduct.radiusMaxM != null ? (
+                {selectedHead.kind === "strip" ? (
+                  <p className="mt-1 text-[10px] leading-snug text-forest/70">
+                    Hersteller:{" "}
+                    {(
+                      selectedProduct.stripWidthM ??
+                      selectedHead.stripWidthM ??
+                      1.5
+                    ).toLocaleString("de-DE")}
+                    ×
+                    {(
+                      selectedProduct.stripLengthM ??
+                      selectedHead.stripLengthM ??
+                      selectedHead.radiusM
+                    ).toLocaleString("de-DE")}{" "}
+                    m (Streifen, kein Kreis)
+                  </p>
+                ) : selectedProduct.radiusMinM != null &&
+                  selectedProduct.radiusMaxM != null ? (
                   <p className="mt-1 text-[10px] leading-snug text-forest/70">
                     Hersteller: {selectedProduct.radiusMinM.toLocaleString("de-DE")}–
                     {selectedProduct.radiusMaxM.toLocaleString("de-DE")} m

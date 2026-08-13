@@ -3,7 +3,7 @@ import type { LngLat } from "@/lib/mapbox";
 /** Local planar point in meters relative to a lng/lat origin. */
 export type PtM = { x: number; y: number };
 
-export type AlgorithmVersion = "v1" | "v2";
+export type AlgorithmVersion = "v1" | "v2" | "v3";
 
 export type ProjectLevel =
   | "ESTIMATE"
@@ -103,8 +103,22 @@ export type HydraulicSummary = {
   maxVelocityMps?: number;
 };
 
+export type ZoneDecisionSummary = {
+  zoneId: string;
+  primaryReason: string;
+  explanation: string;
+  flowLpm: number;
+};
+
+export type ManifoldSummary = {
+  outletsNeeded: number;
+  articles: string[];
+  valveBoxQty: number;
+  note: string;
+};
+
 /**
- * UI / persistence view model — shared by v1 and v2 via adapter.
+ * UI / persistence view model — shared by v1/v2/v3 via adapter.
  * Schema version stays 1 for storage compatibility; algorithmVersion selects engine.
  */
 export type SofortPlan = {
@@ -127,7 +141,7 @@ export type SofortPlan = {
   dripAreaM2: number;
   /** Fraction of lawn sample points hit by at least one head (0–100). */
   coveragePct: number;
-  /** v2 engineering metadata */
+  /** v2/v3 engineering metadata */
   projectLevel?: ProjectLevel;
   confidence?: number;
   blockers?: string[];
@@ -136,4 +150,8 @@ export type SofortPlan = {
   requiresBackflowProtectionReview?: boolean;
   catalogVersion?: string;
   algorithmBuild?: string;
+  /** v3 professional zoning explanations */
+  zoneDecisions?: ZoneDecisionSummary[];
+  /** v3 collector kit in valve box */
+  manifoldSummary?: ManifoldSummary;
 };

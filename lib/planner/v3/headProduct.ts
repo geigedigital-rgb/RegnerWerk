@@ -107,7 +107,7 @@ export function resolveHeadProduct(
     note:
       brand === "hunter"
         ? "PROS-04-PRS40-CV + MP Rotator — Wurfweite laut Herstellerblatt."
-        : "Vollkreis-Düse (360°) auf 1804-SAM — Wurfweite laut Herstellerblatt.",
+        : "Vollkreis-Düse (360°) auf 1804-SAM-PRS-45 (3,1 bar) — Wurfweite laut Herstellerblatt.",
     radiusInSpec: spec
       ? head.radiusM >= spec.radiusMinM && head.radiusM <= spec.radiusMaxM
       : true,
