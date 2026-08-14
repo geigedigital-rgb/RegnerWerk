@@ -106,7 +106,6 @@ export async function searchAddresses(params: {
   plz: string;
   city: string;
 }): Promise<GeocodeFeature[]> {
-  const token = getMapboxToken();
   const query = [params.street, params.number, params.plz, params.city]
     .map((s) => s.trim())
     .filter(Boolean)
@@ -114,39 +113,15 @@ export async function searchAddresses(params: {
 
   if (query.length < 3) return [];
 
-  const url = new URL(
-    `https://api.mapbox.com/geocoding/v5/mapbox.places/${encodeURIComponent(query)}.json`,
-  );
-  url.searchParams.set("access_token", token);
-  url.searchParams.set("country", "de");
-  url.searchParams.set("language", "de");
-  url.searchParams.set("types", "address,place");
-  url.searchParams.set("limit", "6");
-  url.searchParams.set("autocomplete", "true");
-
-  const res = await fetch(url.toString());
+  const res = await fetch(`/api/geocode?q=${encodeURIComponent(query)}`);
+  const data = (await res.json().catch(() => null)) as {
+    features?: GeocodeFeature[];
+    error?: string;
+  } | null;
   if (!res.ok) {
-    throw new Error("Geocoding fehlgeschlagen");
+    throw new Error(data?.error || "Geocoding fehlgeschlagen");
   }
-
-  const data = (await res.json()) as {
-    features: Array<{
-      id: string;
-      place_name: string;
-      center: [number, number];
-      text?: string;
-      address?: string;
-      context?: Array<{ text: string }>;
-    }>;
-  };
-
-  return (data.features ?? []).map((f) => ({
-    id: f.id,
-    placeName: f.place_name,
-    center: f.center,
-    address: [f.address, f.text].filter(Boolean).join(" "),
-    context: f.context?.map((c) => c.text).join(", "),
-  }));
+  return data?.features ?? [];
 }
 
 export function distMeters(a: LngLat, b: LngLat): number {
