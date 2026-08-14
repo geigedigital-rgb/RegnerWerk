@@ -774,9 +774,9 @@ function extractAttrs(
         nominal_size_mm: mm,
         thread_size_inch: threadInch != null ? `${threadInch}"` : null,
         thread_gender: /\bIG\b|Innengewinde/i.test(focus)
-          ? "female"
+          ? "IG"
           : /\bAG\b|Außengewinde|Aussengewinde/i.test(focus)
-            ? "male"
+            ? "AG"
             : "not_applicable",
         thread_standard: threadInch != null ? "BSP" : "not_applicable",
       });
@@ -842,9 +842,9 @@ function extractAttrs(
         nominal_size_mm: null,
         thread_size_inch: `${threadInch}"`,
         thread_gender: /\bIG\b|Innengewinde/i.test(focus)
-          ? "female"
+          ? "IG"
           : /\bAG\b|Außengewinde|Aussengewinde/i.test(focus)
-            ? "male"
+            ? "AG"
             : null,
         thread_standard: "BSP",
       });
@@ -994,9 +994,9 @@ function extractAttrs(
         nominal_size_mm: null,
         thread_size_inch: `${threadInch}"`,
         thread_gender: /\bIG\b|Innengewinde/i.test(focus)
-          ? "female"
+          ? "IG"
           : /\bAG\b|Außengewinde|Aussengewinde/i.test(focus)
-            ? "male"
+            ? "AG"
             : null,
         thread_standard: "BSP",
       });
