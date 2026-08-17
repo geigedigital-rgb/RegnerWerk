@@ -1,9 +1,39 @@
 export const ZONE_TYPES = [
-  { id: "rasen", label: "Rasen", color: "#00FFCF" },
-  { id: "hecke", label: "Hecke", color: "#1B5E3B" },
-  { id: "gebaeude", label: "Gebäude", color: "#FF5C45" },
-  { id: "trocken", label: "Trockenfläche", color: "#D4A574" },
-  { id: "beet", label: "Beet", color: "#8B5A2B" },
+  {
+    id: "rasen",
+    label: "Rasen",
+    short: "Rasen",
+    color: "#00FFCF",
+    icon: "/icons/grass.svg",
+  },
+  {
+    id: "hecke",
+    label: "Hecke",
+    short: "Hecke",
+    color: "#1B5E3B",
+    icon: "/icons/bush.svg",
+  },
+  {
+    id: "gebaeude",
+    label: "Gebäude",
+    short: "Gebäude",
+    color: "#FF5C45",
+    icon: "/icons/house.svg",
+  },
+  {
+    id: "trocken",
+    label: "Weg",
+    short: "Weg",
+    color: "#D4A574",
+    icon: "/icons/road.svg",
+  },
+  {
+    id: "beet",
+    label: "Beet",
+    short: "Beet",
+    color: "#8B5A2B",
+    icon: "/icons/flower.svg",
+  },
 ] as const;
 
 export type ZoneTypeId = (typeof ZONE_TYPES)[number]["id"];

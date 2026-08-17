@@ -7,6 +7,7 @@ import { PlotMap } from "@/components/konfigurator/PlotMap";
 import { loadLastPlace, saveLastPlace } from "@/lib/config-storage";
 import { fetchServerProject } from "@/lib/project-api";
 import { ensureProject, saveProject } from "@/lib/project-storage";
+import { useLockPageZoom } from "@/lib/lock-page-zoom";
 import type { GeocodeFeature } from "@/lib/mapbox";
 
 type Stage = "intro" | "address" | "map" | "loading";
@@ -16,6 +17,7 @@ export function MapConfigurator() {
   const [place, setPlace] = useState<GeocodeFeature | null>(null);
   const [serverProjectId, setServerProjectId] = useState<string | null>(null);
   const [loadError, setLoadError] = useState<string | null>(null);
+  useLockPageZoom(true);
 
   useEffect(() => {
     let cancelled = false;
@@ -87,7 +89,11 @@ export function MapConfigurator() {
   }
 
   return (
-    <div className="fixed inset-0 z-[60] overflow-y-auto bg-forest">
+    <div
+      className={`fixed inset-0 z-[60] bg-forest ${
+        stage === "map" ? "overflow-hidden overscroll-none" : "overflow-y-auto"
+      }`}
+    >
       {loadError ? (
         <div className="absolute left-1/2 top-4 z-[70] w-[min(100%-2rem,24rem)] -translate-x-1/2 rounded-2xl border border-red-200 bg-white px-4 py-3 text-center text-sm text-red-700 shadow-lg">
           {loadError}

@@ -52,15 +52,26 @@ import {
 } from "@/lib/plot-snap";
 import {
   computeSofortPlan,
+  clampHeadGeometry,
+  CLIENT_ALGORITHM,
   DEFAULT_BRAND,
   normalizeLoadedPlan,
   recomputeAfterEdit,
-  type AlgorithmVersion,
   type SofortPlan,
   type SprinklerBrand,
 } from "@/lib/planner";
-import { SofortOverlay } from "@/components/konfigurator/SofortOverlay";
+import {
+  SofortOverlay,
+  type PipeSelection,
+} from "@/components/konfigurator/SofortOverlay";
 import { SofortPanel } from "@/components/konfigurator/SofortPanel";
+import { RailCountIcon } from "@/components/konfigurator/RailCountIcon";
+import {
+  DEFAULT_PLAN_LAYER_MODE,
+  layersFromMode,
+  PlanEditMenu,
+  type PlanLayerMode,
+} from "@/components/konfigurator/PlanEditMenu";
 import {
   ensureProject,
   loadProject,
@@ -215,6 +226,10 @@ export function PlotMap({
     loadSofortPlan(place.id),
   );
   const [selectedHeadId, setSelectedHeadId] = useState<string | null>(null);
+  const [selectedPipe, setSelectedPipe] = useState<PipeSelection | null>(null);
+  const [planLayerMode, setPlanLayerMode] =
+    useState<PlanLayerMode>(DEFAULT_PLAN_LAYER_MODE);
+  const planLayers = layersFromMode(planLayerMode);
   const [selectedFixtureId, setSelectedFixtureId] = useState<string | null>(
     null,
   );
@@ -1104,31 +1119,23 @@ export function PlotMap({
     setPlanChoiceOpen(true);
   }
 
-  function runSofortBerechnung(
-    brand: SprinklerBrand = DEFAULT_BRAND,
-    algorithmVersion: AlgorithmVersion = "v1",
-  ) {
+  function runSofortBerechnung(brand: SprinklerBrand = DEFAULT_BRAND) {
     const plan = computeSofortPlan(zonesRef.current, fixturesRef.current, {
       brand,
-      algorithmVersion,
+      algorithmVersion: CLIENT_ALGORITHM,
     });
     setSofortPlan(plan);
     sofortPlanRef.current = plan;
     setSelectedHeadId(null);
     selectedHeadIdRef.current = null;
+    setSelectedPipe(null);
     setSelectedFixtureId(null);
     plotStageRef.current = "ergebnis";
     setPlotStage("ergebnis");
   }
 
   function changeSofortBrand(brand: SprinklerBrand) {
-    const algo = sofortPlanRef.current?.algorithmVersion ?? "v1";
-    runSofortBerechnung(brand, algo);
-  }
-
-  function changeSofortAlgorithm(algorithmVersion: AlgorithmVersion) {
-    const brand = sofortPlanRef.current?.brand ?? DEFAULT_BRAND;
-    runSofortBerechnung(brand, algorithmVersion);
+    runSofortBerechnung(brand);
   }
 
   function handlePlanChoice(choice: PlanChoice) {
@@ -1146,10 +1153,31 @@ export function PlotMap({
   function handleHeadMove(id: string, pos: LngLat) {
     setSofortPlan((prev) => {
       if (!prev) return prev;
+      const brand = prev.brand ?? DEFAULT_BRAND;
       return {
         ...prev,
         heads: prev.heads.map((h) =>
-          h.id === id ? { ...h, position: pos } : h,
+          h.id === id
+            ? clampHeadGeometry(h, brand, { position: pos })
+            : h,
+        ),
+      };
+    });
+  }
+
+  function handleHeadGeometry(id: string, patch: {
+    radiusM?: number;
+    arcDeg?: number;
+    rotationDeg?: number;
+    position?: LngLat;
+  }) {
+    setSofortPlan((prev) => {
+      if (!prev) return prev;
+      const brand = prev.brand ?? DEFAULT_BRAND;
+      return {
+        ...prev,
+        heads: prev.heads.map((h) =>
+          h.id === id ? clampHeadGeometry(h, brand, patch) : h,
         ),
       };
     });
@@ -1462,7 +1490,7 @@ export function PlotMap({
 
   return (
     <div
-      className={`relative flex h-[100svh] w-full flex-col overflow-hidden ${
+      className={`relative flex h-[100svh] w-full flex-col overflow-hidden overscroll-none ${
         isCanvas ? "bg-[#f7faf8]" : "bg-[#0b2414]"
       }`}
       style={
@@ -1836,12 +1864,24 @@ export function PlotMap({
           selectedHeadId={selectedHeadId}
           onSelectHead={(id) => {
             setSelectedFixtureId(null);
+            setSelectedPipe(null);
             setSelectedHeadId(id);
             selectedHeadIdRef.current = id;
           }}
+          selectedPipe={selectedPipe}
+          onSelectPipe={(sel) => {
+            setSelectedFixtureId(null);
+            selectedHeadIdRef.current = null;
+            setSelectedHeadId(null);
+            setSelectedPipe(sel);
+          }}
           onHeadMove={handleHeadMove}
+          onHeadGeometry={handleHeadGeometry}
           onEditCommit={commitHeadEdit}
           isCanvas={isCanvas}
+          showOverview={isCanvas ? planLayers.overview : true}
+          showPipes={isCanvas ? planLayers.pipes : true}
+          showHeads={isCanvas ? planLayers.heads : true}
         />
       ) : null}
 
@@ -2079,6 +2119,13 @@ export function PlotMap({
         </div>
       </div>
 
+      {/* Ergebnis: Ebenen only in Plan view */}
+      {onErgebnis && sofortPlan && isCanvas ? (
+        <div className="pointer-events-none absolute left-3 top-24 z-20 sm:left-5 sm:top-28">
+          <PlanEditMenu mode={planLayerMode} onMode={setPlanLayerMode} />
+        </div>
+      ) : null}
+
       {/* Ergebnis: result panel on the right */}
       {onErgebnis && sofortPlan ? (
         <div className="pointer-events-none absolute right-3 top-24 z-20 w-[min(100%-1.5rem,21rem)] sm:right-5 sm:top-28">
@@ -2090,18 +2137,39 @@ export function PlotMap({
             isCanvas={isCanvas}
             serverProjectId={serverProjectId}
             onChangeBrand={changeSofortBrand}
-            onChangeAlgorithm={changeSofortAlgorithm}
             onSelectHead={(id) => {
               setSelectedFixtureId(null);
+              setSelectedPipe(null);
               selectedHeadIdRef.current = id;
               setSelectedHeadId(id);
             }}
             onSelectFixture={(id) => {
               selectedHeadIdRef.current = null;
               setSelectedHeadId(null);
+              setSelectedPipe(null);
               setSelectedFixtureId(id);
             }}
-            onSubmitEmail={async ({ name, email }) => {
+            onSubmitEmail={async ({ name, email, phone }) => {
+              const leadRes = await fetch("/api/lead", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                  name,
+                  email,
+                  phone: phone || "",
+                  placeName: place.placeName,
+                  brand: sofortPlan?.brand ?? DEFAULT_BRAND,
+                  lawnAreaM2: sofortPlan?.lawnAreaM2,
+                  heads: sofortPlan?.heads.length,
+                  totalEur: sofortPlan?.totalKnownEur ?? null,
+                }),
+              });
+              const leadBody = (await leadRes.json().catch(() => null)) as {
+                error?: string;
+              } | null;
+              if (!leadRes.ok) {
+                throw new Error(leadBody?.error || "Senden fehlgeschlagen");
+              }
               const local =
                 loadProject(place.id) ??
                 ({
@@ -2124,13 +2192,17 @@ export function PlotMap({
               if (!payload.sofortPlan) {
                 throw new Error("Kein Sofort-Plan vorhanden");
               }
-              const res = await submitProject({
-                payload,
-                customerName: name,
-                customerEmail: email,
-                projectId: serverProjectId ?? undefined,
-              });
-              setServerProjectId(res.id);
+              try {
+                const res = await submitProject({
+                  payload,
+                  customerName: name,
+                  customerEmail: email,
+                  projectId: serverProjectId ?? undefined,
+                });
+                setServerProjectId(res.id);
+              } catch {
+                /* CRM optional — Telegram already accepted the lead */
+              }
             }}
             onDownloadPdf={async () => {
               const local =
@@ -2165,16 +2237,17 @@ export function PlotMap({
         </div>
       ) : null}
 
-      {/* Left tool rail — height fits buttons, vertically centered */}
+      {/* Left tool rail — icon + label, count as badge on icon */}
       {onErgebnis ? null : (
       <div className="pointer-events-none absolute left-0 top-1/2 z-20 -translate-y-1/2 p-3 sm:p-4">
-        <div className="pointer-events-auto flex h-fit w-[4.75rem] flex-col gap-2 rounded-3xl border border-white/15 bg-forest/92 p-2 shadow-soft backdrop-blur-md sm:w-[5.5rem] sm:gap-2.5 sm:p-2.5">
+        <div className="pointer-events-auto flex h-fit w-[9.25rem] flex-col gap-1 rounded-3xl border border-white/15 bg-forest/92 p-1.5 shadow-soft backdrop-blur-md sm:w-[10rem] sm:p-2">
           {drawing
             ? ZONE_TYPES.map((z) => {
                 const armed = armedZone === z.id;
                 const typeSelected =
                   !armedZone && selectedZone?.type === z.id;
                 const count = zones.filter((x) => x.type === z.id).length;
+                const lit = armed || typeSelected;
                 return (
                   <button
                     key={z.id}
@@ -2183,34 +2256,33 @@ export function PlotMap({
                     title={
                       armed
                         ? "Erneut tippen → normaler Cursor"
-                        : `${z.label} wählen zum Zeichnen`
+                        : z.id === "trocken"
+                          ? "Weg — trockene Fläche, nicht bewässern"
+                          : `${z.label} wählen zum Zeichnen`
                     }
-                    className={`flex flex-col items-center gap-1.5 rounded-2xl px-1.5 py-3 transition sm:py-3.5 ${
+                    className={`flex items-center gap-2.5 rounded-2xl px-2 py-2 text-left transition ${
                       armed
                         ? "bg-lime text-forest shadow-soft ring-2 ring-white/40"
                         : typeSelected
                           ? "bg-white text-forest shadow-soft"
-                          : "text-white/80 hover:bg-white/10"
+                          : "text-white/90 hover:bg-white/10"
                     }`}
                   >
-                    <span
-                      className="h-4 w-4 rounded-full ring-2 ring-white/50 sm:h-5 sm:w-5"
-                      style={{ backgroundColor: z.color }}
-                    />
-                    <span className="max-w-full truncate text-center text-[11px] font-bold leading-tight sm:text-xs">
-                      {z.label}
-                    </span>
-                    {count > 0 || armed || typeSelected ? (
-                      <span
-                        className={`rounded-full px-1.5 py-0.5 text-[10px] font-semibold ${
-                          armed || typeSelected
-                            ? "bg-forest/10 text-forest"
-                            : "bg-white/15 text-white/80"
+                    <RailCountIcon count={count} lit={lit}>
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        src={z.icon}
+                        alt=""
+                        width={28}
+                        height={28}
+                        className={`h-7 w-7 object-contain object-center ${
+                          lit ? "" : "brightness-0 invert"
                         }`}
-                      >
-                        {armed ? "Aktiv" : typeSelected ? "Edit" : count}
-                      </span>
-                    ) : null}
+                      />
+                    </RailCountIcon>
+                    <span className="min-w-0 flex-1 text-[12px] font-bold leading-tight sm:text-[13px]">
+                      {z.short}
+                    </span>
                   </button>
                 );
               })
@@ -2227,27 +2299,22 @@ export function PlotMap({
                         : `${s.label} wählen zum Platzieren`
                     }
                     onClick={() => toggleTechnikTool(s.id)}
-                    className={`flex flex-col items-center gap-1.5 rounded-2xl px-1.5 py-3 transition sm:py-3.5 ${
+                    className={`flex items-center gap-2.5 rounded-2xl px-2 py-2 text-left transition ${
                       armed
                         ? "bg-lime text-forest shadow-soft ring-2 ring-white/40"
-                        : "text-white/80 hover:bg-white/10"
+                        : "text-white/90 hover:bg-white/10"
                     }`}
                   >
-                    <FixtureStepIcon kind={s.id} size={22} />
-                    <span className="max-w-full truncate text-center text-[11px] font-bold leading-tight sm:text-xs">
+                    <RailCountIcon count={count} lit={armed}>
+                      <FixtureStepIcon
+                        kind={s.id}
+                        size={22}
+                        className="text-inherit"
+                      />
+                    </RailCountIcon>
+                    <span className="min-w-0 flex-1 text-[12px] font-bold leading-tight sm:text-[13px]">
                       {s.short}
                     </span>
-                    {count > 0 || armed ? (
-                      <span
-                        className={`rounded-full px-1.5 py-0.5 text-[9px] font-semibold uppercase tracking-wide ${
-                          armed
-                            ? "bg-forest/15 text-forest"
-                            : "bg-white/15 text-white/70"
-                        }`}
-                      >
-                        {armed ? "Aktiv" : count}
-                      </span>
-                    ) : null}
                   </button>
                 );
               })}

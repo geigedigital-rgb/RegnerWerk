@@ -32,6 +32,13 @@ export type {
 export { ZONE_COLORS, ZONE_COLORS_CANVAS, zoneColor } from "./v1/hydraulics";
 export { headScreenLabel } from "./v1/layout";
 export { resolveHeadProduct, type HeadProductInfo } from "./v1/headProduct";
+export { clampHeadGeometry, type HeadGeometryPatch } from "./clampHead";
+export {
+  patchFromDraggedEdge,
+  polarScreen,
+  screenBearingDeg,
+  sectorEdges,
+} from "./sectorEdit";
 export { DEFAULT_BRAND, type SprinklerBrand } from "./catalog";
 export { normalizeLoadedPlan };
 export { computeSofortPlanV1, recomputeAfterEditV1 } from "./v1";
@@ -51,9 +58,12 @@ export type ComputeSofortOpts = {
   algorithmVersion?: AlgorithmVersion;
 };
 
+/** Customer-facing Sofort planner always uses zoning v3. */
+export const CLIENT_ALGORITHM: AlgorithmVersion = "v3";
+
 /**
  * Public router: dispatch to frozen v1, engineering v2, or zoning v3.
- * Default algorithm remains v1 until explicitly switched.
+ * Client UI uses v3; tests may still pin v1/v2 explicitly.
  */
 export function computeSofortPlan(
   zones: DrawnZone[],

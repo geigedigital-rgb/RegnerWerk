@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getMapboxToken, type GeocodeFeature } from "@/lib/mapbox";
+import { mapboxGetJson } from "@/lib/mapbox-geocode";
 
 export const runtime = "nodejs";
 
@@ -21,11 +22,13 @@ function pageOrigin(req: NextRequest): string {
   )
     .split(",")[0]
     .trim();
-  const proto = (
-    req.headers.get("x-forwarded-proto") || "https"
+  const forwarded = (
+    req.headers.get("x-forwarded-proto") || ""
   )
     .split(",")[0]
     .trim();
+  const local = host.startsWith("localhost") || host.startsWith("127.0.0.1");
+  const proto = forwarded || (local ? "http" : "https");
   return host ? `${proto}://${host}` : "";
 }
 
@@ -56,22 +59,16 @@ export async function GET(req: NextRequest) {
   url.searchParams.set("limit", "6");
   url.searchParams.set("autocomplete", "true");
 
-  const headers: HeadersInit = {};
-  if (origin) {
-    headers.Origin = origin;
-    headers.Referer = `${origin}/`;
-  }
-
-  const res = await fetch(url.toString(), { headers, cache: "no-store" });
-  if (!res.ok) {
+  const { status, body } = await mapboxGetJson(url.toString(), origin);
+  if (status < 200 || status >= 300) {
     return NextResponse.json(
-      { error: "Geocoding fehlgeschlagen", mapboxStatus: res.status },
+      { error: "Geocoding fehlgeschlagen", mapboxStatus: status },
       { status: 502 },
     );
   }
 
-  const data = (await res.json()) as {
-    features: Array<{
+  const data = body as {
+    features?: Array<{
       id: string;
       place_name: string;
       center: [number, number];

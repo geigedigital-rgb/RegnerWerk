@@ -22,7 +22,7 @@
     "catalog:planner": "tsx scripts/catalog/build-planner-catalog.ts",
     "catalog:repair-connections": "tsx scripts/catalog/repair-connections-from-source.ts",
     "scrape:structure": "tsx scripts/scrape/structure.ts",
-    "test:planner": "tsx --test lib/planner/bomRules.test.ts lib/planner/v1/*.test.ts lib/planner/v2/*.test.ts lib/planner/v3/*.test.ts"
+    "test:planner": "tsx --test lib/planner/bomRules.test.ts lib/planner/sectorEdit.test.ts lib/planner/v1/*.test.ts lib/planner/v2/*.test.ts lib/planner/v3/*.test.ts"
   },
   "engines": {
     "node": ">=22"

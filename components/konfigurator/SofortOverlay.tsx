@@ -6,10 +6,22 @@ import { useId, useRef, useState } from "react";
 import type { DrawnZone, LngLat } from "@/lib/mapbox";
 import {
   headScreenLabel,
+  patchFromDraggedEdge,
+  polarScreen,
   resolveHeadProduct,
+  screenBearingDeg,
+  sectorEdges,
   zoneColor,
+  type HeadGeometryPatch,
   type SofortPlan,
+  type HeadProductInfo,
+  type SprinklerHead,
 } from "@/lib/planner";
+
+/** Selected pipeline: all laterals of a valve zone, or the main feed. */
+export type PipeSelection =
+  | { kind: "zone"; zone: number }
+  | { kind: "main" };
 
 type Props = {
   map: mapboxgl.Map | null;
@@ -18,10 +30,25 @@ type Props = {
   renderTick: number;
   selectedHeadId: string | null;
   onSelectHead: (id: string | null) => void;
+  selectedPipe: PipeSelection | null;
+  onSelectPipe: (sel: PipeSelection | null) => void;
   onHeadMove: (id: string, pos: LngLat) => void;
+  onHeadGeometry: (id: string, patch: HeadGeometryPatch) => void;
   onEditCommit: () => void;
   isCanvas: boolean;
+  showOverview?: boolean;
+  showPipes?: boolean;
+  showHeads?: boolean;
 };
+
+function pipeMatchesSelection(
+  pipe: SofortPlan["pipes"][number],
+  sel: PipeSelection | null,
+): boolean {
+  if (!sel) return false;
+  if (sel.kind === "main") return pipe.kind === "main";
+  return pipe.kind === "lateral" && pipe.hydraulicZone === sel.zone;
+}
 
 /** Open sector outline (no pie fill) — readable plan style. */
 function sectorOutlinePath(
@@ -84,6 +111,133 @@ function stripRectPoints(
   return corners.map((p) => `${p.x},${p.y}`).join(" ");
 }
 
+function HandleDot({
+  x,
+  y,
+  title,
+  label,
+  accent,
+  onPointerDown,
+}: {
+  x: number;
+  y: number;
+  title: string;
+  label?: string;
+  accent?: boolean;
+  onPointerDown: (e: React.PointerEvent) => void;
+}) {
+  return (
+    <button
+      type="button"
+      title={title}
+      aria-label={title}
+      onPointerDown={onPointerDown}
+      className="absolute z-[10] flex h-7 w-7 -translate-x-1/2 -translate-y-1/2 cursor-grab items-center justify-center touch-none rounded-full focus-visible:outline-none active:cursor-grabbing"
+      style={{ left: x, top: y, pointerEvents: "auto" }}
+    >
+      <span
+        className={`block h-3.5 w-3.5 rounded-full ring-2 ${
+          accent
+            ? "bg-lime ring-forest"
+            : "bg-white ring-forest shadow-soft"
+        }`}
+      />
+      {label ? (
+        <span className="pointer-events-none absolute left-1/2 top-7 -translate-x-1/2 whitespace-nowrap rounded-md bg-forest/95 px-1.5 py-0.5 text-[9px] font-bold tabular-nums text-lime">
+          {label}
+        </span>
+      ) : null}
+    </button>
+  );
+}
+
+function renderHeadHandles({
+  head,
+  screen,
+  product,
+  pxPerM,
+  activeHandle,
+  onDrag,
+}: {
+  head: SprinklerHead;
+  screen: { x: number; y: number };
+  product: HeadProductInfo;
+  pxPerM: number;
+  activeHandle: "radius" | "start" | "end" | "strip" | null;
+  onDrag: (
+    e: React.PointerEvent,
+    headId: string,
+    kind: "radius" | "start" | "end" | "strip",
+  ) => void;
+}) {
+  if (head.kind === "strip") {
+    const lPx = (head.stripLengthM ?? head.radiusM) * pxPerM;
+    const far = polarScreen(screen.x, screen.y, lPx, head.rotationDeg);
+    return (
+      <HandleDot
+        x={far.x}
+        y={far.y}
+        title="Drehung ziehen"
+        accent={activeHandle === "strip"}
+        label={
+          activeHandle === "strip"
+            ? `${Math.round(head.rotationDeg)}°`
+            : undefined
+        }
+        onPointerDown={(e) => onDrag(e, head.id, "strip")}
+      />
+    );
+  }
+
+  const rPx = head.radiusM * pxPerM;
+  const radiusPt = polarScreen(screen.x, screen.y, rPx, head.rotationDeg);
+  const arcLocked =
+    product.arcMinDeg != null &&
+    product.arcMaxDeg != null &&
+    product.arcMinDeg >= 360 &&
+    product.arcMaxDeg >= 360;
+  const displayArc = head.arcDeg >= 360 ? 180 : head.arcDeg;
+  const edges = sectorEdges(head.rotationDeg, displayArc);
+  const startPt = polarScreen(screen.x, screen.y, rPx, edges.start);
+  const endPt = polarScreen(screen.x, screen.y, rPx, edges.end);
+
+  return (
+    <>
+      <HandleDot
+        x={radiusPt.x}
+        y={radiusPt.y}
+        title="Wurfweite ziehen"
+        accent={activeHandle === "radius"}
+        label={`${head.radiusM.toLocaleString("de-DE")} m`}
+        onPointerDown={(e) => onDrag(e, head.id, "radius")}
+      />
+      {arcLocked ? null : (
+        <>
+          <HandleDot
+            x={startPt.x}
+            y={startPt.y}
+            title="Sektor-Anfang ziehen"
+            accent={activeHandle === "start"}
+            label={
+              activeHandle === "start" || activeHandle === "end"
+                ? `${head.arcDeg}°`
+                : undefined
+            }
+            onPointerDown={(e) => onDrag(e, head.id, "start")}
+          />
+          <HandleDot
+            x={endPt.x}
+            y={endPt.y}
+            title="Sektor-Ende ziehen"
+            accent={activeHandle === "end"}
+            onPointerDown={(e) => onDrag(e, head.id, "end")}
+          />
+        </>
+      )}
+    </>
+  );
+}
+
 export function SofortOverlay({
   map,
   plan,
@@ -91,17 +245,28 @@ export function SofortOverlay({
   renderTick: _renderTick,
   selectedHeadId,
   onSelectHead,
+  selectedPipe,
+  onSelectPipe,
   onHeadMove,
+  onHeadGeometry,
   onEditCommit,
   isCanvas,
+  showOverview = true,
+  showPipes = true,
+  showHeads = true,
 }: Props) {
   const clipId = useId().replace(/:/g, "");
   const [hoveredHeadId, setHoveredHeadId] = useState<string | null>(null);
+  const [activeHandle, setActiveHandle] = useState<
+    "radius" | "start" | "end" | "strip" | null
+  >(null);
   const dragRef = useRef<{
     headId: string;
+    kind: "move" | "radius" | "start" | "end" | "strip";
     startX: number;
     startY: number;
     moved: boolean;
+    otherEdgeDeg?: number;
   } | null>(null);
 
   if (!map) return null;
@@ -119,6 +284,7 @@ export function SofortOverlay({
     e.preventDefault();
     dragRef.current = {
       headId,
+      kind: "move",
       startX: e.clientX,
       startY: e.clientY,
       moved: false,
@@ -126,7 +292,7 @@ export function SofortOverlay({
     map?.dragPan.disable();
     const onMove = (ev: PointerEvent) => {
       const drag = dragRef.current;
-      if (!drag) return;
+      if (!drag || drag.kind !== "move") return;
       if (
         !drag.moved &&
         Math.hypot(ev.clientX - drag.startX, ev.clientY - drag.startY) < 4
@@ -148,6 +314,105 @@ export function SofortOverlay({
       } else if (drag) {
         onSelectHead(selectedHeadId === drag.headId ? null : drag.headId);
       }
+    };
+    window.addEventListener("pointermove", onMove);
+    window.addEventListener("pointerup", onUp);
+  }
+
+  function pointerFromHead(
+    ev: PointerEvent,
+    headLng: number,
+    headLat: number,
+  ): { dx: number; dy: number; pxPerM: number } | null {
+    const m = map;
+    if (!m) return null;
+    const rect = m.getContainer().getBoundingClientRect();
+    const s = m.project([headLng, headLat]);
+    const dx = ev.clientX - rect.left - s.x;
+    const dy = ev.clientY - rect.top - s.y;
+    const c = m.getCenter();
+    const p0 = m.project([c.lng, c.lat]);
+    const meterLng =
+      c.lng + 1 / (111320 * Math.cos((c.lat * Math.PI) / 180));
+    const p1 = m.project([meterLng, c.lat]);
+    const pxPerM = Math.max(1e-6, Math.abs(p1.x - p0.x));
+    return { dx, dy, pxPerM };
+  }
+
+  function startHandleDrag(
+    e: React.PointerEvent,
+    headId: string,
+    kind: "radius" | "start" | "end" | "strip",
+  ) {
+    e.stopPropagation();
+    e.preventDefault();
+    const head = plan.heads.find((h) => h.id === headId);
+    if (!head) return;
+    onSelectHead(headId);
+
+    const openArc = head.arcDeg >= 360 ? 180 : head.arcDeg;
+    const edges = sectorEdges(head.rotationDeg, openArc);
+    if (head.arcDeg >= 360 && (kind === "start" || kind === "end")) {
+      onHeadGeometry(headId, {
+        arcDeg: 180,
+        rotationDeg: head.rotationDeg,
+      });
+    }
+
+    dragRef.current = {
+      headId,
+      kind,
+      startX: e.clientX,
+      startY: e.clientY,
+      moved: false,
+      otherEdgeDeg: kind === "start" ? edges.end : edges.start,
+    };
+    setActiveHandle(kind);
+    map?.dragPan.disable();
+
+    const info = resolveHeadProduct(head, plan.brand ?? "hunter");
+    const pos = head.position;
+
+    const onMove = (ev: PointerEvent) => {
+      const drag = dragRef.current;
+      if (!drag || drag.kind === "move") return;
+      drag.moved = true;
+      const delta = pointerFromHead(ev, pos.lng, pos.lat);
+      if (!delta) return;
+      const { dx, dy, pxPerM } = delta;
+      if (drag.kind === "radius") {
+        onHeadGeometry(drag.headId, {
+          radiusM: Number((Math.hypot(dx, dy) / pxPerM).toFixed(1)),
+        });
+        return;
+      }
+      if (drag.kind === "strip") {
+        onHeadGeometry(drag.headId, {
+          rotationDeg: Math.round(screenBearingDeg(dx, dy)),
+        });
+        return;
+      }
+      const aMin = info.arcMinDeg ?? 40;
+      const aMax = info.arcMaxDeg ?? 360;
+      onHeadGeometry(
+        drag.headId,
+        patchFromDraggedEdge({
+          which: drag.kind,
+          bearingDeg: screenBearingDeg(dx, dy),
+          otherEdgeDeg: drag.otherEdgeDeg ?? 0,
+          arcMinDeg: aMin,
+          arcMaxDeg: aMax,
+        }),
+      );
+    };
+    const onUp = () => {
+      const drag = dragRef.current;
+      dragRef.current = null;
+      setActiveHandle(null);
+      map?.dragPan.enable();
+      window.removeEventListener("pointermove", onMove);
+      window.removeEventListener("pointerup", onUp);
+      if (drag?.moved) onEditCommit();
     };
     window.addEventListener("pointermove", onMove);
     window.addEventListener("pointerup", onUp);
@@ -204,7 +469,8 @@ export function SofortOverlay({
           </clipPath>
         </defs>
 
-        {plan.heads.map((h) => {
+        {showHeads || showOverview
+          ? plan.heads.map((h) => {
           if (h.id !== focusId) return null;
           const s = project(h.position.lng, h.position.lat);
           const color = colorFor(h.hydraulicZone);
@@ -250,8 +516,26 @@ export function SofortOverlay({
               strokeDasharray="4 3"
             />
           );
-        })}
+        })
+          : null}
 
+        {selectedHead &&
+        selectedHead.kind !== "strip" &&
+        selectedScreen &&
+        selectedProduct?.radiusMaxM != null ? (
+          <circle
+            cx={selectedScreen.x}
+            cy={selectedScreen.y}
+            r={selectedProduct.radiusMaxM * pxPerM}
+            fill="none"
+            stroke={isCanvas ? "#0b2414" : "#ffffff"}
+            strokeOpacity={0.28}
+            strokeWidth={1}
+            strokeDasharray="3 5"
+          />
+        ) : null}
+
+        {showHeads || showOverview ? (
         <g clipPath={`url(#lawn-clip-${clipId})`}>
           {plan.heads.map((h) => {
             const s = project(h.position.lng, h.position.lat);
@@ -333,8 +617,10 @@ export function SofortOverlay({
             );
           })}
         </g>
+        ) : null}
 
-        {lawnScreenPaths.map((p) => (
+        {showOverview
+          ? lawnScreenPaths.map((p) => (
           <polygon
             key={`lawn-edge-${p.id}`}
             points={p.points}
@@ -343,9 +629,11 @@ export function SofortOverlay({
             strokeOpacity={isCanvas ? 0.75 : 0.4}
             strokeWidth={isCanvas ? 2 : 1.5}
           />
-        ))}
+            ))
+          : null}
 
-        {plan.pipes.map((p) => {
+        {showPipes
+          ? plan.pipes.map((p) => {
           const pts = p.points
             .map((pt) => {
               const s = project(pt.lng, pt.lat);
@@ -357,34 +645,94 @@ export function SofortOverlay({
             p.hydraulicZone == null
               ? ink
               : colorFor(p.hydraulicZone);
+          const selected = pipeMatchesSelection(p, selectedPipe);
+          const dimOthers = selectedPipe != null && !selected;
+          const baseHalo = isMain ? 4.5 : 3.5;
+          const baseCore = isMain
+            ? isCanvas
+              ? 2.5
+              : 2
+            : isCanvas
+              ? 2
+              : 1.5;
           return (
-            <g key={p.id}>
+            <g
+              key={p.id}
+              className="pointer-events-auto"
+              opacity={dimOthers ? 0.28 : 1}
+            >
+              {/* Wide invisible hit target */}
+              <polyline
+                points={pts}
+                fill="none"
+                stroke="transparent"
+                strokeWidth={16}
+                strokeLinejoin="round"
+                strokeLinecap="round"
+                style={{ cursor: "pointer", pointerEvents: "stroke" }}
+                onPointerDown={(e) => {
+                  e.stopPropagation();
+                  e.preventDefault();
+                  const next: PipeSelection =
+                    p.kind === "main"
+                      ? { kind: "main" }
+                      : {
+                          kind: "zone",
+                          zone: p.hydraulicZone ?? 0,
+                        };
+                  const same =
+                    selectedPipe?.kind === next.kind &&
+                    (next.kind === "main" ||
+                      (selectedPipe.kind === "zone" &&
+                        selectedPipe.zone === next.zone));
+                  onSelectHead(null);
+                  onSelectPipe(same ? null : next);
+                }}
+              >
+                <title>
+                  {isMain
+                    ? "Hauptleitung"
+                    : `Rohrleitung Zone ${(p.hydraulicZone ?? 0) + 1}`}
+                </title>
+              </polyline>
               <polyline
                 points={pts}
                 fill="none"
                 stroke={isCanvas ? "#ffffff" : "#0b2414"}
-                strokeWidth={isMain ? 4.5 : 3.5}
-                strokeOpacity={isCanvas ? 0.9 : 0.35}
+                strokeWidth={selected ? baseHalo + 2.5 : baseHalo}
+                strokeOpacity={
+                  selected
+                    ? isCanvas
+                      ? 1
+                      : 0.55
+                    : isCanvas
+                      ? 0.9
+                      : 0.35
+                }
                 strokeLinejoin="round"
                 strokeLinecap="round"
+                style={{ pointerEvents: "none" }}
               />
               <polyline
                 points={pts}
                 fill="none"
                 stroke={zc}
-                strokeWidth={isMain ? (isCanvas ? 2.5 : 2) : isCanvas ? 2 : 1.5}
+                strokeWidth={selected ? baseCore + 2 : baseCore}
                 strokeDasharray={isMain ? undefined : "0.5 5"}
                 strokeLinejoin="round"
                 strokeLinecap="round"
-                strokeOpacity={isCanvas ? 1 : 0.95}
+                strokeOpacity={selected ? 1 : isCanvas ? 1 : 0.95}
+                style={{ pointerEvents: "none" }}
               />
             </g>
           );
-        })}
+        })
+          : null}
       </svg>
 
       <div className="absolute inset-0 z-[8]" style={{ pointerEvents: "none" }}>
         {plan.heads.map((h) => {
+          if (!showHeads && h.id !== selectedHeadId) return null;
           const s = project(h.position.lng, h.position.lat);
           const color = colorFor(h.hydraulicZone);
           const selected = h.id === selectedHeadId;
@@ -440,7 +788,18 @@ export function SofortOverlay({
           );
         })}
 
-        {selectedHead && selectedProduct && selectedScreen ? (
+        {selectedHead && selectedScreen && selectedProduct
+          ? renderHeadHandles({
+              head: selectedHead,
+              screen: selectedScreen,
+              product: selectedProduct,
+              pxPerM,
+              activeHandle,
+              onDrag: startHandleDrag,
+            })
+          : null}
+
+        {selectedHead && selectedProduct && selectedScreen && !activeHandle ? (
           <div
             className="pointer-events-auto absolute z-[9] w-[15.5rem] -translate-x-1/2 rounded-2xl border border-forest/15 bg-white p-2.5 shadow-soft"
             style={{
@@ -510,7 +869,8 @@ export function SofortOverlay({
               </div>
             </div>
             <p className="mt-2 text-[10px] leading-snug text-forest/55">
-              {selectedProduct.note}
+              Punkte ziehen: Mitte des Kreises = Wurfweite, seitliche Punkte =
+              Sektor. Werte bleiben im Herstellerbereich.
             </p>
             {!selectedProduct.radiusInSpec || !selectedProduct.arcInSpec ? (
               <p className="mt-1.5 rounded-lg bg-amber-50 px-2 py-1 text-[10px] font-medium text-amber-900 ring-1 ring-amber-200/80">
