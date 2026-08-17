@@ -2310,7 +2310,6 @@ export function PlotMap({
                       <FixtureStepIcon
                         kind={s.id}
                         size={22}
-                        className="text-inherit"
                       />
                     </RailCountIcon>
                     <span className="min-w-0 flex-1 text-[12px] font-bold leading-tight sm:text-[13px]">
