@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 import type { FixtureKind, PlotFixture } from "@/lib/mapbox";
 import { type BomLine, type SofortPlan } from "@/lib/planner";
+import { siteDatenschutzUrl } from "@/lib/consent";
 
 type Props = {
   plan: SofortPlan;
@@ -25,6 +26,7 @@ type Props = {
     name: string;
     email: string;
     phone?: string;
+    privacyAccepted: true;
   }) => Promise<void>;
   onDownloadPdf?: () => Promise<void>;
   onChangeBrand?: (brand: "hunter" | "rainbird") => void;
@@ -83,6 +85,7 @@ export function SofortPanel({
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
+  const [privacy, setPrivacy] = useState(false);
   const [leadDone, setLeadDone] = useState(false);
   const [busy, setBusy] = useState<"email" | "pdf" | null>(null);
   const [flash, setFlash] = useState<string | null>(null);
@@ -120,6 +123,10 @@ export function SofortPanel({
   async function handleLeadThenPdf(e: React.FormEvent) {
     e.preventDefault();
     if (!onSubmitEmail || !onDownloadPdf) return;
+    if (!privacy) {
+      setErr("Bitte die Datenschutzerklärung bestätigen.");
+      return;
+    }
     setBusy("pdf");
     setErr(null);
     try {
@@ -127,6 +134,7 @@ export function SofortPanel({
         name: name.trim(),
         email: email.trim(),
         phone: phone.trim() || undefined,
+        privacyAccepted: true,
       });
       await onDownloadPdf();
       setLeadDone(true);
@@ -422,16 +430,41 @@ export function SofortPanel({
                 autoComplete="tel"
               />
             </label>
-            <p className="mt-2 text-[10px] leading-snug text-forest/40">
-              Wir nutzen die Angaben für Rückfragen zum Plan. Kostenlos, ohne
-              Verpflichtung.
-            </p>
+            <label className="mt-3 flex items-start gap-2.5 text-[10px] leading-snug text-forest/65">
+              <input
+                type="checkbox"
+                required
+                checked={privacy}
+                onChange={(e) => setPrivacy(e.target.checked)}
+                className="mt-0.5 h-3.5 w-3.5 shrink-0 accent-aqua-deep"
+              />
+              <span>
+                Ich willige ein, dass RegnerWerk meine Angaben (Name, E-Mail,
+                ggf. Telefon, Adresse und Plandaten) zur Bearbeitung dieser
+                Anfrage und zur Kontaktaufnahme per E-Mail, Telefon oder
+                Nachricht verarbeitet. Die Kontaktaufnahme kann durch
+                Mitarbeitende <em>oder KI-gestützte Systeme</em> erfolgen
+                (Rückruf, Entgegennahme von Anrufen, Gesprächsführung). Der
+                PDF-Download begründet keinen Vertrag. Die Einwilligung ist
+                freiwillig und jederzeit mit Wirkung für die Zukunft widerrufbar
+                (z.&nbsp;B. an hallo@regnerwerk.de). Details:{" "}
+                <a
+                  href={siteDatenschutzUrl()}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-semibold text-aqua-deep underline"
+                >
+                  Datenschutzerklärung
+                </a>
+                .
+              </span>
+            </label>
             {err ? (
               <p className="mt-2 text-[11px] text-red-600">{err}</p>
             ) : null}
             <button
               type="submit"
-              disabled={busy === "pdf"}
+              disabled={busy === "pdf" || !privacy}
               className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-forest px-3 py-2.5 text-xs font-semibold text-white disabled:opacity-50"
             >
               {busy === "pdf" ? (

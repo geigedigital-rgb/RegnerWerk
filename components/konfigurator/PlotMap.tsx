@@ -2149,7 +2149,7 @@ export function PlotMap({
               setSelectedPipe(null);
               setSelectedFixtureId(id);
             }}
-            onSubmitEmail={async ({ name, email, phone }) => {
+            onSubmitEmail={async ({ name, email, phone, privacyAccepted }) => {
               const leadRes = await fetch("/api/lead", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
@@ -2157,6 +2157,7 @@ export function PlotMap({
                   name,
                   email,
                   phone: phone || "",
+                  privacyAccepted,
                   placeName: place.placeName,
                   brand: sofortPlan?.brand ?? DEFAULT_BRAND,
                   lawnAreaM2: sofortPlan?.lawnAreaM2,

@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { sendTelegramLead } from "@/lib/telegram";
+import { PRIVACY_NOTICE_VERSION } from "@/lib/consent";
 
 export const runtime = "nodejs";
 
@@ -13,6 +14,7 @@ type Body = {
   heads?: number;
   totalEur?: number | null;
   company_website?: string;
+  privacyAccepted?: boolean;
 };
 
 function clean(v: unknown, max = 500) {
@@ -42,6 +44,12 @@ export async function POST(req: Request) {
   if (!email.includes("@") || !email.includes(".")) {
     return NextResponse.json({ error: "E-Mail ungültig." }, { status: 400 });
   }
+  if (body.privacyAccepted !== true) {
+    return NextResponse.json(
+      { error: "Bitte der Datenschutzerklärung zustimmen." },
+      { status: 400 },
+    );
+  }
 
   const sent = await sendTelegramLead({
     source: "Konfigurator · PDF",
@@ -60,6 +68,7 @@ export async function POST(req: Request) {
         typeof body.totalEur === "number"
           ? Math.round(body.totalEur)
           : null,
+      Datenschutz: PRIVACY_NOTICE_VERSION,
     },
   });
 
