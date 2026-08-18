@@ -65,6 +65,7 @@ import {
   type PipeSelection,
 } from "@/components/konfigurator/SofortOverlay";
 import { SofortPanel } from "@/components/konfigurator/SofortPanel";
+import { SofortCalcLoader } from "@/components/konfigurator/SofortCalcLoader";
 import { RailCountIcon } from "@/components/konfigurator/RailCountIcon";
 import {
   DEFAULT_PLAN_LAYER_MODE,
@@ -222,6 +223,9 @@ export function PlotMap({
   const [justSaved, setJustSaved] = useState(false);
   const [planChoiceOpen, setPlanChoiceOpen] = useState(false);
   const [resetConfirmOpen, setResetConfirmOpen] = useState(false);
+  const [calcMode, setCalcMode] = useState<"full" | "brand" | null>(null);
+  const [pendingBrand, setPendingBrand] = useState<SprinklerBrand>(DEFAULT_BRAND);
+  const pendingBrandRef = useRef<SprinklerBrand>(DEFAULT_BRAND);
   const [sofortPlan, setSofortPlan] = useState<SofortPlan | null>(() =>
     loadSofortPlan(place.id),
   );
@@ -1134,14 +1138,25 @@ export function PlotMap({
     setPlotStage("ergebnis");
   }
 
+  function finishSofortCalc() {
+    runSofortBerechnung(pendingBrandRef.current);
+    setCalcMode(null);
+  }
+
   function changeSofortBrand(brand: SprinklerBrand) {
-    runSofortBerechnung(brand);
+    if (calcMode) return;
+    if (brand === (sofortPlan?.brand ?? DEFAULT_BRAND)) return;
+    pendingBrandRef.current = brand;
+    setPendingBrand(brand);
+    setCalcMode("brand");
   }
 
   function handlePlanChoice(choice: PlanChoice) {
     setPlanChoiceOpen(false);
     if (choice === "auto") {
-      runSofortBerechnung();
+      pendingBrandRef.current = DEFAULT_BRAND;
+      setPendingBrand(DEFAULT_BRAND);
+      setCalcMode("full");
       return;
     }
     // Fachplanung request form follows later
@@ -1975,6 +1990,10 @@ export function PlotMap({
         onCancel={() => setPlanChoiceOpen(false)}
       />
 
+      {calcMode === "full" ? (
+        <SofortCalcLoader mode="full" onFinished={finishSofortCalc} />
+      ) : null}
+
       {resetConfirmOpen ? (
         <div
           className="absolute inset-0 z-[40] flex items-center justify-center bg-forest/45 p-4 backdrop-blur-[2px]"
@@ -2129,14 +2148,16 @@ export function PlotMap({
       {/* Ergebnis: result panel on the right */}
       {onErgebnis && sofortPlan ? (
         <div className="pointer-events-none absolute right-3 top-24 z-20 w-[min(100%-1.5rem,21rem)] sm:right-5 sm:top-28">
-          <SofortPanel
-            plan={sofortPlan}
-            fixtures={fixtures}
-            selectedHeadId={selectedHeadId}
-            selectedFixtureId={selectedFixtureId}
-            isCanvas={isCanvas}
-            serverProjectId={serverProjectId}
-            onChangeBrand={changeSofortBrand}
+          <div className="pointer-events-auto relative">
+            <SofortPanel
+              plan={sofortPlan}
+              fixtures={fixtures}
+              selectedHeadId={selectedHeadId}
+              selectedFixtureId={selectedFixtureId}
+              isCanvas={isCanvas}
+              serverProjectId={serverProjectId}
+              recalculating={calcMode === "brand"}
+              onChangeBrand={changeSofortBrand}
             onSelectHead={(id) => {
               setSelectedFixtureId(null);
               setSelectedPipe(null);
@@ -2235,6 +2256,14 @@ export function PlotMap({
               if (projectId) setServerProjectId(projectId);
             }}
           />
+            {calcMode === "brand" ? (
+              <SofortCalcLoader
+                mode="brand"
+                brandLabel={pendingBrand === "rainbird" ? "Rain Bird" : "Hunter"}
+                onFinished={finishSofortCalc}
+              />
+            ) : null}
+          </div>
         </div>
       ) : null}
 

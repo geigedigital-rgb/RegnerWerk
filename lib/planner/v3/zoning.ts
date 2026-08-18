@@ -612,28 +612,34 @@ function tryMergeOrphans(
   return working.length > 0 ? working : null;
 }
 
+function formatLpm(n: number) {
+  return n.toLocaleString("de-DE", {
+    minimumFractionDigits: 1,
+    maximumFractionDigits: 1,
+  });
+}
+
 function explanationDe(
   reason: ZoneDecision["primaryReason"],
-  zoneIndex: number,
   flowLpm: number,
   target: number,
   zoneCount: number,
 ): string {
-  const flow = flowLpm.toFixed(1);
+  const flow = formatLpm(flowLpm);
   switch (reason) {
     case "PRECIPITATION_CLASS":
-      return `Zone ${zoneIndex + 1}: eigene Niederschlagsklasse (z. B. MP800) — ${flow} l/min.`;
+      return `Eigene Niederschlagsklasse (z. B. MP800) — ${flow} l/min.`;
     case "IRRIGATION_METHOD":
-      return `Zone ${zoneIndex + 1}: getrennte Bewässerungsart — ${flow} l/min.`;
+      return `Getrennte Bewässerungsart — ${flow} l/min.`;
     case "SOURCE_FLOW":
       if (zoneCount <= 1) {
-        return `Zone ${zoneIndex + 1}: eine Ventilzone reicht (${flow} l/min).`;
+        return `Eine Ventilzone reicht (${flow} l/min).`;
       }
-      return `Zone ${zoneIndex + 1}: Quellfluss — ausgewogen ≈ ${target.toFixed(1)} l/min (ist ${flow}).`;
+      return `Quellfluss ausgewogen — Ziel ${formatLpm(target)} l/min, aktuell ${flow} l/min.`;
     case "DISCONNECTED_AREA":
-      return `Zone ${zoneIndex + 1}: eigene Rasenfläche (getrennt gezeichnet) — ${flow} l/min.`;
+      return `Eigene Rasenfläche (getrennt gezeichnet) — ${flow} l/min.`;
     default:
-      return `Zone ${zoneIndex + 1}: ${reason} — ${flow} l/min.`;
+      return `${reason} — ${flow} l/min.`;
   }
 }
 
@@ -761,7 +767,6 @@ export function designValveZones(params: {
         mergeRejectedBecause: [],
         explanation: explanationDe(
           primary,
-          nextZone,
           flow,
           target,
           parts.length,

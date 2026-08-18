@@ -14,6 +14,7 @@ export function adaptV2ToViewModel(plan: EngineeringPlan): SofortPlan {
           primaryReason: d.primaryReason,
           explanation: d.explanation,
           flowLpm: d.flowLpm,
+          targetBalancedFlowLpm: d.targetBalancedFlowLpm,
         }))
       : undefined;
   const rawManifold =

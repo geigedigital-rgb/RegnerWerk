@@ -62,7 +62,7 @@ describe("v3 professional zoning", () => {
     assert.ok(z.decisions.length >= 1);
     assert.ok(
       z.decisions[0].primaryReason === "SOURCE_FLOW" ||
-        z.decisions[0].explanation.includes("eine Ventilzone"),
+        /ventilzone/i.test(z.decisions[0].explanation),
     );
   });
 

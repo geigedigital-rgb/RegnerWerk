@@ -4,11 +4,16 @@ import Image from "next/image";
 import { useState } from "react";
 import {
   ChevronDown,
+  CircleDot,
   Download,
   Droplets,
+  Gauge,
+  LandPlot,
   Loader2,
+  Percent,
   X,
 } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 import type { FixtureKind, PlotFixture } from "@/lib/mapbox";
 import { type BomLine, type SofortPlan } from "@/lib/planner";
 import { siteDatenschutzUrl } from "@/lib/consent";
@@ -30,6 +35,7 @@ type Props = {
   }) => Promise<void>;
   onDownloadPdf?: () => Promise<void>;
   onChangeBrand?: (brand: "hunter" | "rainbird") => void;
+  recalculating?: boolean;
 };
 
 const GROUP_LABELS: Record<BomLine["group"], string> = {
@@ -55,6 +61,50 @@ function euro(v: number | null): string {
   return v.toLocaleString("de-DE", { style: "currency", currency: "EUR" });
 }
 
+function de1(n: number): string {
+  return n.toLocaleString("de-DE", {
+    minimumFractionDigits: 1,
+    maximumFractionDigits: 1,
+  });
+}
+
+const FLOW_REASON_HINT: Record<string, string> = {
+  SOURCE_FLOW:
+    "Zonen teilen den verfügbaren Quellfluss möglichst gleichmäßig.",
+  IRRIGATION_METHOD:
+    "Tropf und Regner laufen nicht in derselben Ventilzone.",
+  PRECIPITATION_CLASS:
+    "Düsen mit anderer Niederschlagsrate bekommen eine eigene Zone.",
+  DISCONNECTED_AREA:
+    "Getrennt gezeichnete Rasenflächen haben eigene Ventilzonen.",
+};
+
+function HintStat({
+  icon: Icon,
+  value,
+  hint,
+}: {
+  icon: LucideIcon;
+  value: string;
+  hint: string;
+}) {
+  return (
+    <span
+      tabIndex={0}
+      className="group relative inline-flex items-center gap-1 rounded-full bg-mint/80 px-2 py-1 text-[11px] font-semibold text-forest outline-none ring-aqua-deep/0 focus-visible:ring-2"
+    >
+      <Icon size={12} strokeWidth={2.25} className="shrink-0 text-aqua-deep" />
+      {value}
+      <span
+        role="tooltip"
+        className="pointer-events-none absolute left-1/2 top-full z-30 mt-1.5 w-max max-w-[13.5rem] -translate-x-1/2 rounded-xl border border-white/10 bg-forest px-2.5 py-1.5 text-left text-[11px] font-medium leading-snug text-white opacity-0 shadow-none transition group-hover:opacity-100 group-focus-visible:opacity-100"
+      >
+        {hint}
+      </span>
+    </span>
+  );
+}
+
 function fixtureIdForKind(
   fixtures: PlotFixture[],
   kind: FixtureKind,
@@ -74,6 +124,7 @@ export function SofortPanel({
   onSubmitEmail,
   onDownloadPdf,
   onChangeBrand,
+  recalculating = false,
 }: Props) {
   const presentGroups = GROUP_ORDER.filter((g) =>
     plan.bom.some((l) => l.group === g),
@@ -91,6 +142,25 @@ export function SofortPanel({
   const [flash, setFlash] = useState<string | null>(null);
   const [err, setErr] = useState<string | null>(null);
   const brand = plan.brand ?? "hunter";
+  const flowDecision =
+    plan.zoneDecisions?.find((d) => d.primaryReason === "SOURCE_FLOW") ??
+    plan.zoneDecisions?.[0];
+  const flowHintParts: string[] = [];
+  if (flowDecision) {
+    if (flowDecision.targetBalancedFlowLpm != null) {
+      flowHintParts.push(
+        `Ziel ${de1(flowDecision.targetBalancedFlowLpm)} l/min, aktuell ${de1(flowDecision.flowLpm)} l/min.`,
+      );
+    } else {
+      flowHintParts.push(`Aktuell ${de1(flowDecision.flowLpm)} l/min je Zone.`);
+    }
+    const reasonHint = FLOW_REASON_HINT[flowDecision.primaryReason];
+    if (reasonHint) flowHintParts.push(reasonHint);
+  } else if (plan.sourceFlowLMin) {
+    flowHintParts.push(
+      `Quellfluss ${de1(plan.sourceFlowLMin)} l/min am Anschluss.`,
+    );
+  }
 
   function toggle(g: string) {
     setOpenGroups((prev) => {
@@ -177,20 +247,15 @@ export function SofortPanel({
         if (e.ctrlKey) e.preventDefault();
       }}
     >
-      <div className="border-b border-forest/8 px-4 py-3">
-        <div className="flex items-center gap-2">
-          <Droplets size={16} className="text-aqua-deep" />
-          <h2 className="text-sm font-bold text-forest">Sofort-Berechnung</h2>
-        </div>
-        <p className="mt-1 text-[11px] text-forest/45">
-          {Math.round(plan.lawnAreaM2)} m² · {plan.heads.length} Regner ·{" "}
-          {Math.round(plan.coveragePct)} % Abdeckung
-          {plan.projectLevel ? ` · ${plan.projectLevel}` : ""}
-        </p>
-        <div className="mt-2.5 flex flex-wrap gap-2">
+      <div className="border-b border-forest/8 px-4 py-3.5">
+        <div className="flex items-center justify-between gap-3">
+          <h2 className="flex min-w-0 items-center gap-2 text-base font-bold tracking-tight text-forest">
+            <Droplets size={18} className="shrink-0 text-aqua-deep" />
+            Sofort-Berechnung
+          </h2>
           {onChangeBrand ? (
             <div
-              className="inline-flex rounded-xl border border-forest/10 bg-mint/30 p-0.5"
+              className="inline-flex shrink-0 rounded-full border border-forest/10 bg-mint/40 p-0.5"
               role="group"
               aria-label="Regner-Marke"
             >
@@ -205,8 +270,9 @@ export function SofortPanel({
                   <button
                     key={id}
                     type="button"
+                    disabled={recalculating}
                     onClick={() => onChangeBrand(id)}
-                    className={`rounded-[10px] px-2.5 py-1 text-[11px] font-semibold transition ${
+                    className={`rounded-full px-2.5 py-1 text-xs font-semibold transition disabled:opacity-50 ${
                       active
                         ? "bg-forest text-lime"
                         : "text-forest/55 hover:text-forest"
@@ -219,11 +285,33 @@ export function SofortPanel({
             </div>
           ) : null}
         </div>
-        {plan.zoneDecisions?.[0]?.explanation ? (
-          <p className="mt-2 text-[11px] leading-snug text-forest/55">
-            {plan.zoneDecisions[0].explanation}
-          </p>
-        ) : null}
+        <div className="mt-2.5 flex flex-wrap gap-1.5">
+          <HintStat
+            icon={LandPlot}
+            value={`${Math.round(plan.lawnAreaM2).toLocaleString("de-DE")} m²`}
+            hint="Rasenfläche, die in der Sofort-Berechnung bewässert wird."
+          />
+          <HintStat
+            icon={CircleDot}
+            value={`${plan.heads.length} Regner`}
+            hint="Anzahl der platzierten Regner auf der Rasenfläche."
+          />
+          <HintStat
+            icon={Percent}
+            value={`${Math.round(plan.coveragePct)} %`}
+            hint="Anteil der Rasenfläche, den die Regner abdecken."
+          />
+          {flowDecision || plan.sourceFlowLMin ? (
+            <HintStat
+              icon={Gauge}
+              value={`${de1(flowDecision?.flowLpm ?? plan.sourceFlowLMin)} l/min`}
+              hint={
+                flowHintParts.join(" ") ||
+                "Durchfluss der Ventilzone in Litern pro Minute."
+              }
+            />
+          ) : null}
+        </div>
       </div>
 
       <div className="min-h-0 flex-1 overflow-y-auto px-4 py-3">

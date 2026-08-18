@@ -427,6 +427,7 @@ export function recomputeAfterEditV3(
       primaryReason: d.primaryReason,
       explanation: d.explanation,
       flowLpm: d.flowLpm,
+      targetBalancedFlowLpm: d.targetBalancedFlowLpm,
     }));
     warnings.push(...zoned.warnings);
     const routed = routePipes(

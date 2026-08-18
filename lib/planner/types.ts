@@ -108,6 +108,7 @@ export type ZoneDecisionSummary = {
   primaryReason: string;
   explanation: string;
   flowLpm: number;
+  targetBalancedFlowLpm?: number;
 };
 
 export type ManifoldSummary = {
