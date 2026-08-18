@@ -54,10 +54,10 @@ export function AddressStep({ onSelect, onBack }: Props) {
   }
 
   return (
-    <div className="relative flex min-h-[100svh] w-full items-center justify-center bg-forest px-4 py-16">
+    <div className="relative flex min-h-[100svh] w-full items-start justify-center bg-forest px-4 pb-[max(1.25rem,env(safe-area-inset-bottom))] pt-[max(1.25rem,env(safe-area-inset-top))] sm:items-center sm:py-16">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_rgba(0,255,207,0.12),_transparent_55%)]" />
 
-      <div className="relative z-10 w-full max-w-lg rounded-3xl border border-white/10 bg-white p-6 sm:p-8">
+      <div className="relative z-10 w-full max-w-lg rounded-3xl border border-white/10 bg-white p-5 sm:p-8">
         <button
           type="button"
           onClick={onBack}
@@ -134,7 +134,7 @@ export function AddressStep({ onSelect, onBack }: Props) {
         ) : null}
 
         {searched && results.length > 0 ? (
-          <ul className="mt-5 max-h-64 space-y-2 overflow-y-auto">
+          <ul className="mt-5 max-h-[min(40svh,16rem)] space-y-2 overflow-y-auto sm:max-h-64">
             <p className="text-[11px] font-semibold uppercase tracking-wider text-gray-400">
               Passende Adressen
             </p>

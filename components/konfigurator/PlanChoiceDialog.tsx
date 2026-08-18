@@ -31,7 +31,7 @@ export function PlanChoiceDialog({ open, onChoose, onCancel }: Props) {
 
   return (
     <div
-      className="absolute inset-0 z-[40] flex items-center justify-center bg-forest/45 p-4 backdrop-blur-[2px]"
+      className="absolute inset-0 z-[40] flex items-end justify-center bg-forest/45 p-3 backdrop-blur-[2px] sm:items-center sm:p-4"
       role="presentation"
       onMouseDown={(e) => {
         if (e.target === e.currentTarget) onCancel();
@@ -41,7 +41,7 @@ export function PlanChoiceDialog({ open, onChoose, onCancel }: Props) {
         role="dialog"
         aria-modal="true"
         aria-labelledby={titleId}
-        className="relative w-full max-w-2xl rounded-[1.75rem] bg-[#eef2f6] p-6 shadow-soft sm:p-8"
+        className="relative w-full max-w-2xl overflow-y-auto rounded-[1.5rem] bg-[#eef2f6] p-4 shadow-soft sm:rounded-[1.75rem] sm:p-8"
         onMouseDown={(e) => e.stopPropagation()}
       >
         <button
@@ -55,7 +55,7 @@ export function PlanChoiceDialog({ open, onChoose, onCancel }: Props) {
 
         <h2
           id={titleId}
-          className="pr-10 text-2xl font-bold tracking-tight text-forest"
+          className="pr-10 text-xl font-bold tracking-tight text-forest sm:text-2xl"
         >
           Wie möchten Sie weiterplanen?
         </h2>
@@ -64,9 +64,9 @@ export function PlanChoiceDialog({ open, onChoose, onCancel }: Props) {
           unserem Fachteam überlassen.
         </p>
 
-        <div className="mt-6 grid gap-3 sm:grid-cols-2">
-          <div className="flex flex-col rounded-2xl bg-white p-5 shadow-soft">
-            <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#dbeafe] text-[#2563eb]">
+        <div className="mt-4 grid gap-3 sm:mt-6 sm:grid-cols-2">
+          <div className="flex flex-col rounded-2xl bg-white p-4 shadow-soft sm:p-5">
+            <span className="flex h-10 w-10 items-center justify-center rounded-2xl bg-[#dbeafe] text-[#2563eb] sm:h-12 sm:w-12">
               <Sparkles size={24} strokeWidth={2} />
             </span>
             <h3 className="mt-4 text-base font-bold text-forest">
@@ -102,8 +102,8 @@ export function PlanChoiceDialog({ open, onChoose, onCancel }: Props) {
             </Button>
           </div>
 
-          <div className="flex flex-col rounded-2xl bg-white p-5 shadow-soft">
-            <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#e8f5e9] text-[#2e7d32]">
+          <div className="flex flex-col rounded-2xl bg-white p-4 shadow-soft sm:p-5">
+            <span className="flex h-10 w-10 items-center justify-center rounded-2xl bg-[#e8f5e9] text-[#2e7d32] sm:h-12 sm:w-12">
               <UserRound size={24} strokeWidth={2} />
             </span>
             <h3 className="mt-4 text-base font-bold text-forest">

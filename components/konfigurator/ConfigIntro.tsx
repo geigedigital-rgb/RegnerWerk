@@ -13,7 +13,7 @@ type Props = {
 
 export function ConfigIntro({ onStart, onResume, lastPlace }: Props) {
   return (
-    <div className="relative flex min-h-[100svh] w-full flex-col items-center justify-center overflow-hidden px-4">
+    <div className="relative flex min-h-[100svh] w-full flex-col items-center justify-center overflow-hidden px-4 pb-[max(1.5rem,env(safe-area-inset-bottom))] pt-[max(1.5rem,env(safe-area-inset-top))]">
       <Image
         src="https://images.unsplash.com/photo-1558904541-efa843a96f01?auto=format&fit=crop&w=2000&q=80"
         alt=""
@@ -39,12 +39,12 @@ export function ConfigIntro({ onStart, onResume, lastPlace }: Props) {
           Öffnen Sie Ihren Garten auf der Karte, zeichnen Sie Flächen ein – wir
           zeigen später, was Ihr System braucht.
         </p>
-        <div className="mt-10 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
+        <div className="mt-8 flex w-full max-w-sm flex-col items-stretch gap-3 sm:mx-auto">
           {lastPlace && onResume ? (
             <Button
               type="button"
               variant="primary"
-              className="!shadow-none"
+              className="w-full !shadow-none"
               onClick={() => onResume(lastPlace)}
             >
               <RotateCcw size={18} aria-hidden />
@@ -54,7 +54,7 @@ export function ConfigIntro({ onStart, onResume, lastPlace }: Props) {
             <Button
               type="button"
               variant="primary"
-              className="!shadow-none"
+              className="w-full !shadow-none"
               onClick={onStart}
             >
               <MapPinned size={18} aria-hidden />

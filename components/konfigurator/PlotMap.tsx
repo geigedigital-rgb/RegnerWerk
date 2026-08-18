@@ -3,6 +3,7 @@
 import mapboxgl from "mapbox-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
 import {
+  ArrowLeft,
   Check,
   ChevronLeft,
   ChevronRight,
@@ -17,7 +18,6 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import {
   FixtureCursor,
   FixtureMarker,
-  FixtureStepIcon,
 } from "@/components/konfigurator/FixtureMarker";
 import { WasserquelleDialog, type WasserquelleResult } from "@/components/konfigurator/WasserquelleDialog";
 import {
@@ -66,7 +66,7 @@ import {
 } from "@/components/konfigurator/SofortOverlay";
 import { SofortPanel } from "@/components/konfigurator/SofortPanel";
 import { SofortCalcLoader } from "@/components/konfigurator/SofortCalcLoader";
-import { RailCountIcon } from "@/components/konfigurator/RailCountIcon";
+import { PlotToolRail } from "@/components/konfigurator/PlotToolRail";
 import {
   DEFAULT_PLAN_LAYER_MODE,
   layersFromMode,
@@ -241,6 +241,17 @@ export function PlotMap({
   const [serverProjectId, setServerProjectId] = useState<string | null>(
     initialServerId,
   );
+  const [resultSheetOpen, setResultSheetOpen] = useState(false);
+  const [mobileZonesOpen, setMobileZonesOpen] = useState(false);
+  const [mdUp, setMdUp] = useState(false);
+
+  useEffect(() => {
+    const mq = window.matchMedia("(min-width: 768px)");
+    const apply = () => setMdUp(mq.matches);
+    apply();
+    mq.addEventListener("change", apply);
+    return () => mq.removeEventListener("change", apply);
+  }, []);
 
   const armedZoneRef = useRef(armedZone);
   const sofortPlanRef = useRef<SofortPlan | null>(null);
@@ -2122,42 +2133,45 @@ export function PlotMap({
       ) : null}
 
       {/* Top chrome — address + view mode */}
-      <div className="pointer-events-none absolute inset-x-0 top-0 z-20 p-4 sm:p-5">
-        <div className="pointer-events-auto mx-auto flex max-w-6xl items-center justify-between gap-3 rounded-3xl border border-white/15 bg-forest/92 px-4 py-3 shadow-soft backdrop-blur-md sm:gap-4 sm:px-5 sm:py-3.5">
+      <div className="pointer-events-none absolute inset-x-0 top-0 z-20 px-2 pt-[max(0.5rem,env(safe-area-inset-top))] md:px-5 md:pt-5">
+        <div className="pointer-events-auto mx-auto flex max-w-6xl items-center justify-between gap-2 rounded-2xl border border-white/15 bg-forest/92 px-2 py-2 shadow-soft backdrop-blur-md md:gap-4 md:rounded-3xl md:px-5 md:py-3.5">
           <button
             type="button"
             onClick={onBack}
-            className="shrink-0 text-sm font-semibold text-lime hover:underline"
+            className="inline-flex h-10 shrink-0 items-center gap-1 rounded-full px-2 text-sm font-semibold text-lime hover:underline md:px-3"
           >
-            ← Adresse
+            <ArrowLeft size={18} className="md:hidden" />
+            <span className="hidden md:inline">← Adresse</span>
           </button>
-          <p className="min-w-0 flex-1 truncate text-center text-sm text-white/85 sm:text-base">
+          <p className="min-w-0 flex-1 truncate text-center text-xs text-white/85 md:text-base">
             {place.placeName}
           </p>
-          <div className="flex shrink-0 items-center gap-1 rounded-full bg-white/10 p-1">
+          <div className="flex shrink-0 items-center gap-0.5 rounded-full bg-white/10 p-0.5 md:gap-1 md:p-1">
             <button
               type="button"
               onClick={() => setViewMode("satellite")}
-              className={`inline-flex items-center gap-1.5 rounded-full px-3.5 py-2 text-xs font-semibold uppercase tracking-wide transition ${
+              className={`inline-flex items-center gap-1.5 rounded-full px-2.5 py-2 text-xs font-semibold uppercase tracking-wide transition md:px-3.5 ${
                 viewMode === "satellite"
                   ? "bg-lime text-forest"
                   : "text-white/70 hover:bg-white/10"
               }`}
               title="Satellitenkarte"
             >
-              <Satellite size={15} /> Satellit
+              <Satellite size={15} />
+              <span className="hidden md:inline">Satellit</span>
             </button>
             <button
               type="button"
               onClick={() => setViewMode("canvas")}
-              className={`inline-flex items-center gap-1.5 rounded-full px-3.5 py-2 text-xs font-semibold uppercase tracking-wide transition ${
+              className={`inline-flex items-center gap-1.5 rounded-full px-2.5 py-2 text-xs font-semibold uppercase tracking-wide transition md:px-3.5 ${
                 viewMode === "canvas"
                   ? "bg-lime text-forest"
                   : "text-white/70 hover:bg-white/10"
               }`}
               title="Zeichenfläche mit Raster"
             >
-              <DraftingCompass size={15} /> Plan
+              <DraftingCompass size={15} />
+              <span className="hidden md:inline">Plan</span>
             </button>
           </div>
         </div>
@@ -2165,14 +2179,29 @@ export function PlotMap({
 
       {/* Ergebnis: Ebenen only in Plan view */}
       {onErgebnis && sofortPlan && isCanvas ? (
-        <div className="pointer-events-none absolute left-3 top-24 z-20 sm:left-5 sm:top-28">
-          <PlanEditMenu mode={planLayerMode} onMode={setPlanLayerMode} />
-        </div>
+        <>
+          <div className="pointer-events-none absolute left-3 top-24 z-20 hidden md:block sm:left-5 sm:top-28">
+            <PlanEditMenu mode={planLayerMode} onMode={setPlanLayerMode} />
+          </div>
+          <div className="pointer-events-none absolute right-2 top-[4.75rem] z-20 md:hidden">
+            <PlanEditMenu
+              compact
+              mode={planLayerMode}
+              onMode={setPlanLayerMode}
+            />
+          </div>
+        </>
       ) : null}
 
       {/* Ergebnis: result panel on the right */}
       {onErgebnis && sofortPlan ? (
-        <div className="pointer-events-none absolute right-3 top-24 z-20 w-[min(100%-1.5rem,21rem)] sm:right-5 sm:top-28">
+        <div
+          className={
+            mdUp
+              ? "pointer-events-none absolute right-3 top-24 z-20 w-[min(100%-1.5rem,21rem)] sm:right-5 sm:top-28"
+              : "pointer-events-none absolute inset-x-0 bottom-0 z-30 pb-[env(safe-area-inset-bottom)]"
+          }
+        >
           <div className="pointer-events-auto relative">
             <SofortPanel
               plan={sofortPlan}
@@ -2183,6 +2212,9 @@ export function PlotMap({
               serverProjectId={serverProjectId}
               recalculating={calcMode === "brand"}
               onChangeBrand={changeSofortBrand}
+              variant={mdUp ? "side" : "sheet"}
+              sheetOpen={mdUp || resultSheetOpen}
+              onSheetToggle={() => setResultSheetOpen((o) => !o)}
             onSelectHead={(id) => {
               setSelectedFixtureId(null);
               setSelectedPipe(null);
@@ -2296,91 +2328,25 @@ export function PlotMap({
 
       {/* Left tool rail — icon + label, count as badge on icon */}
       {onErgebnis ? null : (
-      <div className="pointer-events-none absolute left-0 top-1/2 z-20 -translate-y-1/2 p-3 sm:p-4">
-        <div className="pointer-events-auto flex h-fit w-[9.25rem] flex-col gap-1 rounded-3xl border border-white/15 bg-forest/92 p-1.5 shadow-soft backdrop-blur-md sm:w-[10rem] sm:p-2">
-          {drawing
-            ? ZONE_TYPES.map((z) => {
-                const armed = armedZone === z.id;
-                const typeSelected =
-                  !armedZone && selectedZone?.type === z.id;
-                const count = zones.filter((x) => x.type === z.id).length;
-                const lit = armed || typeSelected;
-                return (
-                  <button
-                    key={z.id}
-                    type="button"
-                    onClick={() => toggleZoneTool(z.id)}
-                    title={
-                      armed
-                        ? "Erneut tippen → normaler Cursor"
-                        : z.id === "trocken"
-                          ? "Weg — trockene Fläche, nicht bewässern"
-                          : `${z.label} wählen zum Zeichnen`
-                    }
-                    className={`flex items-center gap-2.5 rounded-2xl px-2 py-2 text-left transition ${
-                      armed
-                        ? "bg-lime text-forest shadow-soft ring-2 ring-white/40"
-                        : typeSelected
-                          ? "bg-white text-forest shadow-soft"
-                          : "text-white/90 hover:bg-white/10"
-                    }`}
-                  >
-                    <RailCountIcon count={count} lit={lit}>
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img
-                        src={z.icon}
-                        alt=""
-                        width={28}
-                        height={28}
-                        className={`h-7 w-7 object-contain object-center ${
-                          lit ? "" : "brightness-0 invert"
-                        }`}
-                      />
-                    </RailCountIcon>
-                    <span className="min-w-0 flex-1 text-[12px] font-bold leading-tight sm:text-[13px]">
-                      {z.short}
-                    </span>
-                  </button>
-                );
-              })
-            : FIXTURE_STEPS.map((s) => {
-                const count = fixtures.filter((f) => f.kind === s.id).length;
-                const armed = armedKind === s.id;
-                return (
-                  <button
-                    key={s.id}
-                    type="button"
-                    title={
-                      armed
-                        ? "Erneut tippen oder Esc → normaler Cursor"
-                        : `${s.label} wählen zum Platzieren`
-                    }
-                    onClick={() => toggleTechnikTool(s.id)}
-                    className={`flex items-center gap-2.5 rounded-2xl px-2 py-2 text-left transition ${
-                      armed
-                        ? "bg-lime text-forest shadow-soft ring-2 ring-white/40"
-                        : "text-white/90 hover:bg-white/10"
-                    }`}
-                  >
-                    <RailCountIcon count={count} lit={armed}>
-                      <FixtureStepIcon
-                        kind={s.id}
-                        size={22}
-                      />
-                    </RailCountIcon>
-                    <span className="min-w-0 flex-1 text-[12px] font-bold leading-tight sm:text-[13px]">
-                      {s.short}
-                    </span>
-                  </button>
-                );
-              })}
+        <div className="pointer-events-none absolute left-0 top-1/2 z-20 hidden -translate-y-1/2 p-3 md:block sm:p-4">
+          <PlotToolRail
+            layout="rail"
+            drawing={drawing}
+            armedZone={armedZone}
+            selectedZoneType={selectedZone?.type}
+            zones={zones}
+            fixtures={fixtures}
+            armedKind={armedKind}
+            onToggleZone={toggleZoneTool}
+            onToggleTechnik={toggleTechnikTool}
+          />
         </div>
-      </div>
       )}
 
       {/* Saved zones panel — vertically centered like left rail */}
       {zones.length > 0 && drawing ? (
-        <div className="pointer-events-none absolute right-3 top-1/2 z-20 w-[min(100%-1.5rem,19rem)] -translate-y-1/2 sm:right-5">
+        <>
+          <div className="pointer-events-none absolute right-3 top-1/2 z-20 hidden w-[min(100%-1.5rem,19rem)] -translate-y-1/2 md:block sm:right-5">
           <div className="pointer-events-auto h-fit overflow-hidden rounded-3xl border border-white/15 bg-forest/92 shadow-soft backdrop-blur-md">
             <div className="flex items-center justify-between border-b border-white/10 px-4 py-3">
               <p className="text-xs font-semibold uppercase tracking-wider text-white/50">
@@ -2433,12 +2399,54 @@ export function PlotMap({
             </ul>
           </div>
         </div>
+          <div className="pointer-events-none absolute right-2 top-[4.75rem] z-20 max-w-[16rem] md:hidden">
+            <div className="pointer-events-auto">
+              <button
+                type="button"
+                onClick={() => setMobileZonesOpen((o) => !o)}
+                className="rounded-full border border-white/15 bg-forest/92 px-3 py-2 text-xs font-semibold text-white shadow-soft backdrop-blur-md"
+              >
+                {zones.length} Flächen · {formatAreaM2(totalArea)}
+              </button>
+              {mobileZonesOpen ? (
+                <div className="mt-2 max-h-48 overflow-y-auto rounded-2xl border border-white/15 bg-forest/95 py-1 shadow-soft">
+                  {zoneSummaries.map((z, i) => (
+                    <div
+                      key={z.id}
+                      className="flex items-center gap-1 px-2 py-1.5"
+                    >
+                      <button
+                        type="button"
+                        onClick={() => {
+                          focusZone(z.id);
+                          setMobileZonesOpen(false);
+                        }}
+                        className="min-w-0 flex-1 truncate text-left text-xs font-semibold text-white"
+                      >
+                        {i + 1}. {z.label}
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => deleteZone(z.id)}
+                        className="rounded-full p-1.5 text-white/50"
+                        aria-label="Fläche löschen"
+                      >
+                        <Trash2 size={14} />
+                      </button>
+                    </div>
+                  ))}
+                </div>
+              ) : null}
+            </div>
+          </div>
+        </>
       ) : null}
 
       {/* Bottom chrome — full-width fade + centered actions */}
+      {onErgebnis && !mdUp ? null : (
       <div className="pointer-events-none absolute inset-x-0 bottom-0 z-20">
         <div
-          className="pointer-events-none absolute inset-x-0 bottom-0 h-36 backdrop-blur-[6px] sm:h-40"
+          className="pointer-events-none absolute inset-x-0 bottom-0 h-40 backdrop-blur-[6px] md:h-40"
           style={{
             background:
               "linear-gradient(to top, rgba(11, 36, 20, 0.72) 0%, rgba(11, 36, 20, 0.35) 42%, rgba(11, 36, 20, 0) 100%)",
@@ -2449,7 +2457,23 @@ export function PlotMap({
           }}
           aria-hidden
         />
-        <div className="pointer-events-auto relative mx-auto flex max-w-4xl flex-wrap items-center justify-center gap-2.5 px-4 py-4 sm:px-5 sm:py-5">
+        <div className="pointer-events-auto relative mx-auto flex max-w-4xl flex-col items-center gap-2 px-2 pb-[max(0.65rem,env(safe-area-inset-bottom))] pt-3 md:px-5 md:py-5">
+          {onErgebnis ? null : (
+            <div className="w-full md:hidden">
+              <PlotToolRail
+                layout="dock"
+                drawing={drawing}
+                armedZone={armedZone}
+                selectedZoneType={selectedZone?.type}
+                zones={zones}
+                fixtures={fixtures}
+                armedKind={armedKind}
+                onToggleZone={toggleZoneTool}
+                onToggleTechnik={toggleTechnikTool}
+              />
+            </div>
+          )}
+        <div className="flex flex-wrap items-center justify-center gap-1.5 md:gap-2.5">
           <div className="group relative">
             <button
               type="button"
@@ -2471,7 +2495,7 @@ export function PlotMap({
             <button
               type="button"
               onClick={() => setResetConfirmOpen(true)}
-              className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-forest/80 px-4 py-3.5 text-sm font-semibold text-white/90 shadow-soft backdrop-blur-md transition hover:border-white/40 hover:bg-forest hover:text-lime"
+              className="inline-flex items-center gap-1.5 rounded-full border border-white/25 bg-forest/80 px-3 py-2.5 text-xs font-semibold text-white/90 shadow-soft backdrop-blur-md transition hover:border-white/40 hover:bg-forest hover:text-lime md:gap-2 md:px-4 md:py-3.5 md:text-sm"
               title="Alle Flächen und Technik löschen"
             >
               <Trash2 size={17} /> Zurücksetzen
@@ -2489,7 +2513,7 @@ export function PlotMap({
                       selectedVertex == null ||
                       (selectedZone?.coordinates.length ?? 0) <= 3
                     }
-                    className="inline-flex items-center gap-2 rounded-full bg-white/95 px-5 py-3.5 text-sm font-semibold text-forest shadow-soft disabled:opacity-40"
+                    className="inline-flex items-center gap-1.5 rounded-full bg-white/95 px-3 py-2.5 text-xs font-semibold text-forest shadow-soft disabled:opacity-40 md:gap-2 md:px-5 md:py-3.5 md:text-sm"
                   >
                     <Trash2 size={17} /> Punkt löschen
                   </button>
@@ -2498,7 +2522,7 @@ export function PlotMap({
                     onClick={() => {
                       if (selectedZoneId) deleteZone(selectedZoneId);
                     }}
-                    className="inline-flex items-center gap-2 rounded-full bg-white/95 px-5 py-3.5 text-sm font-semibold text-forest shadow-soft"
+                    className="inline-flex items-center gap-1.5 rounded-full bg-white/95 px-3 py-2.5 text-xs font-semibold text-forest shadow-soft md:gap-2 md:px-5 md:py-3.5 md:text-sm"
                   >
                     <Trash2 size={17} /> Fläche löschen
                   </button>
@@ -2510,7 +2534,7 @@ export function PlotMap({
                       selectedZoneIdRef.current = null;
                       selectedVertexRef.current = null;
                     }}
-                    className="inline-flex items-center gap-2 rounded-full bg-white/95 px-5 py-3.5 text-sm font-semibold text-forest shadow-soft"
+                    className="inline-flex items-center gap-1.5 rounded-full bg-white/95 px-3 py-2.5 text-xs font-semibold text-forest shadow-soft md:gap-2 md:px-5 md:py-3.5 md:text-sm"
                   >
                     <X size={17} /> Auswahl
                   </button>
@@ -2521,7 +2545,7 @@ export function PlotMap({
                     type="button"
                     onClick={undoPoint}
                     disabled={draftPoints.length === 0}
-                    className="inline-flex items-center gap-2 rounded-full bg-white/95 px-5 py-3.5 text-sm font-semibold text-forest shadow-soft disabled:opacity-40"
+                    className="inline-flex items-center gap-1.5 rounded-full bg-white/95 px-3 py-2.5 text-xs font-semibold text-forest shadow-soft disabled:opacity-40 md:gap-2 md:px-5 md:py-3.5 md:text-sm"
                   >
                     <Undo2 size={17} /> Zurück
                   </button>
@@ -2529,7 +2553,7 @@ export function PlotMap({
                     type="button"
                     onClick={cancelDraft}
                     disabled={!armedZone && draftPoints.length === 0}
-                    className="inline-flex items-center gap-2 rounded-full bg-white/95 px-5 py-3.5 text-sm font-semibold text-forest shadow-soft disabled:opacity-40"
+                    className="inline-flex items-center gap-1.5 rounded-full bg-white/95 px-3 py-2.5 text-xs font-semibold text-forest shadow-soft disabled:opacity-40 md:gap-2 md:px-5 md:py-3.5 md:text-sm"
                   >
                     <X size={17} /> Verwerfen
                   </button>
@@ -2537,7 +2561,7 @@ export function PlotMap({
                     type="button"
                     onClick={closePolygon}
                     disabled={draftPoints.length < 3}
-                    className="inline-flex items-center gap-2 rounded-full bg-white/95 px-5 py-3.5 text-sm font-semibold text-forest shadow-soft disabled:opacity-40"
+                    className="inline-flex items-center gap-1.5 rounded-full bg-white/95 px-3 py-2.5 text-xs font-semibold text-forest shadow-soft disabled:opacity-40 md:gap-2 md:px-5 md:py-3.5 md:text-sm"
                   >
                     <Check size={17} /> Speichern
                   </button>
@@ -2547,7 +2571,7 @@ export function PlotMap({
                 type="button"
                 onClick={goNextStage}
                 disabled={!canGoNext}
-                className="inline-flex items-center gap-2 rounded-full bg-lime px-5 py-3.5 text-sm font-semibold text-forest shadow-soft disabled:opacity-40"
+                className="inline-flex items-center gap-1.5 rounded-full bg-lime px-4 py-2.5 text-xs font-semibold text-forest shadow-soft disabled:opacity-40 md:gap-2 md:px-5 md:py-3.5 md:text-sm"
               >
                 Weiter <ChevronRight size={17} />
               </button>
@@ -2557,7 +2581,7 @@ export function PlotMap({
               <button
                 type="button"
                 onClick={goPrevStage}
-                className="inline-flex items-center gap-2 rounded-full bg-white/95 px-5 py-3.5 text-sm font-semibold text-forest shadow-soft"
+                className="inline-flex items-center gap-1.5 rounded-full bg-white/95 px-3 py-2.5 text-xs font-semibold text-forest shadow-soft md:gap-2 md:px-5 md:py-3.5 md:text-sm"
               >
                 <ChevronLeft size={17} /> Zurück
               </button>
@@ -2565,7 +2589,7 @@ export function PlotMap({
                 type="button"
                 onClick={undoLastFixture}
                 disabled={totalFixtures === 0}
-                className="inline-flex items-center gap-2 rounded-full bg-white/95 px-5 py-3.5 text-sm font-semibold text-forest shadow-soft disabled:opacity-40"
+                className="inline-flex items-center gap-1.5 rounded-full bg-white/95 px-3 py-2.5 text-xs font-semibold text-forest shadow-soft disabled:opacity-40 md:gap-2 md:px-5 md:py-3.5 md:text-sm"
               >
                 <Undo2 size={17} /> Letzte löschen
               </button>
@@ -2574,7 +2598,7 @@ export function PlotMap({
                   type="button"
                   onClick={openPlanChoice}
                   disabled={!planDone}
-                  className="inline-flex items-center gap-2 rounded-full bg-lime px-5 py-3.5 text-sm font-semibold text-forest shadow-soft disabled:opacity-40"
+                  className="inline-flex items-center gap-1.5 rounded-full bg-lime px-4 py-2.5 text-xs font-semibold text-forest shadow-soft disabled:opacity-40 md:gap-2 md:px-5 md:py-3.5 md:text-sm"
                 >
                   <Check size={17} /> Fertig
                 </button>
@@ -2583,7 +2607,7 @@ export function PlotMap({
                   type="button"
                   onClick={goNextStage}
                   disabled={!canGoNext}
-                  className="inline-flex items-center gap-2 rounded-full bg-lime px-5 py-3.5 text-sm font-semibold text-forest shadow-soft disabled:opacity-40"
+                  className="inline-flex items-center gap-1.5 rounded-full bg-lime px-4 py-2.5 text-xs font-semibold text-forest shadow-soft disabled:opacity-40 md:gap-2 md:px-5 md:py-3.5 md:text-sm"
                 >
                   Weiter <ChevronRight size={17} />
                 </button>
@@ -2591,7 +2615,9 @@ export function PlotMap({
             </>
           )}
         </div>
+        </div>
       </div>
+      )}
     </div>
   );
 }

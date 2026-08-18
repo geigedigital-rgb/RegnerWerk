@@ -165,7 +165,7 @@ export function WasserquelleDialog({ open, onConfirm, onCancel }: Props) {
 
   return (
     <div
-      className="absolute inset-0 z-[40] flex items-center justify-center bg-forest/45 p-4 backdrop-blur-[2px]"
+      className="absolute inset-0 z-[40] flex items-end justify-center bg-forest/45 p-3 backdrop-blur-[2px] sm:items-center sm:p-4"
       role="presentation"
       onMouseDown={(e) => {
         if (e.target === e.currentTarget) onCancel();
@@ -175,7 +175,7 @@ export function WasserquelleDialog({ open, onConfirm, onCancel }: Props) {
         role="dialog"
         aria-modal="true"
         aria-labelledby={titleId}
-        className={`relative w-full rounded-[1.75rem] bg-[#eef2f6] p-6 shadow-soft sm:p-8 ${
+        className={`relative w-full overflow-y-auto rounded-[1.5rem] bg-[#eef2f6] p-5 shadow-soft sm:rounded-[1.75rem] sm:p-8 ${
           narrowInput
             ? "max-w-md"
             : medium
@@ -199,7 +199,7 @@ export function WasserquelleDialog({ open, onConfirm, onCancel }: Props) {
           <>
             <h2
               id={titleId}
-              className="pr-10 text-2xl font-bold tracking-tight text-forest"
+              className="pr-10 text-xl font-bold tracking-tight text-forest sm:text-2xl"
             >
               Art der Wasserquelle
             </h2>
@@ -318,7 +318,7 @@ export function WasserquelleDialog({ open, onConfirm, onCancel }: Props) {
           <>
             <h2
               id={titleId}
-              className="pr-10 text-2xl font-bold tracking-tight text-forest"
+              className="pr-10 text-xl font-bold tracking-tight text-forest sm:text-2xl"
             >
               Wassermenge bestimmen
             </h2>
@@ -379,7 +379,7 @@ export function WasserquelleDialog({ open, onConfirm, onCancel }: Props) {
           <>
             <h2
               id={titleId}
-              className="pr-10 text-2xl font-bold tracking-tight text-forest"
+              className="pr-10 text-xl font-bold tracking-tight text-forest sm:text-2xl"
             >
               Wassermenge eingeben
             </h2>
@@ -433,7 +433,7 @@ export function WasserquelleDialog({ open, onConfirm, onCancel }: Props) {
           <>
             <h2
               id={titleId}
-              className="pr-10 text-2xl font-bold tracking-tight text-forest"
+              className="pr-10 text-xl font-bold tracking-tight text-forest sm:text-2xl"
             >
               Eimer-Test
             </h2>
@@ -522,7 +522,7 @@ export function WasserquelleDialog({ open, onConfirm, onCancel }: Props) {
           <>
             <h2
               id={titleId}
-              className="pr-10 text-2xl font-bold tracking-tight text-forest"
+              className="pr-10 text-xl font-bold tracking-tight text-forest sm:text-2xl"
             >
               Zisternenpumpe
             </h2>
@@ -581,7 +581,7 @@ export function WasserquelleDialog({ open, onConfirm, onCancel }: Props) {
           <>
             <h2
               id={titleId}
-              className="pr-10 text-2xl font-bold tracking-tight text-forest"
+              className="pr-10 text-xl font-bold tracking-tight text-forest sm:text-2xl"
             >
               Brunnenpumpe
             </h2>

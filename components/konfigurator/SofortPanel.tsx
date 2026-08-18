@@ -35,6 +35,9 @@ type Props = {
   onDownloadPdf?: () => Promise<void>;
   onChangeBrand?: (brand: "hunter" | "rainbird") => void;
   recalculating?: boolean;
+  variant?: "side" | "sheet";
+  sheetOpen?: boolean;
+  onSheetToggle?: () => void;
 };
 
 const GROUP_LABELS: Record<BomLine["group"], string> = {
@@ -124,6 +127,9 @@ export function SofortPanel({
   onDownloadPdf,
   onChangeBrand,
   recalculating = false,
+  variant = "side",
+  sheetOpen = true,
+  onSheetToggle,
 }: Props) {
   const presentGroups = GROUP_ORDER.filter((g) =>
     plan.bom.some((l) => l.group === g),
@@ -232,22 +238,41 @@ export function SofortPanel({
     }
   }
 
+  const sheet = variant === "sheet";
+  const showBody = !sheet || sheetOpen;
+
   return (
     <div
-      className={`pointer-events-auto relative flex max-h-[min(70vh,36rem)] flex-col overflow-hidden rounded-2xl border border-forest/10 bg-white shadow-sm ${
-        isCanvas ? "bg-white/95" : ""
+      className={`pointer-events-auto relative flex flex-col overflow-hidden border-forest/10 bg-white shadow-sm ${
+        sheet
+          ? "rounded-t-3xl border-x border-t"
+          : "max-h-[min(70vh,36rem)] rounded-2xl border"
+      } ${isCanvas ? "bg-white/95" : ""} ${
+        sheet && sheetOpen ? "max-h-[min(72svh,36rem)]" : ""
       }`}
       onWheel={(e) => {
         if (e.ctrlKey) e.preventDefault();
       }}
     >
-      <div className="border-b border-forest/8 px-4 py-3.5">
+      <div className="border-b border-forest/8 px-4 py-3">
+        {sheet ? (
+          <button
+            type="button"
+            onClick={onSheetToggle}
+            className="flex w-full items-center justify-center pb-1"
+            aria-expanded={sheetOpen}
+            aria-label={sheetOpen ? "Liste einklappen" : "Liste öffnen"}
+          >
+            <span className="h-1 w-10 rounded-full bg-forest/15" />
+          </button>
+        ) : null}
         <div className="flex items-center justify-between gap-3">
           <h2 className="flex min-w-0 items-center gap-2 text-base font-bold tracking-tight text-forest">
             <Droplets size={18} className="shrink-0 text-aqua-deep" />
             Sofort-Berechnung
           </h2>
-          {onChangeBrand ? (
+          <div className="flex shrink-0 items-center gap-1">
+            {onChangeBrand ? (
             <div
               className="inline-flex shrink-0 rounded-full border border-forest/10 bg-mint/40 p-0.5"
               role="group"
@@ -278,6 +303,13 @@ export function SofortPanel({
               })}
             </div>
           ) : null}
+          {sheet ? (
+            <ChevronDown
+              size={18}
+              className={`text-forest/40 transition ${sheetOpen ? "rotate-180" : ""}`}
+            />
+          ) : null}
+          </div>
         </div>
         <div className="mt-2.5 flex flex-wrap gap-1.5">
           <HintStat
@@ -308,6 +340,7 @@ export function SofortPanel({
         </div>
       </div>
 
+      {showBody ? (
       <div className="min-h-0 flex-1 overflow-y-auto px-4 py-3">
         {/* Material groups — unchanged structure below */}
         <div className="space-y-2">
@@ -412,6 +445,7 @@ export function SofortPanel({
           })}
         </div>
       </div>
+      ) : null}
 
       <div className="border-t border-forest/8 bg-mint/40 px-4 py-3">
         <div className="flex items-baseline justify-between">
