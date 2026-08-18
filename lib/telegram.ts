@@ -47,19 +47,24 @@ export async function sendTelegramLead(lead: TelegramLead): Promise<boolean> {
     .filter(Boolean)
     .join("\n");
 
-  const res = await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      chat_id: chatId,
-      text: text.slice(0, 3900),
-    }),
-  });
+  try {
+    const res = await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        chat_id: chatId,
+        text: text.slice(0, 3900),
+      }),
+    });
 
-  if (!res.ok) {
-    const body = await res.text().catch(() => "");
-    console.error("[telegram] send failed", res.status, body.slice(0, 300));
+    if (!res.ok) {
+      const body = await res.text().catch(() => "");
+      console.error("[telegram] send failed", res.status, body.slice(0, 300));
+      return false;
+    }
+    return true;
+  } catch (err) {
+    console.error("[telegram] network error", err);
     return false;
   }
-  return true;
 }

@@ -11,12 +11,11 @@ import {
   LandPlot,
   Loader2,
   Percent,
-  X,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import type { FixtureKind, PlotFixture } from "@/lib/mapbox";
 import { type BomLine, type SofortPlan } from "@/lib/planner";
-import { siteDatenschutzUrl } from "@/lib/consent";
+import { PdfLeadDialog } from "@/components/konfigurator/PdfLeadDialog";
 
 type Props = {
   plan: SofortPlan;
@@ -133,10 +132,6 @@ export function SofortPanel({
     () => new Set(presentGroups.slice(0, 1)),
   );
   const [emailOpen, setEmailOpen] = useState(false);
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [phone, setPhone] = useState("");
-  const [privacy, setPrivacy] = useState(false);
   const [leadDone, setLeadDone] = useState(false);
   const [busy, setBusy] = useState<"email" | "pdf" | null>(null);
   const [flash, setFlash] = useState<string | null>(null);
@@ -190,20 +185,19 @@ export function SofortPanel({
     }
   }
 
-  async function handleLeadThenPdf(e: React.FormEvent) {
-    e.preventDefault();
+  async function handleLeadThenPdf(data: {
+    name: string;
+    email: string;
+    phone?: string;
+  }) {
     if (!onSubmitEmail || !onDownloadPdf) return;
-    if (!privacy) {
-      setErr("Bitte die Datenschutzerklärung bestätigen.");
-      return;
-    }
     setBusy("pdf");
     setErr(null);
     try {
       await onSubmitEmail({
-        name: name.trim(),
-        email: email.trim(),
-        phone: phone.trim() || undefined,
+        name: data.name,
+        email: data.email,
+        phone: data.phone,
         privacyAccepted: true,
       });
       await onDownloadPdf();
@@ -464,107 +458,17 @@ export function SofortPanel({
         )}
       </div>
 
-      {emailOpen ? (
-        <div className="absolute inset-0 z-20 flex items-end justify-center bg-forest/40 p-3 sm:items-center">
-          <form
-            onSubmit={(e) => void handleLeadThenPdf(e)}
-            className="w-full max-w-sm rounded-2xl border border-forest/10 bg-white p-4 shadow-lg"
-          >
-            <div className="mb-3 flex items-start justify-between gap-2">
-              <div>
-                <h3 className="text-sm font-bold text-forest">
-                  PDF kostenlos
-                </h3>
-                <p className="mt-1 text-[11px] leading-snug text-forest/50">
-                  Kurz Kontaktdaten — danach steht der Plan zum Download bereit.
-                </p>
-              </div>
-              <button
-                type="button"
-                onClick={() => setEmailOpen(false)}
-                className="rounded-lg p-1 text-forest/40 hover:bg-mint"
-              >
-                <X size={16} />
-              </button>
-            </div>
-            <label className="block text-[11px] font-medium text-forest/60">
-              Name
-              <input
-                required
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                className="mt-1 w-full rounded-xl border border-forest/15 px-3 py-2 text-sm text-forest outline-none focus:border-aqua-deep"
-                autoComplete="name"
-              />
-            </label>
-            <label className="mt-2 block text-[11px] font-medium text-forest/60">
-              E-Mail
-              <input
-                type="email"
-                required
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                className="mt-1 w-full rounded-xl border border-forest/15 px-3 py-2 text-sm text-forest outline-none focus:border-aqua-deep"
-                autoComplete="email"
-              />
-            </label>
-            <label className="mt-2 block text-[11px] font-medium text-forest/60">
-              Telefon
-              <input
-                type="tel"
-                value={phone}
-                onChange={(e) => setPhone(e.target.value)}
-                className="mt-1 w-full rounded-xl border border-forest/15 px-3 py-2 text-sm text-forest outline-none focus:border-aqua-deep"
-                autoComplete="tel"
-              />
-            </label>
-            <label className="mt-3 flex items-start gap-2.5 text-[10px] leading-snug text-forest/65">
-              <input
-                type="checkbox"
-                required
-                checked={privacy}
-                onChange={(e) => setPrivacy(e.target.checked)}
-                className="mt-0.5 h-3.5 w-3.5 shrink-0 accent-aqua-deep"
-              />
-              <span>
-                Ich willige ein, dass RegnerWerk meine Angaben (Name, E-Mail,
-                ggf. Telefon, Adresse und Plandaten) zur Bearbeitung dieser
-                Anfrage und zur Kontaktaufnahme per E-Mail, Telefon oder
-                Nachricht verarbeitet. Die Kontaktaufnahme kann durch
-                Mitarbeitende <em>oder KI-gestützte Systeme</em> erfolgen
-                (Rückruf, Entgegennahme von Anrufen, Gesprächsführung). Der
-                PDF-Download begründet keinen Vertrag. Die Einwilligung ist
-                freiwillig und jederzeit mit Wirkung für die Zukunft widerrufbar
-                (z.&nbsp;B. an hallo@regnerwerk.de). Details:{" "}
-                <a
-                  href={siteDatenschutzUrl()}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="font-semibold text-aqua-deep underline"
-                >
-                  Datenschutzerklärung
-                </a>
-                .
-              </span>
-            </label>
-            {err ? (
-              <p className="mt-2 text-[11px] text-red-600">{err}</p>
-            ) : null}
-            <button
-              type="submit"
-              disabled={busy === "pdf" || !privacy}
-              className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-forest px-3 py-2.5 text-xs font-semibold text-white disabled:opacity-50"
-            >
-              {busy === "pdf" ? (
-                <Loader2 size={14} className="animate-spin" />
-              ) : (
-                <Download size={14} className="text-lime" />
-              )}
-              Senden und PDF laden
-            </button>
-          </form>
-        </div>
-      ) : null}
+      <PdfLeadDialog
+        open={emailOpen}
+        busy={busy === "pdf"}
+        error={emailOpen ? err : null}
+        onCancel={() => {
+          if (busy === "pdf") return;
+          setEmailOpen(false);
+          setErr(null);
+        }}
+        onSubmit={handleLeadThenPdf}
+      />
     </div>
   );
 }

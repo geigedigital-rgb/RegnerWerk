@@ -2189,9 +2189,7 @@ export function PlotMap({
               const leadBody = (await leadRes.json().catch(() => null)) as {
                 error?: string;
               } | null;
-              if (!leadRes.ok) {
-                throw new Error(leadBody?.error || "Senden fehlgeschlagen");
-              }
+              const leadOk = leadRes.ok;
               const local =
                 loadProject(place.id) ??
                 ({
@@ -2214,6 +2212,7 @@ export function PlotMap({
               if (!payload.sofortPlan) {
                 throw new Error("Kein Sofort-Plan vorhanden");
               }
+              let crmOk = false;
               try {
                 const res = await submitProject({
                   payload,
@@ -2222,8 +2221,12 @@ export function PlotMap({
                   projectId: serverProjectId ?? undefined,
                 });
                 setServerProjectId(res.id);
+                crmOk = true;
               } catch {
-                /* CRM optional — Telegram already accepted the lead */
+                /* CRM project save is optional if Telegram / public lead already landed */
+              }
+              if (!leadOk && !crmOk) {
+                throw new Error(leadBody?.error || "Senden fehlgeschlagen");
               }
             }}
             onDownloadPdf={async () => {
