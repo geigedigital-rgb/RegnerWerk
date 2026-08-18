@@ -1138,11 +1138,6 @@ export function PlotMap({
     setPlotStage("ergebnis");
   }
 
-  function finishSofortCalc() {
-    runSofortBerechnung(pendingBrandRef.current);
-    setCalcMode(null);
-  }
-
   function changeSofortBrand(brand: SprinklerBrand) {
     if (calcMode) return;
     if (brand === (sofortPlan?.brand ?? DEFAULT_BRAND)) return;
@@ -1150,6 +1145,30 @@ export function PlotMap({
     setPendingBrand(brand);
     setCalcMode("brand");
   }
+
+  useEffect(() => {
+    if (!calcMode) return;
+    let cancelled = false;
+    const minMs = calcMode === "brand" ? 900 : 1600;
+    const started = performance.now();
+    let hideTimer = 0;
+    const paint = window.setTimeout(() => {
+      runSofortBerechnung(pendingBrandRef.current);
+      const rest = Math.max(320, minMs - (performance.now() - started));
+      hideTimer = window.setTimeout(() => {
+        requestAnimationFrame(() => {
+          requestAnimationFrame(() => {
+            if (!cancelled) setCalcMode(null);
+          });
+        });
+      }, rest);
+    }, 40);
+    return () => {
+      cancelled = true;
+      window.clearTimeout(paint);
+      window.clearTimeout(hideTimer);
+    };
+  }, [calcMode]);
 
   function handlePlanChoice(choice: PlanChoice) {
     setPlanChoiceOpen(false);
@@ -1991,7 +2010,13 @@ export function PlotMap({
       />
 
       {calcMode === "full" ? (
-        <SofortCalcLoader mode="full" onFinished={finishSofortCalc} />
+        <SofortCalcLoader mode="full" />
+      ) : null}
+      {calcMode === "brand" ? (
+        <div
+          className="pointer-events-none absolute inset-0 z-[44] bg-white/35 backdrop-blur-[1px]"
+          aria-hidden
+        />
       ) : null}
 
       {resetConfirmOpen ? (
@@ -2263,7 +2288,6 @@ export function PlotMap({
               <SofortCalcLoader
                 mode="brand"
                 brandLabel={pendingBrand === "rainbird" ? "Rain Bird" : "Hunter"}
-                onFinished={finishSofortCalc}
               />
             ) : null}
           </div>

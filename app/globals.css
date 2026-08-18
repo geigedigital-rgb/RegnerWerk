@@ -118,6 +118,18 @@ body {
   animation: marquee 28s linear infinite;
 }
 
+@keyframes rw-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.rw-spin {
+  transform-box: view-box;
+  transform-origin: 24px 24px;
+  animation: rw-spin 0.9s linear infinite;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -125,7 +137,8 @@ body {
 
   .animate-float-soft,
   .animate-float-soft-delayed,
-  .animate-marquee {
+  .animate-marquee,
+  .rw-spin {
     animation: none;
   }
 }

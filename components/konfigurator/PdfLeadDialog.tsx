@@ -2,7 +2,7 @@
 
 import { useEffect, useId, useRef, useState } from "react";
 import { createPortal } from "react-dom";
-import { Download, FileDown, Loader2, X } from "lucide-react";
+import { Download, Loader2, X } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { siteDatenschutzUrl } from "@/lib/consent";
 
@@ -21,7 +21,7 @@ type Props = {
 };
 
 const fieldClass =
-  "mt-1.5 w-full rounded-2xl border border-white bg-white px-4 py-3.5 text-sm text-forest shadow-soft outline-none placeholder:text-gray-400 focus-visible:ring-2 focus-visible:ring-lime/40";
+  "mt-1 w-full rounded-xl border border-white bg-white px-3.5 py-2.5 text-sm text-forest shadow-soft outline-none placeholder:text-gray-400 focus-visible:ring-2 focus-visible:ring-lime/40";
 
 export function PdfLeadDialog({
   open,
@@ -96,35 +96,31 @@ export function PdfLeadDialog({
         aria-modal="true"
         aria-labelledby={titleId}
         onSubmit={(e) => void handleSubmit(e)}
-        className="relative max-h-[min(92svh,42rem)] w-full max-w-md overflow-y-auto rounded-[1.75rem] bg-[#eef2f6] p-6 shadow-soft sm:p-8"
+        className="relative w-full max-w-[22rem] overflow-hidden rounded-[1.5rem] bg-[#eef2f6] p-5 shadow-soft"
         onMouseDown={(e) => e.stopPropagation()}
       >
         <button
           type="button"
           onClick={onCancel}
           disabled={busy}
-          className="absolute right-4 top-4 flex h-9 w-9 items-center justify-center rounded-full bg-white text-forest/50 shadow-soft hover:text-forest disabled:opacity-40"
+          className="absolute right-3 top-3 flex h-8 w-8 items-center justify-center rounded-full bg-white text-forest/50 shadow-soft hover:text-forest disabled:opacity-40"
           aria-label="Schließen"
         >
-          <X size={18} />
+          <X size={16} />
         </button>
 
-        <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-mint text-aqua-deep">
-          <FileDown size={24} strokeWidth={2} />
-        </span>
         <h2
           id={titleId}
-          className="mt-4 pr-10 text-2xl font-bold tracking-tight text-forest"
+          className="pr-9 text-lg font-bold tracking-tight text-forest"
         >
           Plan als PDF
         </h2>
-        <p className="mt-2 text-sm leading-relaxed text-gray-600">
-          Kurz Name und E-Mail — dann startet der Download. Unverbindlich und
-          kostenlos.
+        <p className="mt-1 text-sm leading-snug text-gray-600">
+          Name und E-Mail — dann startet der Download. Unverbindlich.
         </p>
 
-        <div className="mt-6 space-y-3.5">
-          <label className="block text-sm font-semibold text-forest">
+        <div className="mt-4 space-y-2.5">
+          <label className="block text-[0.8125rem] font-semibold text-forest">
             Name
             <input
               ref={nameRef}
@@ -136,7 +132,7 @@ export function PdfLeadDialog({
               placeholder="Vor- und Nachname"
             />
           </label>
-          <label className="block text-sm font-semibold text-forest">
+          <label className="block text-[0.8125rem] font-semibold text-forest">
             E-Mail
             <input
               type="email"
@@ -148,7 +144,7 @@ export function PdfLeadDialog({
               placeholder="name@email.de"
             />
           </label>
-          <label className="block text-sm font-semibold text-forest">
+          <label className="block text-[0.8125rem] font-semibold text-forest">
             Telefon{" "}
             <span className="font-medium text-forest/40">(optional)</span>
             <input
@@ -162,7 +158,7 @@ export function PdfLeadDialog({
           </label>
         </div>
 
-        <label className="mt-5 flex cursor-pointer items-start gap-3 rounded-2xl bg-white p-4">
+        <label className="mt-3.5 flex cursor-pointer items-start gap-2.5 rounded-xl bg-white px-3 py-2.5">
           <input
             type="checkbox"
             required
@@ -173,34 +169,32 @@ export function PdfLeadDialog({
             }}
             className="mt-0.5 h-4 w-4 shrink-0 accent-aqua-deep"
           />
-          <span className="text-sm font-medium leading-snug text-forest">
-            Ich willige in die Verarbeitung meiner Angaben zur Anfrage und
-            Kontaktaufnahme ein.
+          <span className="text-[0.8125rem] font-medium leading-snug text-forest">
+            Ich willige in die Verarbeitung zur Anfrage und Kontaktaufnahme ein.
           </span>
         </label>
-        <p className="mt-2 px-1 text-xs leading-relaxed text-forest/50">
-          Kontakt auch durch Mitarbeitende oder KI-gestützte Systeme möglich.
-          Der Download begründet keinen Vertrag. Widerruf jederzeit, z.&nbsp;B.
-          an hallo@regnerwerk.de.{" "}
+        <p className="mt-1.5 px-0.5 text-[11px] leading-snug text-forest/50">
+          Kontakt auch durch Mitarbeitende oder KI-Systeme. Kein Vertrag.
+          Widerruf: hallo@regnerwerk.de.{" "}
           <a
             href={siteDatenschutzUrl()}
             target="_blank"
             rel="noopener noreferrer"
             className="font-semibold text-aqua-deep underline-offset-2 hover:underline"
           >
-            Datenschutzerklärung
+            Datenschutz
           </a>
         </p>
 
         {shownErr ? (
-          <p className="mt-3 text-sm font-medium text-red-600">{shownErr}</p>
+          <p className="mt-2 text-sm font-medium text-red-600">{shownErr}</p>
         ) : null}
 
         <Button
           type="submit"
           variant="primary"
           disabled={busy || !privacy}
-          className="mt-6 w-full !shadow-none disabled:opacity-50"
+          className="mt-4 w-full !shadow-none disabled:opacity-50"
         >
           {busy ? (
             <Loader2 size={18} className="animate-spin" />
