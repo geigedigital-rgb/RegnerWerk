@@ -49,3 +49,9 @@ next-env.d.ts
 
 # local screenshots
 *.png
+!app/icon.png
+!app/apple-icon.png
+!public/favicon-32.png
+!public/apple-touch-icon.png
+!public/icon-192.png
+!public/icon-512.png
