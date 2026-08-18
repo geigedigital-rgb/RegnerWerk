@@ -6,10 +6,32 @@ export const dynamic = "force-dynamic";
 
 type Ctx = { params: Promise<{ path: string[] }> };
 
+const PROXY_MS = 20_000;
+
 async function proxy(req: Request, path: string[]): Promise<NextResponse> {
   const backend = getBackendUrl();
+  if (!backend) {
+    return NextResponse.json(
+      { error: "Backend nicht konfiguriert (BACKEND_URL)." },
+      { status: 503 },
+    );
+  }
+
   const search = new URL(req.url).search;
   const target = `${backend}/api/projects/${path.map(encodeURIComponent).join("/")}${search}`;
+
+  try {
+    if (new URL(target).host === new URL(req.url).host) {
+      console.error("[projects-proxy] refused self loop", target);
+      return NextResponse.json(
+        { error: "Backend zeigt auf diesen Dienst." },
+        { status: 503 },
+      );
+    }
+  } catch {
+    return NextResponse.json({ error: "Ungültige Backend-URL." }, { status: 503 });
+  }
+
   const method = req.method.toUpperCase();
   const headers = backendForwardHeaders(req);
 
@@ -24,6 +46,7 @@ async function proxy(req: Request, path: string[]): Promise<NextResponse> {
       method,
       headers,
       body,
+      signal: AbortSignal.timeout(PROXY_MS),
     });
   } catch (err) {
     console.error("[projects-proxy] unreachable", target, err);

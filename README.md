@@ -23,9 +23,10 @@ Variables (build + runtime; `NEXT_PUBLIC_*` must be set before build):
 | Variable | Notes |
 |----------|--------|
 | `NEXT_PUBLIC_MAPBOX_TOKEN` | Mapbox public token |
-| `NEXT_PUBLIC_API_URL` | Admin/API base (projects submit) |
-| `NEXT_PUBLIC_SITE_URL` | Marketing site URL (Beratung CTAs) |
-| `NEXT_PUBLIC_PROJECTS_SUBMIT_TOKEN` | Optional, if backend requires it |
+| `BACKEND_URL` | Admin backend (CRM / projects). **Not** the configurator URL |
+| `NEXT_PUBLIC_SITE_URL` | Marketing site URL (Beratung CTAs + lead fallback) |
+| `TELEGRAM_BOT_TOKEN` / `TELEGRAM_CHAT_ID` | Optional if CRM or site fallback works |
+| `PROJECTS_SUBMIT_TOKEN` | Optional, if backend requires it |
 
 Entry: `/konfigurator` · healthcheck: `/konfigurator`
 

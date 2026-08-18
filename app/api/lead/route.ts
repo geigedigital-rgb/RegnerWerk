@@ -2,7 +2,7 @@ import { randomUUID } from "node:crypto";
 import { NextResponse } from "next/server";
 import { sendTelegramLead } from "@/lib/telegram";
 import { PRIVACY_NOTICE_VERSION } from "@/lib/consent";
-import { getBackendUrl } from "@/lib/backend";
+import { getBackendUrl, siteLeadBases } from "@/lib/backend";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -56,6 +56,7 @@ async function forwardToCrm(input: {
     const res = await fetch(`${base}/api/public/leads`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
+      signal: AbortSignal.timeout(8000),
       body: JSON.stringify({
         submission_id: randomUUID(),
         form_type: "contact",
@@ -83,6 +84,55 @@ async function forwardToCrm(input: {
     console.error("[lead] CRM unreachable", err);
     return false;
   }
+}
+
+async function forwardToSite(input: {
+  name: string;
+  email: string;
+  phone: string;
+  placeName: string;
+  brand: string;
+  lawnAreaM2: number | null;
+  heads: number | null;
+  totalEur: number | null;
+}): Promise<boolean> {
+  const summary = [
+    "Konfigurator · Sofort-Plan",
+    input.placeName || null,
+    input.lawnAreaM2 != null ? `${Math.round(input.lawnAreaM2)} m²` : null,
+    input.heads != null ? `${input.heads} Regner` : null,
+    input.brand || null,
+    input.totalEur != null ? `ab ${Math.round(input.totalEur)} €` : null,
+  ]
+    .filter(Boolean)
+    .join(" · ");
+
+  for (const base of siteLeadBases()) {
+    for (const path of ["/api/projekt-anfrage/", "/api/contact/"]) {
+      try {
+        const res = await fetch(`${base}${path}`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          signal: AbortSignal.timeout(8000),
+          body: JSON.stringify({
+            name: input.name,
+            email: input.email,
+            phone: input.phone || "",
+            message: summary,
+            gardenType: input.brand ? `Sofort · ${input.brand}` : "Sofort-Plan",
+            privacyAccepted: true,
+            landing_page: "/konfigurator",
+          }),
+        });
+        if (res.ok) return true;
+        const data = await res.text().catch(() => "");
+        console.error("[lead] site forward failed", base, path, res.status, data.slice(0, 200));
+      } catch (err) {
+        console.error("[lead] site unreachable", base, path, err);
+      }
+    }
+  }
+  return false;
 }
 
 export async function POST(req: Request) {
@@ -146,7 +196,21 @@ export async function POST(req: Request) {
     totalEur,
   });
 
-  if (!telegramOk && !crmOk) {
+  const siteOk =
+    telegramOk || crmOk
+      ? false
+      : await forwardToSite({
+          name,
+          email,
+          phone,
+          placeName,
+          brand,
+          lawnAreaM2,
+          heads,
+          totalEur,
+        });
+
+  if (!telegramOk && !crmOk && !siteOk) {
     return NextResponse.json(
       { error: "Senden fehlgeschlagen. Bitte später erneut." },
       { status: 503 },
@@ -157,5 +221,6 @@ export async function POST(req: Request) {
     ok: true,
     telegram: telegramOk,
     crm: crmOk,
+    site: siteOk,
   });
 }
