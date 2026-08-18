@@ -9,3 +9,14 @@ export function getBackendUrl(): string {
     "http://localhost:3001"
   ).replace(/\/$/, "");
 }
+
+export function backendForwardHeaders(req?: Request): Headers {
+  const headers = new Headers();
+  const contentType = req?.headers.get("content-type");
+  if (contentType) headers.set("Content-Type", contentType);
+  const token =
+    process.env.PROJECTS_SUBMIT_TOKEN?.trim() ||
+    process.env.NEXT_PUBLIC_PROJECTS_SUBMIT_TOKEN?.trim();
+  if (token) headers.set("X-Projects-Token", token);
+  return headers;
+}

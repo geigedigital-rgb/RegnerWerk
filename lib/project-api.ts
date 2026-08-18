@@ -1,8 +1,10 @@
 import type { SavedPlotProject } from "@/lib/project-storage";
 
-const API_URL = (
-  process.env.NEXT_PUBLIC_API_URL || "http://localhost:3001"
-).replace(/\/$/, "");
+/**
+ * Browser talks to this app only. Server routes proxy to the admin backend
+ * so CORS on Railway cannot block submit / PDF.
+ */
+const API_URL = "";
 
 export type ServerProject = {
   id: string;
@@ -18,12 +20,7 @@ export type ServerProject = {
 };
 
 function headers(): HeadersInit {
-  const h: Record<string, string> = {
-    "Content-Type": "application/json",
-  };
-  const token = process.env.NEXT_PUBLIC_PROJECTS_SUBMIT_TOKEN;
-  if (token) h["X-Projects-Token"] = token;
-  return h;
+  return { "Content-Type": "application/json" };
 }
 
 export async function fetchServerProject(

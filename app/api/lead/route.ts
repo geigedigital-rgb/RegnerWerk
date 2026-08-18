@@ -58,7 +58,7 @@ async function forwardToCrm(input: {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         submission_id: randomUUID(),
-        form_type: "calculator",
+        form_type: "contact",
         request_type: "new_installation",
         name: input.name,
         email: input.email,
