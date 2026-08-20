@@ -1,4 +1,5 @@
 import type { SavedPlotProject } from "@/lib/project-storage";
+import { getCalcHistory } from "@/lib/planner/calcLog";
 
 /**
  * Browser talks to this app only. Server routes proxy to the admin backend
@@ -47,6 +48,7 @@ export async function submitProject(opts: {
         ...opts.payload,
         sofortPlan: opts.payload.sofortPlan,
         plotStage: "ergebnis",
+        calcHistory: getCalcHistory(),
       },
       customerEmail: opts.customerEmail || "",
       customerName: opts.customerName || "",

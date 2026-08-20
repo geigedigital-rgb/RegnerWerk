@@ -6,6 +6,10 @@ import {
   primaryNozzleOrder,
   sideStripKey,
   smallNozzleKey,
+  AUTO_LAYOUT_ROTORS_ENABLED,
+  nozzleOrderForArc,
+  sprayConfigKey,
+  largestSprayFamilySpec,
   type BrandEmitters,
   type SprinklerBrand,
 } from "../catalog";
@@ -27,10 +31,14 @@ import {
   polygonAreaM2Local,
   sectorClearanceM,
   narrowFraction,
+  localWidthM,
+  sampleLocalWidths,
+  percentile,
 } from "./geometry";
 import type { PtM, SprinklerHead } from "../types";
 import {
   DESIGN_PRESSURE_BAR,
+  familyEffectiveThrowM,
   resolveSprayAtPressure,
   rotorPerformance,
   interpolatePerformance,
@@ -46,6 +54,8 @@ type LocalHead = {
   stripKey?: string;
   stripWidthM?: number;
   stripLengthM?: number;
+  /** Spray-axis span (corridor width), when localWidthM at edge is misleading. */
+  spanWidthM?: number;
 };
 
 type Family = {
@@ -123,18 +133,21 @@ function rotorNozzleFor(
   return opt ? String(opt.nozzle) : "2.0";
 }
 
-/** Official manufacturer ranges — never invent outside them. */
+/** Official manufacturer ranges — prefer practical throw at design pressure. */
 function pickFamilyForNeed(
   needM: number,
   brand: SprinklerBrand,
   emitters: BrandEmitters,
+  arcDeg = 180,
 ): Family {
   const n = emitters.sprayHead.nozzles;
-  const order = primaryNozzleOrder(brand);
+  const order = nozzleOrderForArc(brand, arcDeg);
   for (const key of order) {
     const spec = n[key];
     if (!spec) continue;
-    if (needM >= spec.radiusMinM && needM <= spec.radiusMaxM) {
+    const throwMax =
+      familyEffectiveThrowM(brand, key, arcDeg) ?? spec.radiusMaxM;
+    if (needM >= spec.radiusMinM - 0.3 && needM <= throwMax + 0.15) {
       return {
         kind: "spray",
         familyKey: key,
@@ -171,7 +184,12 @@ function pickFamilyForNeed(
   }
   const lastKey = [...order].reverse().find((k) => n[k]) ?? order[0];
   const last = n[lastKey];
-  if (last && needM <= last.radiusMaxM) {
+  const lastThrow =
+    (last &&
+      (familyEffectiveThrowM(brand, lastKey, arcDeg) ?? last.radiusMaxM)) ??
+    0;
+  // Accept the largest spray family when need fits practical throw (+ buffer).
+  if (last && needM <= lastThrow + 1.0) {
     return {
       kind: "spray",
       familyKey: lastKey,
@@ -180,6 +198,80 @@ function pickFamilyForNeed(
       arcMinDeg: last.arcMinDeg,
       arcMaxDeg: last.arcMaxDeg,
     };
+  }
+  if (!AUTO_LAYOUT_ROTORS_ENABLED) {
+    const fb = largestSprayFamilySpec(brand, emitters, arcDeg);
+    if (fb) {
+      return {
+        kind: "spray",
+        familyKey: fb.key.replace(/-360$/, ""),
+        radiusMinM: fb.spec.radiusMinM,
+        radiusMaxM: fb.spec.radiusMaxM,
+        arcMinDeg: fb.spec.arcMinDeg,
+        arcMaxDeg: arcDeg >= 315 ? 360 : fb.spec.arcMaxDeg,
+      };
+    }
+  }
+  const rotorKey = brand === "hunter" ? "I-20" : "3504";
+  return {
+    kind: "rotor",
+    familyKey: rotorKey,
+    radiusMinM: emitters.rotor.radiusMinM,
+    radiusMaxM: Math.min(emitters.rotor.radiusMaxM, 9.5),
+    arcMinDeg: emitters.rotor.arcMinDeg,
+    arcMaxDeg: emitters.rotor.arcMaxDeg,
+  };
+}
+
+/** Smallest spray family whose practical throw ≥ minThrowM. */
+function pickFamilyForMinThrow(
+  minThrowM: number,
+  brand: SprinklerBrand,
+  emitters: BrandEmitters,
+  arcDeg = 180,
+): Family {
+  const n = emitters.sprayHead.nozzles;
+  const order = nozzleOrderForArc(brand, arcDeg);
+  for (const key of order) {
+    const spec = n[key];
+    if (!spec) continue;
+    const throwM =
+      familyEffectiveThrowM(brand, key, arcDeg) ?? spec.radiusMaxM;
+    if (throwM + 0.1 >= minThrowM) {
+      return {
+        kind: "spray",
+        familyKey: key,
+        radiusMinM: spec.radiusMinM,
+        radiusMaxM: spec.radiusMaxM,
+        arcMinDeg: spec.arcMinDeg,
+        arcMaxDeg: spec.arcMaxDeg,
+      };
+    }
+  }
+  const lastKey = [...order].reverse().find((k) => n[k]) ?? order[0];
+  const last = n[lastKey];
+  if (last) {
+    return {
+      kind: "spray",
+      familyKey: lastKey.replace(/-360$/, ""),
+      radiusMinM: last.radiusMinM,
+      radiusMaxM: last.radiusMaxM,
+      arcMinDeg: last.arcMinDeg,
+      arcMaxDeg: arcDeg >= 315 ? 360 : last.arcMaxDeg,
+    };
+  }
+  if (!AUTO_LAYOUT_ROTORS_ENABLED) {
+    const fb = largestSprayFamilySpec(brand, emitters, arcDeg);
+    if (fb) {
+      return {
+        kind: "spray",
+        familyKey: fb.key.replace(/-360$/, ""),
+        radiusMinM: fb.spec.radiusMinM,
+        radiusMaxM: fb.spec.radiusMaxM,
+        arcMinDeg: fb.spec.arcMinDeg,
+        arcMaxDeg: arcDeg >= 315 ? 360 : fb.spec.arcMaxDeg,
+      };
+    }
   }
   const rotorKey = brand === "hunter" ? "I-20" : "3504";
   return {
@@ -214,10 +306,10 @@ function cornerAim(
 ): { arcDeg: number; rotationDeg: number } {
   const measured = lawnFacingSector(pt, ring, obstacles, 0.85);
   if (measured && measured.arcDeg >= 40) {
-    // Slight shrink for large openings so edge rays stay inside the polygon
     const pad = measured.arcDeg >= 160 ? -4 : measured.arcDeg >= 120 ? -2 : 0;
+    const adjusted = measured.arcDeg + pad;
     return {
-      arcDeg: Math.min(270, Math.max(45, measured.arcDeg + pad)),
+      arcDeg: capPerimeterArc(adjusted),
       rotationDeg: measured.rotationDeg,
     };
   }
@@ -255,9 +347,35 @@ function cornerAim(
     }
   }
   return {
-    arcDeg: Math.min(270, Math.max(45, bestArc)),
+    arcDeg: capPerimeterArc(bestArc),
     rotationDeg: bestMid,
   };
+}
+
+/** Smaller angle between two compass bearings (0–180°). */
+function angleBetweenCompass(a: number, b: number): number {
+  return Math.abs(((b - a + 540) % 360) - 180);
+}
+
+/**
+ * Aim at a convex building corner so the sector wraps the lawn around the house.
+ * Façade normals span the small exterior tip wedge (= building interior angle for
+ * a rectangle ≈ 90°). Lawn occupies the complement → arc ≈ 360° − wedge (270°),
+ * mid = exterior bisector. Sector flanks then lie along the two walls.
+ */
+function buildingCornerAim(
+  bldg: PtM[],
+  vertexIdx: number,
+): { arcDeg: number; rotationDeg: number } {
+  const n = bldg.length;
+  const nPrev = outwardNormalDeg(bldg, (vertexIdx - 1 + n) % n);
+  const nNext = outwardNormalDeg(bldg, vertexIdx);
+  const rotationDeg = averageCompassDeg(nPrev, nNext);
+  const façadeWedge = angleBetweenCompass(nPrev, nNext);
+  const wrapArc = 360 - façadeWedge;
+  // Keep flanks on the walls: never shrink to the tip wedge (90°).
+  const arcDeg = Math.max(180, Math.min(270, Math.round(wrapArc / 5) * 5));
+  return { arcDeg, rotationDeg };
 }
 
 /** Edge / façade: measured lawn-facing arc, hard-capped at 180° (no 195° inflate). */
@@ -272,6 +390,305 @@ function edgeArcDeg(
 
 function mountInset(nearBuilding: boolean): number {
   return nearBuilding ? BUILDING_MOUNT_M : EDGE_EPS_M;
+}
+
+/** algo4 §7.3: equal spacing along edge including endpoints. */
+function distributeChainPoints(
+  a: PtM,
+  b: PtM,
+  maxSpacingM: number,
+  startInset = 0,
+  endInset = 0,
+): PtM[] {
+  const L = dist(a, b);
+  const usable = Math.max(0, L - startInset - endInset);
+  if (usable < 0.12) return [a, b].filter((_, i) => (i === 0 ? startInset <= 0.05 : endInset <= 0.05));
+  const intervalCount = Math.max(1, Math.ceil(usable / maxSpacingM));
+  const step = usable / intervalCount;
+  const out: PtM[] = [];
+  for (let k = 0; k <= intervalCount; k++) {
+    const d = startInset + k * step;
+    const t = L > 0 ? Math.min(1, d / L) : 0;
+    out.push({ x: a.x + (b.x - a.x) * t, y: a.y + (b.y - a.y) * t });
+  }
+  return out;
+}
+
+/** Mid-edge points only (legacy helper). */
+function distributeEdgePoints(a: PtM, b: PtM, spacingM: number): PtM[] {
+  const chain = distributeChainPoints(a, b, spacingM);
+  if (chain.length <= 2) return [];
+  return chain.slice(1, -1);
+}
+
+function isCorridorSpan(spanM: number): boolean {
+  return spanM >= 2.8 && spanM < 9.5;
+}
+
+function corridorThrowNeed(spanM: number): number {
+  return Math.max(4.2, Math.min(spanM * 0.55, 9.2));
+}
+
+function pushCorridorPair(
+  onFacade: PtM,
+  outwardDeg: number,
+  ring: PtM[],
+  obstacles: PtM[][],
+  tryPush: (h: LocalHead, minSep?: number) => boolean,
+  tooClose: (pt: PtM, minSep?: number) => boolean,
+  minSep: number,
+): void {
+  const ptIn = offsetPoint(onFacade, outwardDeg, BUILDING_MOUNT_M);
+  const aimIn = corridorRowAim(outwardDeg, "building");
+  const spanIn = rayWidthM(ptIn, aimIn.rotationDeg, ring, obstacles);
+  tryPush({
+    pt: ptIn,
+    arcDeg: aimIn.arcDeg,
+    rotationDeg: aimIn.rotationDeg,
+    priority: 2,
+    spanWidthM: spanIn,
+  });
+  const ptOut = outerCorridorPoint(onFacade, outwardDeg, ring, obstacles);
+  if (ptOut && !tooClose(ptOut, minSep * 0.42)) {
+    const aimOut = corridorRowAim(outwardDeg, "outer");
+    const spanOut = rayWidthM(ptOut, aimOut.rotationDeg, ring, obstacles);
+    tryPush({
+      pt: ptOut,
+      arcDeg: aimOut.arcDeg,
+      rotationDeg: aimOut.rotationDeg,
+      priority: 1,
+      spanWidthM: spanOut,
+    });
+  }
+}
+
+/** Distance along bearing until lawn/obstacle boundary (true corridor span). */
+function rayWidthM(
+  origin: PtM,
+  bearingDeg: number,
+  ring: PtM[],
+  obstacles: PtM[][],
+): number {
+  for (let d = 0.12; d < 26; d += 0.06) {
+    const p = offsetPoint(origin, bearingDeg, d);
+    if (!pointInPolygon(p, ring)) return Math.max(0.15, d - 0.08);
+    if (obstacles.some((o) => pointInPolygon(p, o))) return Math.max(0.15, d - 0.08);
+  }
+  return 26;
+}
+
+function headSpanWidth(
+  h: LocalHead,
+  ring: PtM[],
+  obstacles: PtM[][],
+): number {
+  if (h.spanWidthM != null && h.spanWidthM > 0) return h.spanWidthM;
+  if (h.arcDeg >= 315) return localWidthM(h.pt, ring);
+  const rayW = rayWidthM(h.pt, h.rotationDeg, ring, obstacles);
+  if (rayW >= 2.5 && rayW < 12) return rayW;
+  return localWidthM(h.pt, ring);
+}
+
+/** Head-to-head spacing from span at a point. */
+function spacingAtPoint(
+  pt: PtM,
+  ring: PtM[],
+  obstacles: PtM[][],
+  brand: SprinklerBrand,
+  emitters: BrandEmitters,
+  bearingDeg?: number,
+): number {
+  const span =
+    bearingDeg != null
+      ? rayWidthM(pt, bearingDeg, ring, obstacles)
+      : localWidthM(pt, ring);
+  const isCorridor = isCorridorSpan(span);
+  const minThrow = Math.max(2.4, span * (isCorridor ? 0.55 : 0.48));
+  const fam = pickFamilyForMinThrow(minThrow, brand, emitters, 180);
+  return (
+    familyEffectiveThrowM(brand, fam.familyKey, 180) ?? fam.radiusMaxM
+  );
+}
+
+function spacingAlongEdge(
+  a: PtM,
+  b: PtM,
+  ring: PtM[],
+  obstacles: PtM[][],
+  brand: SprinklerBrand,
+  emitters: BrandEmitters,
+  bearingDeg?: number,
+): number {
+  const mid = { x: (a.x + b.x) / 2, y: (a.y + b.y) / 2 };
+  return spacingAtPoint(mid, ring, obstacles, brand, emitters, bearingDeg);
+}
+
+function pickFamilyForHead(
+  span: number,
+  arcDeg: number,
+  brand: SprinklerBrand,
+  emitters: BrandEmitters,
+): Family {
+  const isInterior360 = arcDeg >= 315;
+  const isCorridor = isCorridorSpan(span);
+  if (isCorridor || isInterior360) {
+    const minThrow = isInterior360
+      ? Math.max(2.4, span * 0.42)
+      : corridorThrowNeed(span);
+    return pickFamilyForMinThrow(minThrow, brand, emitters, arcDeg);
+  }
+  return pickFamilyForNeed(
+    Math.max(2.4, Math.min(span * 0.52, 9.5)),
+    brand,
+    emitters,
+    arcDeg,
+  );
+}
+
+/**
+ * Minimum throw to cover span (corridor head-to-head or open-field interior).
+ */
+function throwNeedForFamily(
+  pt: PtM,
+  ring: PtM[],
+  obstacles: PtM[][],
+  arcDeg: number,
+  rotationDeg: number,
+  spanWidthM?: number,
+): number {
+  const span =
+    spanWidthM ??
+    (arcDeg >= 315
+      ? localWidthM(pt, ring)
+      : rayWidthM(pt, rotationDeg, ring, obstacles));
+  const isCorridor = isCorridorSpan(span);
+  if (arcDeg >= 315) {
+    return Math.max(2.4, Math.min(span * 0.42, 9.5));
+  }
+  if (isCorridor) {
+    return Math.max(2.4, Math.min(span * 0.55, 9.5));
+  }
+  const clearance = sectorClearanceM(
+    pt,
+    rotationDeg,
+    Math.max(45, arcDeg),
+    ring,
+    obstacles,
+  );
+  const intoLawn =
+    clearance > 0.5
+      ? Math.min(clearance * 0.98, span * 0.52)
+      : span * 0.52;
+  return Math.max(2.4, Math.min(intoLawn, 9.5));
+}
+
+/** 180° sectors facing each other across a corridor (algo4 §6.1). */
+function corridorRowAim(
+  outwardDeg: number,
+  side: "building" | "outer",
+): { arcDeg: number; rotationDeg: number } {
+  return {
+    arcDeg: 180,
+    rotationDeg: side === "building" ? outwardDeg : (outwardDeg + 180) % 360,
+  };
+}
+
+/** Walk from building side to outer boundary along corridor axis. */
+function outerCorridorPoint(
+  fromOnFacade: PtM,
+  outwardDeg: number,
+  ring: PtM[],
+  obstacles: PtM[][],
+): PtM | null {
+  let lastInside: PtM | null = null;
+  for (let d = BUILDING_MOUNT_M + 0.35; d < 14; d += 0.2) {
+    const p = offsetPoint(fromOnFacade, outwardDeg, d);
+    if (!pointInPolygon(p, ring)) break;
+    if (obstacles.some((o) => pointInPolygon(p, o))) continue;
+    lastInside = p;
+    if (distToBoundary(p, ring) < 0.4) {
+      return offsetPoint(p, (outwardDeg + 180) % 360, EDGE_EPS_M);
+    }
+  }
+  return lastInside;
+}
+
+function nearestBoundaryInfo(
+  p: PtM,
+  ring: PtM[],
+): { pt: PtM; inwardDeg: number; dist: number } {
+  let bestDist = Infinity;
+  let bestPt = p;
+  let bestInward = 0;
+  for (let i = 0; i < ring.length; i++) {
+    const a = ring[i];
+    const b = ring[(i + 1) % ring.length];
+    const dx = b.x - a.x;
+    const dy = b.y - a.y;
+    const len2 = dx * dx + dy * dy;
+    let t = len2 > 0 ? ((p.x - a.x) * dx + (p.y - a.y) * dy) / len2 : 0;
+    t = Math.max(0, Math.min(1, t));
+    const q = { x: a.x + t * dx, y: a.y + t * dy };
+    const d = dist(p, q);
+    if (d < bestDist) {
+      bestDist = d;
+      bestPt = q;
+      bestInward = inwardNormalDeg(ring, i);
+    }
+  }
+  return { pt: bestPt, inwardDeg: bestInward, dist: bestDist };
+}
+
+function findDrySamples(
+  kept: LocalHead[],
+  ring: PtM[],
+  obstacles: PtM[][],
+  brand: SprinklerBrand,
+  emitters: BrandEmitters,
+  box: ReturnType<typeof bbox>,
+  step: number,
+): PtM[] {
+  const dry: PtM[] = [];
+  for (let y = box.minY + step / 2; y <= box.maxY; y += step) {
+    for (let x = box.minX + step / 2; x <= box.maxX; x += step) {
+      const p = { x, y };
+      if (!pointInPolygon(p, ring)) continue;
+      if (obstacles.some((o) => pointInPolygon(p, o))) continue;
+      if (!sampleCovered(p, kept, ring, obstacles, brand, emitters)) {
+        dry.push(p);
+      }
+    }
+  }
+  return dry;
+}
+
+function sampleCovered(
+  p: PtM,
+  kept: LocalHead[],
+  ring: PtM[],
+  obstacles: PtM[][],
+  brand: SprinklerBrand,
+  emitters: BrandEmitters,
+): boolean {
+  for (const h of kept) {
+    const arc = h.arcDeg >= 315 ? 360 : h.arcDeg;
+    const span = headSpanWidth(h, ring, obstacles);
+    const fam = pickFamilyForHead(span, arc, brand, emitters);
+    const throwM =
+      familyEffectiveThrowM(brand, fam.familyKey, arc) ?? fam.radiusMaxM;
+    if (pointInSector(p, h.pt, throwM * 0.95, h.arcDeg, h.rotationDeg)) {
+      return true;
+    }
+  }
+  return false;
+}
+
+/** Perimeter heads never use full 360° — only partial sectors along boundaries. */
+function capPerimeterArc(arcDeg: number, interiorAngle?: number): number {
+  if (arcDeg >= 315) {
+    return interiorAngle != null && interiorAngle < 120 ? interiorAngle : 180;
+  }
+  return Math.min(270, Math.max(45, arcDeg));
 }
 
 function isNearBuilding(pt: PtM, obstacles: PtM[][]): boolean {
@@ -333,10 +750,11 @@ function lawnFacingSector(
   if (bestLen === 0) return null;
   if (bestLen >= N - 1) return { arcDeg: 360, rotationDeg: 0 };
 
-  const arcDeg = Math.min(
-    270,
-    Math.max(45, Math.round(((bestLen * 360) / N) / 5) * 5),
-  );
+  const rawArc = Math.round(((bestLen * 360) / N) / 5) * 5;
+  // Allow 360° when the open sector is wide enough (≥ 315°)
+  const arcDeg = rawArc >= 315
+    ? 360
+    : Math.max(45, rawArc);
   const mid = bestStart + bestLen / 2;
   const rotationDeg = (((mid * 360) / N) % 360 + 360) % 360;
   return { arcDeg, rotationDeg };
@@ -353,25 +771,59 @@ function resolveRadius(
   nearestNeighborM: number,
   ring: PtM[],
   obstacles: PtM[][],
+  brand: SprinklerBrand,
 ): { radiusM: number; mayOvershoot: boolean; h2hOk: boolean } {
+  const arcUse = h.arcDeg >= 315 ? 360 : h.arcDeg;
   const clearance = sectorClearanceM(
     h.pt,
     h.rotationDeg,
-    h.arcDeg >= 315 ? 360 : h.arcDeg,
+    arcUse,
     ring,
     obstacles,
   );
   const maxSafe = Math.max(0, clearance * 0.995);
+  const onEdge = distToBoundary(h.pt, ring) < 2.0;
+  const perfMax =
+    fam.kind === "spray"
+      ? (familyEffectiveThrowM(brand, fam.familyKey, arcUse) ??
+        fam.radiusMaxM)
+      : fam.radiusMaxM;
+  const throwMax = Math.min(fam.radiusMaxM, perfMax);
+  const span = headSpanWidth(h, ring, obstacles);
+  const isCorridor = isCorridorSpan(span);
 
-  // Target: reach neighbour (head-to-head), else mid-family throw
-  let desired = Number.isFinite(nearestNeighborM)
-    ? nearestNeighborM
-    : (fam.radiusMinM + fam.radiusMaxM) / 2;
-  desired = Math.min(fam.radiusMaxM, Math.max(fam.radiusMinM, desired));
-  if (maxSafe >= fam.radiusMinM) {
-    // Large sectors: keep a bit more margin — flanks overshoot first
-    const margin = h.arcDeg >= 170 ? 0.97 : 0.995;
-    desired = Math.min(desired, maxSafe * margin);
+  const minDesired = fam.radiusMinM + (throwMax - fam.radiusMinM) * 0.7;
+  let desired: number;
+  if (h.arcDeg >= 315) {
+    desired = Math.min(throwMax, Math.max(minDesired, maxSafe * 0.98));
+  } else if (onEdge && h.arcDeg < 200 && isCorridor) {
+    desired = Math.min(
+      throwMax,
+      maxSafe * 0.98,
+      Math.max(minDesired, span * 0.55),
+    );
+  } else if (onEdge && h.arcDeg < 200) {
+    desired = Math.min(
+      throwMax,
+      maxSafe * 0.98,
+      Math.max(minDesired, span * 0.52),
+    );
+  } else {
+    desired = Number.isFinite(nearestNeighborM)
+      ? Math.max(nearestNeighborM, minDesired)
+      : Math.max((fam.radiusMinM + throwMax) / 2, minDesired);
+    desired = Math.min(throwMax, Math.max(fam.radiusMinM, desired));
+    if (maxSafe >= fam.radiusMinM) {
+      const margin = h.arcDeg >= 170 ? 0.97 : 0.995;
+      desired = Math.min(desired, maxSafe * margin);
+    }
+  }
+  if (
+    Number.isFinite(nearestNeighborM) &&
+    nearestNeighborM < 9.5 &&
+    h.priority !== 3
+  ) {
+    desired = Math.min(throwMax, Math.max(desired, nearestNeighborM));
   }
 
   const radiusM = Number(desired.toFixed(1));
@@ -382,30 +834,6 @@ function resolveRadius(
       !Number.isFinite(nearestNeighborM) ||
       radiusM + 0.15 >= nearestNeighborM,
   };
-}
-
-function coversPoint(
-  sample: PtM,
-  h: LocalHead,
-  radiusM: number,
-): boolean {
-  if (h.kind === "strip") {
-    const a = compassToMathAngle(h.rotationDeg);
-    const dx = sample.x - h.pt.x;
-    const dy = sample.y - h.pt.y;
-    const along = dx * Math.cos(a) + dy * Math.sin(a);
-    const across = -dx * Math.sin(a) + dy * Math.cos(a);
-    const len = h.stripLengthM ?? radiusM;
-    const w = h.stripWidthM ?? 1.5;
-    return along >= 0 && along <= len && Math.abs(across) <= w / 2;
-  }
-  const d = dist(sample, h.pt);
-  if (d > radiusM) return false;
-  if (h.arcDeg >= 360) return true;
-  const bearing = ((90 - (Math.atan2(sample.y - h.pt.y, sample.x - h.pt.x) * 180) / Math.PI) + 360) % 360;
-  const half = h.arcDeg / 2;
-  const delta = ((bearing - h.rotationDeg + 540) % 360) - 180;
-  return Math.abs(delta) <= half + 0.5;
 }
 
 function layoutStripZone(
@@ -509,19 +937,17 @@ function finalizeHeads(
       nearest = Math.min(nearest, dist(h.pt, other.pt));
     }
     const arcForThrow = h.arcDeg >= 315 ? 360 : h.arcDeg;
-    const clearance = sectorClearanceM(
+    const span = headSpanWidth(h, ring, obstacles);
+    const needM = throwNeedForFamily(
       h.pt,
-      h.rotationDeg,
-      Math.max(45, arcForThrow),
       ring,
       obstacles,
+      arcForThrow,
+      h.rotationDeg,
+      span,
     );
-    const needM = Math.max(
-      2.4,
-      clearance > 0.5 ? Math.min(clearance, 9.5) : 2.4,
-    );
-    const fam = pickFamilyForNeed(needM, brand, emitters);
-    return { nearest, needM, fam };
+    const fam = pickFamilyForHead(span, arcForThrow, brand, emitters);
+    return { nearest, needM, fam, span };
   });
 
   // Consolidation pass: prefer one dominant spray family per lawn zone.
@@ -532,12 +958,19 @@ function finalizeHeads(
   const largestSpraySpec = n[largestSprayKey];
 
   // Step 1: convert rotors to spray where the largest spray family can cover
+  // but keep rotors that need arc > spray max (e.g. 360° for Rain Bird)
   if (largestSpraySpec) {
-    for (const info of headInfo) {
+    for (let hi = 0; hi < headInfo.length; hi++) {
+      const info = headInfo[hi];
       if (info.fam.kind !== "rotor") continue;
+      const headArc = kept[hi].arcDeg;
+      if (headArc > largestSpraySpec.arcMaxDeg) continue;
+      const largestThrow =
+        familyEffectiveThrowM(brand, largestSprayKey, kept[hi].arcDeg) ??
+        largestSpraySpec.radiusMaxM;
       const canFit =
-        info.needM >= largestSpraySpec.radiusMinM - 0.3 &&
-        info.needM <= largestSpraySpec.radiusMaxM + 0.3;
+        info.needM >= largestSpraySpec.radiusMinM - 0.5 &&
+        info.needM <= largestThrow + 0.15;
       if (canFit) {
         info.fam = {
           kind: "spray",
@@ -551,45 +984,7 @@ function finalizeHeads(
     }
   }
 
-  // Step 2: among remaining spray heads, consolidate to the dominant family
-  const sprayFamilyCounts = new Map<string, number>();
-  for (const info of headInfo) {
-    if (info.fam.kind === "spray") {
-      sprayFamilyCounts.set(
-        info.fam.familyKey,
-        (sprayFamilyCounts.get(info.fam.familyKey) ?? 0) + 1,
-      );
-    }
-  }
-  if (sprayFamilyCounts.size > 1) {
-    let dominantKey = "";
-    let dominantCount = 0;
-    for (const [key, count] of sprayFamilyCounts) {
-      if (count > dominantCount) {
-        dominantCount = count;
-        dominantKey = key;
-      }
-    }
-    const dominantSpec = n[dominantKey];
-    if (dominantSpec) {
-      for (const info of headInfo) {
-        if (info.fam.kind !== "spray" || info.fam.familyKey === dominantKey) continue;
-        const canFit =
-          info.needM >= dominantSpec.radiusMinM - 0.3 &&
-          info.needM <= dominantSpec.radiusMaxM + 0.3;
-        if (canFit) {
-          info.fam = {
-            kind: "spray",
-            familyKey: dominantKey,
-            radiusMinM: dominantSpec.radiusMinM,
-            radiusMaxM: dominantSpec.radiusMaxM,
-            arcMinDeg: dominantSpec.arcMinDeg,
-            arcMaxDeg: dominantSpec.arcMaxDeg,
-          };
-        }
-      }
-    }
-  }
+  // Step 2: spray family per head comes from needM (no forced merge to dominant)
 
   return kept.map((h, idx) => {
     const { nearest, fam } = headInfo[idx];
@@ -599,6 +994,7 @@ function finalizeHeads(
       nearest,
       ring,
       obstacles,
+      brand,
     );
     if (mayOvershoot) overshoot += 1;
     if (!h2hOk) h2hFail += 1;
@@ -684,12 +1080,95 @@ function finalizeHeads(
   });
 }
 
+function fillInteriorFromDeficit(
+  kept: LocalHead[],
+  ring: PtM[],
+  obstacles: PtM[][],
+  box: ReturnType<typeof bbox>,
+  brand: SprinklerBrand,
+  emitters: BrandEmitters,
+  spacingFactor: number,
+  tryPush: (h: LocalHead, minSep?: number) => boolean,
+): number {
+  const widths = sampleLocalWidths(ring, obstacles);
+  if (widths.length === 0) return 0;
+  const sorted = [...widths].sort((a, b) => a - b);
+  const p75 = percentile(sorted, 75);
+  const p90 = percentile(sorted, 90);
+  const maxW = sorted[sorted.length - 1] ?? 0;
+  const openEnough = p75 >= 5.5 || p90 >= 6.5 || maxW >= 7.5;
+  if (!openEnough) return 0;
+
+  const gridFam = pickFamilyForMinThrow(
+    Math.max(4.2, p75 * 0.48),
+    brand,
+    emitters,
+    360,
+  );
+  const gridR =
+    familyEffectiveThrowM(brand, gridFam.familyKey, 360) ?? gridFam.radiusMaxM;
+  const minSep = gridR * spacingFactor * 0.82;
+  let totalAdded = 0;
+  const maxInterior = 8;
+
+  for (let pass = 0; pass < 4 && totalAdded < maxInterior; pass++) {
+    const step = Math.max(1.0, Math.min(box.w, box.h) / 22);
+    const dry = findDrySamples(kept, ring, obstacles, brand, emitters, box, step);
+    if (dry.length === 0) break;
+
+    type Cand = { p: PtM; lw: number; score: number };
+    const candidates: Cand[] = [];
+    for (const p of dry) {
+      const lw = localWidthM(p, ring);
+      if (lw < 5) continue;
+      const clr = sectorClearanceM(p, 0, 360, ring, obstacles);
+      if (clr < 3.2) continue;
+      const dtb = distToBoundary(p, ring);
+      if (dtb < 1.6) continue;
+      const score = lw * 1.8 + Math.min(dtb, 7) * 0.55 + clr * 0.25;
+      candidates.push({ p, lw, score });
+    }
+    if (candidates.length === 0) break;
+    candidates.sort((a, b) => b.score - a.score);
+
+    let passAdded = 0;
+    for (const c of candidates) {
+      if (totalAdded >= maxInterior) break;
+      const clr = sectorClearanceM(c.p, 0, 360, ring, obstacles);
+      const needM = Math.max(2.4, Math.min(clr * 0.92, c.lw * 0.45));
+      const fam = pickFamilyForMinThrow(needM, brand, emitters, 360);
+      const R =
+        familyEffectiveThrowM(brand, fam.familyKey, 360) ?? fam.radiusMaxM;
+      if (clr < R * 0.72) continue;
+      if (kept.some((k) => dist(k.pt, c.p) < minSep * 0.55)) continue;
+
+      if (
+        tryPush(
+          {
+            pt: c.p,
+            arcDeg: 360,
+            rotationDeg: 0,
+            priority: 3,
+            spanWidthM: c.lw,
+          },
+          minSep * 0.45,
+        )
+      ) {
+        totalAdded += 1;
+        passAdded += 1;
+        break;
+      }
+    }
+    if (passAdded === 0) break;
+  }
+  return totalAdded;
+}
+
 /**
  * Place sprinkler heads on one lawn polygon.
  *
- * Order: corners → long edges → near-building edges → dry-spot 360°.
- * Hard rule: radius capped so spray stays on lawn and off Gebäude.
- * Spacing aims for head-to-head (distance ≤ working radius).
+ * Order: corners → building façades → long edges (equal spacing).
+ * Interior heads only via refineHeadSet if coverage allows removal.
  */
 export function layoutLawnZone(
   zone: DrawnZone,
@@ -774,46 +1253,55 @@ export function layoutLawnZone(
     };
   }
 
-  // Working radius for spacing: cover toward mid-lawn from edges (≈ half width)
-  const spacingNeed = Math.max(2.4, Math.min(widthM * 0.55, 7.3));
-  const spacingFam = pickFamilyForNeed(spacingNeed, brand, emitters);
-  const R = Math.max(
-    spacingFam.radiusMinM,
-    Math.min(spacingNeed, spacingFam.radiusMaxM),
-  );
-  // v2 §7.4: spacing ≤ actual throw (spacingFactor ≤ 1; default 1.0)
+  // Working radius for spacing: p75 local width (mixed open field + corridor)
+  const widthSamples = sampleLocalWidths(ring, obstacleRings);
+  const sortedWidths = [...widthSamples].sort((a, b) => a - b);
+  const p75Width = percentile(sortedWidths, 75) || widthM;
+  const spacingNeed = Math.max(2.4, Math.min(p75Width * 0.48, 9.5));
+  const spacingFam = pickFamilyForNeed(spacingNeed, brand, emitters, 180);
+  const S =
+    familyEffectiveThrowM(brand, spacingFam.familyKey, 180) ??
+    spacingFam.radiusMaxM;
   const spacingFactor = CATALOG.hydraulics.spacingFactor ?? 1.0;
-  const S = R * Math.min(1, spacingFactor);
+  const SDefault = S * Math.min(1, spacingFactor);
 
   const kept: LocalHead[] = [];
 
-  function tooClose(pt: PtM, minSep = S * 0.7): boolean {
+  function tooClose(pt: PtM, minSep = SDefault * 0.7): boolean {
     return kept.some((k) => dist(k.pt, pt) < minSep);
   }
 
-  function tryPush(h: LocalHead): boolean {
+  function tryPush(h: LocalHead, minSep = SDefault * 0.7): boolean {
     if (!pointInPolygon(h.pt, ring)) return false;
     if (obstacleRings.some((o) => pointInPolygon(h.pt, o))) return false;
-    if (tooClose(h.pt)) return false;
+    if (tooClose(h.pt, minSep)) return false;
     kept.push(h);
     return true;
   }
 
-  // ——— 1. Lawn corners (convex outer + concave notches) ———
+  // ——— 1. Significant lawn corners only (algo4 §4.3 — skip digital noise) ———
   for (let i = 0; i < ring.length; i++) {
     const ang = interiorAngleDeg(ring, i);
     if (ang < 40 || ang > 320) continue;
-    const bis = inwardBisectorDeg(ring, i);
     const nearBldg = isNearBuilding(ring[i], obstacleRings);
+    // Nearly straight outer boundary — not a real corner
+    if (!nearBldg && ang > 168 && ang < 192) continue;
+    const bis = inwardBisectorDeg(ring, i);
     const pt = offsetPoint(ring[i], bis, mountInset(nearBldg));
 
     const aim = cornerAim(ring, i, pt, obstacleRings);
-    tryPush({
-      pt,
-      arcDeg: aim.arcDeg,
-      rotationDeg: aim.rotationDeg,
-      priority: nearBldg || ang > 185 ? 2 : 0,
-    });
+    const concave = ang > 185;
+    // Concave notch at building — two façade heads in step 2 (algo4 §9.4)
+    if (concave && nearBldg) continue;
+    tryPush(
+      {
+        pt,
+        arcDeg: capPerimeterArc(aim.arcDeg, ang),
+        rotationDeg: aim.rotationDeg,
+        priority: nearBldg || concave ? 2 : 0,
+      },
+      concave ? SDefault * 0.42 : SDefault * 0.7,
+    );
   }
 
   // ——— 2. Building façades & corners (Bewässerungsbox-style) ———
@@ -825,6 +1313,10 @@ export function layoutLawnZone(
 
     // 2a. Building corners that touch irrigable lawn
     for (let i = 0; i < bldg.length; i++) {
+      const bldgAng = interiorAngleDeg(bldg, i);
+      // Concave/reflex corner — two façade heads in step 2b, not one wide sector
+      if (bldgAng > 185) continue;
+
       const n = bldg.length;
       const nPrev = outwardNormalDeg(bldg, (i - 1 + n) % n);
       const nNext = outwardNormalDeg(bldg, i);
@@ -832,16 +1324,15 @@ export function layoutLawnZone(
       const pt = offsetPoint(bldg[i], intoLawn, BUILDING_MOUNT_M);
       if (!pointInPolygon(pt, ring)) continue;
       if (obstacleRings.some((o) => pointInPolygon(pt, o))) continue;
+      if (kept.some((k) => dist(k.pt, pt) < SDefault * 0.45)) continue;
 
-      const sector = lawnFacingSector(pt, ring, obstacleRings);
-      if (!sector || sector.arcDeg < 40) continue;
-      // Skip near-full circles at building corners — those belong in the center
-      if (sector.arcDeg >= 315) continue;
-
+      const aim = buildingCornerAim(bldg, i);
+      // Do not pass bldgAng into capPerimeterArc — that would collapse wrap (270°)
+      // back toward the building interior angle (90°).
       tryPush({
         pt,
-        arcDeg: edgeArcDeg(sector, Math.min(270, sector.arcDeg)),
-        rotationDeg: sector.rotationDeg,
+        arcDeg: Math.min(270, Math.max(180, aim.arcDeg)),
+        rotationDeg: aim.rotationDeg,
         priority: 2,
       });
     }
@@ -858,61 +1349,132 @@ export function layoutLawnZone(
       if (obstacleRings.some((o) => pointInPolygon(probe, o))) continue;
 
       // Corners already cover short façades — avoid redundant mid-edge heads
-      if (L <= S * 1.35) continue;
-      const nSeg = Math.max(2, Math.ceil(L / (S * 1.1)));
-      for (let k = 1; k < nSeg; k++) {
-        const t = k / nSeg;
-        const onEdge = {
-          x: a.x + (b.x - a.x) * t,
-          y: a.y + (b.y - a.y) * t,
-        };
+      const corridorW = rayWidthM(probe, out, ring, obstacleRings);
+      const corridorEdge =
+        isCorridorSpan(corridorW) && L / Math.max(corridorW, 1) >= 2;
+      const throwNeed = corridorThrowNeed(corridorW);
+      const edgeS =
+        (corridorEdge
+          ? familyEffectiveThrowM(
+              brand,
+              pickFamilyForMinThrow(throwNeed, brand, emitters, 180).familyKey,
+              180,
+            ) ?? throwNeed
+          : spacingAtPoint(probe, ring, obstacleRings, brand, emitters, out)) *
+        spacingFactor;
+
+      if (L <= edgeS * 1.05 && !corridorEdge) continue;
+
+      const chainPts = distributeChainPoints(
+        a,
+        b,
+        edgeS,
+        BUILDING_MOUNT_M * 0.5,
+        BUILDING_MOUNT_M * 0.5,
+      );
+
+      for (const onEdge of chainPts) {
+        if (corridorEdge) {
+          pushCorridorPair(
+            onEdge,
+            out,
+            ring,
+            obstacleRings,
+            tryPush,
+            tooClose,
+            edgeS,
+          );
+          continue;
+        }
+
         const pt = offsetPoint(onEdge, out, BUILDING_MOUNT_M);
         const face = lawnFacingSector(pt, ring, obstacleRings, 0.7);
+        const span = rayWidthM(pt, out, ring, obstacleRings);
         tryPush({
           pt,
           arcDeg: edgeArcDeg(face, 180),
           rotationDeg: face?.rotationDeg ?? out,
           priority: 2,
+          spanWidthM: span >= 2.5 ? span : undefined,
         });
       }
     }
   }
 
   // ——— 3. Long lawn edges → ≤180° inward (head-to-head spacing ≤ R) ———
-  // Compact near-square lawns: corners alone are enough — mid-edge 180°
-  // heads overshoot past the short sides when throw ≈ half-width.
+  // Skip mid-edge only when the rectangle is so small that corner throws
+  // already meet on every side (true compact pad). Elongated beds still need
+  // H2H midpoints even when area is small (e.g. 3×9 m / 31 m²).
   const aspectNow = acrossM > 0.05 ? alongM / acrossM : 1;
   const compactCornersOnly =
-    alongM <= 6.8 && aspectNow <= 1.55 && areaM2 <= 45;
+    alongM <= SDefault * 1.85 && aspectNow <= 1.35 && areaM2 <= 28;
   if (!compactCornersOnly) {
   for (let i = 0; i < ring.length; i++) {
     const a = ring[i];
     const b = ring[(i + 1) % ring.length];
     const L = dist(a, b);
-    if (L <= S * 1.2) continue;
-
     const normal = inwardNormalDeg(ring, i);
-    // Skip edges that run along a building (already handled in step 2)
+    const edgeS =
+      spacingAlongEdge(a, b, ring, obstacleRings, brand, emitters, normal) *
+      spacingFactor;
+    if (L <= edgeS * 1.05) continue;
     const mid = { x: (a.x + b.x) / 2, y: (a.y + b.y) / 2 };
     const outProbe = offsetPoint(mid, (normal + 180) % 360, 0.35);
     const alongBuilding = obstacleRings.some((o) => pointInPolygon(outProbe, o));
     if (alongBuilding) continue;
 
-    const nSeg = Math.max(2, Math.ceil(L / (S * 1.05)));
-    for (let k = 1; k < nSeg; k++) {
-      const t = k / nSeg;
-      const onEdge = {
-        x: a.x + (b.x - a.x) * t,
-        y: a.y + (b.y - a.y) * t,
-      };
+    // Skip only when enough heads already sit on this edge for H2H spacing.
+    // Do NOT floor at 2 — two corner heads alone leave the mid-edge bald
+    // whenever L ≳ 2× throw (typical 3×9 m bed).
+    let nearEdge = 0;
+    for (const k of kept) {
+      const dx = b.x - a.x;
+      const dy = b.y - a.y;
+      const len2 = dx * dx + dy * dy;
+      let t = len2 > 0 ? ((k.pt.x - a.x) * dx + (k.pt.y - a.y) * dy) / len2 : 0;
+      t = Math.max(0, Math.min(1, t));
+      const q = { x: a.x + t * dx, y: a.y + t * dy };
+      if (dist(k.pt, q) < 2.4) nearEdge += 1;
+    }
+    const neededOnEdge = Math.ceil(L / Math.max(edgeS, 0.5)) + 1;
+    if (nearEdge >= neededOnEdge) continue;
+
+    const spanMid = rayWidthM(mid, normal, ring, obstacleRings);
+    let chainSpacing = edgeS;
+    if (L > 12 && spanMid > 10) {
+      const wideFam = pickFamilyForMinThrow(
+        Math.max(5.5, spanMid * 0.48),
+        brand,
+        emitters,
+        180,
+      );
+      const wideR =
+        familyEffectiveThrowM(brand, wideFam.familyKey, 180) ??
+        wideFam.radiusMaxM;
+      chainSpacing = Math.max(chainSpacing, wideR * spacingFactor);
+    }
+
+    const chainPts = distributeChainPoints(
+      a,
+      b,
+      chainSpacing,
+      EDGE_EPS_M,
+      EDGE_EPS_M,
+    );
+    for (let ci = 0; ci < chainPts.length; ci++) {
+      if (ci === 0 || ci === chainPts.length - 1) continue;
+      const onEdge = chainPts[ci];
       const nearBldg = isNearBuilding(onEdge, obstacleRings);
       const pt = offsetPoint(onEdge, normal, mountInset(nearBldg));
       const face = lawnFacingSector(pt, ring, obstacleRings, 0.7);
+      const rot = face?.rotationDeg ?? normal;
+      const span = rayWidthM(pt, rot, ring, obstacleRings);
       tryPush({
         pt,
         arcDeg: edgeArcDeg(face, 180),
-        rotationDeg: face?.rotationDeg ?? normal,
+        rotationDeg: rot,
         priority: nearBldg ? 2 : 1,
+        spanWidthM: span >= 2.5 ? span : undefined,
       });
     }
   }
@@ -922,172 +1484,21 @@ export function layoutLawnZone(
     );
   }
 
-  // ——— 4. Dry pockets → interior 360° (often small radius)
-  // Perimeter heads are capped by buildings/boundaries and often cannot
-  // reach the middle. Detect dry cells with *effective* throw, then place
-  // full-circle heads even when only the smallest spray clearance exists.
-  const step = Math.max(0.45, Math.min(box.w, box.h) / 18);
-  const smallMin =
-    emitters.sprayHead.nozzles[smallNozzleKey(brand)]?.radiusMinM ??
-    emitters.sprayHead.nozzles[primaryNozzleOrder(brand)[0]]?.radiusMinM ??
-    2.4;
-
-  function effectiveRadius(h: LocalHead): number {
-    const clearance = sectorClearanceM(
-      h.pt,
-      h.rotationDeg,
-      h.arcDeg >= 315 ? 360 : h.arcDeg,
-      ring,
-      obstacleRings,
-    );
-    const need = Math.min(R, Math.max(0, clearance * 0.98));
-    const fam = pickFamilyForNeed(Math.max(need, smallMin), brand, emitters);
-    return Math.min(
-      fam.radiusMaxM,
-      Math.max(fam.radiusMinM, Math.min(need || fam.radiusMinM, fam.radiusMaxM)),
-    );
-  }
-
-  function isCoveredByKept(p: PtM): boolean {
-    return kept.some((h) => coversPoint(p, h, effectiveRadius(h)));
-  }
-
-  function uncoveredSamples(): PtM[] {
-    const dry: PtM[] = [];
-    for (let y = box.minY + step / 2; y <= box.maxY; y += step) {
-      for (let x = box.minX + step / 2; x <= box.maxX; x += step) {
-        const p = { x, y };
-        if (!pointInPolygon(p, ring)) continue;
-        if (obstacleRings.some((o) => pointInPolygon(p, o))) continue;
-        // Keep mid-lawn samples; only skip a thin strip on the boundary
-        if (distToBoundary(p, ring) < 0.4) continue;
-        if (!isCoveredByKept(p)) dry.push(p);
-      }
-    }
-    return dry;
-  }
-
-  /** v2 §7.6: 360° only if dist to NO_SPRAY ≥ actualRadius − tolerance */
-  function blocksInterior(pt: PtM, plannedRadiusM = smallMin): boolean {
-    const tol = 0.15;
-    if (distToBoundary(pt, ring) < plannedRadiusM - tol) return true;
-    const obst = distToObstacles(pt, obstacleRings);
-    if (Number.isFinite(obst) && obst < plannedRadiusM - tol) return true;
-    for (const h of kept) {
-      const d = dist(h.pt, pt);
-      if (d < Math.max(plannedRadiusM * 0.55, S * 0.55)) return true;
-      if (h.arcDeg >= 315 && d < Math.max(2.2, effectiveRadius(h) * 0.5)) {
-        return true;
-      }
-    }
-    return false;
-  }
-
-  function countLawnSamples(): number {
-    let total = 0;
-    for (let y = box.minY + step / 2; y <= box.maxY; y += step) {
-      for (let x = box.minX + step / 2; x <= box.maxX; x += step) {
-        const p = { x, y };
-        if (!pointInPolygon(p, ring)) continue;
-        if (obstacleRings.some((o) => pointInPolygon(p, o))) continue;
-        total += 1;
-      }
-    }
-    return total;
-  }
-
-  let dry = uncoveredSamples();
-  const maxInterior = 6;
-  let added = 0;
-  while (dry.length > 0 && added < maxInterior) {
-    let best: PtM | null = null;
-    let bestScore = -1;
-
-    for (const p of dry) {
-      if (obstacleRings.some((o) => pointInPolygon(p, o))) continue;
-
-      const clearance = sectorClearanceM(p, 0, 360, ring, obstacleRings);
-      // v2 §7.6: room for planned 360° radius
-      if (clearance < smallMin * 1.05) continue;
-      const plannedR = Math.min(clearance * 0.98, Math.max(R, smallMin));
-      if (blocksInterior(p, plannedR)) continue;
-
-      let localDry = 0;
-      const reach = Math.min(clearance, Math.max(R, smallMin));
-      for (const q of dry) {
-        if (dist(p, q) <= reach) localDry += 1;
-      }
-      // Prefer deeper interior points
-      const score = localDry * 20 + clearance + distToBoundary(p, ring);
-      if (score > bestScore) {
-        bestScore = score;
-        best = p;
-      }
-    }
-
-    if (!best || bestScore < 25) break;
-
-    if (!pointInPolygon(best, ring)) break;
-    if (obstacleRings.some((o) => pointInPolygon(best, o))) break;
-    kept.push({
-      pt: best,
-      arcDeg: 360,
-      rotationDeg: 0,
-      priority: 3,
-    });
-    added += 1;
-    dry = uncoveredSamples();
-  }
-  if (added > 0) {
+  // ——— 4. Open field: 360° grid where width > 2× perimeter throw ———
+  const interiorAdded = fillInteriorFromDeficit(
+    kept,
+    ring,
+    obstacleRings,
+    box,
+    brand,
+    emitters,
+    spacingFactor,
+    tryPush,
+  );
+  if (interiorAdded > 0) {
     warnings.push(
-      `${added} Innenregner 360° für Trockeninsel(n) gesetzt (Kantenreichweite durch Gebäude/Grenze begrenzt).`,
+      `${interiorAdded} Innenregner 360° nach Abdeckungsdefizit (offenes Feld).`,
     );
-  }
-
-  // Self-check: remaining dry fraction (layout audit)
-  dry = uncoveredSamples();
-  const totalSamples = countLawnSamples();
-  if (totalSamples > 0) {
-    const dryPct = (100 * dry.length) / totalSamples;
-    if (dryPct >= 4) {
-      warnings.push(
-        `Layout-Audit: noch ≈${dryPct.toFixed(0)} % Trockenfläche — Abdeckung prüfen.`,
-      );
-    }
-  }
-
-  // ——— 5. Prune: only if head-to-head + coverage + dry patch stay ok (§8.1) ———
-  if (kept.length > 4) {
-    for (let i = kept.length - 1; i >= 0; i--) {
-      if (kept[i].priority < 1) continue;
-      const without = kept.filter((_, j) => j !== i);
-      const saved = [...kept];
-      kept.length = 0;
-      kept.push(...without);
-      const dryWithout = uncoveredSamples();
-      const total = countLawnSamples();
-      // Head-to-head among remaining: each pair of near heads should reach
-      let h2hOk = true;
-      for (let a = 0; a < without.length; a++) {
-        for (let b = a + 1; b < without.length; b++) {
-          const d = dist(without[a].pt, without[b].pt);
-          if (d > S * 1.8) continue;
-          const ra = effectiveRadius(without[a]);
-          const rb = effectiveRadius(without[b]);
-          if (ra + 0.2 < d && rb + 0.2 < d) {
-            h2hOk = false;
-            break;
-          }
-        }
-        if (!h2hOk) break;
-      }
-      kept.length = 0;
-      kept.push(...saved);
-      const dryFrac = total > 0 ? dryWithout.length / total : 1;
-      if (h2hOk && dryFrac <= 0.02) {
-        kept.splice(i, 1);
-      }
-    }
   }
 
   kept.sort((a, b) => a.priority - b.priority);

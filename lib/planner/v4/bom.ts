@@ -373,6 +373,7 @@ export function buildBom(params: {
           }),
         );
       }
+      // Gerade Kupplung nur wenn mehrere Rollen gesteckt werden
       const coupling = peCouplingPart(od);
       if (coupling && rollQty > 1) {
         bom.push(
@@ -392,6 +393,7 @@ export function buildBom(params: {
     }
   }
 
+  // PE-Klemmwinkel für echte Trassenknicke (Waypoints), nicht die Platzhalter-1×
   const elbowCounts = countRouteElbowsByOd(pipes);
   for (const [od, qty] of [...elbowCounts.entries()].sort((a, b) => a[0] - b[0])) {
     if (qty <= 0) continue;

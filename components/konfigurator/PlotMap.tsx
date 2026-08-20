@@ -60,6 +60,7 @@ import {
   type SofortPlan,
   type SprinklerBrand,
 } from "@/lib/planner";
+import { logCalculation } from "@/lib/planner/calcLog";
 import {
   SofortOverlay,
   type PipeSelection,
@@ -1134,6 +1135,22 @@ export function PlotMap({
     setPlanChoiceOpen(true);
   }
 
+  function logPlanCalculation(plan: SofortPlan) {
+    const allZones = zonesRef.current;
+    const allFixtures = fixturesRef.current;
+    const lawns = allZones.filter((z) => z.type === "rasen");
+    logCalculation(
+      plan,
+      lawns.map((l) => ({ id: l.id, areaM2: polygonAreaM2(l.coordinates) })),
+      {
+        zones: allZones,
+        fixtures: allFixtures,
+        placeId: place.id,
+        placeLabel: place.placeName,
+      },
+    );
+  }
+
   function runSofortBerechnung(brand: SprinklerBrand = DEFAULT_BRAND) {
     const plan = computeSofortPlan(zonesRef.current, fixturesRef.current, {
       brand,
@@ -1141,6 +1158,9 @@ export function PlotMap({
     });
     setSofortPlan(plan);
     sofortPlanRef.current = plan;
+
+    logPlanCalculation(plan);
+
     setSelectedHeadId(null);
     selectedHeadIdRef.current = null;
     setSelectedPipe(null);
@@ -2618,6 +2638,7 @@ export function PlotMap({
         </div>
       </div>
       )}
+
     </div>
   );
 }

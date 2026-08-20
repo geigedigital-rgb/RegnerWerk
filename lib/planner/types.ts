@@ -3,7 +3,7 @@ import type { LngLat } from "@/lib/mapbox";
 /** Local planar point in meters relative to a lng/lat origin. */
 export type PtM = { x: number; y: number };
 
-export type AlgorithmVersion = "v1" | "v2" | "v3";
+export type AlgorithmVersion = "v1" | "v2" | "v3" | "v4";
 
 export type ProjectLevel =
   | "ESTIMATE"

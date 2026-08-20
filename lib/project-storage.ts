@@ -1,5 +1,6 @@
 import type { DrawnZone, GeocodeFeature, PlotFixture, PlotStage } from "@/lib/mapbox";
 import type { SofortPlan } from "@/lib/planner";
+import type { CalcLogEntry } from "@/lib/planner/calcLog";
 
 /**
  * Persisted garden project: address + drawing + Sofort plan.
@@ -13,6 +14,7 @@ export type SavedPlotProject = {
   fixtures: PlotFixture[];
   sofortPlan: SofortPlan | null;
   plotStage: PlotStage;
+  calcHistory?: CalcLogEntry[];
 };
 
 const INDEX_KEY = "rw-projects-index";

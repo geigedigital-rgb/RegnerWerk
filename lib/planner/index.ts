@@ -14,6 +14,10 @@ import {
   computeSofortPlanV3,
   recomputeAfterEditV3,
 } from "./v3";
+import {
+  computeSofortPlanV4,
+  recomputeAfterEditV4,
+} from "./v4";
 
 export type {
   SofortPlan,
@@ -52,18 +56,23 @@ export {
   computeSofortPlanV3Raw,
   recomputeAfterEditV3,
 } from "./v3";
+export {
+  computeSofortPlanV4,
+  computeSofortPlanV4Raw,
+  recomputeAfterEditV4,
+} from "./v4";
 
 export type ComputeSofortOpts = {
   brand?: SprinklerBrand;
   algorithmVersion?: AlgorithmVersion;
 };
 
-/** Customer-facing Sofort planner always uses zoning v3. */
-export const CLIENT_ALGORITHM: AlgorithmVersion = "v3";
+/** Customer-facing Sofort planner — production default is algorithm v4. */
+export const CLIENT_ALGORITHM: AlgorithmVersion = "v4";
 
 /**
- * Public router: dispatch to frozen v1, engineering v2, or zoning v3.
- * Client UI uses v3; tests may still pin v1/v2 explicitly.
+ * Public router: dispatch to v1–v4.
+ * Client UI always uses CLIENT_ALGORITHM (v4); tests may pin older versions.
  */
 export function computeSofortPlan(
   zones: DrawnZone[],
@@ -71,7 +80,10 @@ export function computeSofortPlan(
   opts?: ComputeSofortOpts,
 ): SofortPlan {
   const brand = opts?.brand ?? DEFAULT_BRAND;
-  const algorithmVersion = opts?.algorithmVersion ?? "v1";
+  const algorithmVersion = opts?.algorithmVersion ?? CLIENT_ALGORITHM;
+  if (algorithmVersion === "v4") {
+    return computeSofortPlanV4(zones, fixtures, { brand });
+  }
   if (algorithmVersion === "v3") {
     return computeSofortPlanV3(zones, fixtures, { brand });
   }
@@ -87,6 +99,9 @@ export function recomputeAfterEdit(
   zones: DrawnZone[],
 ): SofortPlan {
   const version = plan.algorithmVersion ?? "v1";
+  if (version === "v4") {
+    return recomputeAfterEditV4(plan, fixtures, zones);
+  }
   if (version === "v3") {
     return recomputeAfterEditV3(plan, fixtures, zones);
   }

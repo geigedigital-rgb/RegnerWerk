@@ -1,8 +1,10 @@
 import assert from "node:assert/strict";
 import { describe, it } from "node:test";
 import {
+  countRouteElbowsByOd,
   mainOdFromPipes,
   manifoldInletAdapter,
+  peElbowPart,
   spliceConnectorQty,
   sourcePeAdapter,
   wireMetersWithSpare,
@@ -42,6 +44,40 @@ describe("bomRules", () => {
   it("wire spare is ~10%", () => {
     assert.equal(wireMetersWithSpare(10), 11);
     assert.equal(wireMetersWithSpare(1), 5);
+  });
+
+  it("counts PE elbows only on polyline bends", () => {
+    assert.equal(peElbowPart(25)?.article, "1.00-W03");
+    assert.equal(peElbowPart(32)?.article, "1.00-W04");
+    const straight: PipeRun[] = [
+      {
+        id: "m",
+        kind: "main",
+        hydraulicZone: null,
+        lengthM: 14,
+        odMm: 32,
+        points: [
+          { lng: 0, lat: 0 },
+          { lng: 0.0002, lat: 0 },
+        ],
+      },
+    ];
+    assert.equal(countRouteElbowsByOd(straight).get(32) ?? 0, 0);
+    const bent: PipeRun[] = [
+      {
+        id: "m",
+        kind: "main",
+        hydraulicZone: null,
+        lengthM: 20,
+        odMm: 32,
+        points: [
+          { lng: 0, lat: 0 },
+          { lng: 0.00015, lat: 0 },
+          { lng: 0.00015, lat: 0.00012 },
+        ],
+      },
+    ];
+    assert.equal(countRouteElbowsByOd(bent).get(32), 1);
   });
 });
 
@@ -107,10 +143,53 @@ describe("buildBom v3 critical fixes", () => {
     assert.ok(bom.some((l) => l.key === "backflow-review"));
     assert.ok(bom.some((l) => l.key === "winter-drain"));
     assert.ok(bom.some((l) => l.key === "source-adapter-pe25"));
+    assert.ok(!bom.some((l) => l.key === "controller-power-review"));
+    assert.ok(!bom.some((l) => l.key === "route-fittings-review"));
     const seal = bom.find((l) => l.key === "thread-seal");
     assert.ok(seal?.article === "Teflon_1" && seal.priceEur != null);
     const filter = bom.find((l) => l.key === "source-filter");
     assert.ok(filter?.article === "5.02-SF19" && filter.priceEur != null);
+  });
+
+  it("adds priced PE elbow when main has a 90° bend", () => {
+    const pipes: PipeRun[] = [
+      {
+        id: "main",
+        kind: "main",
+        hydraulicZone: null,
+        lengthM: 20,
+        odMm: 32,
+        points: [
+          { lng: 0, lat: 0 },
+          { lng: 0.00015, lat: 0 },
+          { lng: 0.00015, lat: 0.00012 },
+        ],
+      },
+      {
+        id: "lat",
+        kind: "lateral",
+        hydraulicZone: 1,
+        lengthM: 10,
+        odMm: 25,
+        points: [
+          { lng: 0.00015, lat: 0.00012 },
+          { lng: 0.00015, lat: 0.0002 },
+        ],
+      },
+    ];
+    const { bom } = buildBom({
+      heads,
+      pipes,
+      zoneCount: 2,
+      wireLengthM: 12,
+      dripTubeLengthM: 0,
+      brand: "rainbird",
+    });
+    const elbow = bom.find((l) => l.key === "pe-elbow-32");
+    assert.ok(elbow);
+    assert.equal(elbow!.article, "1.00-W04");
+    assert.equal(elbow!.qty, 1);
+    assert.ok(elbow!.priceEur != null && elbow!.priceEur > 0);
   });
 
   it("picks PE32 disc filter and VENT-EG for 6 zones", () => {

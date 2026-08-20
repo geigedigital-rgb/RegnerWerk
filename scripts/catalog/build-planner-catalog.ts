@@ -1048,7 +1048,26 @@ const catalog = {
   // Mirrors defaultBrand for callers that still read top-level sprayHead/rotor
   sprayHead: hunterPack.sprayHead,
   rotor: hunterPack.rotor,
-  pipes: { pe25Rolls, pe32Rolls },
+  pipes: {
+    pe25Rolls,
+    pe32Rolls,
+    elbowPe25: simple(
+      "1.00-W03",
+      /Winkel 25 x 25 Klemm x Klemm PN10/i,
+    ),
+    elbowPe32: simple(
+      "1.00-W04",
+      /Winkel 32 x 32 Klemm x Klemm PN10/i,
+    ),
+    couplingPe25: simple(
+      "1.03-K55",
+      /Kupplung 25 x 25 Klemm x Klemm PN10/i,
+    ),
+    couplingPe32: simple(
+      "1.03-K56",
+      /Kupplung 32 x 32 Klemm x Klemm PN10/i,
+    ),
+  },
   hydraulics: {
     defaultSourceFlowM3h: 2.0,
     zoneFillFactor: 0.85,

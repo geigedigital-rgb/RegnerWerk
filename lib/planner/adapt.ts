@@ -1,9 +1,10 @@
 import type { SofortPlan } from "./types";
 import type { SofortPlanV2 } from "./v2/types";
 import type { SofortPlanV3 } from "./v3/types";
+import type { SofortPlanV4 } from "./v4/types";
 import { ZONE_COLORS } from "./v1/hydraulics";
 
-type EngineeringPlan = SofortPlanV2 | SofortPlanV3;
+type EngineeringPlan = SofortPlanV2 | SofortPlanV3 | SofortPlanV4;
 
 /** Map full v2/v3 engineering model → shared UI / persistence SofortPlan. */
 export function adaptV2ToViewModel(plan: EngineeringPlan): SofortPlan {
@@ -30,7 +31,7 @@ export function adaptV2ToViewModel(plan: EngineeringPlan): SofortPlan {
 
   return {
     version: 1,
-    algorithmVersion: plan.algorithmVersion === "v3" ? "v3" : "v2",
+    algorithmVersion: plan.algorithmVersion === "v4" ? "v4" : plan.algorithmVersion === "v3" ? "v3" : "v2",
     createdAt: plan.createdAt,
     brand: plan.brand,
     heads: plan.heads.map((h) => ({

@@ -55,3 +55,7 @@ next-env.d.ts
 !public/apple-touch-icon.png
 !public/icon-192.png
 !public/icon-512.png
+
+# Calc logs (local dev only)
+.calc-logs.json
+.calc-snapshots/

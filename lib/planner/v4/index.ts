@@ -8,6 +8,9 @@ import {
   CATALOG,
   DEFAULT_BRAND,
   brandEmitters,
+  AUTO_LAYOUT_ROTORS_ENABLED,
+  largestSprayFamilySpec,
+  sprayConfigKey,
   type SprinklerBrand,
 } from "../catalog";
 import { buildBom } from "./bom";
@@ -25,7 +28,7 @@ import { refineHeadSet } from "./optimize";
 import type { SofortPlan, SprinklerHead } from "../types";
 import type {
   LandscapeHydrozone,
-  SofortPlanV3,
+  SofortPlanV4,
   ValveZone,
   WarningItem,
   ZoneDecision,
@@ -43,27 +46,330 @@ import { designValveZones } from "./zoning";
 export { ZONE_COLORS, ZONE_COLORS_CANVAS, zoneColor } from "./hydraulics";
 export { headScreenLabel } from "./layout";
 export { resolveHeadProduct, type HeadProductInfo } from "./headProduct";
-export type { SofortPlanV3 } from "./types";
+export type { SofortPlanV4 } from "./types";
 
-const ALGORITHM_BUILD = "v3.stage1-zoning-2026.08";
+const ALGORITHM_BUILD = "v4.compact-zones-2026.08";
+
+/**
+ * Extract the spray family key from a configKey (e.g. "R-VAN18" → "R-VAN18",
+ * "R-VAN14-360" → "R-VAN14", "3504@2.0" → "3504").
+ */
+function headFamilyKey(h: SprinklerHead): string {
+  const ck = h.configKey;
+  // "R-VAN14-360" → "R-VAN14", "MP3000" → "MP3000", "3504@2.0" → "3504"
+  const atIdx = ck.indexOf("@");
+  const base = atIdx >= 0 ? ck.slice(0, atIdx) : ck;
+  // Strip trailing angle suffix like "-360", "-180"
+  const match = base.match(/^(.+?)-\d{2,3}$/);
+  return match ? match[1] : base;
+}
+
+/**
+ * Pre-zoning pass: convert all rotor heads to the largest spray family
+ * when their radius is within range. Runs before zoning so the zone
+ * partitioning never sees mixed rotor/spray.
+ */
+function convertRotorHeadToSpray<T extends {
+  kind: string;
+  configKey: string;
+  radiusM: number;
+  arcDeg: number;
+  flowLMin: number;
+}>(h: T, brand: SprinklerBrand): T {
+  const emitters = brandEmitters(brand);
+  const fb = largestSprayFamilySpec(brand, emitters, h.arcDeg);
+  if (!fb) return h;
+  const baseKey = fb.key.replace(/-360$/, "");
+  const arcClamped =
+    h.arcDeg >= 315
+      ? 360
+      : Math.max(
+          fb.spec.arcMinDeg,
+          Math.min(fb.spec.arcMaxDeg, h.arcDeg),
+        );
+  const clampedRadius = Math.max(
+    fb.spec.radiusMinM,
+    Math.min(fb.spec.radiusMaxM, h.radiusM),
+  );
+  return {
+    ...h,
+    kind: "spray",
+    configKey: sprayConfigKey(baseKey, arcClamped),
+    radiusM: clampedRadius,
+    arcDeg: arcClamped,
+    flowLMin:
+      fb.spec.flow360LMin != null
+        ? (fb.spec.flow360LMin * arcClamped) / 360
+        : h.flowLMin,
+  };
+}
+
+function convertRotorsToSpray<T extends { kind: string; configKey: string; radiusM: number; arcDeg: number; flowLMin: number }>(
+  heads: T[],
+  brand: SprinklerBrand,
+): T[] {
+  if (!AUTO_LAYOUT_ROTORS_ENABLED) {
+    return heads.map((h) =>
+      h.kind === "rotor" ? convertRotorHeadToSpray(h, brand) : h,
+    );
+  }
+
+  const emitters = brandEmitters(brand);
+  const nozzles = emitters.sprayHead.nozzles;
+
+  let largestKey = "";
+  let largestMax = 0;
+  for (const [key, spec] of Object.entries(nozzles)) {
+    if (spec.radiusMaxM > largestMax) {
+      largestMax = spec.radiusMaxM;
+      largestKey = key;
+    }
+  }
+  const spec = nozzles[largestKey];
+  if (!spec) return heads;
+
+  const BUFFER = 1.0;
+  return heads.map((h): T => {
+    if (h.kind !== "rotor") return h;
+    if (h.radiusM > spec.radiusMaxM + BUFFER) {
+      return convertRotorHeadToSpray(h, brand);
+    }
+    if (h.arcDeg > spec.arcMaxDeg) {
+      return convertRotorHeadToSpray(h, brand);
+    }
+    const clampedRadius = Math.max(spec.radiusMinM, Math.min(spec.radiusMaxM, h.radiusM));
+    const arcClamped = Math.max(spec.arcMinDeg, Math.min(spec.arcMaxDeg, h.arcDeg));
+    return {
+      ...h,
+      kind: "spray",
+      configKey: sprayConfigKey(largestKey, arcClamped),
+      radiusM: clampedRadius,
+      arcDeg: arcClamped,
+      flowLMin: spec.flow360LMin != null ? (spec.flow360LMin * arcClamped) / 360 : h.flowLMin,
+    };
+  });
+}
+
+/**
+ * After zoning, enforce that each valve zone uses a single spray family.
+ * If the dominant family is a spray (R-VAN*), rotors (3504/I-20) are converted
+ * when their radius fits. If no spray nozzle spec is found for the dominant key,
+ * we fall back to the largest available spray family for conversions.
+ */
+function enforceZoneFamilyConsistency(
+  heads: SprinklerHead[],
+  brand: SprinklerBrand,
+): SprinklerHead[] {
+  const emitters = brandEmitters(brand);
+  const nozzles = emitters.sprayHead.nozzles;
+
+  // Find the largest spray family by radiusMaxM for fallback
+  let largestSprayKey = "";
+  let largestSprayMax = 0;
+  for (const [key, spec] of Object.entries(nozzles)) {
+    if (spec.radiusMaxM > largestSprayMax) {
+      largestSprayMax = spec.radiusMaxM;
+      largestSprayKey = key;
+    }
+  }
+
+  // Global pass first: if project-wide dominant is a spray, convert all rotors
+  const globalFamilyCounts = new Map<string, number>();
+  const globalSprayCounts = new Map<string, number>();
+  for (const h of heads) {
+    const fk = headFamilyKey(h);
+    globalFamilyCounts.set(fk, (globalFamilyCounts.get(fk) ?? 0) + 1);
+    if (h.kind === "spray") {
+      globalSprayCounts.set(fk, (globalSprayCounts.get(fk) ?? 0) + 1);
+    }
+  }
+  let globalTargetKey = largestSprayKey;
+  let globalMaxSprayCount = 0;
+  for (const [fk, count] of globalSprayCounts) {
+    if (count > globalMaxSprayCount) { globalMaxSprayCount = count; globalTargetKey = fk; }
+  }
+  const globalTargetSpec = nozzles[globalTargetKey];
+
+  const isRotorKey = (fk: string) =>
+    fk === "3504" || fk === "I-20" || fk.startsWith("3504") || fk.startsWith("I-20");
+
+  // Convert rotors globally before per-zone enforcement
+  const preProcessed: SprinklerHead[] = [];
+  if (globalTargetSpec) {
+    const GLOBAL_BUFFER = AUTO_LAYOUT_ROTORS_ENABLED ? 1.0 : Infinity;
+    for (const h of heads) {
+      const fk = headFamilyKey(h);
+      if (
+        isRotorKey(fk) &&
+        (!AUTO_LAYOUT_ROTORS_ENABLED ||
+          (h.radiusM <= globalTargetSpec.radiusMaxM + GLOBAL_BUFFER &&
+            h.arcDeg <= globalTargetSpec.arcMaxDeg))
+      ) {
+        preProcessed.push(
+          AUTO_LAYOUT_ROTORS_ENABLED
+            ? {
+                ...h,
+                kind: "spray",
+                configKey: sprayConfigKey(
+                  globalTargetKey,
+                  Math.max(
+                    globalTargetSpec.arcMinDeg,
+                    Math.min(globalTargetSpec.arcMaxDeg, h.arcDeg),
+                  ),
+                ),
+                radiusM: Math.max(
+                  globalTargetSpec.radiusMinM,
+                  Math.min(globalTargetSpec.radiusMaxM, h.radiusM),
+                ),
+                arcDeg: Math.max(
+                  globalTargetSpec.arcMinDeg,
+                  Math.min(globalTargetSpec.arcMaxDeg, h.arcDeg),
+                ),
+                flowLMin:
+                  globalTargetSpec.flow360LMin != null
+                    ? (globalTargetSpec.flow360LMin *
+                        Math.max(
+                          globalTargetSpec.arcMinDeg,
+                          Math.min(globalTargetSpec.arcMaxDeg, h.arcDeg),
+                        )) /
+                      360
+                    : h.flowLMin,
+              }
+            : convertRotorHeadToSpray(h, brand),
+        );
+      } else {
+        preProcessed.push(h);
+      }
+    }
+  } else {
+    preProcessed.push(...heads);
+  }
+
+  // Regroup after global pass
+  const zoneHeadsPost = new Map<number, SprinklerHead[]>();
+  for (const h of preProcessed) {
+    const z = h.hydraulicZone;
+    if (!zoneHeadsPost.has(z)) zoneHeadsPost.set(z, []);
+    zoneHeadsPost.get(z)!.push(h);
+  }
+
+  const result: SprinklerHead[] = [];
+
+  for (const [, zh] of zoneHeadsPost) {
+    const familyCounts = new Map<string, number>();
+    const sprayCounts = new Map<string, number>();
+    for (const h of zh) {
+      const fk = headFamilyKey(h);
+      familyCounts.set(fk, (familyCounts.get(fk) ?? 0) + 1);
+      if (h.kind === "spray") {
+        sprayCounts.set(fk, (sprayCounts.get(fk) ?? 0) + 1);
+      }
+    }
+
+    if (familyCounts.size <= 1) {
+      result.push(...zh);
+      continue;
+    }
+
+    // Dominant = most common family overall
+    let dominantFamily = "";
+    let maxCount = 0;
+    for (const [fk, count] of familyCounts) {
+      if (count > maxCount) { maxCount = count; dominantFamily = fk; }
+    }
+
+    // If dominant is a rotor, prefer the most common spray instead
+    // (rotors should only dominate if there are no sprays at all)
+    if (isRotorKey(dominantFamily) && sprayCounts.size > 0) {
+      let bestSpray = "";
+      let bestCount = 0;
+      for (const [fk, count] of sprayCounts) {
+        if (count > bestCount) { bestCount = count; bestSpray = fk; }
+      }
+      if (bestSpray) dominantFamily = bestSpray;
+    }
+
+    // Resolve nozzle spec: try dominant key, then fall back to largest spray
+    let targetKey = dominantFamily;
+    let targetSpec = nozzles[targetKey];
+    if (!targetSpec && largestSprayKey) {
+      targetKey = largestSprayKey;
+      targetSpec = nozzles[targetKey];
+    }
+    if (!targetSpec) {
+      result.push(...zh);
+      continue;
+    }
+
+    const BUFFER = 1.0;
+    for (const h of zh) {
+      const fk = headFamilyKey(h);
+      if (fk === targetKey) {
+        result.push(h);
+        continue;
+      }
+
+      const sourceSpec = nozzles[fk];
+      // Never downgrade spray family (e.g. MP2000 → MP1000) — kills throw & coverage.
+      if (
+        h.kind === "spray" &&
+        sourceSpec &&
+        !isRotorKey(fk)
+      ) {
+        result.push(h);
+        continue;
+      }
+
+      // Convert rotors (or missing spec) to target spray when radius/arc fit
+      if (
+        h.radiusM >= targetSpec.radiusMinM - BUFFER &&
+        h.radiusM <= targetSpec.radiusMaxM + BUFFER &&
+        h.arcDeg <= targetSpec.arcMaxDeg
+      ) {
+        const clampedRadius = Math.max(
+          targetSpec.radiusMinM,
+          Math.min(targetSpec.radiusMaxM, h.radiusM),
+        );
+        const arcClamped = Math.max(
+          targetSpec.arcMinDeg,
+          Math.min(targetSpec.arcMaxDeg, h.arcDeg),
+        );
+        result.push({
+          ...h,
+          kind: "spray",
+          configKey: targetKey,
+          radiusM: clampedRadius,
+          arcDeg: arcClamped,
+          flowLMin: targetSpec.flow360LMin != null
+            ? (targetSpec.flow360LMin * arcClamped) / 360
+            : h.flowLMin,
+        });
+      } else {
+        result.push(h);
+      }
+    }
+  }
+
+  return result;
+}
 
 /**
  * Sofort-Berechnung v3 — iterative engineering pipeline per spec.
- * Returns UI view model via adapter; use computeSofortPlanV3Raw for full model.
+ * Returns UI view model via adapter; use computeSofortPlanV4Raw for full model.
  */
-export function computeSofortPlanV3(
+export function computeSofortPlanV4(
   zones: DrawnZone[],
   fixtures: PlotFixture[],
   opts?: { brand?: SprinklerBrand },
 ): SofortPlan {
-  return adaptV2ToViewModel(computeSofortPlanV3Raw(zones, fixtures, opts));
+  return adaptV2ToViewModel(computeSofortPlanV4Raw(zones, fixtures, opts));
 }
 
-export function computeSofortPlanV3Raw(
+export function computeSofortPlanV4Raw(
   zones: DrawnZone[],
   fixtures: PlotFixture[],
   opts?: { brand?: SprinklerBrand },
-): SofortPlanV3 {
+): SofortPlanV4 {
   const brand = opts?.brand ?? DEFAULT_BRAND;
   const emitters = brandEmitters(brand);
   const warningItems: WarningItem[] = [];
@@ -112,7 +418,7 @@ export function computeSofortPlanV3Raw(
       hydraulicZone: 0,
       id: h.id || `tmp-${i}`,
     }));
-    const refined = refineHeadSet(seededTmp, lawns, obstacles);
+    const refined = refineHeadSet(seededTmp, lawns, obstacles, { brand });
     rawHeads = refined;
   }
 
@@ -123,7 +429,11 @@ export function computeSofortPlanV3Raw(
     brand,
   });
 
-  const seeded: SprinklerHead[] = rawHeads.map((h) => ({
+  // Pre-zoning: convert all rotors to the largest spray family when radius allows.
+  // This ensures zoning never sees mixed rotor/spray families.
+  const preZoning = convertRotorsToSpray(rawHeads, brand);
+
+  const seeded: SprinklerHead[] = preZoning.map((h) => ({
     ...h,
     hydraulicZone: 0,
     designPressureBar: CATALOG.hydraulics.recommendedPressureBar,
@@ -143,7 +453,7 @@ export function computeSofortPlanV3Raw(
       brand,
       allZones: zones,
     });
-    heads = zoned.heads;
+    heads = enforceZoneFamilyConsistency(zoned.heads, brand);
     zoneCount = zoned.zoneCount;
     zoneDecisions = zoned.decisions;
     for (const a of zoned.assumptions) {
@@ -377,7 +687,7 @@ export function computeSofortPlanV3Raw(
     dripAreaM2: Math.round(dripAreaM2),
     brand,
     catalogVersion: CATALOG.hydraulics.catalogVersion ?? "planner",
-    algorithmVersion: "v3",
+    algorithmVersion: "v4",
     algorithmBuild: ALGORITHM_BUILD,
     requiresBackflowProtectionReview,
     createdAt: new Date().toISOString(),
@@ -387,7 +697,7 @@ export function computeSofortPlanV3Raw(
 }
 
 /** Recompute after drag/delete — reuse v3 professional zoning + pipe sizing. */
-export function recomputeAfterEditV3(
+export function recomputeAfterEditV4(
   plan: SofortPlan,
   fixtures: PlotFixture[],
   zones: DrawnZone[],
@@ -411,6 +721,7 @@ export function recomputeAfterEditV3(
   if (verteilerPos && heads.length > 0) {
     const lawns = zones.filter((z) => z.type === "rasen");
     const obstacles = zones.filter((oz) => oz.type === "gebaeude" || oz.type === "trocken");
+    heads = convertRotorsToSpray(heads, brand);
     const zoned = designValveZones({
       heads,
       lawns,
@@ -420,7 +731,7 @@ export function recomputeAfterEditV3(
       brand,
       allZones: zones,
     });
-    heads = zoned.heads;
+    heads = enforceZoneFamilyConsistency(zoned.heads, brand);
     zoneCount = zoned.zoneCount;
     zoneDecisions = zoned.decisions.map((d) => ({
       zoneId: d.zoneId,
@@ -473,7 +784,7 @@ export function recomputeAfterEditV3(
 
   return {
     ...plan,
-    algorithmVersion: "v3",
+    algorithmVersion: "v4",
     createdAt: new Date().toISOString(),
     brand,
     heads,

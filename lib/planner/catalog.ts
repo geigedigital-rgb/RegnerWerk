@@ -115,7 +115,16 @@ export type PlannerCatalog = {
   brands?: Record<SprinklerBrand, BrandEmitters>;
   sprayHead: BrandEmitters["sprayHead"];
   rotor: BrandEmitters["rotor"];
-  pipes: { pe25Rolls: RollSpec[]; pe32Rolls: RollSpec[] };
+  pipes: {
+    pe25Rolls: RollSpec[];
+    pe32Rolls: RollSpec[];
+    /** PE Klemmwinkel 90° (route bends), Wasser&Grün 1.00-W03 / 1.00-W04 */
+    elbowPe25?: SimplePart;
+    elbowPe32?: SimplePart;
+    /** PE Klemmkupplung gerade (roll joins), 1.03-K55 / 1.03-K56 */
+    couplingPe25?: SimplePart;
+    couplingPe32?: SimplePart;
+  };
   hydraulics: {
     defaultSourceFlowM3h: number;
     zoneFillFactor: number;
@@ -207,6 +216,53 @@ export function setVariantFor(
 export function primaryNozzleOrder(brand: SprinklerBrand): string[] {
   if (brand === "hunter") return ["MP1000", "MP2000", "MP3000", "MP3500"];
   return ["R-VAN14", "R-VAN18", "R-VAN24"];
+}
+
+/**
+ * Gear-drive / PC rotors (3504-PC-SAM, I-20) — not used in automatic layout until
+ * explicitly enabled (special pressure-compensating layouts come later).
+ */
+export const AUTO_LAYOUT_ROTORS_ENABLED = false;
+
+/** Spray families eligible for a target arc (includes Rain Bird 360° nozzle keys). */
+export function nozzleOrderForArc(
+  brand: SprinklerBrand,
+  arcDeg = 180,
+): string[] {
+  if (brand === "rainbird" && arcDeg >= 315) {
+    return ["R-VAN14-360", "R-VAN18-360", "R-VAN24-360"];
+  }
+  return primaryNozzleOrder(brand);
+}
+
+export function sprayConfigKey(familyKey: string, arcDeg: number): string {
+  if (arcDeg >= 315 && !familyKey.endsWith("-360")) {
+    return `${familyKey}-360`;
+  }
+  return familyKey;
+}
+
+/** Largest catalogued spray family for arc; never returns a rotor. */
+export function largestSprayFamilySpec(
+  brand: SprinklerBrand,
+  emitters: BrandEmitters,
+  arcDeg = 180,
+): { key: string; spec: NozzleSpec } | null {
+  const n = emitters.sprayHead.nozzles;
+  const order = nozzleOrderForArc(brand, arcDeg);
+  for (let i = order.length - 1; i >= 0; i--) {
+    const key = order[i];
+    const spec = n[key];
+    if (spec) return { key, spec };
+    // R-VAN24-360 may inherit performance from R-VAN24 in catalog
+    if (key.endsWith("-360")) {
+      const base = n[key.replace(/-360$/, "")];
+      if (base) return { key, spec: base };
+    }
+  }
+  const fallback = order[0];
+  const spec = n[fallback];
+  return spec ? { key: fallback, spec } : null;
 }
 
 export function smallNozzleKey(brand: SprinklerBrand): string {

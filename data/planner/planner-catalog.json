@@ -3358,7 +3358,31 @@
         "priceEur": 139,
         "imageUrl": "https://www.wasserundgruen.de/images/product_images/original_images/PE-Rohr%20Blau%20Hauptbild_497_0_cleanup.png"
       }
-    ]
+    ],
+    "elbowPe25": {
+      "article": "1.00-W03",
+      "label": "Winkel PE 25×25 Klemm × Klemm PN10",
+      "priceEur": 2.35,
+      "imageUrl": "https://www.wasserundgruen.de/images/product_images/original_images/Logo%20Winkel%20Klemm%20x%20Klemm_cleanup.png"
+    },
+    "elbowPe32": {
+      "article": "1.00-W04",
+      "label": "Winkel PE 32×32 Klemm × Klemm PN10",
+      "priceEur": 2.82,
+      "imageUrl": "https://www.wasserundgruen.de/images/product_images/original_images/Logo%20Winkel%20Klemm%20x%20Klemm_cleanup.png"
+    },
+    "couplingPe25": {
+      "article": "1.03-K55",
+      "label": "Kupplung PE 25×25 Klemm × Klemm PN10",
+      "priceEur": 1.94,
+      "imageUrl": "https://www.wasserundgruen.de/images/product_images/original_images/Kupplung%20gerade%20mit%20IG_cleanup.png"
+    },
+    "couplingPe32": {
+      "article": "1.03-K56",
+      "label": "Kupplung PE 32×32 Klemm × Klemm PN10",
+      "priceEur": 2.45,
+      "imageUrl": "https://www.wasserundgruen.de/images/product_images/original_images/Kupplung%20gerade%20mit%20IG_cleanup.png"
+    }
   },
   "hydraulics": {
     "defaultSourceFlowM3h": 2,
